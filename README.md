@@ -26,7 +26,7 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
 
 1. **Autenticacion y Perfil de Usuario**:
    - Registro de nuevas cuentas con validacion de credenciales en tiempo real.
-   - Inicio de sesion y almacenamiento seguro del token JWT en el almacenamiento local del navegador.
+   - Inicio de sesion con JWT en memoria; recargar requiere autenticarse nuevamente.
    - Consulta del perfil activo del usuario autenticado.
 
 2. **Gestion de Espacios Compartidos**:
@@ -157,3 +157,7 @@ front-fairshareapp/
 ## Sistema de diseño
 
 La fuente de valores es `tokens.json`. Consultá [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) para la paleta, las utilidades y las reglas de uso. El tema se genera automáticamente antes de iniciar o compilar; `npm run tokens:build` lo actualiza y `npm run tokens:check` comprueba su sincronización.
+
+## Arquitectura y componentes compartidos
+
+Consultá [FRONTEND_ARCHITECTURE.md](./FRONTEND_ARCHITECTURE.md) para las rutas, responsables por carpeta, estados de datos y contratos de integración. La galería interactiva está en `/componentes` después de iniciar sesión. Para verificar la base: `npm test`, `npm run lint`, `npm run tokens:check` y `npm run build`.
