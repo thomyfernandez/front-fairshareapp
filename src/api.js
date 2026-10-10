@@ -31,9 +31,13 @@ export function createApi({ baseUrl = '', token = '', onUnauthorized = () => {},
     let data = null
     if (text) {
       try { data = JSON.parse(text) } catch {
-        if (response.ok) throw new ApiError('El servidor devolvió una respuesta que no pudimos interpretar.', {
-          status: response.status, code: 'INVALID_RESPONSE',
-        })
+        if (response.ok && text.trim() === 'OK') {
+          data = text.trim()
+        } else if (response.ok) {
+          throw new ApiError('El servidor devolvió una respuesta que no pudimos interpretar.', {
+            status: response.status, code: 'INVALID_RESPONSE',
+          })
+        }
       }
     }
     if (!response.ok) {
