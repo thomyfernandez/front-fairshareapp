@@ -9,7 +9,27 @@ export function SessionProvider({ children }) {
   const [session, setSession] = useState(null)
   const active = useRef(null)
   const { notify } = useUI()
-  const signIn = useCallback(auth => { active.current = auth; setSession(auth) }, [])
+  const signIn = useCallback(auth => {
+    if (!auth) {
+      active.current = null
+      setSession(null)
+      return
+    }
+    const usuario = auth.usuario || {
+      id: auth.id || auth.usuarioId || 1,
+      nombre: auth.nombre || auth.usuario || 'Usuario',
+      apellido: auth.apellido || '',
+      email: auth.email || '',
+      usuario: auth.usuario || auth.nombre || 'usuario',
+    }
+    const sessionData = {
+      ...auth,
+      token: auth.token,
+      usuario,
+    }
+    active.current = sessionData
+    setSession(sessionData)
+  }, [])
   const signOut = useCallback(() => { active.current = null; setSession(null) }, [])
   const api = useMemo(() => createApi({
     baseUrl: import.meta.env.VITE_API_URL || '', token: session?.token,

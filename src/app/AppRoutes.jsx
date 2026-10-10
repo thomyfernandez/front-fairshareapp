@@ -17,6 +17,7 @@ const BalancePage = lazy(() => import('../features/balance/BalancePage'))
 const RecurringPage = lazy(() => import('../features/recurrentes/RecurringPage'))
 const SettlementsPage = lazy(() => import('../features/liquidaciones/SettlementsPage'))
 const MembersPage = lazy(() => import('../features/miembros/MembersPage'))
+const SpaceSettings = lazy(() => import('../features/espacios/SpaceSettings'))
 const ComponentGallery = lazy(() => import('../features/design-system/ComponentGallery'))
 
 function ProtectedApp() {
@@ -55,6 +56,7 @@ export function AppRoutes() {
         <Route path="recurrentes" element={<WorkspacePage component={RecurringPage} />} />
         <Route path="liquidaciones" element={<WorkspacePage component={SettlementsPage} />} />
         <Route path="miembros" element={<WorkspacePage component={MembersPage} />} />
+        <Route path="configuracion" element={<WorkspacePage component={SpaceSettings} />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Route></Route>

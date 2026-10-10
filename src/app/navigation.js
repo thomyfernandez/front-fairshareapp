@@ -5,6 +5,7 @@ export const spaceSections = [
   { slug: 'recurrentes', label: 'Recurrentes', icon: 'repeat' },
   { slug: 'liquidaciones', label: 'Liquidaciones', icon: 'check' },
   { slug: 'miembros', label: 'Miembros', icon: 'users' },
+  { slug: 'configuracion', label: 'Configuración', icon: 'settings' },
 ]
 export function sectionTitle(pathname) {
   if (pathname === '/espacios') return 'Mis espacios'

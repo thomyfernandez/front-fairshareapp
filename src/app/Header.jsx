@@ -17,7 +17,7 @@ export function Header({ onOpenMenu }) {
     document.addEventListener('pointerdown', closeOutside)
     return () => document.removeEventListener('pointerdown', closeOutside)
   }, [])
-  const name = session.usuario.nombre || session.usuario.usuario || 'Mi cuenta'
+  const name = session?.usuario?.nombre || session?.usuario?.usuario || session?.nombre || 'Mi cuenta'
   return <header className="app-header">
     <div className="header-left"><Button className="mobile-menu-button" variant="ghost" size="icon" aria-label="Abrir navegación" onClick={onOpenMenu}><Icon name="menu" /></Button>
       <div className="header-breadcrumb"><span>Tu cuenta</span><Icon name="chevron" size={14} /><strong>{sectionTitle(pathname)}</strong></div>
@@ -29,7 +29,7 @@ export function Header({ onOpenMenu }) {
         {spaces.map(item => <option key={item.id} value={item.id}>{item.nombre}</option>)}
       </select>
     </div><details ref={account} className="account-menu" onKeyDown={event => { if (event.key === 'Escape') { event.currentTarget.removeAttribute('open'); event.currentTarget.querySelector('summary')?.focus() } }}><summary aria-label={`Cuenta de ${name}`}><span className="avatar">{name.slice(0, 1).toUpperCase()}</span><span className="account-name">{name}</span></summary>
-      <div className="account-menu__panel"><strong>{name}</strong><span>{session.usuario.email}</span><Button variant="ghost" onClick={() => { signOut(); navigate('/login', { replace: true }) }}><Icon name="logout" size={17} />Cerrar sesión</Button></div>
+      <div className="account-menu__panel"><strong>{name}</strong><span>{session?.usuario?.email || session?.email}</span><Button variant="ghost" onClick={() => { signOut(); navigate('/login', { replace: true }) }}><Icon name="logout" size={17} />Cerrar sesión</Button></div>
     </details></div>
   </header>
 }
