@@ -15,7 +15,7 @@ export function WorkspaceProvider({ children }) {
   const membersState = useApiResource(api, spaceId ? `/api/v1/espacios/${spaceId}/miembros` : null, { revision })
   const invalidate = useCallback(() => setRevision(value => value + 1), [])
   const members = membersState.data
-  const isAdmin = members.some(member => member.usuarioId === session.usuario.id && member.rol === 'ADMIN')
+  const isAdmin = members.some(member => member.usuarioId === session?.usuario?.id && member.rol === 'ADMIN')
   return <WorkspaceContext.Provider value={{
     session, api, spaces: spacesState.data, spacesState, spaceId,
     space: spaceState.data, spaceState, members, membersState, isAdmin, revision, invalidate,
