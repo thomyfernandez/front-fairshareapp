@@ -24,3 +24,13 @@ export const nextMonth = () => {
   return localDate(date)
 }
 export const formData = event => Object.fromEntries(new FormData(event.currentTarget))
+
+const capitalize = text => text.charAt(0).toUpperCase() + text.slice(1)
+export const monthOptions = Array.from({ length: 12 }, (_, index) => ({
+  value: index + 1,
+  label: capitalize(new Intl.DateTimeFormat('es-AR', { month: 'long' }).format(new Date(2000, index, 1))),
+}))
+export function periodLabel(mes, anio) {
+  if (!mes || !anio) return 'Sin período'
+  return `${monthOptions[mes - 1]?.label || mes} ${anio}`
+}
