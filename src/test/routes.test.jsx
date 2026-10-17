@@ -72,7 +72,7 @@ it('keeps expenses and navigation available when only the balance fails', async 
 it('expires the session and announces it once when an authenticated request returns 401', async () => {
   setup('/espacios/1/resumen', { balanceStatus: 401 })
   await logIn()
-  await screen.findByRole('heading', { name: 'Bienvenido de nuevo' })
+  await screen.findByRole('heading', { name: 'Ingresá a FairShare' })
   expect(await screen.findByText('Tu sesión venció. Iniciá sesión nuevamente para continuar.')).toBeInTheDocument()
   expect(screen.getByTestId('route')).toHaveTextContent('/login')
   expect(screen.queryByText('Compras compartidas')).not.toBeInTheDocument()

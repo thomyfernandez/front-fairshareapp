@@ -56,5 +56,6 @@ Las dimensiones de tipografía y espaciado se convierten a rem tomando 16px como
 - `text-tertiary` sobre blanco no alcanza contraste suficiente para texto pequeño esencial. Usar `text-secondary` en etiquetas, ayudas e información necesaria.
 - Transiciones de 150–200ms, sin animación de tamaño ni desplazamiento. Los estilos base desactivan las transiciones con `prefers-reduced-motion: reduce`; para nuevas utilidades animadas, usar también `motion-reduce:transition-none`.
 - Los controles base tienen una altura mínima de 44px y foco visible. Los errores deben comunicarse con texto, no solamente con color.
+- Para contraseñas, usar `PasswordField` (en `src/components/ui`): mantiene la estructura de `Field` (etiqueta, ayuda y error asociados) y agrega dentro del campo un botón de 44px «Mostrar/Ocultar» con nombre accesible «Mostrar contraseña»/«Ocultar contraseña». No crear toggles propios en cada formulario.
 
 Referencias técnicas: [DTCG Format 2025.10](https://www.designtokens.org/tr/2025.10/format/), [DTCG Color 2025.10](https://www.designtokens.org/tr/2025.10/color/), [Tailwind v4 con Vite](https://tailwindcss.com/docs/installation/using-vite), [variables de tema](https://tailwindcss.com/docs/theme).
