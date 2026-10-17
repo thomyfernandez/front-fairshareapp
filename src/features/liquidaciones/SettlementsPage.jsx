@@ -1,18 +1,47 @@
-import { Field, Submit, Empty, PageHeader, ResourceState } from '../../components/ui'
+import { useState } from 'react'
+import { Link, useSearchParams } from 'react-router'
+import { Card, InlineAlert, PageHeader, ResourceState } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
-import { money } from '../../lib/format'
-import { useWorkspace } from '../../app/useWorkspace'
 import { useApiResource } from '../../hooks/useApiResource'
-import { useUI } from '../../components/ui'
+import { money } from '../../lib/format'
+import { historyQuery, readFilters } from './model'
+import { SettlementForm } from './SettlementForm'
+import { SettlementHistory } from './SettlementHistory'
+import { SettlementDetail } from './SettlementDetail'
 
 export default function SettlementsPage() {
-  const { spaceId, api, revision } = useWorkspace()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const filters = readFilters(searchParams)
+  const { query } = historyQuery(filters)
+  const { spaceId, space, api, revision, invalidate, isAdmin, busy, run } = useFeature(null)
   const spacePath = `/api/v1/espacios/${spaceId}`
-  const { resource, isAdmin, busy, mutate } = useFeature(`${spacePath}/liquidaciones/historial`)
+  const history = useApiResource(api, `${spacePath}/liquidaciones/historial${query ? `?${query}` : ''}`, { revision })
   const expenseState = useApiResource(api, `${spacePath}/gastos`, { revision })
-  const { notify } = useUI()
-  const pending = expenseState.data.filter(g => g.estado === 'PENDIENTE')
-  const settlements = resource.data
-  return <div className="legacy-feature"><PageHeader title="Liquidaciones" /><ResourceState resource={resource}><ResourceState resource={expenseState}><section className="card"><h2>Cierre de gastos</h2><p>El cierre descuenta del presupuesto los gastos pendientes seleccionados. No registra pagos entre miembros.</p>{isAdmin && <form onSubmit={event => { event.preventDefault(); const f = new FormData(event.currentTarget); const ids = f.getAll('gastoIds').map(Number); if (!ids.length) { notify('Seleccioná al menos un gasto.', 'error'); return } mutate(`${spacePath}/liquidaciones/cierre`, 'POST', { gastoIds: ids, descripcion: f.get('descripcion') }, 'Liquidación cerrada.') }}><fieldset><legend>Gastos pendientes</legend>{pending.map(g => <label className="check" key={g.id}><input type="checkbox" name="gastoIds" value={g.id} defaultChecked />{g.descripcion} · {money(g.monto)}</label>)}{!pending.length && <Empty>No hay gastos pendientes de cierre.</Empty>}</fieldset><Field label="Nota del cierre" name="descripcion" maxLength={255} /><Submit busy={busy || !pending.length}>Cerrar seleccionados</Submit></form>}
-            <h3>Historial</h3>{settlements.map(l => <article className="row" key={l.id}><div><strong>Liquidación #{l.id}</strong><small>{l.fechaLiquidacion} · {l.cantidadGastos} gastos</small></div><strong>{money(l.montoTotal)}</strong></article>)}{!settlements.length && <Empty>Todavía no se realizaron cierres.</Empty>}</section></ResourceState></ResourceState></div>
+  const [detail, setDetail] = useState(null)
+  const pending = expenseState.data.filter(expense => expense.estado === 'PENDIENTE')
+
+  return <div className="legacy-feature">
+    <PageHeader
+      title="Liquidaciones"
+      description={space ? `Presupuesto disponible del espacio: ${money(space.presupuestoBase)}` : undefined}
+    />
+    <InlineAlert tone="info">
+      Liquidar cierra gastos y descuenta su total del presupuesto del espacio. No registra pagos entre personas: para eso usá <Link to={`/espacios/${spaceId}/balance`}>Balance y pagos</Link>.
+    </InlineAlert>
+    <div className="grid gap-6">
+      {isAdmin
+        ? <ResourceState resource={expenseState}>
+          <SettlementForm spaceId={spaceId} pending={pending} presupuesto={space?.presupuestoBase} busy={busy} run={run} api={api} invalidate={invalidate} />
+        </ResourceState>
+        : <Card><h2>Nuevo cierre</h2><p>Solo los administradores del espacio pueden liquidar gastos. Podés consultar el historial de cierres debajo.</p></Card>}
+      <SettlementHistory
+        resource={history}
+        filters={filters}
+        onApply={next => setSearchParams(new URLSearchParams(Object.entries(next).filter(([, value]) => value)))}
+        onClear={() => setSearchParams({})}
+        onOpen={setDetail}
+      />
+    </div>
+    <SettlementDetail settlement={detail} expenses={expenseState.data} onClose={() => setDetail(null)} />
+  </div>
 }
