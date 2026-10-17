@@ -19,6 +19,10 @@
   .ui-field__hint, .ui-field__error { font-size: var(--text-xs); line-height: 1.5; }
   .ui-field__hint { color: var(--color-text-secondary); }
   .ui-field__error { color: var(--color-error-foreground); }
+  .ui-password { position: relative; }
+  .ui-password .ui-input { padding-right: 96px; }
+  .ui-password__toggle.ui-button { position: absolute; top: 0; right: 0; height: 100%; min-width: 88px; padding: 0 14px; border-radius: 0 var(--radius-md) var(--radius-md) 0; color: var(--color-brand-hover); }
+  .ui-password__toggle.ui-button:focus-visible { outline-offset: -3px; }
   .ui-checkbox { display: flex; align-items: center; gap: 10px; cursor: pointer; }
   .ui-checkbox input { width: 18px; height: 18px; min-height: 0; accent-color: var(--color-brand-primary); flex: 0 0 auto; }
   .ui-card { background: var(--color-canvas); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-subtle); min-width: 0; }

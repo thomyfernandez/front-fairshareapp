@@ -25,9 +25,12 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
 ## Funcionalidades de la Interfaz
 
 1. **Autenticacion y Perfil de Usuario**:
-   - Registro de nuevas cuentas con validacion de credenciales en tiempo real.
+   - Registro con validacion junto a cada campo; al crear la cuenta se vuelve al login con el email completado.
+   - Mensajes claros para email ya registrado (409), credenciales incorrectas (401), errores del servidor y falta de conexion.
    - Inicio de sesion con JWT en memoria; recargar requiere autenticarse nuevamente.
-   - Consulta del perfil activo del usuario autenticado.
+   - Cierre de sesion desde el menu de usuario y aviso de sesion vencida (al recibir 401 o al llegar el `exp` del token).
+   - No se ofrece recuperacion de contrasena porque el backend todavia no la implementa.
+   - Pantallas en `src/features/auth`: `LoginPage`, `RegisterPage`, `AuthLayout`, `UserMenu` y `SessionProvider`.
 
 2. **Gestion de Espacios Compartidos**:
    - Creacion de nuevos espacios con asignacion de regla de reparto (Equitativa vs. Proporcional a Ingresos) y presupuesto base.

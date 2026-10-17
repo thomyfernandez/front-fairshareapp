@@ -1,7 +1,8 @@
 import { lazy, Suspense } from 'react'
 import { Link, Navigate, Outlet, Route, Routes, useLocation } from 'react-router'
 import { Card, EmptyState, LoadingState } from '../components/ui'
-import AuthPage from '../features/auth/AuthPage'
+import LoginPage from '../features/auth/LoginPage'
+import RegisterPage from '../features/auth/RegisterPage'
 import { useSession } from '../features/auth/useSession'
 import Dashboard from '../features/dashboard/Dashboard'
 import SpacesPage from '../features/espacios/SpacesPage'
@@ -41,8 +42,8 @@ function NotFound() {
 }
 export function AppRoutes() {
   return <Routes>
-    <Route path="/login" element={<AuthPage key="login" />} />
-    <Route path="/registro" element={<AuthPage key="register" register />} />
+    <Route path="/login" element={<LoginPage />} />
+    <Route path="/registro" element={<RegisterPage />} />
     <Route element={<ProtectedApp />}><Route element={<ScreenBoundary />}>
       <Route index element={<LandingPage />} />
       <Route path="espacios" element={<SpacesPage />} />
