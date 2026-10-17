@@ -1,5 +1,6 @@
 export { Button, Submit } from './Button'
 export { Field, Checkbox } from './Field'
+export { PasswordField } from './PasswordField'
 export { Card, Badge, PageHeader, Empty, EmptyState, LoadingState, ErrorState, InlineAlert, ResourceState } from './States'
 export { Icon } from './Icon'
 export { Modal } from './Modal'

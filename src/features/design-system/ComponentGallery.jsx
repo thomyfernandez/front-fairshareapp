@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Badge, Button, Card, Checkbox, EmptyState, Field, InlineAlert, LoadingState, Modal, PageHeader, useUI } from '../../components/ui'
+import { Badge, Button, Card, Checkbox, EmptyState, Field, InlineAlert, LoadingState, Modal, PageHeader, PasswordField, useUI } from '../../components/ui'
 
 export default function ComponentGallery() {
   const [open, setOpen] = useState(false)
