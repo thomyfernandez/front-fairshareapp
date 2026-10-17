@@ -1,13 +1,96 @@
-import { Field, Submit, PageHeader, ResourceState } from '../../components/ui'
+import { useState } from 'react'
+import { Card, InlineAlert, Modal, PageHeader, ResourceState } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
-import { formData } from '../../lib/format'
+import { money } from '../../lib/format'
+import { ChangeRoleDialog } from './ChangeRoleDialog'
+import { InviteCard } from './InviteCard'
+import { MembersList } from './MembersList'
+import { isSoleAdmin, otherRole } from './model'
 
 export default function MembersPage() {
-  const { membersState: resource, space, members, session, isAdmin, busy, mutate } = useFeature(null)
-  const spacePath = `/api/v1/espacios/${space.id}`
-  return <div className="legacy-feature"><PageHeader title="Miembros" /><ResourceState resource={resource}><section className="card"><h2>Miembros y configuración</h2>{members.map(m => <article className="row" key={m.id}><div><strong>{m.nombreUsuario}</strong><small>{m.rol}</small></div>{isAdmin && <button disabled={busy} className="secondary" onClick={() => mutate(`${spacePath}/miembros/${m.usuarioId}/rol?rol=${m.rol === 'ADMIN' ? 'MIEMBRO' : 'ADMIN'}`, 'PATCH', undefined, 'Rol actualizado.')}>{m.rol === 'ADMIN' ? 'Quitar administración' : 'Hacer administrador'}</button>}</article>)}
-            <form className="filters" onSubmit={event => { event.preventDefault(); const d = formData(event); mutate(`${spacePath}/miembros/${session.usuario.id}/sueldo`, 'PUT', { sueldoDeclarado: Number(d.sueldoDeclarado) }, 'Ingreso declarado actualizado.') }}><Field label="Mi ingreso declarado en este espacio" name="sueldoDeclarado" type="number" min="0" step="0.01" required /><Submit busy={busy}>Guardar</Submit></form>
-            {isAdmin && <><form className="filters" onSubmit={event => { event.preventDefault(); const d = formData(event); mutate(`${spacePath}/presupuesto-base?presupuestoBase=${Number(d.presupuesto)}`, 'PATCH', undefined, 'Presupuesto actualizado.') }}><Field label="Presupuesto disponible" name="presupuesto" type="number" min="0" step="0.01" defaultValue={space.presupuestoBase} key={space.presupuestoBase} required /><Submit busy={busy}>Actualizar presupuesto</Submit></form>
-              <form className="filters" onSubmit={event => { event.preventDefault(); const d = formData(event); mutate(`${spacePath}/regla-distribucion?reglaReparto=${d.regla}`, 'PATCH', undefined, 'Regla actualizada.') }}><Field label="Regla del espacio"><select name="regla" defaultValue={space.reglaReparto}><option value="CINCUENTA_CINCUENTA">Equitativa</option><option value="PROPORCIONAL">Proporcional</option></select></Field><Submit busy={busy}>Guardar regla</Submit></form></>}
-          </section></ResourceState></div>
+  const { space, spaceId, membersState, members, session, isAdmin, busy, error, mutate } = useFeature(null)
+  const userId = session.usuario.id
+  const currentMember = members.find((m) => m.usuarioId === userId)
+  const [roleTarget, setRoleTarget] = useState(null)
+
+  const closeDialog = () => setRoleTarget(null)
+
+  async function confirmRoleChange() {
+    const nextRole = otherRole(roleTarget.rol)
+    const result = await mutate(
+      `/api/v1/espacios/${spaceId}/miembros/${roleTarget.usuarioId}/rol?rol=${nextRole}&solicitanteId=${userId}`,
+      'PATCH',
+      undefined,
+      'Rol actualizado.'
+    )
+    if (result.ok) closeDialog()
+  }
+
+  return (
+    <div>
+      <PageHeader
+        eyebrow="INTEGRANTES Y ACCESO"
+        title="Miembros"
+        description="Mirá quién forma parte de este espacio y quién puede administrarlo."
+      />
+
+      <ResourceState resource={membersState}>
+        <div className="flex flex-col gap-6">
+          <InviteCard space={space} />
+
+          <section>
+            <div className="mb-4 flex items-center justify-between gap-4">
+              <h2 className="text-lg font-semibold text-primary">Integrantes del espacio</h2>
+              <span className="text-sm text-secondary">
+                {members.length} {members.length === 1 ? 'integrante' : 'integrantes'}
+              </span>
+            </div>
+            <MembersList
+              members={members}
+              currentUserId={userId}
+              canManageRoles={isAdmin}
+              onChangeRole={setRoleTarget}
+            />
+          </section>
+
+          <Card>
+            <h2 className="text-lg font-semibold text-primary">Tu ingreso declarado en este espacio</h2>
+            <p className="text-sm text-secondary">
+              Se usa para calcular el reparto proporcional de gastos en este espacio.
+            </p>
+            <p className="mt-2 text-base font-medium text-primary">
+              {currentMember?.sueldoDeclarado != null
+                ? money(currentMember.sueldoDeclarado)
+                : 'Todavía no declaraste un ingreso en este espacio.'}
+            </p>
+            <div className="mt-3">
+              <InlineAlert tone="info">
+                La edición todavía no está disponible desde esta pantalla: se va a incorporar acá el
+                formulario DeclaredIncomeForm que publica el equipo de Liquidaciones e ingresos.
+              </InlineAlert>
+            </div>
+          </Card>
+        </div>
+      </ResourceState>
+
+      <Modal
+        open={Boolean(roleTarget)}
+        onClose={closeDialog}
+        dismissible={!busy}
+        title={roleTarget ? `Cambiar rol de ${roleTarget.nombreUsuario}` : ''}
+      >
+        {roleTarget && (
+          <ChangeRoleDialog
+            member={roleTarget}
+            isSelf={roleTarget.usuarioId === userId}
+            soleAdmin={isSoleAdmin(members, roleTarget.usuarioId)}
+            busy={busy}
+            error={error}
+            onConfirm={confirmRoleChange}
+            onCancel={closeDialog}
+          />
+        )}
+      </Modal>
+    </div>
+  )
 }
