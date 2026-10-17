@@ -56,5 +56,6 @@ Las dimensiones de tipografía y espaciado se convierten a rem tomando 16px como
 - `text-tertiary` sobre blanco no alcanza contraste suficiente para texto pequeño esencial. Usar `text-secondary` en etiquetas, ayudas e información necesaria.
 - Transiciones de 150–200ms, sin animación de tamaño ni desplazamiento. Los estilos base desactivan las transiciones con `prefers-reduced-motion: reduce`; para nuevas utilidades animadas, usar también `motion-reduce:transition-none`.
 - Los controles base tienen una altura mínima de 44px y foco visible. Los errores deben comunicarse con texto, no solamente con color.
+- `InlineAlert` admite los tonos `info` (predeterminado), `success`, `warning` y `error`. Usar `warning` para consecuencias que el usuario debe revisar antes de confirmar (por ejemplo, presupuesto insuficiente o un período que se va a reemplazar); usa `bg-warning-background` y `text-warning-foreground`.
 
 Referencias técnicas: [DTCG Format 2025.10](https://www.designtokens.org/tr/2025.10/format/), [DTCG Color 2025.10](https://www.designtokens.org/tr/2025.10/color/), [Tailwind v4 con Vite](https://tailwindcss.com/docs/installation/using-vite), [variables de tema](https://tailwindcss.com/docs/theme).
