@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react'
-import { Button, PageHeader, ResourceState } from '../../components/ui'
+import { useState } from 'react'
+import { Button, Icon, PageHeader, ResourceState } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
 import { useWorkspace } from '../../app/useWorkspace'
 import { useSearchParams } from 'react-router'
@@ -34,15 +34,8 @@ export default function ExpensesPage() {
   const [searchTerm, setSearchTerm] = useState('')
 
   // Filtrado reactivo en cliente para búsqueda por texto
-  const filteredExpenses = useMemo(() => {
-    if (!searchTerm.trim()) return expenses
-    const term = searchTerm.toLowerCase()
-    return expenses.filter(g => {
-      const desc = (g.descripcion || '').toLowerCase()
-      const payer = (g.pagadorNombre || '').toLowerCase()
-      return desc.includes(term) || payer.includes(term)
-    })
-  }, [expenses, searchTerm])
+  const term = searchTerm.trim().toLocaleLowerCase('es-AR')
+  const filteredExpenses = term ? expenses.filter(g => [g.descripcion, g.pagadorNombre].some(value => value?.toLocaleLowerCase('es-AR').includes(term))) : expenses
 
   const handleDesdeChange = (val) => {
     const next = new URLSearchParams(searchParams)
@@ -64,40 +57,23 @@ export default function ExpensesPage() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="feature-page expenses-page">
       {/* Cabecera principal */}
       <PageHeader
-        title="Gastos"
-        description="Gestiona y distribuye los gastos compartidos del espacio."
-        actions={
-          <div className="flex items-center gap-2 flex-wrap">
-            <Button
-              variant={tab === 'lista' ? 'secondary' : 'ghost'}
-              onClick={() => setTab('lista')}
-            >
-              Ver listado
-            </Button>
-            <Button
-              variant={tab === 'individual' ? 'primary' : 'secondary'}
-              onClick={() => setTab('individual')}
-            >
-              + Registrar gasto
-            </Button>
-            <Button
-              variant={tab === 'lote' ? 'primary' : 'secondary'}
-              onClick={() => setTab('lote')}
-            >
-              Registrar por lote
-            </Button>
-          </div>
+        title={tab === 'lista' ? 'Gastos' : tab === 'individual' ? 'Registrar gasto' : 'Registrar por lote'}
+        description={tab === 'lista' ? 'Lo que compartieron, en un solo lugar.' : tab === 'individual' ? 'Contanos qué pagaste y cómo lo comparten.' : 'Cargá varios gastos y revisalos antes de guardarlos juntos.'}
+        actions={tab === 'lista' &&
+          <>
+            <Button variant="secondary" onClick={() => setTab('lote')}>Registrar por lote</Button>
+            <Button onClick={() => setTab('individual')}><Icon name="plus" size={18} />Registrar gasto</Button>
+          </>
         }
       />
 
       {/* Vista 1: Formulario Individual */}
       {tab === 'individual' && (
         <section className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-primary">Nuevo gasto individual</h2>
+          <div className="feature-section-heading">
             <Button variant="ghost" size="small" onClick={() => setTab('lista')}>
               Volver al listado
             </Button>
@@ -122,8 +98,7 @@ export default function ExpensesPage() {
       {/* Vista 2: Formulario por Lote */}
       {tab === 'lote' && (
         <section className="space-y-4">
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-bold text-primary">Carga masiva por lote</h2>
+          <div className="feature-section-heading">
             <Button variant="ghost" size="small" onClick={() => setTab('lista')}>
               Volver al listado
             </Button>

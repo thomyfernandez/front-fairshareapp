@@ -1,4 +1,4 @@
-import { useId, useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { Badge, Button, Icon } from '../../components/ui'
 import { cents, money } from '../../lib/format'
 
@@ -25,7 +25,7 @@ export function ParticipantsSelector({
   members = [],
   tipoReparto = 'EQUITATIVA',
   monto = 0,
-  value,
+  value: _value,
   onChange,
   disabled = false,
   error: externalError,
@@ -314,7 +314,7 @@ export function ParticipantsSelector({
   const activeError = externalError || validationError
 
   return (
-    <div className="space-y-3">
+    <div className="participants-selector space-y-3">
       {/* Cabecera del selector */}
       <div className="flex items-center justify-between flex-wrap gap-2 pt-2 border-t border-subtle">
         <div className="flex items-center gap-2">
@@ -330,7 +330,7 @@ export function ParticipantsSelector({
                 size="small"
                 onClick={selectAll}
                 disabled={disabled}
-                className="text-xs px-2 py-1 min-h-[32px]"
+                className="text-xs px-2 py-1 min-h-[44px]"
               >
                 Todos
               </Button>
@@ -339,7 +339,7 @@ export function ParticipantsSelector({
                 size="small"
                 onClick={deselectAll}
                 disabled={disabled}
-                className="text-xs px-2 py-1 min-h-[32px]"
+                className="text-xs px-2 py-1 min-h-[44px]"
               >
                 Ninguno
               </Button>
@@ -351,7 +351,7 @@ export function ParticipantsSelector({
               size="small"
               onClick={distributeEvenlyPct}
               disabled={disabled}
-              className="text-xs px-2 py-1 min-h-[32px]"
+              className="text-xs px-2 py-1 min-h-[44px]"
             >
               Distribuir 100%
             </Button>
@@ -362,7 +362,7 @@ export function ParticipantsSelector({
               size="small"
               onClick={distributeEvenlyAmount}
               disabled={disabled}
-              className="text-xs px-2 py-1 min-h-[32px]"
+              className="text-xs px-2 py-1 min-h-[44px]"
             >
               Distribuir total
             </Button>
@@ -381,7 +381,7 @@ export function ParticipantsSelector({
           return (
             <div
               key={m.usuarioId}
-              className="flex items-center justify-between gap-3 p-2 bg-canvas rounded-md border border-subtle"
+              className="participant-choice"
             >
               {/* Información del miembro */}
               <div className="flex items-center gap-3 min-w-0 flex-1">
@@ -392,7 +392,7 @@ export function ParticipantsSelector({
                   {m.nombreUsuario.slice(0, 2).toUpperCase()}
                 </span>
                 <div className="min-w-0">
-                  <span className="text-sm font-medium text-primary block truncate">
+                  <span className="text-sm font-medium text-primary block break-words">
                     {m.nombreUsuario}
                   </span>
                   {m.rol && (

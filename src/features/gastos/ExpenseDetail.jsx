@@ -198,7 +198,7 @@ export function ExpenseDetail({
                           {nombre.slice(0, 2).toUpperCase()}
                         </span>
                         <div className="min-w-0">
-                          <span className="text-sm font-medium text-primary block truncate">
+                          <span className="text-sm font-medium text-primary block break-words">
                             {nombre}
                           </span>
                           <span className="text-xs text-secondary">

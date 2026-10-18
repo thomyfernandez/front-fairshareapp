@@ -1,3 +1,4 @@
+import { incomeDestination } from '../../app/navigation'
 import { Link } from 'react-router'
 import { Field, Submit } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
@@ -21,7 +22,7 @@ export function DeclaredIncomeForm({ spaceId, member, onSaved }) {
   return <form onSubmit={submit} aria-labelledby="declared-income-title">
     <h3 id="declared-income-title">Mi ingreso declarado en este espacio</h3>
     <p className="text-sm text-secondary">
-      Es el ingreso que compartís con los miembros de este espacio como referencia. No reemplaza tu ingreso mensual: los repartos proporcionales usan el que cargás en <Link to="/ingresos">Mis ingresos</Link>.
+      Es el ingreso que compartís con los miembros de este espacio como referencia. No reemplaza tu ingreso mensual: los repartos proporcionales usan el que cargás en <Link to={incomeDestination(spaceId)}>Mis ingresos</Link>.
     </p>
     <div className="filters">
       <Field

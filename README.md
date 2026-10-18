@@ -159,7 +159,7 @@ front-fairshareapp/
 
 ## Sistema de diseño
 
-La dirección visual es **Cercana**, con el tema oscuro del prototipo en resumen y galería: un balance protagonista, información agrupada por tarea y detalles a demanda. La fuente de valores es `tokens.json`. Consultá [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) para la paleta, las utilidades y las reglas de uso, y el [catálogo de componentes](./docs/DESIGN_SYSTEM_COMPONENTS.md) para sus contratos y estados. `/componentes` incluye fundamentos, una composición de referencia del resumen y ejemplos interactivos de deuda, cobro, saldos simultáneos, carga y error. Todos usan datos de demostración; el resumen real ya utiliza estos componentes con sus datos y flujos existentes. El tema se genera automáticamente antes de iniciar o compilar; `npm run tokens:build` lo actualiza y `npm run tokens:check` comprueba su sincronización.
+La dirección visual es **Cercana**, con el tema oscuro del prototipo en todas las pantallas: un balance protagonista, información agrupada por tarea y detalles a demanda. La fuente de valores es `tokens.json`. Consultá [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) para la paleta, las utilidades y las reglas de uso, y el [catálogo de componentes](./docs/DESIGN_SYSTEM_COMPONENTS.md) para sus contratos y estados. `/componentes` incluye fundamentos, una composición de referencia del resumen y ejemplos interactivos de deuda, cobro, saldos simultáneos, carga y error. Todos usan datos de demostración; las pantallas reales utilizan estos componentes con sus datos y flujos existentes. El tema se genera automáticamente antes de iniciar o compilar; `npm run tokens:build` lo actualiza y `npm run tokens:check` comprueba su sincronización.
 
 ## Arquitectura y componentes compartidos
 
@@ -167,8 +167,26 @@ Consultá [FRONTEND_ARCHITECTURE.md](./FRONTEND_ARCHITECTURE.md) para las rutas,
 
 ### Dashboard y navegación
 
-El selector de espacio está debajo del logo y permite cambiar de grupo o crear uno. En el resumen, la navegación se concentra en Inicio, Gastos, Balance, Recurrentes y Más, que conserva las secciones secundarias. Cuenta y espacios están al pie; en móvil se accede desde “Abrir navegación”. El resumen aplica el tema oscuro a sus detalles y confirmaciones; las demás pantallas mantienen el tema claro durante la migración.
+El selector de espacio está debajo del logo y permite cambiar de grupo o crear uno. Dentro de cada espacio, la navegación muestra Inicio, Gastos, Balance, Recurrentes y Liquidaciones en el grupo principal; Miembros y Configuración quedan visibles en un segundo grupo. Mis ingresos, cuenta y espacios están al pie; en móvil se accede desde “Abrir navegación”. Todo el producto comparte el tema oscuro, incluidos acceso, registro, detalles y confirmaciones. En Mis espacios e ingresos la navegación muestra los destinos de cuenta. No hay un desplegable Más: todos los destinos del espacio están visibles. Los filtros y formularios conservan sus contratos. El presupuesto, los datos de espacios y la edición de recurrentes reutilizan PanelDisclosure; las filas de gastos comparten categorías, foco y hover completo.
 
 El resumen aplica la dirección Cercana: un balance personal protagonista, actividad del mes en una sección abierta y avisos solo cuando hay tareas reales. El saldo aparece una sola vez por concepto; si hay dinero por pagar y por cobrar se muestran ambos, aunque su neto sea cero. El selector de mes solo filtra los gastos. Cada fila abre el detalle existente, y registrar un pago conserva la elección de deuda, el importe total o parcial y la confirmación antes de actualizar los datos. Las plantillas vencidas enlazan a su revisión; las invitaciones se gestionan desde Miembros.
 
 El presupuesto se consulta desplegando “Presupuesto del espacio”. Representa el saldo acumulado actual, que el backend descuenta al liquidar, y no un límite mensual. La estimación utiliza solo gastos pendientes del mes seleccionado, no vuelve a descontar gastos liquidados y no reserva fondos ni incluye pendientes de otros meses. Si los pendientes superan el saldo, se muestra un aviso visible antes de abrir el detalle.
+
+### Liquidaciones
+
+La pantalla separa **Pendientes** e **Historial** con pestañas accesibles. Los pendientes se agrupan por mes y cada fila completa permite seleccionar el gasto. El resumen lateral muestra total, período contable, nota opcional y saldo estimado; en móvil se apila debajo. El período del cierre usa un campo de mes y año entre 2000 y 9999 y puede incluir gastos de meses anteriores. La selección, la nota y el período se conservan al consultar el historial.
+
+El botón Revisar cierre abre el desglose exacto antes de enviar el POST existente. Se bloquea un cierre sin presupuesto confirmado, con importes no disponibles o insuficientes; si los datos cambian durante la revisión, se exige revisarlos otra vez. Los conflictos recargan los datos conservando la nota. El historial muestra filtros a demanda cuando hay cierres o un filtro activo, y distingue una búsqueda sin resultados de un historial que todavía no tiene cierres. `vista=historial` permite entrar directamente al historial; sus filtros existentes permanecen en la URL.
+
+## Configuración del espacio
+
+La pantalla separa datos básicos, modalidad de reparto, saldo disponible, invitación y eliminación. Los administradores pueden editar; los miembros consultan los valores y la invitación. No se muestran filtros ni pestañas para estas opciones.
+
+El guardado indica cambios pendientes, permite descartarlos y envía únicamente campos modificados en el `PUT /api/v1/espacios/{id}?solicitanteId={usuarioId}` existente. El DTO admite campos opcionales: cambiar el nombre no vuelve a enviar un presupuesto anterior. El saldo usa formato es-AR (puntos para miles y coma para centavos), admite cero y valida el límite de 10 enteros y 2 decimales del backend. Guardarlo reemplaza el saldo actual; no suma fondos ni establece un presupuesto mensual. Cambios de saldo o modalidad se revisan antes de enviarse; si esos datos cambian durante la revisión, se exige revisarlos nuevamente. Los errores conservan lo ingresado y solo una respuesta exitosa produce confirmación.
+
+La invitación prioriza copiar el enlace de ingreso y conserva las alternativas de código y compartir a demanda. La eliminación permanece separada y requiere confirmación con su alcance. `ChoiceCards` y `CurrencyField` se documentan y muestran con datos de ejemplo en `/componentes`.
+
+### Contexto al navegar a Mis ingresos
+
+`/ingresos` sigue siendo una sección personal: consulta y modifica `/api/v1/sueldos` para todos los espacios. Los enlaces desde un espacio incluyen `?espacio={id}` para conservar su selector y navegación lateral, también al volver con el navegador o abrir el enlace después de iniciar sesión. El selector permite cambiar ese contexto sin salir de Mis ingresos ni filtrar o volver a solicitar los sueldos. El contexto solo se admite si el espacio pertenece al listado del usuario; un identificador inválido, ajeno o sin acceso no bloquea la consulta de ingresos personales. Entrar a `/ingresos` sin contexto mantiene la vista general de la cuenta. No se guarda el espacio activo en almacenamiento del navegador.

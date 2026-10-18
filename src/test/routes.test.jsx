@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, useLocation, useNavigate } from 'react-router'
 import { expect, it, vi } from 'vitest'
@@ -11,14 +11,14 @@ const spaces = [
   { id: 1, nombre: 'Casa del equipo', presupuestoBase: 5000, reglaReparto: 'CINCUENTA_CINCUENTA' },
   { id: 2, nombre: 'Viaje del grupo', presupuestoBase: 10000, reglaReparto: 'PROPORCIONAL' },
 ]
-function mockApi({ balanceStatus = 200 } = {}) {
+function mockApi({ balanceStatus = 200, spaceStatus = 200 } = {}) {
   const fetcher = vi.fn(async (url, options = {}) => {
     const path = url.split('?')[0]
     let data
     let status = 200
     if (path.endsWith('/login')) data = { token: 'test-token', usuario: { id: 1, nombre: 'Ana', email: 'ana@example.test' } }
     else if (path === '/api/v1/espacios') data = spaces
-    else if (/\/espacios\/\d+$/.test(path)) data = spaces.find(space => String(space.id) === path.split('/').at(-1))
+    else if (/\/espacios\/\d+$/.test(path)) { status = spaceStatus; data = spaceStatus === 200 ? spaces.find(space => String(space.id) === path.split('/').at(-1)) : { message: 'No tenés acceso a este espacio' } }
     else if (path.endsWith('/miembros')) data = [{ id: 1, usuarioId: 1, nombreUsuario: 'Ana', rol: 'ADMIN' }]
     else if (path.endsWith('/gastos')) data = [{ id: 1, descripcion: 'Compras compartidas', monto: 1500, fecha: localDate(), estado: 'PENDIENTE', participantes: [] }]
     else if (path.endsWith('/balance')) { status = balanceStatus; data = balanceStatus === 200 ? { deudas: [] } : { message: 'Balance temporalmente no disponible', code: 'SERVER_ERROR' } }
@@ -80,15 +80,83 @@ it('expires the session and announces it once when an authenticated request retu
 })
 
 
-it('usa la navegación compacta en el resumen y conserva las secciones secundarias en Más', async () => {
+it('muestra todas las secciones y ubica liquidaciones junto a la actividad principal', async () => {
   setup('/espacios/1/resumen')
   const user = await logIn()
   await screen.findByRole('heading', { name: 'Tus cuentas, claras.', level: 1 })
   expect(document.documentElement).toHaveAttribute('data-theme', 'dark')
   expect(screen.getByRole('link', { name: 'Inicio', exact: true })).toHaveAttribute('href', '/espacios/1/resumen')
   expect(screen.getByRole('link', { name: 'Balance', exact: true })).toHaveAttribute('href', '/espacios/1/balance')
-  await user.click(screen.getByText('Más', { exact: true }))
+  expect(screen.queryByText('Más', { exact: true })).not.toBeInTheDocument()
+  expect(within(screen.getByRole('group', { name: 'Actividad del espacio' })).getByRole('link', { name: 'Liquidaciones', exact: true })).toHaveAttribute('href', '/espacios/1/liquidaciones')
+  expect(within(screen.getByRole('group', { name: 'Administración del espacio' })).getByRole('link', { name: 'Configuración', exact: true })).toBeVisible()
+  expect(within(screen.getByRole('navigation', { name: 'Tu cuenta', exact: true })).getByRole('link', { name: 'Mis ingresos', exact: true })).toHaveAttribute('href', '/ingresos?espacio=1')
   await user.click(screen.getByRole('link', { name: 'Miembros', exact: true }))
   await waitFor(() => expect(screen.getByTestId('route')).toHaveTextContent('/espacios/1/miembros'))
-  expect(document.documentElement).toHaveAttribute('data-theme', 'light')
+  expect(document.documentElement).toHaveAttribute('data-theme', 'dark')
+})
+
+
+it('conserva el espacio activo al abrir ingresos y volver a una sección del espacio', async () => {
+  const fetcher = setup('/espacios/2/gastos')
+  const user = await logIn()
+  await screen.findByRole('heading', { name: 'Gastos', level: 1 })
+  await user.click(screen.getByRole('link', { name: 'Mis ingresos', exact: true }))
+  await screen.findByRole('heading', { name: 'Mis ingresos', level: 1 })
+  expect(screen.getByTestId('route')).toHaveTextContent('/ingresos?espacio=2')
+  expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Viaje del grupo')
+  expect(screen.getByRole('link', { name: 'Mis ingresos', exact: true })).toHaveAttribute('aria-current', 'page')
+  expect(screen.getByRole('link', { name: 'Gastos', exact: true })).toHaveAttribute('href', '/espacios/2/gastos')
+  expect(fetcher.mock.calls.filter(([url]) => url === '/api/v1/sueldos')).toHaveLength(1)
+  expect(fetcher.mock.calls.filter(([url]) => url === '/api/v1/espacios/2')).toHaveLength(1)
+  await user.click(screen.getByRole('link', { name: 'Gastos', exact: true }))
+  await screen.findByRole('heading', { name: 'Gastos', level: 1 })
+  expect(screen.getByTestId('route')).toHaveTextContent('/espacios/2/gastos')
+  await user.click(screen.getByRole('button', { name: 'Atrás en la prueba' }))
+  await screen.findByRole('heading', { name: 'Mis ingresos', level: 1 })
+  expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Viaje del grupo')
+})
+
+it('restaura el contexto desde el enlace directo y permite cambiarlo sin filtrar ingresos', async () => {
+  const fetcher = setup('/ingresos?espacio=2')
+  const user = await logIn()
+  await screen.findByRole('heading', { name: 'Mis ingresos', level: 1 })
+  await waitFor(() => expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Viaje del grupo'))
+  await user.click(screen.getByLabelText('Cambiar espacio activo'))
+  await user.click(screen.getByRole('link', { name: 'Casa del equipo', exact: true }))
+  await waitFor(() => expect(screen.getByTestId('route')).toHaveTextContent('/ingresos?espacio=1'))
+  await waitFor(() => expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Casa del equipo'))
+  expect(screen.getByRole('heading', { name: 'Mis ingresos', level: 1 })).toBeVisible()
+  expect(screen.getByRole('link', { name: 'Inicio', exact: true })).toHaveAttribute('href', '/espacios/1/resumen')
+  expect(fetcher.mock.calls.filter(([url]) => url === '/api/v1/sueldos')).toHaveLength(1)
+  expect(fetcher.mock.calls.some(([url]) => /sueldos.*espacio/.test(url))).toBe(false)
+})
+
+it.each(['/ingresos', '/ingresos?espacio=999', '/ingresos?espacio=-1', '/ingresos?espacio=abc'])('mantiene ingresos accesible sin seleccionar un espacio ajeno o inválido: %s', async route => {
+  const fetcher = setup(route)
+  await logIn()
+  await screen.findByRole('heading', { name: 'Mis ingresos', level: 1 })
+  expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Elegí un espacio')
+  expect(screen.queryByRole('group', { name: 'Actividad del espacio' })).not.toBeInTheDocument()
+  expect(fetcher.mock.calls.some(([url]) => /\/espacios\/(999|-1|abc)/.test(url))).toBe(false)
+})
+
+it('mantiene ingresos personal accesible si el contexto dejó de estar autorizado', async () => {
+  setup('/ingresos?espacio=2', { spaceStatus: 403 })
+  await logIn()
+  await screen.findByRole('heading', { name: 'Mis ingresos', level: 1 })
+  await waitFor(() => expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Elegí un espacio'))
+  expect(screen.queryByRole('group', { name: 'Actividad del espacio' })).not.toBeInTheDocument()
+  expect(screen.getByTestId('route')).toHaveTextContent('/ingresos?espacio=2')
+})
+
+it('conserva el contexto al abrir ingresos desde la explicación de miembros', async () => {
+  setup('/espacios/2/miembros')
+  const user = await logIn()
+  await screen.findByRole('heading', { name: 'Miembros', level: 1 })
+  const links = within(screen.getByRole('main')).getAllByRole('link', { name: 'Mis ingresos', exact: true })
+  for (const link of links) expect(link).toHaveAttribute('href', '/ingresos?espacio=2')
+  await user.click(links[0])
+  await screen.findByRole('heading', { name: 'Mis ingresos', level: 1 })
+  expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Viaje del grupo')
 })

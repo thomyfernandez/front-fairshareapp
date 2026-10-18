@@ -13,7 +13,7 @@ export function MembersList({ members, currentUserId, canManageRoles, onChangeRo
   }
 
   return (
-    <ul className="flex flex-col gap-3">
+    <ul className="members-list">
       {members.map((member) => (
         <MemberCard
           key={member.id}

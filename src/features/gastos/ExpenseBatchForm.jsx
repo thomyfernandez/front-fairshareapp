@@ -1,8 +1,14 @@
 import { useState, useCallback } from 'react'
-import { Button, Card, Field, Icon, InlineAlert, Submit, useUI } from '../../components/ui'
+import { Button, Card, Field, Icon, InlineAlert, PanelDisclosure, Submit, useUI } from '../../components/ui'
 import { cents, money, today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
 import { ParticipantsSelector } from './ParticipantsSelector.jsx'
+
+// Mantiene estable el callback de cada selector al editar otra fila del lote.
+function BatchParticipants({ expenseId, onChange, ...props }) {
+  const handleChange = useCallback((parts, state) => onChange(expenseId, parts, state), [expenseId, onChange])
+  return <ParticipantsSelector {...props} onChange={handleChange} />
+}
 
 /**
  * Genera un nuevo objeto de gasto vacío con valores por defecto.
@@ -116,7 +122,7 @@ export function ExpenseBatchForm({
     setServerError(null)
 
     let hasAnyError = false
-    const updatedGastos = gastos.map((g, index) => {
+    const updatedGastos = gastos.map((g) => {
       const itemErrors = {}
 
       if (!g.descripcion.trim()) {
@@ -233,24 +239,22 @@ export function ExpenseBatchForm({
       <div className="space-y-3">
         <div className="flex items-center justify-between flex-wrap gap-2">
           <div>
-            <h2 className="text-xl font-bold text-primary">Registro de gastos por lote</h2>
+            <h2 className="text-xl font-bold text-primary">Los gastos del lote</h2>
             <p className="text-sm text-secondary">
               Agrega múltiples gastos y envíalos en una sola operación compartida.
             </p>
           </div>
 
-          <div className="text-right">
+          {totalLote > 0 && <div className="text-right">
             <span className="text-xs text-secondary block">Total del lote ({gastos.length} gastos)</span>
             <strong className="text-xl font-bold text-brand-primary block">{money(totalLote)}</strong>
-          </div>
+          </div>}
         </div>
 
         {/* Notificación visual de la regla de lote transaccional */}
-        <InlineAlert tone="info">
-          <strong>Registro transaccional en lote:</strong> Si cualquiera de los gastos del lote falla
-          o contiene información inválida, <strong>el lote completo será rechazado</strong> por el servidor.
-          Revisa que todos los gastos estén completos.
-        </InlineAlert>
+        <PanelDisclosure title="Cómo funciona el registro por lote" icon="info">
+          <p>Revisá todos los gastos antes de guardarlos. Se registran juntos: si uno tiene un error, el lote completo queda sin guardar.</p>
+        </PanelDisclosure>
 
         {serverError && (
           <InlineAlert tone="error">
@@ -273,7 +277,7 @@ export function ExpenseBatchForm({
                 {/* Cabecera del ítem de lote */}
                 <div className="flex items-center justify-between border-b border-subtle pb-2">
                   <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-brand-primary text-white text-xs font-semibold flex items-center justify-center">
+                    <span className="w-6 h-6 rounded-full bg-brand-primary text-inverse text-xs font-semibold flex items-center justify-center">
                       {index + 1}
                     </span>
                     <strong className="text-sm font-semibold text-primary">
@@ -292,7 +296,7 @@ export function ExpenseBatchForm({
                       size="small"
                       onClick={() => handleRemoveExpense(g.tempId)}
                       disabled={busy}
-                      className="text-xs text-error hover:bg-error-background px-2 py-1 min-h-[32px]"
+                      className="text-xs text-error hover:bg-error-background px-2 py-1 min-h-[44px]"
                       aria-label={`Quitar gasto número ${index + 1} del lote`}
                     >
                       <Icon name="close" size={14} />
@@ -372,14 +376,13 @@ export function ExpenseBatchForm({
 
                 {/* Selector dinámico de participantes para este gasto */}
                 <div className="bg-canvas p-3 rounded-lg border border-subtle">
-                  <ParticipantsSelector
+                  <BatchParticipants
+                    expenseId={g.tempId}
                     members={effectiveMembers}
                     tipoReparto={g.tipoReparto}
                     monto={numericMonto}
                     value={g.participantes}
-                    onChange={(parts, validState) =>
-                      handleParticipantsChange(g.tempId, parts, validState)
-                    }
+                    onChange={handleParticipantsChange}
                     disabled={busy}
                     error={g.errors.participantes}
                   />

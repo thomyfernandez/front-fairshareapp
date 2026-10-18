@@ -8,6 +8,7 @@ export function expenseIcon(category, description) {
   if (/luz|electric|agua|gas|servicio/.test(normalized)) return 'bolt'
   if (/salud|farmacia/.test(normalized)) return 'heart'
   if (/ocio|entretenimiento/.test(normalized)) return 'ticket'
+  if (!normalized && String(description || '').trim().toLocaleLowerCase('es-AR') === 'alquiler') return 'home'
   if (!normalized && ['dia', 'día', 'coto', 'carrefour', 'jumbo', 'disco', 'vea'].includes(String(description || '').trim().toLocaleLowerCase('es-AR'))) return 'basket'
   return 'receipt'
 }

@@ -25,8 +25,8 @@ export function ExpenseFilters({
   const hasActiveFilters = Boolean(search || desde || hasta || estado)
 
   return (
-    <div className={`bg-canvas border border-subtle rounded-xl p-4 shadow-subtle space-y-3 ${className}`}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 items-end">
+    <div className={`expense-filters ${className}`}>
+      <div className="expense-filters__fields">
         {/* Buscador de texto */}
         <div className="lg:col-span-1">
           <Field label="Buscar gasto">
@@ -36,14 +36,14 @@ export function ExpenseFilters({
                 placeholder="Descripción, concepto..."
                 value={search}
                 onChange={e => onSearchChange?.(e.target.value)}
-                className="ui-input pr-8"
+                className="ui-input pr-12"
                 aria-label="Buscar gastos por texto"
               />
               {search && (
                 <button
                   type="button"
                   onClick={() => onSearchChange?.('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-secondary hover:text-primary p-1"
+                  className="expense-filters__clear"
                   aria-label="Limpiar búsqueda"
                 >
                   <Icon name="close" size={14} />
@@ -116,7 +116,7 @@ export function ExpenseFilters({
 
       {/* Barra de estado de filtros activos */}
       {hasActiveFilters && (
-        <div className="flex items-center justify-between text-xs text-secondary pt-2 border-t border-subtle">
+        <div className="expense-filters__summary">
           <span>
             Filtros activos:{' '}
             {[

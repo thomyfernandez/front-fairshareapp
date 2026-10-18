@@ -6,3 +6,8 @@
 @import './styles/dashboard.css';
 @import './styles/summary-components.css';
 @import './styles/design-system.css';
+
+@import './styles/product.css';
+
+@import './styles/settlements.css';
+@import './styles/settings.css';

@@ -1,11 +1,10 @@
-import { Disclosure, Icon, Money } from '../../components/ui'
+import { PanelDisclosure, Icon, Money } from '../../components/ui'
 import { budgetProjection } from './model'
 
 // Separa el saldo acumulado de la estimación por pendientes del mes, disponible a demanda.
 export function DashboardBudget({ available, pending, periodLabel }) {
   const budget = budgetProjection(available, pending)
-  const title = <><Icon name="wallet" /><span>Presupuesto del espacio</span><Icon name="chevron" className="summary-budget__chevron" /></>
-  return <Disclosure title={title} className="summary-budget">
+  return <PanelDisclosure title="Presupuesto del espacio" icon="wallet" className="summary-budget">
     {!budget ? <p>El saldo actual del espacio no está disponible.</p> : <>
       <div className="summary-budget__layout">
         <div className="summary-budget__current">
@@ -22,5 +21,5 @@ export function DashboardBudget({ available, pending, periodLabel }) {
       </div>
       {pending !== null && <p className="summary-budget__footnote"><Icon name="info" size={16} /><span>Esta estimación no reserva fondos ni incluye pendientes de otros meses.</span></p>}
     </>}
-  </Disclosure>
+  </PanelDisclosure>
 }

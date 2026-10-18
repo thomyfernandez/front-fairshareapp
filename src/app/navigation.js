@@ -14,6 +14,11 @@ export function sectionTitle(pathname) {
   return spaceSections.find(section => pathname.endsWith(`/${section.slug}`))?.label || 'Inicio'
 }
 export function spaceDestination(id, pathname) {
+  if (pathname === '/ingresos') return incomeDestination(id)
   const slug = spaceSections.find(section => pathname.endsWith(`/${section.slug}`))?.slug || 'resumen'
   return `/espacios/${id}/${slug}`
+}
+
+export function incomeDestination(spaceId) {
+  return /^[1-9]\d*$/.test(String(spaceId || '')) ? `/ingresos?espacio=${spaceId}` : '/ingresos'
 }

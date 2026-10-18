@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Badge, Button, EmptyState, Icon, LoadingState, Modal, useUI } from '../../components/ui'
+import { Badge, Button, EmptyState, Icon, ExpenseRow, LoadingState, Modal, useUI } from '../../components/ui'
 import { dateLabel, money } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
 import { ExpenseDetail } from './ExpenseDetail.jsx'
@@ -106,115 +106,17 @@ export function ExpenseList({
 
   return (
     <div className={`space-y-3 ${className}`}>
-      {/* Listado de tarjetas de gasto */}
-      <div className="divide-y divide-subtle border border-subtle rounded-xl bg-canvas overflow-hidden shadow-subtle">
+      <ul className="ui-expense-list expense-management-list" aria-label="Gastos del espacio">
         {expenses.map(g => {
-          // Resolver pagador
-          const payer = effectiveMembers.find(
-            m => Number(m.usuarioId ?? m.id) === Number(g.pagadorId)
-          )
-          const pagadorNombre =
-            g.pagadorNombre ||
-            payer?.nombreUsuario ||
-            `Usuario #${g.pagadorId}`
-
-          const canDelete =
-            g.estado === 'PENDIENTE' && (isAdmin || Number(g.pagadorId) === Number(currentUserId))
-
-          return (
-            <article
-              key={g.id}
-              className="p-4 flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap hover:bg-panel transition-colors"
-            >
-              {/* Información izquierda: Ícono, descripción, fecha, pagador */}
-              <div className="flex items-start gap-3 min-w-0 flex-1">
-                <span
-                  className="w-10 h-10 rounded-lg bg-header text-brand-primary flex items-center justify-center shrink-0 border border-subtle mt-0.5"
-                  aria-hidden="true"
-                >
-                  <Icon name="receipt" size={20} />
-                </span>
-
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <strong className="text-base font-semibold text-primary block truncate">
-                      {g.descripcion}
-                    </strong>
-                    <Badge
-                      tone={
-                        g.estado === 'LIQUIDADO'
-                          ? 'success'
-                          : g.estado === 'PENDIENTE'
-                          ? 'warning'
-                          : 'neutral'
-                      }
-                    >
-                      {g.estado === 'LIQUIDADO' ? 'Liquidado' : 'Pendiente'}
-                    </Badge>
-                  </div>
-
-                  <p className="text-xs text-secondary mt-1 flex items-center gap-2 flex-wrap">
-                    <span>{dateLabel(g.fecha)}</span>
-                    <span>·</span>
-                    <span>Pagó: <strong>{pagadorNombre}</strong></span>
-                    {g.tipoReparto && (
-                      <>
-                        <span>·</span>
-                        <span className="capitalize">{g.tipoReparto.toLowerCase().replace('_', ' ')}</span>
-                      </>
-                    )}
-                    {g.participantes?.length > 0 && (
-                      <>
-                        <span>·</span>
-                        <span>{g.participantes.length} participantes</span>
-                      </>
-                    )}
-                  </p>
-                </div>
-              </div>
-
-              {/* Información derecha: Monto y acciones */}
-              <div className="flex items-center gap-3 shrink-0 ml-auto sm:ml-0">
-                <div className="text-right">
-                  <strong className="text-base sm:text-lg font-bold text-primary block">
-                    {money(g.monto)}
-                  </strong>
-                </div>
-
-                <div className="flex items-center gap-1">
-                  {/* Botón Ver Detalle */}
-                  <Button
-                    variant="ghost"
-                    size="small"
-                    onClick={() => setSelectedGasto(g)}
-                    title="Ver detalle del reparto"
-                    aria-label={`Ver detalle de ${g.descripcion}`}
-                    className="text-xs px-2.5 py-1.5 min-h-[38px]"
-                  >
-                    <Icon name="info" size={16} />
-                    <span className="hidden sm:inline">Detalle</span>
-                  </Button>
-
-                  {/* Botón Eliminar con Modal */}
-                  {canDelete && (
-                    <Button
-                      variant="ghost"
-                      size="small"
-                      onClick={() => setGastoToDelete(g)}
-                      title="Eliminar gasto"
-                      aria-label={`Eliminar ${g.descripcion}`}
-                      className="text-xs px-2.5 py-1.5 min-h-[38px] text-error hover:bg-error-background"
-                    >
-                      <Icon name="close" size={16} />
-                      <span className="hidden sm:inline">Eliminar</span>
-                    </Button>
-                  )}
-                </div>
-              </div>
-            </article>
-          )
+          const payer = effectiveMembers.find(m => Number(m.usuarioId ?? m.id) === Number(g.pagadorId))
+          const payerName = g.pagadorNombre || payer?.nombreUsuario || `Usuario #${g.pagadorId}`
+          const canDelete = g.estado === 'PENDIENTE' && (isAdmin || Number(g.pagadorId) === Number(currentUserId))
+          return <li key={g.id} className="expense-management-list__item">
+            <ExpenseRow description={g.descripcion} category={g.categoria} date={g.fecha} amount={g.monto == null ? undefined : Number(g.monto)} payerName={payerName} paidByYou={Number(g.pagadorId) === Number(currentUserId)} onSelect={() => setSelectedGasto(g)} status={<Badge tone={g.estado === 'LIQUIDADO' ? 'success' : 'neutral'}>{g.estado === 'LIQUIDADO' ? 'Liquidado' : 'Pendiente'}</Badge>} />
+            <span className="expense-management-list__actions">{canDelete && <Button variant="ghost" size="icon" onClick={() => setGastoToDelete(g)} aria-label={`Eliminar ${g.descripcion}`} className="expense-management-list__delete"><Icon name="close" size={16} /></Button>}</span>
+          </li>
         })}
-      </div>
+      </ul>
 
       {/* Modal de Detalle */}
       {selectedGasto && (

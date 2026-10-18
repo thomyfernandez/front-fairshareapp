@@ -1,8 +1,10 @@
 import { useEffect } from 'react'
 import { Card } from '../../components/ui'
+import { useAppTheme } from '../../app/useAppTheme'
 import { Brand } from '../../app/Sidebar'
 
 export function AuthLayout({ pageTitle, title, description, children }) {
+  useAppTheme()
   useEffect(() => { document.title = `${pageTitle} · FairShare` }, [pageTitle])
   return <div className="auth-shell">
     <header className="auth-brand"><Brand /></header>

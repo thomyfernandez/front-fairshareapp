@@ -7,7 +7,7 @@
     font-family: var(--font-sans);
     font-size: 100%;
     color: var(--color-text-primary);
-    background: var(--color-canvas);
+    background: var(--color-workspace);
     line-height: var(--leading-normal);
     color-scheme: light;
     font-synthesis: none;

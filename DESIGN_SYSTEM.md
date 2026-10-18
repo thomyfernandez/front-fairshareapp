@@ -2,9 +2,9 @@
 
 La dirección visual de FairShare es Cercana: una experiencia tranquila, personal y clara para compartir gastos. La pantalla parte de la situación del usuario y de la próxima tarea que necesita resolver. Un balance protagonista, secciones abiertas y detalles a demanda reemplazan la acumulación de indicadores y tarjetas equivalentes.
 
-La referencia del resumen es el prototipo oscuro de Cercana: fondo #17171f, navegación y listas #22222c, balance #30264e y acciones lavanda #b3a1ff. Inter se sirve localmente. La galería comparte este tema; las demás pantallas conservan la base clara durante la migración. El color no indica por sí solo una deuda o un cobro: siempre lo explica el texto. Los componentes reales y sus estados se pueden revisar en `/componentes` con datos de demostración.
+La referencia de todo el producto es el prototipo oscuro de Cercana: fondo #17171f, navegación y listas #22222c, balance #30264e y acciones lavanda #b3a1ff. Inter se sirve localmente. Todas las pantallas, incluidos acceso, registro, menús, diálogos y galería, comparten este tema. El color no indica por sí solo una deuda o un cobro: siempre lo explica el texto. Los componentes reales y sus estados se pueden revisar en `/componentes` con datos de demostración.
 
-La base y su galería ya están integradas en el resumen, con los datos y flujos existentes de detalle y pago. El resto de las pantallas se migra gradualmente. Consultá el [catálogo de componentes](docs/DESIGN_SYSTEM_COMPONENTS.md) para los contratos, estados y criterios de uso.
+Los componentes se aplican al resumen, gastos, balance, recurrentes, liquidaciones, miembros, configuración, espacios e ingresos, conservando los contratos de API y las confirmaciones existentes. Consultá el [catálogo de componentes](docs/DESIGN_SYSTEM_COMPONENTS.md) para los contratos, estados y criterios de uso.
 
 ## Archivos y mantenimiento
 
@@ -113,11 +113,36 @@ Los tokens existentes de formularios, texto, estados y elevación siguen disponi
 
 1. **Sistema y componentes — implementado:** tokens, contratos, catálogo interactivo y pruebas de sus estados.
 2. **Resumen — implementado:** componentes conectados al modelo actual, sin importes repetidos, filtro mensual separado del balance y flujos reales de detalle y pago total o parcial. Presupuesto a demanda y avisos por revisiones reales o saldo insuficiente. Un error en un recurso no bloquea los demás.
-3. **Resto del producto:** revisar navegación, gastos, balance y recurrentes con la misma jerarquía. Cada pantalla conserva las funciones necesarias y reduce información secundaria en el primer nivel.
+3. **Resto del producto — implementado:** navegación compacta en todas las secciones, tema oscuro en acceso y registro, filas de gastos con categoría y acciones separadas, balance compartido sin neto redundante, recurrentes con edición a demanda y paneles de ingresos, miembros, espacios y configuración. Liquidaciones separa Pendientes e Historial, agrupa los gastos por mes y muestra total, período, nota y saldo estimado en un resumen lateral que se apila en móvil. Conserva la revisión exacta antes de confirmar y no presupone un saldo disponible en cero ante datos ausentes.
 
 ## Tema y navegación de la referencia
 
-- `AppLayout` selecciona `data-theme="dark"` para el resumen y `/componentes`, y restaura el tema al cambiar de contexto. El tema se aplica a la raíz para incluir modales y avisos que usan portal. No cambia la apariencia del sistema operativo ni guarda preferencias del usuario.
+- `useAppTheme` aplica `data-theme="dark"` desde `AppLayout` y `AuthLayout`; `index.html` establece el mismo tema para la primera pintura. La raíz incluye modales y avisos que usan portal. No cambia la apariencia del sistema operativo ni guarda preferencias del usuario.
 - El generador conserva las variables semánticas entre temas y emite las variantes oscuras desde `tokens.json`. No editar directamente `theme.css`.
-- En el resumen, la navegación muestra Inicio, Gastos, Balance, Recurrentes y Más. Más conserva liquidaciones, miembros, configuración e ingresos; cuenta y espacios permanecen accesibles al pie. En móvil se reutiliza el menú accesible.
-- El resumen no agrega una cabecera de migas de pan en escritorio. La composición usa espacio del grupo, título, balance, mes, presupuesto desplegable y aviso de revisión. El título usa `page` (26px), el total mensual `metric` (28px) y el ícono `brand.tint`.
+- En las secciones de un espacio, la navegación muestra Inicio, Gastos, Balance, Recurrentes y Liquidaciones en el grupo principal. Miembros y Configuración forman un segundo grupo visible, separado por espacio y un borde sutil. Mis ingresos, cuenta y espacios permanecen accesibles al pie. No ocultar destinos detrás de Más. Configuración usa un engranaje, sin rayos de sol. En móvil se reutiliza el menú accesible.
+- Las pantallas usan un área de trabajo de hasta 960px y una navegación de 176px desde 721px. En móvil, el menú usa el diálogo compartido. No se agrega una cabecera de migas de pan en escritorio. La composición usa espacio del grupo, título, balance, mes, presupuesto desplegable y aviso de revisión. El título usa `page` (26px), el total mensual `metric` (28px) y el ícono `brand.tint`.
+
+## Componentes del resto del producto
+
+- `PanelDisclosure` extiende `Disclosure` con superficie, ícono y chevron. Se usa en presupuesto, contexto de ingresos, datos de espacios y edición de recurrentes. Mantiene `details`/`summary`, apertura nativa con teclado y foco visible; no esconder errores o confirmaciones esenciales.
+- `ExpenseRow` acepta `status` para el estado del gasto. Sus acciones de administración van fuera del botón principal, con nombres accesibles y objetivos de 44px; no anidar controles dentro de la fila. Los importes se alinean aunque una fila no permita eliminar.
+- `Avatar` identifica personas y `ui-item-icon` orienta sobre el tipo de contenido. No reemplazan las etiquetas escritas.
+- `product.css` compone las superficies, filtros y listas compartidas usando los tokens existentes. Los formularios y confirmaciones mantienen su validación y preservan los datos ante errores.
+
+### Composición de Liquidaciones
+
+`Tabs` conserva los paneles montados y permite navegar con flechas, Inicio y Fin, con foco visible y una única pestaña en el recorrido de Tab. `SelectableExpenseRow` reutiliza el contenido, las categorías y los importes de `ExpenseRow`; su checkbox nativo está asociado a toda la fila, con foco y selección legibles. No agrega líneas divisorias entre gastos.
+
+El encabezado explica la tarea. Las filas se agrupan por fecha del gasto y el resumen reúne el total a liquidar, período contable, nota a demanda y saldo posterior estimado; no volver a presentar el saldo disponible en el encabezado. La ayuda sobre el efecto del cierre queda a demanda y también se explica en la confirmación. El resumen inicia sin selección y no propone un cierre financiero automáticamente. El historial vacío tiene un mensaje breve, sin panel elevado ni filtros; si un filtro activo no encuentra resultados, conserva los filtros y permite limpiarlos.
+
+### Composición de Configuración
+
+Configuración usa secciones abiertas con título, contexto breve y controles; desde un ancho útil de 48rem, títulos y controles se distribuyen en dos columnas. Los datos básicos, modalidad de reparto y saldo disponible pertenecen al mismo formulario. La invitación y la eliminación quedan fuera de él. No agregar pestañas ni tarjetas anidadas para estas opciones.
+
+`ChoiceCards` muestra alternativas excluyentes con radios nativos, etiquetas y explicaciones; conserva navegación con flechas y no comunica selección solo con color. `CurrencyField` extiende `Field` con teclado decimal, formato es-AR al salir y parseo explícito de separadores, sin convertir valores inválidos o ausentes en cero. Los ejemplos interactivos están en `/componentes`.
+
+La barra de guardado comunica cambios pendientes y permite descartarlos. Guardar se habilita con cambios reales y valores válidos; solo envía campos modificados. Los cambios de saldo o modalidad requieren revisar sus consecuencias. El saldo se reemplaza, no se incrementa, y no es un límite mensual. Las respuestas fallidas conservan el borrador; el éxito depende de la API. Las invitaciones priorizan copiar el enlace y muestran las alternativas a demanda. Eliminar permanece separado, con confirmación explícita y explicación del alcance.
+
+### Navegación personal con contexto del espacio
+
+Mis ingresos pertenece a la cuenta y se aplica a todos los espacios. Al abrirlo desde uno, conservar su selector y los accesos a Inicio, Gastos, Balance y demás secciones; solo Mis ingresos queda marcado como destino actual. El contexto viaja en el enlace como `?espacio={id}` y se valida contra los espacios del usuario. Cambiar de espacio desde Mis ingresos conserva la pantalla personal. El menú móvil ofrece la misma navegación y cierra al elegir un destino. No presentar ingresos distintos por espacio ni perder el contexto por cambiar a una sección personal.

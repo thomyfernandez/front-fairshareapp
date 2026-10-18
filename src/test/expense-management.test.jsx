@@ -6,6 +6,7 @@ import { ExpenseFilters } from '../features/gastos/ExpenseFilters.jsx'
 import { ExpenseDetail } from '../features/gastos/ExpenseDetail.jsx'
 import { ExpenseList } from '../features/gastos/ExpenseList.jsx'
 import { ExpenseBatchForm } from '../features/gastos/ExpenseBatchForm.jsx'
+import { WorkspaceContext } from '../app/workspace-context'
 import { ApiError } from '../api'
 
 const mockMembers = [
@@ -47,7 +48,7 @@ const mockExpenses = [
 ]
 
 function renderWithUI(ui) {
-  return render(<UIProvider>{ui}</UIProvider>)
+  return render(<UIProvider><WorkspaceContext.Provider value={{ spaceId: '1', members: mockMembers, session: { usuario: { id: 1 } }, isAdmin: true, api: ui.props.api || vi.fn(), invalidate: vi.fn() }}>{ui}</WorkspaceContext.Provider></UIProvider>)
 }
 
 describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => {
@@ -85,13 +86,13 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
         members={mockMembers}
         open={true}
         onClose={vi.fn()}
-        asModal={false}
+        asModal={true}
       />
     )
 
     expect(screen.getByText('Supermercado Mensual')).toBeInTheDocument()
-    expect(screen.getByText('$ 6.000,00')).toBeInTheDocument()
-    expect(screen.getByText('Ana')).toBeInTheDocument()
+    expect(screen.getAllByText('$ 6.000,00')).toHaveLength(2)
+    expect(screen.getAllByText('Ana')).toHaveLength(2)
     expect(screen.getByText(/Abonó el importe total/i)).toBeInTheDocument()
     expect(screen.getByText('Carlos')).toBeInTheDocument()
     expect(screen.getByText('Lucía')).toBeInTheDocument()
@@ -142,8 +143,9 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
       />
     )
 
-    expect(screen.getByText('Registro de gastos por lote')).toBeInTheDocument()
-    expect(screen.getByText(/Registro transaccional en lote/i)).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Los gastos del lote' })).toBeInTheDocument()
+    await user.click(screen.getByText('Cómo funciona el registro por lote', { exact: true }))
+    expect(screen.getByText(/si uno tiene un error, el lote completo queda sin guardar/)).toBeVisible()
 
     // Completar el primer gasto
     const descInputs = screen.getAllByLabelText(/^Descripción/)
@@ -196,15 +198,20 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
 
     await user.type(descInputs[0], 'Compra no confirmada')
     await user.type(montoInputs[0], '800')
+    await user.type(descInputs[1], 'Segunda compra no confirmada')
+    await user.type(montoInputs[1], '200')
 
     const submitBtn = screen.getByRole('button', { name: /Registrar lote/i })
     await user.click(submitBtn)
 
     // Mensaje de error visible
-    expect(await screen.findByText('Error 400: Lote rechazado por datos inconsistentes.')).toBeInTheDocument()
+    expect(await screen.findAllByText('Error 400: Lote rechazado por datos inconsistentes.')).not.toHaveLength(0)
+    expect(mockApi).toHaveBeenCalledTimes(1)
 
     // Los datos DEBEN preservarse
     expect(descInputs[0]).toHaveValue('Compra no confirmada')
     expect(montoInputs[0]).toHaveValue(800)
+    expect(descInputs[1]).toHaveValue('Segunda compra no confirmada')
+    expect(montoInputs[1]).toHaveValue(200)
   })
 })

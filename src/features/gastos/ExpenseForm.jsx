@@ -1,4 +1,4 @@
-import { useState, useCallback, useId } from 'react'
+import { useState, useCallback } from 'react'
 import { Button, Card, Field, InlineAlert, Submit, useUI } from '../../components/ui'
 import { today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'

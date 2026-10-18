@@ -1,0 +1,50 @@
+@layer components {
+  .space-settings-page { container: settings / inline-size; }
+  .settings-section { display: grid; gap: var(--spacing-4); padding: var(--spacing-6) 0; border-bottom: 1px solid var(--color-border-subtle); }
+  .settings-section__heading h2 { margin: 0 0 var(--spacing-2); font-size: var(--text-base); }
+  .settings-section__heading p, .settings-context, .settings-delete p, .settings-permission { margin: 0; font-size: var(--text-sm); color: var(--color-text-secondary); }
+  .settings-section__content { min-width: 0; }
+  .settings-fields, .ui-choice-cards { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .settings-fields { display: grid; gap: var(--spacing-4); }
+  .settings-fields__row { display: grid; gap: var(--spacing-4); }
+  .settings-fields textarea { resize: vertical; }
+  .settings-context { margin-top: var(--spacing-3); }
+  .ui-choice-cards__options { display: grid; gap: var(--spacing-3); }
+  .ui-choice-card { display: flex; align-items: flex-start; gap: var(--spacing-3); padding: var(--spacing-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); background: var(--color-canvas); cursor: pointer; font-weight: var(--font-weight-regular); min-width: 0; }
+  .ui-choice-card:has(:checked) { border-color: var(--color-brand-primary); background: var(--color-brand-tint); }
+  .ui-choice-card:has(:disabled) { cursor: default; opacity: .65; }
+  .ui-choice-card input { margin: var(--spacing-1) 0 0; width: var(--spacing-4); height: var(--spacing-4); min-height: var(--spacing-4); flex-shrink: 0; accent-color: var(--color-brand-primary); padding: 0; }
+  .ui-choice-card > span { min-width: 0; overflow-wrap: anywhere; }
+  .ui-choice-card strong { display: block; font-size: var(--text-sm); font-weight: var(--font-weight-semibold); }
+  .ui-choice-card > span > span { display: block; margin-top: var(--spacing-2); color: var(--color-text-secondary); font-size: var(--text-xs); }
+  .settings-save-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--spacing-3); padding: var(--spacing-4); margin-top: var(--spacing-4); border-radius: var(--radius-lg); background: var(--color-canvas); border: 1px solid var(--color-border-subtle); }
+  .settings-save-bar p { margin: 0; color: var(--color-text-secondary); font-size: var(--text-sm); flex: 1 1 12rem; }
+  .settings-save-bar > div { display: flex; flex-wrap: wrap; gap: var(--spacing-2); width: 100%; }
+  .settings-save-bar > div > .ui-button { flex: 1 1 10rem; }
+  .settings-invitation__main { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--spacing-4); padding: var(--spacing-4); border-radius: var(--radius-lg); background: var(--color-canvas); }
+  .settings-invitation .invite-code-box { flex: 1 1 10rem; min-width: 0; }
+  .settings-invitation .invite-code-box__label { font-size: var(--text-xs); text-transform: none; letter-spacing: normal; }
+  .settings-invitation .invite-code-box__code { font-size: var(--text-lg); letter-spacing: .06em; }
+  .settings-invitation__alternatives.ui-disclosure { border: 0; margin-top: var(--spacing-2); }
+  .settings-invitation__alternatives > summary { font-size: var(--text-xs); min-height: 44px; display: flex; align-items: center; gap: var(--spacing-2); list-style: none; }
+  .settings-invitation__alternatives > summary::after { content: '+'; }
+  .settings-invitation__alternatives[open] > summary::after { content: '−'; }
+  .settings-invitation__alternatives > summary::-webkit-details-marker { display: none; }
+  .settings-invitation__alternatives > div { display: flex; flex-wrap: wrap; gap: var(--spacing-2); }
+  .settings-readonly { display: grid; gap: var(--spacing-4); margin: 0; }
+  .settings-readonly dt { font-size: var(--text-xs); color: var(--color-text-secondary); }
+  .settings-readonly dd { margin: var(--spacing-1) 0 0; overflow-wrap: anywhere; }
+  .settings-readonly__value { margin: 0; }
+  .settings-delete { border-bottom: 0; margin-top: var(--spacing-4); }
+  .settings-delete .ui-button { margin-top: var(--spacing-4); }
+  .settings-delete .ui-alert { margin-top: var(--spacing-3); }
+  @container settings (min-width: 48rem) {
+    .settings-section { grid-template-columns: 14rem minmax(0, 1fr); gap: var(--spacing-8); padding-block: var(--spacing-8); }
+    .settings-fields__row { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); }
+    .settings-section__content > .ui-choice-cards > .ui-choice-cards__options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .settings-save-bar { position: sticky; bottom: var(--spacing-4); z-index: 1; }
+    .settings-save-bar > div { width: auto; }
+    .settings-save-bar > div > .ui-button { flex: 0 1 auto; }
+    .settings-readonly { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+}

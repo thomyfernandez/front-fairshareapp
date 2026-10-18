@@ -1,6 +1,5 @@
 import { Link } from 'react-router'
-import { Badge, Card, Icon } from '../../components/ui'
-import { money } from '../../lib/format'
+import { Badge, Card, Icon, Money, PanelDisclosure } from '../../components/ui'
 
 const typeIcons = {
   HOGAR: 'home',
@@ -37,18 +36,12 @@ export function SpaceCard({ space }) {
       <h2>{space.nombre}</h2>
       <p>{space.descripcion || 'Un espacio para compartir con claridad.'}</p>
 
+      <Badge tone={isProportional ? 'brand' : 'neutral'}>{isProportional ? 'Proporcional' : 'Equitativo (50/50)'}</Badge>
+      <PanelDisclosure title="Datos del espacio" icon="info">
       <dl>
         <div>
           <dt>Presupuesto disponible</dt>
-          <dd>{money(space.presupuestoBase)}</dd>
-        </div>
-        <div>
-          <dt>Modalidad de reparto</dt>
-          <dd>
-            <Badge tone={isProportional ? 'brand' : 'neutral'}>
-              {isProportional ? 'Proporcional' : 'Equitativo (50/50)'}
-            </Badge>
-          </dd>
+          <dd><Money value={space.presupuestoBase} hideZeroDecimals /></dd>
         </div>
         {space.codigo && (
           <div>
@@ -59,10 +52,11 @@ export function SpaceCard({ space }) {
           </div>
         )}
       </dl>
+      </PanelDisclosure>
 
-      <div style={{ display: 'flex', gap: '10px', marginTop: 'auto', paddingTop: '10px' }}>
+      <div className="space-card__action">
         <Link
-          className="ui-link"
+          className="ui-button ui-button--secondary"
           to={`/espacios/${space.id}/resumen`}
           aria-label={`Abrir espacio ${space.nombre}`}
         >
