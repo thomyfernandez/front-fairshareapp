@@ -12,17 +12,17 @@ export function RecurringForm({ spacePath, session, members, mutate, busy }) {
         ))}
     </select>
     </Field>
-)
+    )
 
 return (
     <details>
     <summary>Crear nueva plantilla</summary>
     <form 
         className="grid-form" 
-        onSubmit={event => { 
-        event.preventDefault()
+        onSubmit={event => {
+            event.preventDefault()
             const d = formData(event)
-        for (const k of ['pagadorId', 'montoBase', 'montoVariable', 'frecuenciaAjusteMeses']) {
+            for (const k of ['pagadorId', 'montoBase', 'montoVariable', 'frecuenciaAjusteMeses']) {
             d[k] = Number(d[k])
         }
         mutate(`${spacePath}/favoritos`, 'POST', d, 'Plantilla creada con éxito.') 
@@ -94,7 +94,7 @@ return (
         </Field>
         
         <Submit busy={busy}>Guardar plantilla</Submit>
-    </form>
+        </form>
     </details>
     )
 }
