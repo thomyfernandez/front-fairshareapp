@@ -2,3 +2,7 @@
 @import './styles/app-shell.css';
 @import './styles/auth.css';
 @import './styles/legacy-features.css';
+
+@import './styles/dashboard.css';
+@import './styles/summary-components.css';
+@import './styles/design-system.css';

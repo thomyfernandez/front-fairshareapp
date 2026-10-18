@@ -66,7 +66,7 @@ export function SpaceCard({ space }) {
           to={`/espacios/${space.id}/resumen`}
           aria-label={`Abrir espacio ${space.nombre}`}
         >
-          Abrir espacio <Icon name="arrow" size={16} />
+          Abrir espacio
         </Link>
       </div>
     </Card>

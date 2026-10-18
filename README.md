@@ -159,8 +159,16 @@ front-fairshareapp/
 
 ## Sistema de diseño
 
-La fuente de valores es `tokens.json`. Consultá [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) para la paleta, las utilidades y las reglas de uso. El tema se genera automáticamente antes de iniciar o compilar; `npm run tokens:build` lo actualiza y `npm run tokens:check` comprueba su sincronización.
+La dirección visual es **Cercana**, con el tema oscuro del prototipo en resumen y galería: un balance protagonista, información agrupada por tarea y detalles a demanda. La fuente de valores es `tokens.json`. Consultá [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) para la paleta, las utilidades y las reglas de uso, y el [catálogo de componentes](./docs/DESIGN_SYSTEM_COMPONENTS.md) para sus contratos y estados. `/componentes` incluye fundamentos, una composición de referencia del resumen y ejemplos interactivos de deuda, cobro, saldos simultáneos, carga y error. Todos usan datos de demostración; el resumen real ya utiliza estos componentes con sus datos y flujos existentes. El tema se genera automáticamente antes de iniciar o compilar; `npm run tokens:build` lo actualiza y `npm run tokens:check` comprueba su sincronización.
 
 ## Arquitectura y componentes compartidos
 
 Consultá [FRONTEND_ARCHITECTURE.md](./FRONTEND_ARCHITECTURE.md) para las rutas, responsables por carpeta, estados de datos y contratos de integración. La galería interactiva está en `/componentes` después de iniciar sesión. Para verificar la base: `npm test`, `npm run lint`, `npm run tokens:check` y `npm run build`.
+
+### Dashboard y navegación
+
+El selector de espacio está debajo del logo y permite cambiar de grupo o crear uno. En el resumen, la navegación se concentra en Inicio, Gastos, Balance, Recurrentes y Más, que conserva las secciones secundarias. Cuenta y espacios están al pie; en móvil se accede desde “Abrir navegación”. El resumen aplica el tema oscuro a sus detalles y confirmaciones; las demás pantallas mantienen el tema claro durante la migración.
+
+El resumen aplica la dirección Cercana: un balance personal protagonista, actividad del mes en una sección abierta y avisos solo cuando hay tareas reales. El saldo aparece una sola vez por concepto; si hay dinero por pagar y por cobrar se muestran ambos, aunque su neto sea cero. El selector de mes solo filtra los gastos. Cada fila abre el detalle existente, y registrar un pago conserva la elección de deuda, el importe total o parcial y la confirmación antes de actualizar los datos. Las plantillas vencidas enlazan a su revisión; las invitaciones se gestionan desde Miembros.
+
+El presupuesto se consulta desplegando “Presupuesto del espacio”. Representa el saldo acumulado actual, que el backend descuenta al liquidar, y no un límite mensual. La estimación utiliza solo gastos pendientes del mes seleccionado, no vuelve a descontar gastos liquidados y no reserva fondos ni incluye pendientes de otros meses. Si los pendientes superan el saldo, se muestra un aviso visible antes de abrir el detalle.
