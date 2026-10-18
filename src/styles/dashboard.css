@@ -43,12 +43,30 @@
   .summary-month__total strong { color: var(--color-text-primary); font-size: var(--text-metric); font-weight: var(--font-weight-semibold); overflow-wrap: anywhere; }
   .summary-month__total > span { font-size: var(--text-sm); }
   .summary-month__all { min-height: 44px; margin-top: var(--spacing-2); }
-  .summary .summary-budget { margin-top: var(--spacing-4); border-top: 0; }
-  .summary-budget__amounts { display: grid; gap: var(--spacing-4); margin: 0 0 var(--spacing-4); }
-  .summary-budget__amounts > div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--spacing-2) var(--spacing-4); }
-  .summary-budget__amounts dt { color: var(--color-text-secondary); flex: 1 1 12rem; }
-  .summary-budget__amounts dd { margin: 0; color: var(--color-text-primary); font-weight: var(--font-weight-medium); overflow-wrap: anywhere; }
-  .summary-budget__note { font-size: var(--text-sm); }
+  .summary .summary-budget { margin-top: var(--spacing-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); }
+  .summary .summary-budget[open] { background: var(--color-canvas); }
+  .summary .summary-budget > summary { display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); border-radius: var(--radius-xl); list-style: none; color: var(--color-text-primary); font-weight: var(--font-weight-medium); transition: background-color var(--motion-duration-fast) var(--ease-standard); }
+  .summary .summary-budget > summary::-webkit-details-marker { display: none; }
+  .summary .summary-budget > summary:hover { background: var(--color-brand-tint); }
+  .summary .summary-budget > summary > svg:first-child { color: var(--color-brand-primary); flex-shrink: 0; }
+  .summary .summary-budget > summary > span { flex: 1; min-width: 0; }
+  .summary-budget__chevron { flex-shrink: 0; color: var(--color-text-secondary); transform: rotate(90deg); }
+  .summary-budget[open] .summary-budget__chevron { transform: rotate(-90deg); }
+  .summary-budget > .ui-disclosure__body { padding: var(--spacing-2) var(--spacing-4) var(--spacing-4); }
+  .summary-budget__layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); gap: var(--spacing-6); }
+  .summary-budget__amounts { display: grid; gap: var(--spacing-4); margin: 0; }
+  .summary-budget__amounts dt { color: var(--color-text-secondary); }
+  .summary-budget__amounts dd { margin: var(--spacing-2) 0 0; color: var(--color-text-primary); font-size: var(--text-xl); font-weight: var(--font-weight-semibold); overflow-wrap: anywhere; }
+  .summary-budget__pending { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--spacing-2) var(--spacing-4); }
+  .summary-budget__pending dt { flex: 1 1 12rem; }
+  .summary-budget__pending dd { margin: 0; font-size: var(--text-sm); font-weight: var(--font-weight-medium); }
+  .summary-budget__estimate { padding: var(--spacing-4); border-radius: var(--radius-md); background: var(--color-brand-tint); }
+  .summary-budget__estimate dt, .summary-budget__estimate dd { color: var(--color-brand-ink); }
+  .summary-budget__estimate--exceeded { background: var(--color-warning-background); }
+  .summary-budget__estimate--exceeded dt, .summary-budget__estimate--exceeded dd { color: var(--color-warning-foreground); }
+  .summary-budget__note { margin: var(--spacing-3) 0 0; max-width: 40ch; color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .summary-budget__footnote { display: flex; align-items: flex-start; gap: var(--spacing-2); margin: var(--spacing-6) 0 0; color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .summary-budget__footnote svg { flex-shrink: 0; margin-top: var(--spacing-1); }
   .summary > .ui-loading { padding: 0; }
   @media (min-width: 41rem) {
     .summary .page-heading { align-items: center; }
