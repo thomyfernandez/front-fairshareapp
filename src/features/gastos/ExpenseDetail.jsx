@@ -19,6 +19,7 @@ export function ExpenseDetail({
   api: propApi,
   open = true,
   onClose,
+  onRepeat,
   asModal = true,
 }) {
   const workspace = useWorkspace()
@@ -113,7 +114,7 @@ export function ExpenseDetail({
                 {money(gasto.monto)}
               </strong>
               <span className="text-xs text-secondary block mt-1">
-                Registrado el {dateLabel(gasto.fecha)}
+                Fecha del gasto: {dateLabel(gasto.fecha)}
               </span>
             </div>
 
@@ -127,7 +128,7 @@ export function ExpenseDetail({
                     : 'neutral'
                 }
               >
-                {gasto.estado === 'LIQUIDADO' ? 'Liquidado' : 'Pendiente de balance'}
+                {gasto.estado === 'LIQUIDADO' ? 'Liquidado' : 'Pendiente de liquidar'}
               </Badge>
               <Badge tone="brand">
                 Reparto: {gasto.tipoReparto || gasto.regla || 'EQUITATIVA'}
@@ -245,9 +246,9 @@ export function ExpenseDetail({
       title={gasto?.descripcion || 'Detalle del gasto'}
       description="Desglose del pago y distribución entre miembros."
       footer={
-        <Button variant="secondary" onClick={onClose}>
+        <>{onRepeat && <Button disabled={loading || Boolean(error) || !gasto} onClick={() => onRepeat(gasto)}><Icon name="repeat" size={16} />Repetir gasto</Button>}<Button variant="secondary" onClick={onClose}>
           Cerrar detalle
-        </Button>
+        </Button></>
       }
     >
       {content}

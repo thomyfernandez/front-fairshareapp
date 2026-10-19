@@ -129,7 +129,7 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     expect(screen.getByText(/Esta acción recalculará los balances/i)).toBeInTheDocument()
   })
 
-  it('ExpenseBatchForm: construye y envía un único payload con { gastos: [...] }', async () => {
+  it('ExpenseBatchForm: envía el array de gastos del contrato real de lote', async () => {
     const user = userEvent.setup()
     const mockApi = vi.fn().mockResolvedValue({ status: 'OK', count: 2 })
     const onSuccess = vi.fn()
@@ -170,12 +170,10 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
 
     const [calledUrl, calledOpts] = mockApi.mock.calls[0]
     expect(calledUrl).toBe('/api/v1/espacios/1/gastos/lote')
-    expect(calledOpts.body).toEqual({
-      gastos: expect.arrayContaining([
+    expect(calledOpts.body).toEqual(expect.arrayContaining([
         expect.objectContaining({ descripcion: 'Gasto Lote 1', monto: 1500 }),
         expect.objectContaining({ descripcion: 'Gasto Lote 2', monto: 2500 }),
-      ]),
-    })
+      ]))
     expect(onSuccess).toHaveBeenCalled()
   })
 

@@ -9,6 +9,8 @@ export function WorkspaceProvider({ children }) {
   const { session, api } = useSession()
   const { pathname, search } = useLocation()
   const [revision, setRevision] = useState(0)
+  const [expenseViews, setExpenseViews] = useState({})
+  const rememberExpenseView = useCallback((id, value) => setExpenseViews(previous => ({ ...previous, [id]: { ...previous[id], ...value } })), [])
   const spacesState = useApiResource(api, '/api/v1/espacios', { revision })
   const routeSpaceId = pathname.match(/^\/espacios\/([1-9]\d*)(?:\/|$)/)?.[1] || null
   const incomeContext = new URLSearchParams(search).get('espacio')
@@ -24,6 +26,6 @@ export function WorkspaceProvider({ children }) {
   const isAdmin = members.some(member => member.usuarioId === session?.usuario?.id && member.rol === 'ADMIN')
   return <WorkspaceContext.Provider value={{
     session, api, spaces: spacesState.data, spacesState, spaceId: unavailableContext ? null : spaceId,
-    space: spaceState.data, spaceState, members, membersState, isAdmin, revision, invalidate,
+    space: spaceState.data, spaceState, members, membersState, isAdmin, revision, invalidate, expenseViews, rememberExpenseView,
   }}>{children}</WorkspaceContext.Provider>
 }

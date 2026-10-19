@@ -146,3 +146,13 @@ La barra de guardado comunica cambios pendientes y permite descartarlos. Guardar
 ### Navegación personal con contexto del espacio
 
 Mis ingresos pertenece a la cuenta y se aplica a todos los espacios. Al abrirlo desde uno, conservar su selector y los accesos a Inicio, Gastos, Balance y demás secciones; solo Mis ingresos queda marcado como destino actual. El contexto viaja en el enlace como `?espacio={id}` y se valida contra los espacios del usuario. Cambiar de espacio desde Mis ingresos conserva la pantalla personal. El menú móvil ofrece la misma navegación y cierra al elegir un destino. No presentar ingresos distintos por espacio ni perder el contexto por cambiar a una sección personal.
+
+### Continuidad en el registro de gastos
+
+En el lote, la descripción junto al número funciona como título editable: conserva `Field`, su etiqueta para lectores de pantalla y validación, con fondo transparente y sin borde para reducir el peso visual de la cabecera. El campo vacío invita a escribir con “Escribí una descripción…”, sin una etiqueta visible encima. El foco usa un subrayado lavanda de 2px, sin recuadro alrededor del texto. Cuando contiene un error, el subrayado pasa a rojo y se conserva el mensaje escrito.
+
+Repetir vive en el detalle y en hasta cuatro accesos frecuentes dentro de la carga individual, calculados del historial real del espacio. No agregar un panel de sugerencias en el resumen. Las sugerencias abren una carga revisable; si existe un borrador, pedir confirmación antes de reemplazarlo. La fecha se actualiza y los participantes se restringen a miembros actuales.
+
+Los borradores se anuncian en el listado con acciones para retomar o descartar, sin mezclar sus importes con los registrados. Un texto breve aclara dónde se conservan. Quitar una fila de un borrador ofrece Deshacer; eliminar un registro continúa requiriendo la confirmación existente y no ofrece una reversión inexistente.
+
+Las coincidencias por concepto, fecha e importe usan el diálogo compartido, con una salida para revisar y una acción explícita para registrar igualmente. `ExpenseReceipt` presenta el resultado confirmado y enlaces a su desglose; errores y repartos estimados no se convierten en comprobantes. Los errores del formulario se muestran junto a la carga, sin avisos flotantes duplicados que cubran los controles. Los filtros y la posición del listado se conservan por espacio durante la sesión.

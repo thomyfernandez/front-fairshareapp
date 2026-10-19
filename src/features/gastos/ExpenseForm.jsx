@@ -1,7 +1,8 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { Button, Card, Field, InlineAlert, Submit, useUI } from '../../components/ui'
-import { today } from '../../lib/format'
+import { money, today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
+import { expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
 import { ParticipantsSelector } from './ParticipantsSelector.jsx'
 
 /**
@@ -14,9 +15,9 @@ import { ParticipantsSelector } from './ParticipantsSelector.jsx'
  *   "monto": 0.0,
  *   "fecha": "YYYY-MM-DD",
  *   "pagadorId": 0,
- *   "tipoReparto": "EQUITATIVA | PORCENTUAL | MONTOS_FIJOS", 
+ *   "regla": "EQUITATIVA | PERSONALIZADA | PROPORCIONAL_INGRESOS",
  *   "participantes": [
- *     { "usuarioId": 0, "porcentaje": 0.0, "importe": 0.0 }
+ *     { "usuarioId": 0 } // En personalizada, porcentaje o importe según el modo.
  *   ]
  * }
  *
@@ -31,11 +32,16 @@ export function ExpenseForm({
   api: propApi,
   initialValues = {},
   onSuccess,
+  onDraftChange,
+  draftLocation,
+  existingExpenses = [],
   onCancel,
   className = '',
 }) {
   const workspace = useWorkspace()
-  const { notify } = useUI()
+  const { notify, confirm } = useUI()
+  const submitting = useRef(false)
+  const errorRef = useRef(null)
 
   // Fuente de datos del espacio y miembros (permite props directos o contexto global)
   const effectiveSpaceId = propSpaceId || workspace?.spaceId
@@ -44,11 +50,12 @@ export function ExpenseForm({
   const currentUserId = workspace?.session?.usuario?.id
 
   // Estados controlados para preservar los datos ante cualquier fallo
+  const [touched, setTouched] = useState(Boolean(initialValues.touched))
   const [descripcion, setDescripcion] = useState(initialValues.descripcion || '')
   const [monto, setMonto] = useState(initialValues.monto !== undefined ? String(initialValues.monto) : '')
   const [fecha, setFecha] = useState(initialValues.fecha || today())
   const [pagadorId, setPagadorId] = useState(() => {
-    if (initialValues.pagadorId) return String(initialValues.pagadorId)
+    if (initialValues.pagadorId !== undefined) return String(initialValues.pagadorId)
     if (currentUserId && effectiveMembers.some(m => (m.usuarioId ?? m.id) === currentUserId)) {
       return String(currentUserId)
     }
@@ -58,16 +65,19 @@ export function ExpenseForm({
 
   // Participantes calculados y su estado de validación
   const [participantes, setParticipantes] = useState(initialValues.participantes || [])
+  const [selection, setSelection] = useState(initialValues.selection)
   const [participantsValidation, setParticipantsValidation] = useState({ isValid: true, error: null })
 
   // Estados de proceso y feedback
   const [busy, setBusy] = useState(false)
   const [errors, setErrors] = useState({})
   const [serverError, setServerError] = useState(null)
+  useEffect(() => { if (serverError) errorRef.current?.scrollIntoView?.({ block: 'center', behavior: 'instant' }) }, [serverError])
 
   // Callback del selector de participantes
   const handleParticipantsChange = useCallback((calculatedParticipants, validationState) => {
     setParticipantes(calculatedParticipants)
+    setSelection(validationState.selection)
     setParticipantsValidation(validationState)
     // Limpiar error de participantes si ya es válido
     if (validationState.isValid) {
@@ -80,9 +90,14 @@ export function ExpenseForm({
     }
   }, [])
 
+  useEffect(() => {
+    onDraftChange?.({ descripcion, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched })
+  }, [descripcion, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched, onDraftChange])
+
   // Validación y envío del formulario
   const handleSubmit = async (event) => {
     event.preventDefault()
+    if (submitting.current) return
     setServerError(null)
 
     const clientErrors = {}
@@ -96,8 +111,7 @@ export function ExpenseForm({
     }
 
     // 2. Validar monto positivo
-    const numericMonto = parseFloat(monto)
-    if (isNaN(numericMonto) || numericMonto <= 0) {
+    if (!validExpenseAmount(monto)) {
       clientErrors.monto = 'El importe debe ser un monto positivo mayor a 0.'
     }
 
@@ -108,7 +122,7 @@ export function ExpenseForm({
 
     // 4. Validar pagador
     const numericPagadorId = Number(pagadorId)
-    if (!numericPagadorId || numericPagadorId <= 0) {
+    if (!numericPagadorId || !effectiveMembers.some(member => Number(member.usuarioId ?? member.id) === numericPagadorId)) {
       clientErrors.pagadorId = 'Debes seleccionar qué persona realizó el pago.'
     }
 
@@ -136,20 +150,12 @@ export function ExpenseForm({
     setBusy(true)
 
     // Construcción del contrato JSON estricto
-    const payload = {
-      descripcion: trimmedDescripcion,
-      monto: Number(numericMonto.toFixed(2)),
-      fecha,
-      pagadorId: numericPagadorId,
-      tipoReparto,
-      participantes: participantes.map(p => ({
-        usuarioId: Number(p.usuarioId),
-        porcentaje: Number(Number(p.porcentaje).toFixed(2)),
-        importe: Number(Number(p.importe).toFixed(2)),
-      })),
-    }
+    const payload = expensePayload({ descripcion: trimmedDescripcion, monto, fecha, pagadorId, tipoReparto, participantes })
+    submitting.current = true
 
     try {
+      const matches = similarExpenses(payload, existingExpenses)
+      if (matches.length && !await confirm({ title: 'Posible gasto repetido', description: `Ya hay ${matches.length === 1 ? 'un gasto' : 'gastos'} con el concepto «${payload.descripcion}», ${money(payload.monto)} y fecha ${payload.fecha}. Podés volver al formulario para revisar los datos.`, confirmLabel: 'Registrar de todos modos' })) return
       if (!effectiveSpaceId) {
         throw new Error('No se pudo identificar el espacio activo para registrar el gasto.')
       }
@@ -163,13 +169,13 @@ export function ExpenseForm({
         body: payload,
       })
 
-      notify('Gasto registrado con éxito.', 'success')
+      if (!onSuccess) notify('Gasto registrado con éxito.', 'success')
 
       // Invalidar caché del workspace si existe
       workspace?.invalidate?.()
 
       if (onSuccess) {
-        onSuccess(response)
+        onSuccess(response, payload)
       } else {
         // En caso de formulario persistente sin navegación/cierre, limpiar valores solo en éxito
         setDescripcion('')
@@ -188,8 +194,9 @@ export function ExpenseForm({
         setErrors(prev => ({ ...prev, ...error.fieldErrors }))
       }
 
-      notify(errorMsg, 'error')
+
     } finally {
+      submitting.current = false
       setBusy(false)
     }
   }
@@ -198,14 +205,13 @@ export function ExpenseForm({
 
   return (
     <Card className={`expense-form-container ${className}`}>
-      <form onSubmit={handleSubmit} noValidate className="space-y-4">
+      <form onChangeCapture={() => setTouched(true)} onSubmit={handleSubmit} noValidate className="space-y-4">
         {/* Alerta de error del servidor (persiste el formulario para corrección) */}
         {serverError && (
-          <InlineAlert tone="error">
-            {serverError}
-          </InlineAlert>
+          <div ref={errorRef}><InlineAlert tone="error">{serverError}</InlineAlert></div>
         )}
 
+        {onDraftChange && <p className="expense-draft-hint">{draftLocation === 'memory' ? 'El borrador se conserva mientras mantengas esta sesión abierta.' : draftLocation === 'unavailable' ? 'No pudimos conservar un borrador. Mantené esta pantalla abierta.' : 'El borrador se guarda en esta pestaña. Podés salir y retomarlo después.'}</p>}
         {/* Fila 1: Descripción */}
         <Field
           label="Descripción del gasto"
@@ -291,6 +297,7 @@ export function ExpenseForm({
               required
             >
               <option value="EQUITATIVA">Equitativa (partes iguales)</option>
+              <option value="PROPORCIONAL_INGRESOS">Según los ingresos del período</option>
               <option value="PORCENTUAL">Porcentual (%)</option>
               <option value="MONTOS_FIJOS">Montos fijos ($)</option>
             </select>
@@ -303,6 +310,8 @@ export function ExpenseForm({
           tipoReparto={tipoReparto}
           monto={numericMontoForSelector}
           value={participantes}
+          initialSelection={initialValues.selection}
+          onInteraction={() => setTouched(true)}
           onChange={handleParticipantsChange}
           disabled={busy}
           error={errors.participantes}
@@ -317,7 +326,7 @@ export function ExpenseForm({
               onClick={onCancel}
               disabled={busy}
             >
-              Cancelar
+              {onDraftChange ? 'Guardar borrador y salir' : 'Cancelar'}
             </Button>
           )}
           <Submit busy={busy}>

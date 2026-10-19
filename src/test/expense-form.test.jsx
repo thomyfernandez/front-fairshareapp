@@ -136,11 +136,11 @@ describe('ExpenseForm & ParticipantsSelector', () => {
       monto: 3000,
       fecha: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
       pagadorId: 1,
-      tipoReparto: 'EQUITATIVA',
+      regla: 'EQUITATIVA',
       participantes: [
-        { usuarioId: 1, porcentaje: 33.33, importe: 1000 },
-        { usuarioId: 2, porcentaje: 33.33, importe: 1000 },
-        { usuarioId: 3, porcentaje: 33.33, importe: 1000 },
+        { usuarioId: 1 },
+        { usuarioId: 2 },
+        { usuarioId: 3 },
       ],
     })
     expect(onSuccess).toHaveBeenCalled()

@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect, useId } from 'react'
 import { Badge, Button, Icon } from '../../components/ui'
 import { cents, money } from '../../lib/format'
 
@@ -25,12 +25,15 @@ export function ParticipantsSelector({
   members = [],
   tipoReparto = 'EQUITATIVA',
   monto = 0,
-  value: _value,
+  value,
+  initialSelection,
+  onInteraction,
   onChange,
   disabled = false,
   error: externalError,
 }) {
   const normalizedMembers = useMemo(() => normalizeMembers(members), [members])
+  const selectionId = useId()
   const numericMonto = Math.max(0, Number(monto) || 0)
   const totalCents = cents(numericMonto)
 
@@ -38,7 +41,7 @@ export function ParticipantsSelector({
   const [selectedEquitativa, setSelectedEquitativa] = useState(() => {
     const initial = {}
     normalizedMembers.forEach(m => {
-      initial[m.usuarioId] = true
+      initial[m.usuarioId] = initialSelection?.equal?.[m.usuarioId] ?? (value?.length ? value.some(part => Number(part.usuarioId) === m.usuarioId) : true)
     })
     return initial
   })
@@ -49,7 +52,7 @@ export function ParticipantsSelector({
     const count = normalizedMembers.length || 1
     const basePct = (100 / count).toFixed(2)
     normalizedMembers.forEach(m => {
-      initial[m.usuarioId] = basePct
+      initial[m.usuarioId] = initialSelection?.percentages?.[m.usuarioId] ?? (value?.length ? String(value.find(part => Number(part.usuarioId) === m.usuarioId)?.porcentaje ?? 0) : basePct)
     })
     return initial
   })
@@ -58,7 +61,7 @@ export function ParticipantsSelector({
   const [importes, setImportes] = useState(() => {
     const initial = {}
     normalizedMembers.forEach(m => {
-      initial[m.usuarioId] = ''
+      initial[m.usuarioId] = initialSelection?.amounts?.[m.usuarioId] ?? String(value?.find(part => Number(part.usuarioId) === m.usuarioId)?.importe ?? '')
     })
     return initial
   })
@@ -99,7 +102,7 @@ export function ParticipantsSelector({
       }
     }
 
-    if (tipoReparto === 'EQUITATIVA') {
+    if (tipoReparto === 'EQUITATIVA' || tipoReparto === 'PROPORCIONAL_INGRESOS') {
       const activeMembers = normalizedMembers.filter(m => selectedEquitativa[m.usuarioId])
       const count = activeMembers.length
 
@@ -111,6 +114,8 @@ export function ParticipantsSelector({
           statusBadge: <Badge tone="error">0 seleccionados</Badge>,
         }
       }
+
+      if (tipoReparto === 'PROPORCIONAL_INGRESOS') return { participantes: activeMembers.map(member => ({ usuarioId: member.usuarioId })), isValid: true, validationError: null, statusBadge: <Badge>Reparto según ingresos al registrar</Badge> }
 
       // Distribución precisa de centavos para que la suma siempre coincida con el monto
       const baseCents = count > 0 ? Math.floor(totalCents / count) : 0
@@ -266,18 +271,20 @@ export function ParticipantsSelector({
   // Notificar al componente padre cuando cambie el resultado
   useEffect(() => {
     if (onChange) {
-      onChange(participantes, { isValid, error: validationError })
+      onChange(participantes, { isValid, error: validationError, selection: { equal: selectedEquitativa, percentages: porcentajes, amounts: importes } })
     }
-  }, [participantes, isValid, validationError, onChange])
+  }, [participantes, isValid, validationError, onChange, selectedEquitativa, porcentajes, importes])
 
   // Acciones rápidas para EQUITATIVA
   const selectAll = () => {
+    onInteraction?.()
     const next = {}
     normalizedMembers.forEach(m => { next[m.usuarioId] = true })
     setSelectedEquitativa(next)
   }
 
   const deselectAll = () => {
+    onInteraction?.()
     const next = {}
     normalizedMembers.forEach(m => { next[m.usuarioId] = false })
     setSelectedEquitativa(next)
@@ -285,6 +292,7 @@ export function ParticipantsSelector({
 
   // Acción rápida para PORCENTUAL: Repartir equitativamente
   const distributeEvenlyPct = () => {
+    onInteraction?.()
     const count = normalizedMembers.length
     if (count === 0) return
     const basePct = Math.floor((100 / count) * 100) / 100
@@ -299,6 +307,7 @@ export function ParticipantsSelector({
 
   // Acción rápida para MONTOS_FIJOS: Asignar monto total distribuido
   const distributeEvenlyAmount = () => {
+    onInteraction?.()
     const count = normalizedMembers.length
     if (count === 0 || totalCents === 0) return
     const baseCents = Math.floor(totalCents / count)
@@ -323,7 +332,7 @@ export function ParticipantsSelector({
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           {statusBadge}
-          {tipoReparto === 'EQUITATIVA' && (
+          {['EQUITATIVA', 'PROPORCIONAL_INGRESOS'].includes(tipoReparto) && (
             <div className="flex gap-1">
               <Button
                 variant="ghost"
@@ -402,16 +411,16 @@ export function ParticipantsSelector({
               </div>
 
               {/* Modo EQUITATIVA */}
-              {tipoReparto === 'EQUITATIVA' && (
+              {['EQUITATIVA', 'PROPORCIONAL_INGRESOS'].includes(tipoReparto) && (
                 <div className="flex items-center gap-3">
                   <div className="text-right">
                     {isSelected ? (
                       <div>
                         <span className="text-sm font-semibold text-brand-primary block">
-                          {money(partInfo?.importe ?? (numericMonto / (participantes.length || 1)))}
+                          {tipoReparto === 'PROPORCIONAL_INGRESOS' ? 'Según ingresos' : money(partInfo?.importe ?? (numericMonto / (participantes.length || 1)))}
                         </span>
                         <span className="text-xs text-secondary">
-                          {partInfo?.porcentaje || 0}%
+                          {tipoReparto === 'PROPORCIONAL_INGRESOS' ? 'Se calcula al registrar' : `${partInfo?.porcentaje || 0}%`}
                         </span>
                       </div>
                     ) : (
@@ -420,7 +429,7 @@ export function ParticipantsSelector({
                   </div>
                   <input
                     type="checkbox"
-                    id={`participant-check-${m.usuarioId}`}
+                    id={`participant-${selectionId}-${m.usuarioId}`}
                     checked={!!isSelected}
                     disabled={disabled}
                     onChange={e => {

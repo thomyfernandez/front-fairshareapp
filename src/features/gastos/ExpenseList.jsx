@@ -20,6 +20,7 @@ export function ExpenseList({
   error = null,
   onExpenseDeleted,
   onRegisterClick,
+  onRepeat,
   className = '',
 }) {
   const workspace = useWorkspace()
@@ -126,6 +127,7 @@ export function ExpenseList({
           members={effectiveMembers}
           open={Boolean(selectedGasto)}
           onClose={() => setSelectedGasto(null)}
+          onRepeat={onRepeat ? expense => { setSelectedGasto(null); onRepeat(expense) } : undefined}
         />
       )}
 

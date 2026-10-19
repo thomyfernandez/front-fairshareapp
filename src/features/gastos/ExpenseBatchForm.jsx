@@ -1,7 +1,8 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import { Button, Card, Field, Icon, InlineAlert, PanelDisclosure, Submit, useUI } from '../../components/ui'
 import { cents, money, today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
+import { expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
 import { ParticipantsSelector } from './ParticipantsSelector.jsx'
 
 // Mantiene estable el callback de cada selector al editar otra fila del lote.
@@ -32,7 +33,7 @@ function createEmptyExpense(tempId, defaultPayerId = '') {
  * Formulario para el registro masivo ("por lote") de múltiples gastos.
  *
  * Características clave:
- * - Envío en una única petición POST con payload: { "gastos": [ ... ] }
+ * - Envío de un array en una única petición POST.
  * - Advertencia visual de atomicidad: si uno falla, el backend rechaza el lote completo.
  * - Validación integral de cada elemento del lote antes del envío.
  * - UX Crítica: Conservación total de todos los gastos ingresados si la petición falla (ej. error 400).
@@ -42,11 +43,17 @@ export function ExpenseBatchForm({
   members: propMembers,
   api: propApi,
   onSuccess,
+  initialValues,
+  onDraftChange,
+  draftLocation,
+  existingExpenses = [],
   onCancel,
   className = '',
 }) {
   const workspace = useWorkspace()
-  const { notify } = useUI()
+  const { notify, confirm } = useUI()
+  const submitting = useRef(false)
+  const errorRef = useRef(null)
 
   const effectiveSpaceId = propSpaceId || workspace?.spaceId
   const effectiveMembers = propMembers || workspace?.members || []
@@ -61,23 +68,32 @@ export function ExpenseBatchForm({
       : ''
 
   // Array dinámico de gastos en el lote
-  const [gastos, setGastos] = useState(() => [
+  const [gastos, setGastos] = useState(() => initialValues?.gastos?.length ? initialValues.gastos.map(item => ({ ...item, errors: {}, validationState: { isValid: false } })) : [
     createEmptyExpense(1, defaultPayerId),
     createEmptyExpense(2, defaultPayerId),
   ])
 
+  const [removed, setRemoved] = useState(initialValues?.removed || null)
+  const nextId = useRef(Math.max(2, ...gastos.map(item => Number(item.tempId) || 0), Number(removed?.expense?.tempId) || 0) + 1)
+  useEffect(() => {
+    onDraftChange?.({ gastos: gastos.map(({ errors: _errors, validationState: _validation, ...value }) => value), removed })
+  }, [gastos, removed, onDraftChange])
+
   const [busy, setBusy] = useState(false)
   const [serverError, setServerError] = useState(null)
+  useEffect(() => { if (serverError) errorRef.current?.scrollIntoView?.({ block: 'center', behavior: 'instant' }) }, [serverError])
 
   // Agregar nuevo gasto al lote
   const handleAddExpense = () => {
-    const nextId = Date.now()
-    setGastos(prev => [...prev, createEmptyExpense(nextId, defaultPayerId)])
+    if (gastos.length + (removed ? 1 : 0) >= 100) return
+    const id = nextId.current++
+    setGastos(prev => [...prev, { ...createEmptyExpense(id, defaultPayerId), touched: true }])
   }
 
   // Eliminar un gasto del lote
   const handleRemoveExpense = (tempId) => {
     if (gastos.length <= 1) return
+    setRemoved({ expense: { ...gastos.find(item => item.tempId === tempId), touched: true }, index: gastos.findIndex(item => item.tempId === tempId) })
     setGastos(prev => prev.filter(g => g.tempId !== tempId))
   }
 
@@ -106,6 +122,7 @@ export function ExpenseBatchForm({
           ...g,
           participantes: calculatedParticipants,
           validationState,
+          selection: validationState.selection,
           errors: nextErrors,
         }
       })
@@ -119,18 +136,18 @@ export function ExpenseBatchForm({
   // Envío del lote con validación estricta
   const handleSubmit = async (event) => {
     event.preventDefault()
+    if (submitting.current) return
     setServerError(null)
 
     let hasAnyError = false
     const updatedGastos = gastos.map((g) => {
       const itemErrors = {}
 
-      if (!g.descripcion.trim()) {
+      if (!g.descripcion.trim() || g.descripcion.trim().length > 255) {
         itemErrors.descripcion = 'La descripción es obligatoria.'
       }
 
-      const numMonto = parseFloat(g.monto)
-      if (isNaN(numMonto) || numMonto <= 0) {
+      if (!validExpenseAmount(g.monto)) {
         itemErrors.monto = 'El importe debe ser mayor a 0.'
       }
 
@@ -138,7 +155,7 @@ export function ExpenseBatchForm({
         itemErrors.fecha = 'La fecha es requerida.'
       }
 
-      if (!g.pagadorId || Number(g.pagadorId) <= 0) {
+      if (!g.pagadorId || !effectiveMembers.some(member => Number(member.usuarioId ?? member.id) === Number(g.pagadorId))) {
         itemErrors.pagadorId = 'Indica quién pagó.'
       }
 
@@ -162,58 +179,30 @@ export function ExpenseBatchForm({
 
     if (hasAnyError) {
       setGastos(updatedGastos)
-      notify('Hay errores en uno o más gastos del lote. Revisa los campos resaltados.', 'error')
+      setServerError('Hay errores en uno o más gastos del lote. Revisá los campos resaltados.')
       return
     }
 
     setBusy(true)
 
-    // Contrato estricto: { "gastos": [ { ... }, ... ] }
-    const payload = {
-      gastos: gastos.map(g => ({
-        descripcion: g.descripcion.trim(),
-        monto: Number(parseFloat(g.monto).toFixed(2)),
-        fecha: g.fecha,
-        pagadorId: Number(g.pagadorId),
-        tipoReparto: g.tipoReparto,
-        participantes: g.participantes.map(p => ({
-          usuarioId: Number(p.usuarioId),
-          porcentaje: Number(Number(p.porcentaje).toFixed(2)),
-          importe: Number(Number(p.importe).toFixed(2)),
-        })),
-      })),
-    }
+    // El endpoint recibe directamente un array de gastos.
+    const payload = gastos.map(expensePayload)
+    submitting.current = true
 
     try {
       if (!effectiveSpaceId) {
         throw new Error('No se identificó el espacio activo.')
       }
 
-      // Endpoint de lote en backend
-      const endpoint = `/api/v1/espacios/${effectiveSpaceId}/gastos/lote`
-      let response
-      try {
-        response = await effectiveApi(endpoint, {
-          method: 'POST',
-          body: payload,
-        })
-      } catch (err) {
-        // Soporte de fallback a endpoint /batch si el backend lo expone con ese nombre
-        if (err.status === 404) {
-          response = await effectiveApi(`/api/v1/espacios/${effectiveSpaceId}/gastos/batch`, {
-            method: 'POST',
-            body: payload,
-          })
-        } else {
-          throw err
-        }
-      }
+      const duplicates = payload.filter((expense, index) => similarExpenses(expense, [...existingExpenses, ...payload.slice(0, index)]).length > 0)
+      if (duplicates.length && !await confirm({ title: 'Posibles gastos repetidos en el lote', description: `${duplicates.length} ${duplicates.length === 1 ? 'gasto coincide' : 'gastos coinciden'} en concepto, importe y fecha con otro registro o con una fila del lote: ${duplicates.slice(0, 5).map(item => `${item.descripcion} (${money(item.monto)}, ${item.fecha})`).join('; ')}. Revisá los datos antes de continuar.`, confirmLabel: 'Registrar de todos modos' })) return
+      const response = await effectiveApi(`/api/v1/espacios/${effectiveSpaceId}/gastos/lote`, { method: 'POST', body: payload })
 
-      notify(`Lote de ${gastos.length} gastos registrado con éxito.`, 'success')
+      if (!onSuccess) notify(`Lote de ${gastos.length} gastos registrado con éxito.`, 'success')
       workspace?.invalidate?.()
 
       if (onSuccess) {
-        onSuccess(response)
+        onSuccess(response, payload)
       } else {
         // Limpiar solo en caso de éxito
         setGastos([
@@ -227,14 +216,17 @@ export function ExpenseBatchForm({
         error?.message ||
         'No se pudo registrar el lote. Revisa los datos ingresados e intenta nuevamente.'
       setServerError(errorMsg)
-      notify(errorMsg, 'error')
+
     } finally {
+      submitting.current = false
       setBusy(false)
     }
   }
 
   return (
     <Card className={`expense-batch-container space-y-6 ${className}`}>
+      {onDraftChange && <p className="expense-draft-hint">{draftLocation === 'memory' ? 'El borrador se conserva mientras mantengas esta sesión abierta.' : draftLocation === 'unavailable' ? 'No pudimos conservar un borrador. Mantené esta pantalla abierta.' : 'El borrador se guarda en esta pestaña. Podés salir y retomarlo después.'}</p>}
+      {removed && <div className="expense-undo"><p role="status">Quitaste «{removed.expense.descripcion || 'Gasto sin descripción'}» del borrador.</p><Button variant="secondary" disabled={busy} onClick={() => { setGastos(previous => { const next = [...previous]; next.splice(Math.min(removed.index, next.length), 0, removed.expense); return next }); setRemoved(null) }}>Deshacer</Button></div>}
       {/* Cabecera y Alerta Crítica de Atomicidad */}
       <div className="space-y-3">
         <div className="flex items-center justify-between flex-wrap gap-2">
@@ -257,9 +249,7 @@ export function ExpenseBatchForm({
         </PanelDisclosure>
 
         {serverError && (
-          <InlineAlert tone="error">
-            {serverError}
-          </InlineAlert>
+          <div ref={errorRef}><InlineAlert tone="error">{serverError}</InlineAlert></div>
         )}
       </div>
 
@@ -272,31 +262,32 @@ export function ExpenseBatchForm({
             return (
               <div
                 key={g.tempId}
+                onChangeCapture={() => handleFieldChange(g.tempId, 'touched', true)}
                 className="p-4 border border-subtle rounded-xl bg-panel space-y-4 relative transition-shadow hover:shadow-subtle"
               >
-                {/* Cabecera del ítem de lote */}
-                <div className="flex items-center justify-between border-b border-subtle pb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-brand-primary text-inverse text-xs font-semibold flex items-center justify-center">
-                      {index + 1}
-                    </span>
-                    <strong className="text-sm font-semibold text-primary">
-                      Gasto #{index + 1}
-                    </strong>
-                    {g.monto > 0 && (
-                      <span className="text-xs font-semibold text-secondary">
-                        · {money(g.monto)}
-                      </span>
-                    )}
-                  </div>
-
+                <div className="expense-batch-item__header">
+                  <span className="expense-batch-item__number w-6 h-6 rounded-full bg-brand-primary text-inverse text-xs font-semibold flex items-center justify-center">
+                    <span className="sr-only">Gasto </span>
+                    {index + 1}
+                  </span>
+                  <Field
+                    className="expense-batch-item__name"
+                    label="Descripción"
+                    maxLength={255}
+                    value={g.descripcion}
+                    onChange={e => handleFieldChange(g.tempId, 'descripcion', e.target.value)}
+                    error={g.errors.descripcion}
+                    placeholder="Escribí una descripción…"
+                    required
+                    disabled={busy}
+                  />
                   {gastos.length > 1 && (
                     <Button
                       variant="ghost"
                       size="small"
                       onClick={() => handleRemoveExpense(g.tempId)}
                       disabled={busy}
-                      className="text-xs text-error hover:bg-error-background px-2 py-1 min-h-[44px]"
+                      className="expense-batch-item__remove text-xs text-error hover:bg-error-background px-2 py-1 min-h-[44px]"
                       aria-label={`Quitar gasto número ${index + 1} del lote`}
                     >
                       <Icon name="close" size={14} />
@@ -304,17 +295,6 @@ export function ExpenseBatchForm({
                     </Button>
                   )}
                 </div>
-
-                {/* Campos del gasto individual */}
-                <Field
-                  label="Descripción"
-                  value={g.descripcion}
-                  onChange={e => handleFieldChange(g.tempId, 'descripcion', e.target.value)}
-                  error={g.errors.descripcion}
-                  placeholder="Ej. Supermercado, Almuerzo grupal"
-                  required
-                  disabled={busy}
-                />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                   <Field
@@ -368,6 +348,7 @@ export function ExpenseBatchForm({
                       className="ui-input"
                     >
                       <option value="EQUITATIVA">Equitativo</option>
+                      <option value="PROPORCIONAL_INGRESOS">Según los ingresos</option>
                       <option value="PORCENTUAL">Porcentual (%)</option>
                       <option value="MONTOS_FIJOS">Montos fijos ($)</option>
                     </select>
@@ -382,6 +363,8 @@ export function ExpenseBatchForm({
                     tipoReparto={g.tipoReparto}
                     monto={numericMonto}
                     value={g.participantes}
+                    initialSelection={g.selection}
+                    onInteraction={() => handleFieldChange(g.tempId, 'touched', true)}
                     onChange={handleParticipantsChange}
                     disabled={busy}
                     error={g.errors.participantes}
@@ -397,7 +380,7 @@ export function ExpenseBatchForm({
           <Button
             variant="secondary"
             onClick={handleAddExpense}
-            disabled={busy}
+            disabled={busy || gastos.length + (removed ? 1 : 0) >= 100}
             className="w-full sm:w-auto"
           >
             <Icon name="plus" size={16} />
@@ -420,7 +403,7 @@ export function ExpenseBatchForm({
                 onClick={onCancel}
                 disabled={busy}
               >
-                Cancelar
+                {onDraftChange ? 'Guardar borrador y salir' : 'Cancelar'}
               </Button>
             )}
             <Submit busy={busy}>

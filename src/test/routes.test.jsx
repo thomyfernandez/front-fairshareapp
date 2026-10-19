@@ -5,6 +5,7 @@ import { expect, it, vi } from 'vitest'
 import { AppRoutes } from '../app/AppRoutes'
 import { UIProvider } from '../components/ui'
 import { SessionProvider } from '../features/auth/SessionProvider'
+import { saveDraft, readDraft } from '../lib/draft-storage'
 import { localDate } from '../lib/format'
 
 const spaces = [
@@ -142,11 +143,12 @@ it.each(['/ingresos', '/ingresos?espacio=999', '/ingresos?espacio=-1', '/ingreso
 })
 
 it('mantiene ingresos personal accesible si el contexto dejó de estar autorizado', async () => {
-  setup('/ingresos?espacio=2', { spaceStatus: 403 })
+  const fetcher = setup('/ingresos?espacio=2', { spaceStatus: 403 })
   await logIn()
   await screen.findByRole('heading', { name: 'Mis ingresos', level: 1 })
-  await waitFor(() => expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Elegí un espacio'))
-  expect(screen.queryByRole('group', { name: 'Actividad del espacio' })).not.toBeInTheDocument()
+  await waitFor(() => expect(fetcher).toHaveBeenCalledWith('/api/v1/espacios/2', expect.anything()))
+  await waitFor(() => expect(screen.queryByRole('group', { name: 'Actividad del espacio' })).not.toBeInTheDocument())
+  expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Elegí un espacio')
   expect(screen.getByTestId('route')).toHaveTextContent('/ingresos?espacio=2')
 })
 
@@ -159,4 +161,16 @@ it('conserva el contexto al abrir ingresos desde la explicación de miembros', a
   await user.click(links[0])
   await screen.findByRole('heading', { name: 'Mis ingresos', level: 1 })
   expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Viaje del grupo')
+})
+
+
+it('elimina los borradores de gastos al cerrar sesión', async () => {
+  setup('/espacios/1/gastos')
+  const user = await logIn()
+  await screen.findByRole('heading', { name: 'Gastos', level: 1 })
+  saveDraft(1, 1, 'individual', { descripcion: 'Borrador privado' })
+  await user.click(screen.getByLabelText('Cuenta de Ana'))
+  await user.click(screen.getByRole('button', { name: 'Cerrar sesión' }))
+  await screen.findByRole('heading', { name: 'Ingresá a FairShare' })
+  expect(readDraft(1, 1, 'individual')).toBeNull()
 })
