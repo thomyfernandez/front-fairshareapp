@@ -115,6 +115,13 @@ Los tokens existentes de formularios, texto, estados y elevación siguen disponi
 2. **Resumen — implementado:** componentes conectados al modelo actual, sin importes repetidos, filtro mensual separado del balance y flujos reales de detalle y pago total o parcial. Presupuesto a demanda y avisos por revisiones reales o saldo insuficiente. Un error en un recurso no bloquea los demás.
 3. **Resto del producto — implementado:** navegación compacta en todas las secciones, tema oscuro en acceso y registro, filas de gastos con categoría y acciones separadas, balance compartido sin neto redundante, recurrentes con edición a demanda y paneles de ingresos, miembros, espacios y configuración. Liquidaciones separa Pendientes e Historial, agrupa los gastos por mes y muestra total, período, nota y saldo estimado en un resumen lateral que se apila en móvil. Conserva la revisión exacta antes de confirmar y no presupone un saldo disponible en cero ante datos ausentes.
 
+## Marca
+
+- El isotipo es una **F cuyos dos brazos forman un signo igual**: la F de FairShare y la idea de repartir en partes justas. Se dibuja con `BrandMark` (SVG) usando `brand-primary` de fondo y `text-inverse` para la figura, por eso se adapta solo a cada tema.
+- `Brand` combina el isotipo con el nombre en minúsculas `fairshare.`; el punto violeta pertenece solo al nombre y no se repite en el ícono. El enlace se anuncia como “FairShare, ir al inicio” y el isotipo queda oculto para lectores de pantalla.
+- `public/favicon.svg` repite la misma geometría con los valores de `tokens.json` y cambia a la variante oscura según la apariencia del sistema. Si cambia el isotipo, actualizar ambos archivos.
+- No deformar, rotar ni recolorear el isotipo fuera de los tokens de marca, ni agregarle texto o efectos.
+
 ## Tema y navegación de la referencia
 
 - `useAppTheme` aplica `data-theme="dark"` desde `AppLayout` y `AuthLayout`; `index.html` establece el mismo tema para la primera pintura. La raíz incluye modales y avisos que usan portal. No cambia la apariencia del sistema operativo ni guarda preferencias del usuario.
