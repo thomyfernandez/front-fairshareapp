@@ -69,6 +69,7 @@ export default function Dashboard() {
           payerName={payer}
           payerLabel={membersReady ? payerDisplayName(payer, members) : payer}
           category={item.categoriaNombre}
+          icon={item.icono}
           paidByYou={String(item.pagadorId) === String(userId)}
           date={item.fecha}
           amount={item.monto}

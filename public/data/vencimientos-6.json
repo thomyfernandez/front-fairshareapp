@@ -1,0 +1,26 @@
+[
+  {
+    "servicioId": 802,
+    "nombreServicio": "Entradas de cine",
+    "fechaVencimiento": "2026-10-11",
+    "montoBase": 24500,
+    "montoVariable": 2000,
+    "diasVencido": 8
+  },
+  {
+    "servicioId": 805,
+    "nombreServicio": "Café y merienda",
+    "fechaVencimiento": "2026-10-14",
+    "montoBase": 18500,
+    "montoVariable": 2000,
+    "diasVencido": 5
+  },
+  {
+    "servicioId": 808,
+    "nombreServicio": "Entradas al teatro",
+    "fechaVencimiento": "2026-10-17",
+    "montoBase": 68000,
+    "montoVariable": 2000,
+    "diasVencido": 2
+  }
+]

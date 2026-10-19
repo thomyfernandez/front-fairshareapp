@@ -1,0 +1,36 @@
+{
+  "espacioId": 1,
+  "espacioNombre": "Nuestro hogar",
+  "deudas": [
+    {
+      "id": 1,
+      "deudorId": 1,
+      "deudorNombre": "Ana Ruiz",
+      "acreedorId": 5,
+      "acreedorNombre": "Martín López",
+      "monto": 974465.17,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 2,
+      "deudorId": 2,
+      "deudorNombre": "Thomas Fernandez",
+      "acreedorId": 5,
+      "acreedorNombre": "Martín López",
+      "monto": 367014.22,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 3,
+      "deudorId": 4,
+      "deudorNombre": "Lucía Pérez",
+      "acreedorId": 5,
+      "acreedorNombre": "Martín López",
+      "monto": 537535.04,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    }
+  ]
+}

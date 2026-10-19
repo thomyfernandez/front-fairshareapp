@@ -1,0 +1,46 @@
+{
+  "espacioId": 3,
+  "espacioNombre": "Oficina compartida",
+  "deudas": [
+    {
+      "id": 9,
+      "deudorId": 1,
+      "deudorNombre": "Ana Ruiz",
+      "acreedorId": 9,
+      "acreedorNombre": "Mateo Herrera",
+      "monto": 66596.33,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 10,
+      "deudorId": 4,
+      "deudorNombre": "Lucía Pérez",
+      "acreedorId": 9,
+      "acreedorNombre": "Mateo Herrera",
+      "monto": 161881.19,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 11,
+      "deudorId": 3,
+      "deudorNombre": "Sol García",
+      "acreedorId": 9,
+      "acreedorNombre": "Mateo Herrera",
+      "monto": 32729.57,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 12,
+      "deudorId": 3,
+      "deudorNombre": "Sol García",
+      "acreedorId": 10,
+      "acreedorNombre": "Julieta Castro",
+      "monto": 29453.22,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    }
+  ]
+}

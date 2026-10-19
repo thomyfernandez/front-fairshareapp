@@ -1,0 +1,26 @@
+[
+  {
+    "servicioId": 402,
+    "nombreServicio": "Combustible",
+    "fechaVencimiento": "2026-10-11",
+    "montoBase": 68000,
+    "montoVariable": 2000,
+    "diasVencido": 8
+  },
+  {
+    "servicioId": 405,
+    "nombreServicio": "Compras para el viaje",
+    "fechaVencimiento": "2026-10-14",
+    "montoBase": 56000,
+    "montoVariable": 2000,
+    "diasVencido": 5
+  },
+  {
+    "servicioId": 408,
+    "nombreServicio": "Desayuno en ruta",
+    "fechaVencimiento": "2026-10-17",
+    "montoBase": 26500,
+    "montoVariable": 2000,
+    "diasVencido": 2
+  }
+]

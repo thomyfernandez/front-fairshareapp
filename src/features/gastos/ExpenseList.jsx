@@ -14,6 +14,7 @@ import { ExpenseDetail } from './ExpenseDetail.jsx'
  */
 export function ExpenseList({
   expenses = [],
+  listId,
   members = [],
   spaceId: propSpaceId,
   loading = false,
@@ -107,13 +108,13 @@ export function ExpenseList({
 
   return (
     <div className={`space-y-3 ${className}`}>
-      <ul className="ui-expense-list expense-management-list" aria-label="Gastos del espacio">
+      <ul id={listId} className="ui-expense-list expense-management-list" aria-label="Gastos del espacio">
         {expenses.map(g => {
           const payer = effectiveMembers.find(m => Number(m.usuarioId ?? m.id) === Number(g.pagadorId))
           const payerName = g.pagadorNombre || payer?.nombreUsuario || `Usuario #${g.pagadorId}`
           const canDelete = g.estado === 'PENDIENTE' && (isAdmin || Number(g.pagadorId) === Number(currentUserId))
           return <li key={g.id} className="expense-management-list__item">
-            <ExpenseRow description={g.descripcion} category={g.categoria} date={g.fecha} amount={g.monto == null ? undefined : Number(g.monto)} payerName={payerName} paidByYou={Number(g.pagadorId) === Number(currentUserId)} onSelect={() => setSelectedGasto(g)} status={<Badge tone={g.estado === 'LIQUIDADO' ? 'success' : 'neutral'}>{g.estado === 'LIQUIDADO' ? 'Liquidado' : 'Pendiente'}</Badge>} />
+            <ExpenseRow description={g.descripcion} category={g.categoriaNombre || g.categoria} icon={g.icono} date={g.fecha} amount={g.monto == null ? undefined : Number(g.monto)} payerName={payerName} paidByYou={Number(g.pagadorId) === Number(currentUserId)} onSelect={() => setSelectedGasto(g)} status={<Badge tone={g.estado === 'LIQUIDADO' ? 'success' : 'neutral'}>{g.estado === 'LIQUIDADO' ? 'Liquidado' : 'Pendiente'}</Badge>} />
             <span className="expense-management-list__actions">{canDelete && <Button variant="ghost" size="icon" onClick={() => setGastoToDelete(g)} aria-label={`Eliminar ${g.descripcion}`} className="expense-management-list__delete"><Icon name="close" size={16} /></Button>}</span>
           </li>
         })}

@@ -1,0 +1,26 @@
+[
+  {
+    "servicioId": 602,
+    "nombreServicio": "Pelota nueva",
+    "fechaVencimiento": "2026-10-11",
+    "montoBase": 42000,
+    "montoVariable": 2000,
+    "diasVencido": 8
+  },
+  {
+    "servicioId": 605,
+    "nombreServicio": "Tercer tiempo",
+    "fechaVencimiento": "2026-10-14",
+    "montoBase": 65800,
+    "montoVariable": 2000,
+    "diasVencido": 5
+  },
+  {
+    "servicioId": 608,
+    "nombreServicio": "Botiquín",
+    "fechaVencimiento": "2026-10-17",
+    "montoBase": 15400,
+    "montoVariable": 2000,
+    "diasVencido": 2
+  }
+]

@@ -7,6 +7,7 @@ import { loginError } from './authErrors'
 import { useAuthForm } from './useAuthForm'
 import { useSession } from './useSession'
 import { validateLogin } from './validation'
+import { DEMO_ACCOUNT, MOCK_MODE } from '../../mocks/config'
 
 const notices = {
   expired: { tone: 'info', text: 'Tu sesión venció. Iniciá sesión nuevamente para continuar.' },
@@ -18,9 +19,9 @@ export default function LoginPage() {
   const location = useLocation()
   const destination = safeDestination(location.state?.from)
   const registeredEmail = location.state?.registeredEmail
-  const initialEmail = registeredEmail || location.state?.email || notice?.email || ''
+  const initialEmail = registeredEmail || location.state?.email || notice?.email || (MOCK_MODE ? DEMO_ACCOUNT.email : '')
   const form = useAuthForm({
-    initialValues: { email: initialEmail, contra: '' },
+    initialValues: { email: initialEmail, contra: MOCK_MODE && initialEmail === DEMO_ACCOUNT.email ? DEMO_ACCOUNT.contra : '' },
     validate: validateLogin,
     mapError: loginError,
     submit: async values => {
@@ -33,6 +34,7 @@ export default function LoginPage() {
   if (session) return <Navigate to={destination} replace />
   const banner = registeredEmail ? { tone: 'success', text: 'Tu cuenta está lista. Ingresá tu contraseña para continuar.' } : notices[notice?.reason]
   return <AuthLayout pageTitle="Iniciar sesión" title="Ingresá a FairShare" description="Accedé a tus espacios compartidos.">
+    {MOCK_MODE && <InlineAlert>La cuenta de ejemplo ya está completada. Iniciá sesión para explorar la demostración; también podés crear una cuenta de prueba.</InlineAlert>}
     {form.formError ? <InlineAlert tone="error">{form.formError.message}</InlineAlert> : banner && <InlineAlert tone={banner.tone}>{banner.text}</InlineAlert>}
     <form className="auth-form" noValidate onSubmit={form.handleSubmit}>
       <Field label="Email" type="email" inputMode="email" autoComplete="email" autoCapitalize="none" spellCheck={false} required maxLength={254} autoFocus={!initialEmail} {...form.field('email')} />

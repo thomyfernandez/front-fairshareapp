@@ -2,8 +2,9 @@ import { useState, useCallback, useEffect, useRef } from 'react'
 import { Button, Disclosure, Icon, InlineAlert, Modal, Submit, useUI } from '../../components/ui'
 import { cents, dateLabel, money, today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
-import { batchMemberName, batchSplitLabel, expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
+import { expenseErrorMessage, expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
 import { BatchExpenseItem } from './BatchExpenseItem'
+import { BatchExpenseBreakdown } from './BatchExpenseBreakdown'
 
 /**
  * Genera un nuevo objeto de gasto vacío con valores por defecto.
@@ -174,7 +175,7 @@ export function ExpenseBatchForm({
     if (updatedGastos.some(g => Object.keys(g.errors).length)) {
       setGastos(updatedGastos)
       setCollapsed({})
-      setServerError('Hay errores en uno o más gastos del lote. Revisá los campos resaltados.')
+      setServerError('Hay errores en uno o más gastos. Revisá los campos resaltados.')
       return
     }
     const payload = gastos.map(expensePayload)
@@ -198,7 +199,7 @@ export function ExpenseBatchForm({
 
       const response = await effectiveApi(`/api/v1/espacios/${effectiveSpaceId}/gastos/lote`, { method: 'POST', body: payload })
 
-      if (!onSuccess) notify(`Lote de ${snapshot.items.length} ${snapshot.items.length === 1 ? 'gasto' : 'gastos'} registrado con éxito.`, 'success')
+      if (!onSuccess) notify(`${snapshot.items.length} ${snapshot.items.length === 1 ? 'gasto registrado' : 'gastos registrados'} con éxito.`, 'success')
       setReview(null)
       workspace?.invalidate?.()
 
@@ -213,9 +214,7 @@ export function ExpenseBatchForm({
       }
     } catch (error) {
       // UX CRÍTICA: Conservar todos los datos del lote en caso de error
-      const errorMsg =
-        error?.message ||
-        'No se pudo registrar el lote. Revisa los datos ingresados e intenta nuevamente.'
+      const errorMsg = expenseErrorMessage(error, effectiveMembers, 'No se pudieron registrar los gastos. Revisá los datos e intentá nuevamente.')
       setReview(null)
       setServerError(errorMsg)
 
@@ -229,7 +228,7 @@ export function ExpenseBatchForm({
     <div className={`expense-batch-container expense-batch-workspace ${className}`}>
       <div className="expense-batch-context">
         {onDraftChange && <p className="expense-draft-hint">{draftLocation === 'memory' ? 'Borrador conservado durante esta sesión.' : draftLocation === 'unavailable' ? 'No pudimos conservar el borrador. Mantené esta pantalla abierta.' : 'Borrador guardado en esta pestaña.'}</p>}
-        <Disclosure title="Cómo funciona" className="expense-batch-help"><p>Los gastos se registran juntos. Si uno tiene un error, el lote completo queda sin guardar. Revisá los datos antes de confirmar.</p></Disclosure>
+        <Disclosure title="Cómo funciona" className="expense-batch-help"><p>Los gastos se registran juntos. Si uno tiene un error, ninguno se guarda. Revisá los datos antes de confirmar.</p></Disclosure>
       </div>
       {removed && <div className="expense-undo"><p role="status">Quitaste «{removed.expense.descripcion || 'Gasto sin descripción'}» del borrador.</p><Button variant="secondary" disabled={busy} onClick={() => { setGastos(previous => { const next = [...previous]; next.splice(Math.min(removed.index, next.length), 0, removed.expense); return next }); setCollapsed(previous => ({ ...previous, [removed.expense.tempId]: false })); setFocusId(removed.expense.tempId); setRemoved(null) }}>Deshacer</Button></div>}
       {serverError && <div ref={errorRef}><InlineAlert tone="error">{serverError}</InlineAlert></div>}
@@ -237,18 +236,18 @@ export function ExpenseBatchForm({
         <div className="expense-batch-items">
           {gastos.map((g, index) => <BatchExpenseItem key={g.tempId} expense={g} index={index} members={effectiveMembers} busy={busy} removable={gastos.length > 1} complete={Object.keys(validateExpense(g)).length === 0} collapsed={collapsed[g.tempId]} focus={focusId === g.tempId} onCollapse={(id, value) => setCollapsed(previous => ({ ...previous, [id]: value }))} onRemove={handleRemoveExpense} onFieldChange={handleFieldChange} onParticipantsChange={handleParticipantsChange} />)}
         </div>
-        <Button variant="secondary" onClick={handleAddExpense} disabled={busy || gastos.length + (removed ? 1 : 0) >= 100} className="expense-batch-add"><Icon name="plus" size={16} />Agregar otro gasto al lote</Button>
+        <Button variant="secondary" onClick={handleAddExpense} disabled={busy || gastos.length + (removed ? 1 : 0) >= 100} className="expense-batch-add"><Icon name="plus" size={16} />Agregar otro gasto</Button>
         <div className="expense-batch-footer">
-          <div><span>{gastos.length} {gastos.length === 1 ? 'gasto en el lote' : 'gastos en el lote'}</span><strong>{money(totalLote)}</strong></div>
-          <div className="expense-batch-footer__actions">{onCancel && <Button variant="ghost" onClick={onCancel} disabled={busy}>{onDraftChange ? 'Guardar borrador y salir' : 'Cancelar'}</Button>}<Submit busy={busy}>Revisar lote</Submit></div>
+          <div><span>{gastos.length} {gastos.length === 1 ? 'gasto para registrar' : 'gastos para registrar'}</span><strong>{money(totalLote)}</strong></div>
+          <div className="expense-batch-footer__actions">{onCancel && <Button variant="ghost" onClick={onCancel} disabled={busy}>{onDraftChange ? 'Guardar borrador y salir' : 'Cancelar'}</Button>}<Submit busy={busy}>Registrar {gastos.length} {gastos.length === 1 ? 'gasto' : 'gastos'}</Submit></div>
         </div>
       </form>
-      <Modal open={Boolean(review)} title="Revisar lote" description="Confirmá los importes y el reparto antes de registrar." dismissible={!busy} onClose={() => { if (!busy) setReview(null) }} className="expense-batch-review" footer={<><Button variant="secondary" data-autofocus disabled={busy} onClick={() => setReview(null)}>Volver a editar</Button><Button loading={busy} onClick={handleRegister}>{review?.duplicates.length ? 'Registrar de todos modos' : 'Registrar lote'}</Button></>}>
+      <Modal open={Boolean(review)} title="Confirmar registro" description={review ? `Vas a registrar ${review.items.length} ${review.items.length === 1 ? 'gasto' : 'gastos'} en ${workspace?.space?.nombre || 'este espacio'}.` : undefined} dismissible={!busy} onClose={() => { if (!busy) setReview(null) }} className="expense-batch-review" footer={<><Button variant="secondary" data-autofocus disabled={busy} onClick={() => setReview(null)}>Volver a editar</Button><Button loading={busy} onClick={handleRegister}>{review?.duplicates.length ? 'Registrar de todos modos' : 'Confirmar registro'}</Button></>}>
         {review && <>
-          {review.duplicates.length > 0 && <InlineAlert tone="warning"><strong>Posibles gastos repetidos</strong><p>Hay coincidencias en descripción, fecha e importe con otro registro o con una fila del lote: {review.duplicates.map((item, index) => <span key={index}>{index > 0 ? '; ' : ''}{item.descripcion} ({money(item.monto)}, {dateLabel(item.fecha)})</span>)}. Podés volver a editar o registrarlos de todos modos.</p></InlineAlert>}
-          <ol className="expense-batch-review__items">{review.items.map(g => <li key={g.tempId}><div><strong>{g.descripcion}</strong><strong>{money(g.monto)}</strong></div><p>{dateLabel(g.fecha)} · Pagó {batchMemberName(effectiveMembers, g.pagadorId)}</p><p>{batchSplitLabel(g.tipoReparto)}{g.tipoReparto === 'PROPORCIONAL_INGRESOS' ? ' · Se calcula al registrar' : ' · Reparto estimado'}</p><ul>{g.participantes.map(part => <li key={part.usuarioId}><span>{batchMemberName(effectiveMembers, part.usuarioId)}</span><span>{g.tipoReparto === 'PROPORCIONAL_INGRESOS' ? 'Según ingresos' : g.tipoReparto === 'PORCENTUAL' ? `${part.porcentaje}% · ${money(part.importe)}` : money(part.importe)}</span></li>)}</ul></li>)}</ol>
-          <div className="expense-batch-review__total"><span>Total · {review.items.length} {review.items.length === 1 ? 'gasto' : 'gastos'}</span><strong>{money(review.total)}</strong></div>
+          {review.duplicates.length > 0 && <InlineAlert tone="warning"><strong>Posibles gastos repetidos</strong><p>Hay coincidencias en descripción, fecha e importe con otro registro o con otro de los gastos que estás agregando: {review.duplicates.map((item, index) => <span key={index}>{index > 0 ? '; ' : ''}{item.descripcion} ({money(item.monto)}, {dateLabel(item.fecha)})</span>)}. Podés volver a editar o registrarlos de todos modos.</p></InlineAlert>}
+          <div className="expense-batch-review__total"><span>Total a registrar</span><strong>{money(review.total)}</strong></div>
           <p className="text-sm text-secondary">Se guardan todos juntos en este espacio. Este registro no confirma pagos entre personas.</p>
+          <BatchExpenseBreakdown expenses={review.items} members={effectiveMembers} />
         </>}
       </Modal>
     </div>

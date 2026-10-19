@@ -1,0 +1,56 @@
+{
+  "espacioId": 5,
+  "espacioNombre": "Proyecto final",
+  "deudas": [
+    {
+      "id": 20,
+      "deudorId": 5,
+      "deudorNombre": "Martín López",
+      "acreedorId": 1,
+      "acreedorNombre": "Ana Ruiz",
+      "monto": 15556.87,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 21,
+      "deudorId": 5,
+      "deudorNombre": "Martín López",
+      "acreedorId": 3,
+      "acreedorNombre": "Sol García",
+      "monto": 45785.81,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 22,
+      "deudorId": 7,
+      "deudorNombre": "Nicolás Romero",
+      "acreedorId": 3,
+      "acreedorNombre": "Sol García",
+      "monto": 93939.97,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 23,
+      "deudorId": 7,
+      "deudorNombre": "Nicolás Romero",
+      "acreedorId": 12,
+      "acreedorNombre": "Emilia Vega",
+      "monto": 3276.69,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 24,
+      "deudorId": 9,
+      "deudorNombre": "Mateo Herrera",
+      "acreedorId": 12,
+      "acreedorNombre": "Emilia Vega",
+      "monto": 53008.53,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    }
+  ]
+}

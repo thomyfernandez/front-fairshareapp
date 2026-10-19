@@ -5,6 +5,7 @@ import { UIProvider } from '../components/ui'
 import { ExpenseFilters } from '../features/gastos/ExpenseFilters.jsx'
 import { ExpenseDetail } from '../features/gastos/ExpenseDetail.jsx'
 import { ExpenseList } from '../features/gastos/ExpenseList.jsx'
+import { ExpenseForm } from '../features/gastos/ExpenseForm.jsx'
 import { ExpenseBatchForm } from '../features/gastos/ExpenseBatchForm.jsx'
 import { WorkspaceContext } from '../app/workspace-context'
 import { ApiError } from '../api'
@@ -144,9 +145,9 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     )
 
     expect(screen.getAllByLabelText(/^Descripción/)).toHaveLength(1)
-    await user.click(screen.getByRole('button', { name: 'Agregar otro gasto al lote' }))
+    await user.click(screen.getByRole('button', { name: 'Agregar otro gasto' }))
     await user.click(screen.getByText('Cómo funciona', { exact: true }))
-    expect(screen.getByText(/Si uno tiene un error, el lote completo queda sin guardar/)).toBeVisible()
+    expect(screen.getByText(/Si uno tiene un error, ninguno se guarda/)).toBeVisible()
 
     // Completar el primer gasto
     const descInputs = screen.getAllByLabelText(/^Descripción/)
@@ -162,10 +163,10 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     await user.selectOptions(pagadorSelects[1], '2')
 
     // Enviar lote
-    const submitBtn = screen.getByRole('button', { name: 'Revisar lote' })
+    const submitBtn = screen.getByRole('button', { name: /^Registrar \d+ gastos?$/ })
     await user.click(submitBtn)
     expect(mockApi).not.toHaveBeenCalled()
-    await user.click(screen.getByRole('button', { name: 'Registrar lote', exact: true }))
+    await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
 
     await waitFor(() => {
       expect(mockApi).toHaveBeenCalledTimes(1)
@@ -194,7 +195,7 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
       />
     )
 
-    await user.click(screen.getByRole('button', { name: 'Agregar otro gasto al lote' }))
+    await user.click(screen.getByRole('button', { name: 'Agregar otro gasto' }))
     const descInputs = screen.getAllByLabelText(/^Descripción/)
     const montoInputs = screen.getAllByLabelText(/^Monto/)
 
@@ -203,10 +204,10 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     await user.type(descInputs[1], 'Segunda compra no confirmada')
     await user.type(montoInputs[1], '200')
 
-    const submitBtn = screen.getByRole('button', { name: 'Revisar lote' })
+    const submitBtn = screen.getByRole('button', { name: /^Registrar \d+ gastos?$/ })
     await user.click(submitBtn)
     expect(mockApi).not.toHaveBeenCalled()
-    await user.click(screen.getByRole('button', { name: 'Registrar lote', exact: true }))
+    await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
 
     // Mensaje de error visible
     expect(await screen.findAllByText('Error 400: Lote rechazado por datos inconsistentes.')).not.toHaveLength(0)
@@ -219,3 +220,21 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     expect(montoInputs[1]).toHaveValue(200)
   })
 })
+
+for (const [label, Form] of [['individual', ExpenseForm], ['varios gastos', ExpenseBatchForm]]) {
+  it(`muestra el nombre en el error de ingresos del registro ${label} y conserva lo ingresado`, async () => {
+    const user = userEvent.setup()
+    const api = vi.fn().mockRejectedValue(new ApiError('El usuario con id 74 no cuenta con un sueldo registrado mayor a cero para aplicar la division proporcional', { status: 400, code: 'REGLA_INVALIDA' }))
+    renderWithUI(<Form spaceId="1" members={[mockMembers[0], { usuarioId: 74, nombreUsuario: 'Thomas Fernandez', rol: 'MIEMBRO' }]} api={api} />)
+    await user.type(screen.getByLabelText(/^Descripción/), 'Alquiler')
+    await user.type(screen.getByLabelText(/^Monto/), '21000')
+    await user.selectOptions(screen.getByLabelText(/^(Tipo de reparto|Reparto)/), 'PROPORCIONAL_INGRESOS')
+    await user.click(screen.getByRole('button', { name: Form === ExpenseForm ? 'Registrar gasto' : /^Registrar 1 gasto$/ }))
+    if (Form === ExpenseBatchForm) await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
+    expect(await screen.findByText(/Thomas Fernandez necesita registrar un ingreso mayor a cero/)).toBeVisible()
+    expect(screen.queryByText(/El usuario con id 74/)).not.toBeInTheDocument()
+    expect(screen.getByLabelText(/^Descripción/)).toHaveValue('Alquiler')
+    expect(screen.getByLabelText(/^Monto/)).toHaveValue(21000)
+    expect(api).toHaveBeenCalledTimes(1)
+  })
+}

@@ -1,0 +1,7022 @@
+[
+  {
+    "id": 40080,
+    "descripcion": "Lavado de camisetas",
+    "icono": null,
+    "monto": 12306.76,
+    "fecha": "2026-10-19",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4008001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1758.16,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4008002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 1758.1,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4008003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 1758.1,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4008004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1758.1,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4008005,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1758.1,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4008006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 1758.1,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4008007,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 1758.1,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40079,
+    "descripcion": "Entrenamiento",
+    "icono": "DEPORTES",
+    "monto": 28298.87,
+    "fecha": "2026-10-18",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3537.35,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3537.36,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 3537.36,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3537.36,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007905,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 3537.36,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 3537.36,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007907,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 3537.36,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007908,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3537.36,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40078,
+    "descripcion": "Botiquín",
+    "icono": null,
+    "monto": 15690.98,
+    "fecha": "2026-10-17",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1768.03,
+        "porcentaje": 11.27,
+        "sueldo": null
+      },
+      {
+        "id": 4007802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2651.99,
+        "porcentaje": 16.9,
+        "sueldo": null
+      },
+      {
+        "id": 4007803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 1988.99,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4007804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2283.66,
+        "porcentaje": 14.55,
+        "sueldo": null
+      },
+      {
+        "id": 4007805,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1620.66,
+        "porcentaje": 10.33,
+        "sueldo": null
+      },
+      {
+        "id": 4007806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2136.33,
+        "porcentaje": 13.62,
+        "sueldo": null
+      },
+      {
+        "id": 4007807,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 1841.66,
+        "porcentaje": 11.74,
+        "sueldo": null
+      },
+      {
+        "id": 4007808,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1399.66,
+        "porcentaje": 8.92,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40077,
+    "descripcion": "Inscripción al torneo",
+    "icono": null,
+    "monto": 80283.09,
+    "fecha": "2026-10-16",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10035.43,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10035.38,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 10035.38,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 10035.38,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007705,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 10035.38,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 10035.38,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007707,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 10035.38,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007708,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 10035.38,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40076,
+    "descripcion": "Traslado al torneo",
+    "icono": "TRANSPORTE",
+    "monto": 45275.2,
+    "fecha": "2026-10-15",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6467.92,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6467.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6467.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6467.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007605,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6467.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6467.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007607,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6467.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40075,
+    "descripcion": "Tercer tiempo",
+    "icono": null,
+    "monto": 66067.31,
+    "fecha": "2026-10-14",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 8258.44,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 8258.41,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 8258.41,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8258.41,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007505,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8258.41,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 8258.41,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007507,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 8258.41,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007508,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 8258.41,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40074,
+    "descripcion": "Bebidas del partido",
+    "icono": null,
+    "monto": 18759.42,
+    "fecha": "2026-10-13",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2113.78,
+        "porcentaje": 11.27,
+        "sueldo": null
+      },
+      {
+        "id": 4007402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3170.6,
+        "porcentaje": 16.9,
+        "sueldo": null
+      },
+      {
+        "id": 4007403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2377.95,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4007404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2730.24,
+        "porcentaje": 14.55,
+        "sueldo": null
+      },
+      {
+        "id": 4007405,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1937.59,
+        "porcentaje": 10.33,
+        "sueldo": null
+      },
+      {
+        "id": 4007406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2554.09,
+        "porcentaje": 13.62,
+        "sueldo": null
+      },
+      {
+        "id": 4007407,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2201.8,
+        "porcentaje": 11.74,
+        "sueldo": null
+      },
+      {
+        "id": 4007408,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1673.37,
+        "porcentaje": 8.92,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40073,
+    "descripcion": "Camisetas del equipo",
+    "icono": "DEPORTES",
+    "monto": 96251.53,
+    "fecha": "2026-10-12",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12031.45,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12031.44,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 12031.44,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 12031.44,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007305,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 12031.44,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12031.44,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007307,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 12031.44,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007308,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 12031.44,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40072,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42243.64,
+    "fecha": "2026-10-11",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6034.84,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6034.8,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6034.8,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6034.8,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007205,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6034.8,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6034.8,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4007207,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6034.8,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40071,
+    "descripcion": "Reserva de cancha",
+    "icono": null,
+    "monto": 52235.75,
+    "fecha": "2026-10-10",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6529.46,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6529.47,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6529.47,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6529.47,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007105,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6529.47,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6529.47,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007107,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6529.47,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4007108,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6529.47,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40070,
+    "descripcion": "Lavado de camisetas",
+    "icono": "DEPORTES",
+    "monto": 12227.86,
+    "fecha": "2026-10-09",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4007001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1377.81,
+        "porcentaje": 11.27,
+        "sueldo": null
+      },
+      {
+        "id": 4007002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2066.68,
+        "porcentaje": 16.9,
+        "sueldo": null
+      },
+      {
+        "id": 4007003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 1550.01,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4007004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1779.64,
+        "porcentaje": 14.55,
+        "sueldo": null
+      },
+      {
+        "id": 4007005,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1262.97,
+        "porcentaje": 10.33,
+        "sueldo": null
+      },
+      {
+        "id": 4007006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 1664.82,
+        "porcentaje": 13.62,
+        "sueldo": null
+      },
+      {
+        "id": 4007007,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 1435.19,
+        "porcentaje": 11.74,
+        "sueldo": null
+      },
+      {
+        "id": 4007008,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1090.74,
+        "porcentaje": 8.92,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40069,
+    "descripcion": "Entrenamiento",
+    "icono": null,
+    "monto": 28219.97,
+    "fecha": "2026-10-08",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 4006901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3527.54,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3527.49,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 3527.49,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3527.49,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006905,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 3527.49,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 3527.49,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006907,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 3527.49,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006908,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3527.49,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40068,
+    "descripcion": "Botiquín",
+    "icono": null,
+    "monto": 15612.08,
+    "fecha": "2026-10-07",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2230.34,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2230.29,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2230.29,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2230.29,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006805,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2230.29,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2230.29,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006807,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2230.29,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40067,
+    "descripcion": "Inscripción al torneo",
+    "icono": "DEPORTES",
+    "monto": 80204.19,
+    "fecha": "2026-10-06",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10025.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10025.52,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 10025.52,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 10025.52,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006705,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 10025.52,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 10025.52,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006707,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 10025.52,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006708,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 10025.52,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40066,
+    "descripcion": "Traslado al torneo",
+    "icono": null,
+    "monto": 45196.3,
+    "fecha": "2026-10-05",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5092.57,
+        "porcentaje": 11.27,
+        "sueldo": null
+      },
+      {
+        "id": 4006602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7638.81,
+        "porcentaje": 16.9,
+        "sueldo": null
+      },
+      {
+        "id": 4006603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5729.1,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4006604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6577.86,
+        "porcentaje": 14.55,
+        "sueldo": null
+      },
+      {
+        "id": 4006605,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4668.16,
+        "porcentaje": 10.33,
+        "sueldo": null
+      },
+      {
+        "id": 4006606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6153.48,
+        "porcentaje": 13.62,
+        "sueldo": null
+      },
+      {
+        "id": 4006607,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 5304.73,
+        "porcentaje": 11.74,
+        "sueldo": null
+      },
+      {
+        "id": 4006608,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4031.59,
+        "porcentaje": 8.92,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40065,
+    "descripcion": "Tercer tiempo",
+    "icono": null,
+    "monto": 65988.41,
+    "fecha": "2026-10-04",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 8248.56,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 8248.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 8248.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8248.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006505,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8248.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 8248.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006507,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 8248.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006508,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 8248.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40064,
+    "descripcion": "Bebidas del partido",
+    "icono": "COMIDAS",
+    "monto": 18680.52,
+    "fecha": "2026-10-03",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2668.68,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2668.64,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2668.64,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2668.64,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006405,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2668.64,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2668.64,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006407,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2668.64,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40063,
+    "descripcion": "Camisetas del equipo",
+    "icono": null,
+    "monto": 96172.63,
+    "fecha": "2026-10-02",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12021.57,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12021.58,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 12021.58,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 12021.58,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006305,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 12021.58,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12021.58,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006307,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 12021.58,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006308,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 12021.58,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40062,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42164.74,
+    "fecha": "2026-10-01",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4750.99,
+        "porcentaje": 11.27,
+        "sueldo": null
+      },
+      {
+        "id": 4006202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7126.43,
+        "porcentaje": 16.9,
+        "sueldo": null
+      },
+      {
+        "id": 4006203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5344.82,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4006204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6136.65,
+        "porcentaje": 14.55,
+        "sueldo": null
+      },
+      {
+        "id": 4006205,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4355.04,
+        "porcentaje": 10.33,
+        "sueldo": null
+      },
+      {
+        "id": 4006206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5740.73,
+        "porcentaje": 13.62,
+        "sueldo": null
+      },
+      {
+        "id": 4006207,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 4948.91,
+        "porcentaje": 11.74,
+        "sueldo": null
+      },
+      {
+        "id": 4006208,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3761.17,
+        "porcentaje": 8.92,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40061,
+    "descripcion": "Reserva de cancha",
+    "icono": "DEPORTES",
+    "monto": 52156.85,
+    "fecha": "2026-10-01",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6519.65,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6519.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6519.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6519.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006105,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6519.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6519.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006107,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6519.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4006108,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6519.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40060,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42212.27,
+    "fecha": "2026-09-23",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4006001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6030.35,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6030.32,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6030.32,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6030.32,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006005,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6030.32,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6030.32,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4006007,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6030.32,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40059,
+    "descripcion": "Reserva de cancha",
+    "icono": null,
+    "monto": 52204.38,
+    "fecha": "2026-09-21",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6525.53,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6525.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6525.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6525.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005905,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6525.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6525.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005907,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6525.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005908,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6525.55,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40058,
+    "descripcion": "Lavado de camisetas",
+    "icono": "DEPORTES",
+    "monto": 12196.49,
+    "fecha": "2026-09-19",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1371.99,
+        "porcentaje": 11.25,
+        "sueldo": null
+      },
+      {
+        "id": 4005802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2069.56,
+        "porcentaje": 16.97,
+        "sueldo": null
+      },
+      {
+        "id": 4005803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 1546.36,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4005804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1778.89,
+        "porcentaje": 14.59,
+        "sueldo": null
+      },
+      {
+        "id": 4005805,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1255.69,
+        "porcentaje": 10.3,
+        "sueldo": null
+      },
+      {
+        "id": 4005806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 1662.62,
+        "porcentaje": 13.63,
+        "sueldo": null
+      },
+      {
+        "id": 4005807,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 1430.09,
+        "porcentaje": 11.73,
+        "sueldo": null
+      },
+      {
+        "id": 4005808,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1081.29,
+        "porcentaje": 8.87,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40057,
+    "descripcion": "Entrenamiento",
+    "icono": null,
+    "monto": 28188.6,
+    "fecha": "2026-09-17",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3523.61,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3523.57,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 3523.57,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3523.57,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005705,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 3523.57,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 3523.57,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005707,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 3523.57,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005708,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3523.57,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40056,
+    "descripcion": "Botiquín",
+    "icono": null,
+    "monto": 15580.71,
+    "fecha": "2026-09-15",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2225.85,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2225.81,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2225.81,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2225.81,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005605,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2225.81,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2225.81,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005607,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2225.81,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40055,
+    "descripcion": "Inscripción al torneo",
+    "icono": "DEPORTES",
+    "monto": 80172.82,
+    "fecha": "2026-09-13",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10021.62,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10021.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 10021.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 10021.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005505,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 10021.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 10021.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005507,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 10021.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005508,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 10021.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40054,
+    "descripcion": "Traslado al torneo",
+    "icono": null,
+    "monto": 45164.93,
+    "fecha": "2026-09-11",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5080.56,
+        "porcentaje": 11.25,
+        "sueldo": null
+      },
+      {
+        "id": 4005402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7663.82,
+        "porcentaje": 16.97,
+        "sueldo": null
+      },
+      {
+        "id": 4005403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5726.34,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4005404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6587.44,
+        "porcentaje": 14.59,
+        "sueldo": null
+      },
+      {
+        "id": 4005405,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4649.96,
+        "porcentaje": 10.3,
+        "sueldo": null
+      },
+      {
+        "id": 4005406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6156.89,
+        "porcentaje": 13.63,
+        "sueldo": null
+      },
+      {
+        "id": 4005407,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 5295.79,
+        "porcentaje": 11.73,
+        "sueldo": null
+      },
+      {
+        "id": 4005408,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4004.13,
+        "porcentaje": 8.87,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40053,
+    "descripcion": "Tercer tiempo",
+    "icono": null,
+    "monto": 65957.04,
+    "fecha": "2026-09-09",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 8244.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 8244.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 8244.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8244.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005305,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8244.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 8244.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005307,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 8244.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005308,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 8244.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40052,
+    "descripcion": "Bebidas del partido",
+    "icono": "COMIDAS",
+    "monto": 18649.15,
+    "fecha": "2026-09-07",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2664.19,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2664.16,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2664.16,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2664.16,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005205,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2664.16,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2664.16,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4005207,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2664.16,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40051,
+    "descripcion": "Camisetas del equipo",
+    "icono": null,
+    "monto": 96141.26,
+    "fecha": "2026-09-05",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12017.64,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12017.66,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 12017.66,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 12017.66,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005105,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 12017.66,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12017.66,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005107,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 12017.66,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4005108,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 12017.66,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40050,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42133.37,
+    "fecha": "2026-09-03",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4005001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4739.54,
+        "porcentaje": 11.25,
+        "sueldo": null
+      },
+      {
+        "id": 4005002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7149.41,
+        "porcentaje": 16.97,
+        "sueldo": null
+      },
+      {
+        "id": 4005003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5341.98,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4005004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6145.28,
+        "porcentaje": 14.59,
+        "sueldo": null
+      },
+      {
+        "id": 4005005,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4337.84,
+        "porcentaje": 10.3,
+        "sueldo": null
+      },
+      {
+        "id": 4005006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5743.63,
+        "porcentaje": 13.63,
+        "sueldo": null
+      },
+      {
+        "id": 4005007,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 4940.32,
+        "porcentaje": 11.73,
+        "sueldo": null
+      },
+      {
+        "id": 4005008,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3735.37,
+        "porcentaje": 8.87,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40049,
+    "descripcion": "Reserva de cancha",
+    "icono": "DEPORTES",
+    "monto": 52125.48,
+    "fecha": "2026-09-01",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6515.72,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6515.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6515.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6515.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004905,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6515.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6515.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004907,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6515.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004908,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6515.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40048,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42180.9,
+    "fecha": "2026-08-23",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6025.86,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6025.84,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6025.84,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6025.84,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004805,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6025.84,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6025.84,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004807,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6025.84,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40047,
+    "descripcion": "Reserva de cancha",
+    "icono": null,
+    "monto": 52173.01,
+    "fecha": "2026-08-21",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6521.6,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6521.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6521.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6521.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004705,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6521.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6521.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004707,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6521.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004708,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6521.63,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40046,
+    "descripcion": "Lavado de camisetas",
+    "icono": "DEPORTES",
+    "monto": 12165.12,
+    "fecha": "2026-08-19",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1366.1,
+        "porcentaje": 11.23,
+        "sueldo": null
+      },
+      {
+        "id": 4004602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2072.66,
+        "porcentaje": 17.04,
+        "sueldo": null
+      },
+      {
+        "id": 4004603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 1542.72,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4004604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1778.25,
+        "porcentaje": 14.62,
+        "sueldo": null
+      },
+      {
+        "id": 4004605,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1248.3,
+        "porcentaje": 10.26,
+        "sueldo": null
+      },
+      {
+        "id": 4004606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 1660.48,
+        "porcentaje": 13.65,
+        "sueldo": null
+      },
+      {
+        "id": 4004607,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 1424.95,
+        "porcentaje": 11.71,
+        "sueldo": null
+      },
+      {
+        "id": 4004608,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1071.66,
+        "porcentaje": 8.81,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40045,
+    "descripcion": "Entrenamiento",
+    "icono": null,
+    "monto": 28157.23,
+    "fecha": "2026-08-17",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3519.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3519.65,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 3519.65,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3519.65,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004505,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 3519.65,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 3519.65,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004507,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 3519.65,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004508,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3519.65,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40044,
+    "descripcion": "Botiquín",
+    "icono": null,
+    "monto": 15549.34,
+    "fecha": "2026-08-15",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2221.36,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2221.33,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2221.33,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2221.33,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004405,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2221.33,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2221.33,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004407,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2221.33,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40043,
+    "descripcion": "Inscripción al torneo",
+    "icono": "DEPORTES",
+    "monto": 80141.45,
+    "fecha": "2026-08-13",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10017.69,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10017.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 10017.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 10017.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004305,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 10017.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 10017.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004307,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 10017.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004308,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 10017.68,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40042,
+    "descripcion": "Traslado al torneo",
+    "icono": null,
+    "monto": 45133.56,
+    "fecha": "2026-08-11",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5068.28,
+        "porcentaje": 11.23,
+        "sueldo": null
+      },
+      {
+        "id": 4004202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7689.74,
+        "porcentaje": 17.04,
+        "sueldo": null
+      },
+      {
+        "id": 4004203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5723.61,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4004204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6597.45,
+        "porcentaje": 14.62,
+        "sueldo": null
+      },
+      {
+        "id": 4004205,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4631.32,
+        "porcentaje": 10.26,
+        "sueldo": null
+      },
+      {
+        "id": 4004206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6160.53,
+        "porcentaje": 13.65,
+        "sueldo": null
+      },
+      {
+        "id": 4004207,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 5286.69,
+        "porcentaje": 11.71,
+        "sueldo": null
+      },
+      {
+        "id": 4004208,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3975.94,
+        "porcentaje": 8.81,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40041,
+    "descripcion": "Tercer tiempo",
+    "icono": null,
+    "monto": 65925.67,
+    "fecha": "2026-08-09",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 8240.77,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 8240.7,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 8240.7,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8240.7,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004105,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8240.7,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 8240.7,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004107,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 8240.7,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4004108,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 8240.7,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40040,
+    "descripcion": "Bebidas del partido",
+    "icono": "COMIDAS",
+    "monto": 18617.78,
+    "fecha": "2026-08-07",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4004001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2659.7,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2659.68,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2659.68,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2659.68,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004005,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2659.68,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2659.68,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4004007,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2659.68,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40039,
+    "descripcion": "Camisetas del equipo",
+    "icono": null,
+    "monto": 96109.89,
+    "fecha": "2026-08-05",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12013.71,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12013.74,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 12013.74,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 12013.74,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003905,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 12013.74,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12013.74,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003907,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 12013.74,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003908,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 12013.74,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40038,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42102,
+    "fecha": "2026-08-03",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4727.87,
+        "porcentaje": 11.23,
+        "sueldo": null
+      },
+      {
+        "id": 4003802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7173.23,
+        "porcentaje": 17.04,
+        "sueldo": null
+      },
+      {
+        "id": 4003803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5339.16,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4003804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6154.3,
+        "porcentaje": 14.62,
+        "sueldo": null
+      },
+      {
+        "id": 4003805,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4320.24,
+        "porcentaje": 10.26,
+        "sueldo": null
+      },
+      {
+        "id": 4003806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5746.73,
+        "porcentaje": 13.65,
+        "sueldo": null
+      },
+      {
+        "id": 4003807,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 4931.59,
+        "porcentaje": 11.71,
+        "sueldo": null
+      },
+      {
+        "id": 4003808,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3708.88,
+        "porcentaje": 8.81,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40037,
+    "descripcion": "Reserva de cancha",
+    "icono": "DEPORTES",
+    "monto": 52094.11,
+    "fecha": "2026-08-01",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6511.79,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6511.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6511.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6511.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003705,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6511.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6511.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003707,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6511.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003708,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6511.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40036,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42149.53,
+    "fecha": "2026-07-23",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6021.37,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6021.36,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6021.36,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6021.36,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003605,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6021.36,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6021.36,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003607,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6021.36,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40035,
+    "descripcion": "Reserva de cancha",
+    "icono": null,
+    "monto": 52141.64,
+    "fecha": "2026-07-21",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6517.67,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6517.71,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6517.71,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6517.71,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003505,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6517.71,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6517.71,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003507,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6517.71,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003508,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6517.71,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40034,
+    "descripcion": "Lavado de camisetas",
+    "icono": "DEPORTES",
+    "monto": 12133.75,
+    "fecha": "2026-07-19",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1360.17,
+        "porcentaje": 11.21,
+        "sueldo": null
+      },
+      {
+        "id": 4003402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2075.98,
+        "porcentaje": 17.11,
+        "sueldo": null
+      },
+      {
+        "id": 4003403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 1539.08,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4003404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1777.7,
+        "porcentaje": 14.65,
+        "sueldo": null
+      },
+      {
+        "id": 4003405,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1240.81,
+        "porcentaje": 10.23,
+        "sueldo": null
+      },
+      {
+        "id": 4003406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 1658.39,
+        "porcentaje": 13.67,
+        "sueldo": null
+      },
+      {
+        "id": 4003407,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 1419.77,
+        "porcentaje": 11.7,
+        "sueldo": null
+      },
+      {
+        "id": 4003408,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1061.85,
+        "porcentaje": 8.75,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40033,
+    "descripcion": "Entrenamiento",
+    "icono": null,
+    "monto": 28125.86,
+    "fecha": "2026-07-17",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3515.75,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3515.73,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 3515.73,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3515.73,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003305,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 3515.73,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 3515.73,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003307,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 3515.73,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003308,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3515.73,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40032,
+    "descripcion": "Botiquín",
+    "icono": null,
+    "monto": 15517.97,
+    "fecha": "2026-07-15",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2216.87,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2216.85,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2216.85,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2216.85,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003205,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2216.85,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2216.85,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4003207,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2216.85,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40031,
+    "descripcion": "Inscripción al torneo",
+    "icono": "DEPORTES",
+    "monto": 80110.08,
+    "fecha": "2026-07-13",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10013.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10013.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 10013.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 10013.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003105,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 10013.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 10013.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003107,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 10013.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4003108,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 10013.76,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40030,
+    "descripcion": "Traslado al torneo",
+    "icono": null,
+    "monto": 45102.19,
+    "fecha": "2026-07-11",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4003001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5055.74,
+        "porcentaje": 11.21,
+        "sueldo": null
+      },
+      {
+        "id": 4003002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7716.59,
+        "porcentaje": 17.11,
+        "sueldo": null
+      },
+      {
+        "id": 4003003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5720.92,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4003004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6607.89,
+        "porcentaje": 14.65,
+        "sueldo": null
+      },
+      {
+        "id": 4003005,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4612.22,
+        "porcentaje": 10.23,
+        "sueldo": null
+      },
+      {
+        "id": 4003006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6164.4,
+        "porcentaje": 13.67,
+        "sueldo": null
+      },
+      {
+        "id": 4003007,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 5277.44,
+        "porcentaje": 11.7,
+        "sueldo": null
+      },
+      {
+        "id": 4003008,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3946.99,
+        "porcentaje": 8.75,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40029,
+    "descripcion": "Tercer tiempo",
+    "icono": null,
+    "monto": 65894.3,
+    "fecha": "2026-07-09",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 8236.84,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 8236.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 8236.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8236.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002905,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8236.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 8236.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002907,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 8236.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002908,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 8236.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40028,
+    "descripcion": "Bebidas del partido",
+    "icono": "COMIDAS",
+    "monto": 18586.41,
+    "fecha": "2026-07-07",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2655.21,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2655.2,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2655.2,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2655.2,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002805,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2655.2,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2655.2,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002807,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2655.2,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40027,
+    "descripcion": "Camisetas del equipo",
+    "icono": null,
+    "monto": 96078.52,
+    "fecha": "2026-07-05",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12009.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12009.82,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 12009.82,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 12009.82,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002705,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 12009.82,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12009.82,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002707,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 12009.82,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002708,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 12009.82,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40026,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42070.63,
+    "fecha": "2026-07-03",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4715.92,
+        "porcentaje": 11.21,
+        "sueldo": null
+      },
+      {
+        "id": 4002602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7197.92,
+        "porcentaje": 17.11,
+        "sueldo": null
+      },
+      {
+        "id": 4002603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5336.39,
+        "porcentaje": 12.68,
+        "sueldo": null
+      },
+      {
+        "id": 4002604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6163.74,
+        "porcentaje": 14.65,
+        "sueldo": null
+      },
+      {
+        "id": 4002605,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4302.2,
+        "porcentaje": 10.23,
+        "sueldo": null
+      },
+      {
+        "id": 4002606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5750.06,
+        "porcentaje": 13.67,
+        "sueldo": null
+      },
+      {
+        "id": 4002607,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 4922.71,
+        "porcentaje": 11.7,
+        "sueldo": null
+      },
+      {
+        "id": 4002608,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3681.69,
+        "porcentaje": 8.75,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40025,
+    "descripcion": "Reserva de cancha",
+    "icono": "DEPORTES",
+    "monto": 52062.74,
+    "fecha": "2026-07-01",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6507.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6507.84,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6507.84,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6507.84,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002505,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6507.84,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6507.84,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002507,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6507.84,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002508,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6507.84,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40024,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42118.16,
+    "fecha": "2026-06-23",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6016.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6016.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6016.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6016.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002405,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6016.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6016.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002407,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6016.88,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40023,
+    "descripcion": "Reserva de cancha",
+    "icono": null,
+    "monto": 52110.27,
+    "fecha": "2026-06-21",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6513.81,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6513.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6513.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6513.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002305,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6513.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6513.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002307,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6513.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002308,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6513.78,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40022,
+    "descripcion": "Lavado de camisetas",
+    "icono": "DEPORTES",
+    "monto": 12102.38,
+    "fecha": "2026-06-19",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1354.16,
+        "porcentaje": 11.19,
+        "sueldo": null
+      },
+      {
+        "id": 4002202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2079.52,
+        "porcentaje": 17.18,
+        "sueldo": null
+      },
+      {
+        "id": 4002203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 1535.46,
+        "porcentaje": 12.69,
+        "sueldo": null
+      },
+      {
+        "id": 4002204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1777.27,
+        "porcentaje": 14.69,
+        "sueldo": null
+      },
+      {
+        "id": 4002205,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1233.2,
+        "porcentaje": 10.19,
+        "sueldo": null
+      },
+      {
+        "id": 4002206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 1656.36,
+        "porcentaje": 13.69,
+        "sueldo": null
+      },
+      {
+        "id": 4002207,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 1414.56,
+        "porcentaje": 11.69,
+        "sueldo": null
+      },
+      {
+        "id": 4002208,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1051.85,
+        "porcentaje": 8.69,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40021,
+    "descripcion": "Entrenamiento",
+    "icono": null,
+    "monto": 28094.49,
+    "fecha": "2026-06-17",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3511.82,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3511.81,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 3511.81,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3511.81,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002105,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 3511.81,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 3511.81,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002107,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 3511.81,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4002108,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3511.81,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40020,
+    "descripcion": "Botiquín",
+    "icono": null,
+    "monto": 15486.6,
+    "fecha": "2026-06-15",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4002001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2212.38,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2212.37,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2212.37,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2212.37,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002005,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2212.37,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2212.37,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4002007,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2212.37,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40019,
+    "descripcion": "Inscripción al torneo",
+    "icono": "DEPORTES",
+    "monto": 80078.71,
+    "fecha": "2026-06-13",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10009.9,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10009.83,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 10009.83,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 10009.83,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001905,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 10009.83,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 10009.83,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001907,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 10009.83,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001908,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 10009.83,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40018,
+    "descripcion": "Traslado al torneo",
+    "icono": null,
+    "monto": 45070.82,
+    "fecha": "2026-06-11",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5042.92,
+        "porcentaje": 11.19,
+        "sueldo": null
+      },
+      {
+        "id": 4001802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7744.43,
+        "porcentaje": 17.18,
+        "sueldo": null
+      },
+      {
+        "id": 4001803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5718.27,
+        "porcentaje": 12.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6618.79,
+        "porcentaje": 14.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001805,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4592.63,
+        "porcentaje": 10.19,
+        "sueldo": null
+      },
+      {
+        "id": 4001806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6168.53,
+        "porcentaje": 13.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001807,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 5268.01,
+        "porcentaje": 11.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001808,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3917.24,
+        "porcentaje": 8.69,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40017,
+    "descripcion": "Tercer tiempo",
+    "icono": null,
+    "monto": 65862.93,
+    "fecha": "2026-06-09",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 8232.91,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 8232.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 8232.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8232.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001705,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8232.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 8232.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001707,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 8232.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001708,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 8232.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40016,
+    "descripcion": "Bebidas del partido",
+    "icono": "COMIDAS",
+    "monto": 18555.04,
+    "fecha": "2026-06-07",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2650.72,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2650.72,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2650.72,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2650.72,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001605,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2650.72,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2650.72,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001607,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2650.72,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40015,
+    "descripcion": "Camisetas del equipo",
+    "icono": null,
+    "monto": 96047.15,
+    "fecha": "2026-06-05",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12005.92,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12005.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 12005.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 12005.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001505,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 12005.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12005.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001507,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 12005.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001508,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 12005.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40014,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42039.26,
+    "fecha": "2026-06-03",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4703.73,
+        "porcentaje": 11.19,
+        "sueldo": null
+      },
+      {
+        "id": 4001402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7223.52,
+        "porcentaje": 17.18,
+        "sueldo": null
+      },
+      {
+        "id": 4001403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5333.65,
+        "porcentaje": 12.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6173.59,
+        "porcentaje": 14.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001405,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4283.72,
+        "porcentaje": 10.19,
+        "sueldo": null
+      },
+      {
+        "id": 4001406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5753.62,
+        "porcentaje": 13.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001407,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 4913.67,
+        "porcentaje": 11.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001408,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3653.76,
+        "porcentaje": 8.69,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40013,
+    "descripcion": "Reserva de cancha",
+    "icono": "DEPORTES",
+    "monto": 52031.37,
+    "fecha": "2026-06-01",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6503.93,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6503.92,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6503.92,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6503.92,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001305,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6503.92,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6503.92,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001307,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6503.92,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001308,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6503.92,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40012,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42086.79,
+    "fecha": "2026-05-23",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6012.45,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6012.39,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6012.39,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6012.39,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001205,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6012.39,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6012.39,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4001207,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6012.39,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40011,
+    "descripcion": "Reserva de cancha",
+    "icono": null,
+    "monto": 52078.9,
+    "fecha": "2026-05-21",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6509.88,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6509.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6509.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6509.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001105,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6509.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6509.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001107,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6509.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4001108,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6509.86,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40010,
+    "descripcion": "Lavado de camisetas",
+    "icono": "DEPORTES",
+    "monto": 12071.01,
+    "fecha": "2026-05-19",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4001001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1348.05,
+        "porcentaje": 11.17,
+        "sueldo": null
+      },
+      {
+        "id": 4001002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2083.32,
+        "porcentaje": 17.26,
+        "sueldo": null
+      },
+      {
+        "id": 4001003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 1531.85,
+        "porcentaje": 12.69,
+        "sueldo": null
+      },
+      {
+        "id": 4001004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1776.95,
+        "porcentaje": 14.72,
+        "sueldo": null
+      },
+      {
+        "id": 4001005,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1225.48,
+        "porcentaje": 10.15,
+        "sueldo": null
+      },
+      {
+        "id": 4001006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 1654.4,
+        "porcentaje": 13.71,
+        "sueldo": null
+      },
+      {
+        "id": 4001007,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 1409.3,
+        "porcentaje": 11.68,
+        "sueldo": null
+      },
+      {
+        "id": 4001008,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1041.66,
+        "porcentaje": 8.63,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40009,
+    "descripcion": "Entrenamiento",
+    "icono": null,
+    "monto": 28063.12,
+    "fecha": "2026-05-17",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3507.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3507.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 3507.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3507.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000905,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 3507.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 3507.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000907,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 3507.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000908,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3507.89,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40008,
+    "descripcion": "Botiquín",
+    "icono": null,
+    "monto": 15455.23,
+    "fecha": "2026-05-15",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2207.89,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2207.89,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2207.89,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2207.89,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000805,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2207.89,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2207.89,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000807,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2207.89,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40007,
+    "descripcion": "Inscripción al torneo",
+    "icono": "DEPORTES",
+    "monto": 80047.34,
+    "fecha": "2026-05-13",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10005.97,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10005.91,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 10005.91,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 10005.91,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000705,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 10005.91,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 10005.91,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000707,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 10005.91,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000708,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 10005.91,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40006,
+    "descripcion": "Traslado al torneo",
+    "icono": null,
+    "monto": 45039.45,
+    "fecha": "2026-05-11",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5029.82,
+        "porcentaje": 11.17,
+        "sueldo": null
+      },
+      {
+        "id": 4000602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7773.3,
+        "porcentaje": 17.26,
+        "sueldo": null
+      },
+      {
+        "id": 4000603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5715.66,
+        "porcentaje": 12.69,
+        "sueldo": null
+      },
+      {
+        "id": 4000604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6630.17,
+        "porcentaje": 14.72,
+        "sueldo": null
+      },
+      {
+        "id": 4000605,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4572.53,
+        "porcentaje": 10.15,
+        "sueldo": null
+      },
+      {
+        "id": 4000606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6172.91,
+        "porcentaje": 13.71,
+        "sueldo": null
+      },
+      {
+        "id": 4000607,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 5258.41,
+        "porcentaje": 11.68,
+        "sueldo": null
+      },
+      {
+        "id": 4000608,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3886.65,
+        "porcentaje": 8.63,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40005,
+    "descripcion": "Tercer tiempo",
+    "icono": null,
+    "monto": 65831.56,
+    "fecha": "2026-05-09",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 8228.98,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 8228.94,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 8228.94,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8228.94,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000505,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8228.94,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 8228.94,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000507,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 8228.94,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000508,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 8228.94,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40004,
+    "descripcion": "Bebidas del partido",
+    "icono": "COMIDAS",
+    "monto": 18523.67,
+    "fecha": "2026-05-07",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2646.29,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2646.23,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2646.23,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2646.23,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000405,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2646.23,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2646.23,
+        "porcentaje": 14.29,
+        "sueldo": null
+      },
+      {
+        "id": 4000407,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 2646.23,
+        "porcentaje": 14.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40003,
+    "descripcion": "Camisetas del equipo",
+    "icono": null,
+    "monto": 96015.78,
+    "fecha": "2026-05-05",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 11,
+    "pagadorNombre": "Santiago Acosta",
+    "pagadorEmail": "santiago@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12001.99,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12001.97,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 12001.97,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 12001.97,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000305,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 12001.97,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12001.97,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000307,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 12001.97,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000308,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 12001.97,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40002,
+    "descripcion": "Pelota nueva",
+    "icono": null,
+    "monto": 42007.89,
+    "fecha": "2026-05-03",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4691.26,
+        "porcentaje": 11.17,
+        "sueldo": null
+      },
+      {
+        "id": 4000202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7250.09,
+        "porcentaje": 17.26,
+        "sueldo": null
+      },
+      {
+        "id": 4000203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5330.95,
+        "porcentaje": 12.69,
+        "sueldo": null
+      },
+      {
+        "id": 4000204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6183.9,
+        "porcentaje": 14.72,
+        "sueldo": null
+      },
+      {
+        "id": 4000205,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 4264.76,
+        "porcentaje": 10.15,
+        "sueldo": null
+      },
+      {
+        "id": 4000206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5757.42,
+        "porcentaje": 13.71,
+        "sueldo": null
+      },
+      {
+        "id": 4000207,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 4904.47,
+        "porcentaje": 11.68,
+        "sueldo": null
+      },
+      {
+        "id": 4000208,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3625.04,
+        "porcentaje": 8.63,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 40001,
+    "descripcion": "Reserva de cancha",
+    "icono": "DEPORTES",
+    "monto": 52000,
+    "fecha": "2026-05-01",
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 10,
+    "categoriaNombre": "Deportes",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 4000101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6500,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 6500,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 6500,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6500,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000105,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 6500,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 6500,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000107,
+        "usuarioId": 11,
+        "usuarioNombre": "Santiago Acosta",
+        "usuarioEmail": "santiago@example.test",
+        "importe": 6500,
+        "porcentaje": 12.5,
+        "sueldo": null
+      },
+      {
+        "id": 4000108,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 6500,
+        "porcentaje": 12.5,
+        "sueldo": null
+      }
+    ]
+  }
+]

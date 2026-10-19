@@ -2,7 +2,9 @@ import { useState, useCallback, useEffect, useRef } from 'react'
 import { Button, Card, Field, InlineAlert, Submit, useUI } from '../../components/ui'
 import { money, today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
-import { expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
+import { expenseErrorMessage, expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
+import { ExpenseIconPicker } from './ExpenseIconPicker'
+import { isExpenseIcon } from '../../components/ui/expense-icons'
 import { ParticipantsSelector } from './ParticipantsSelector.jsx'
 
 /**
@@ -51,6 +53,9 @@ export function ExpenseForm({
 
   // Estados controlados para preservar los datos ante cualquier fallo
   const [touched, setTouched] = useState(Boolean(initialValues.touched))
+  const [icono, setIcono] = useState(isExpenseIcon(initialValues.icono) ? initialValues.icono : null)
+  const [categoriaId] = useState(initialValues.categoriaId)
+  const [categoriaNombre] = useState(initialValues.categoriaNombre)
   const [descripcion, setDescripcion] = useState(initialValues.descripcion || '')
   const [monto, setMonto] = useState(initialValues.monto !== undefined ? String(initialValues.monto) : '')
   const [fecha, setFecha] = useState(initialValues.fecha || today())
@@ -91,8 +96,8 @@ export function ExpenseForm({
   }, [])
 
   useEffect(() => {
-    onDraftChange?.({ descripcion, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched })
-  }, [descripcion, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched, onDraftChange])
+    onDraftChange?.({ descripcion, icono, categoriaId, categoriaNombre, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched })
+  }, [descripcion, icono, categoriaId, categoriaNombre, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched, onDraftChange])
 
   // Validación y envío del formulario
   const handleSubmit = async (event) => {
@@ -150,7 +155,7 @@ export function ExpenseForm({
     setBusy(true)
 
     // Construcción del contrato JSON estricto
-    const payload = expensePayload({ descripcion: trimmedDescripcion, monto, fecha, pagadorId, tipoReparto, participantes })
+    const payload = expensePayload({ descripcion: trimmedDescripcion, icono, categoriaId, monto, fecha, pagadorId, tipoReparto, participantes })
     submitting.current = true
 
     try {
@@ -179,6 +184,7 @@ export function ExpenseForm({
       } else {
         // En caso de formulario persistente sin navegación/cierre, limpiar valores solo en éxito
         setDescripcion('')
+        setIcono(null)
         setMonto('')
         setFecha(today())
       }
@@ -186,7 +192,7 @@ export function ExpenseForm({
       // UX CRÍTICA:
       // Si la petición falla (ej. error 400 del servidor), el formulario
       // CONSERVA TODOS LOS DATOS ingresados para que el usuario pueda corregirlos.
-      const errorMsg = error?.message || 'No pudimos registrar el gasto. Revisá los datos ingresados.'
+      const errorMsg = expenseErrorMessage(error, effectiveMembers, 'No pudimos registrar el gasto. Revisá los datos ingresados.')
       setServerError(errorMsg)
 
       // Si el servidor devolvió errores por campo (ej. ApiError.fieldErrors)
@@ -212,7 +218,9 @@ export function ExpenseForm({
         )}
 
         {onDraftChange && <p className="expense-draft-hint">{draftLocation === 'memory' ? 'El borrador se conserva mientras mantengas esta sesión abierta.' : draftLocation === 'unavailable' ? 'No pudimos conservar un borrador. Mantené esta pantalla abierta.' : 'El borrador se guarda en esta pestaña. Podés salir y retomarlo después.'}</p>}
-        {/* Fila 1: Descripción */}
+        {/* Fila 1: Ícono y descripción */}
+        <div className="expense-description">
+        <ExpenseIconPicker value={icono} onChange={value => { setIcono(value); setTouched(true) }} description={descripcion} category={categoriaNombre} disabled={busy} />
         <Field
           label="Descripción del gasto"
           name="descripcion"
@@ -227,6 +235,8 @@ export function ExpenseForm({
           required
           disabled={busy}
         />
+
+        </div>
 
         {/* Fila 2: Monto y Fecha */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

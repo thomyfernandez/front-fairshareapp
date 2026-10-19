@@ -9,7 +9,9 @@ export class ApiError extends Error {
   }
 }
 
-export function createApi({ baseUrl = '', token = '', onUnauthorized = () => {}, fetcher = globalThis.fetch } = {}) {
+const fetchMock = (...args) => import('./mocks/mock-fetch').then(module => module.mockFetch(...args))
+
+export function createApi({ baseUrl = '', token = '', onUnauthorized = () => {}, fetcher = import.meta.env.MODE === 'mock' ? fetchMock : globalThis.fetch } = {}) {
   return async function api(path, { method = 'GET', body, signal } = {}) {
     const headers = { Accept: 'application/json' }
     if (token) headers.Authorization = `Bearer ${token}`

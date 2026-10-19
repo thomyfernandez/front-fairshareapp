@@ -1,18 +1,24 @@
+import { useRef } from 'react'
 import { Badge, Button, Card, EmptyState, Field, Icon, Money, PageHeader, PanelDisclosure, ResourceState, Submit } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
 import { dateLabel, nextMonth, formData } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
 import { useSearchParams } from 'react-router'
 import { RecurringAmountFields } from './RecurringAmountFields'
+import { RecurringBatchTray } from './RecurringBatchTray'
+import { useRecurringBatch } from './useRecurringBatch'
+import { templateUnavailable } from './recurring-batch'
 
 export default function RecurringPage() {
+  const pageRef = useRef(null)
   const { spaceId } = useWorkspace()
   const [query] = useSearchParams()
   const spacePath = `/api/v1/espacios/${spaceId}`
   const { resource, membersState, members, session, busy, mutate, confirm } = useFeature(`${spacePath}/favoritos`)
+  const batch = useRecurringBatch({ userId: session?.usuario?.id, spaceId, members })
   const templates = resource.data
-  return <div className="legacy-feature feature-page recurring-page">
-    <PageHeader title="Gastos recurrentes" description="Los gastos que vuelven, sin empezar de cero." />
+  return <div ref={pageRef} className="legacy-feature feature-page recurring-page">
+    <PageHeader title="Gastos recurrentes" description="Elegí tus plantillas y revisá los gastos antes de registrarlos." />
     <ResourceState resource={resource}><ResourceState resource={membersState}>
       <PanelDisclosure title="Crear plantilla" icon="plus" className="recurring-create">
         <form aria-label="Crear plantilla recurrente" className="grid-form recurring-template-form" onSubmit={event => {
@@ -31,16 +37,17 @@ export default function RecurringPage() {
         </form>
       </PanelDisclosure>
       <div className="recurring-list">
-        {templates.map(p => <Card as="article" key={p.id} className="recurring-item">
+        {templates.map(p => <Card as="article" key={p.id} className={`recurring-item${batch.selected(p.id) ? ' recurring-item--selected' : ''}`}>
           <div className="recurring-item__header">
             <span className="ui-item-icon"><Icon name="repeat" /></span>
-            <div className="recurring-item__name"><h2>{p.nombre}</h2><p>Revisión: {dateLabel(p.fechaProximaRevision)}</p>{p.vencido && <Badge tone="warning">Necesita revisión</Badge>}</div>
+            <div className="recurring-item__name"><h2>{p.nombre}</h2><p>Revisión: {dateLabel(p.fechaProximaRevision)}</p>{p.vencido && <Badge tone="warning">Necesita revisión</Badge>}{batch.selected(p.id) && <Badge tone="brand">Agregado</Badge>}</div>
             <strong className="recurring-item__amount"><Money value={Number(p.montoBase) + Number(p.montoVariable)} hideZeroDecimals /></strong>
           </div>
           <div className="feature-actions">
-            <Button variant="secondary" disabled={busy || p.vencido} onClick={() => mutate(`/api/v1/favoritos/${p.id}/ejecutar`, 'POST', undefined, 'Gasto generado.')}>Generar gasto</Button>
+            <Button variant="secondary" disabled={busy || (!batch.selected(p.id) && Boolean(templateUnavailable(p, members)))} aria-label={`${batch.selected(p.id) ? 'Quitar' : 'Agregar'} ${p.nombre} ${batch.selected(p.id) ? 'de la selección' : 'para registrar'}`} onClick={() => batch.selected(p.id) ? batch.removeTemplate(p.id) : batch.add(p)}><Icon name={batch.selected(p.id) ? 'close' : 'plus'} size={16} />{batch.selected(p.id) ? 'Quitar' : 'Agregar para registrar'}</Button>
             <Button variant="ghost" disabled={busy} onClick={async () => { if (await confirm('¿Eliminar esta plantilla?')) mutate(`/api/v1/favoritos/${p.id}`, 'DELETE', undefined, 'Plantilla eliminada.') }}>Eliminar</Button>
           </div>
+          {!batch.selected(p.id) && templateUnavailable(p, members) && <p className="recurring-item__hint">{templateUnavailable(p, members)}</p>}
           <PanelDisclosure title="Actualizar monto y revisión" icon="settings" open={String(p.id) === query.get('revisar') || undefined}>
             <form aria-label={`Actualizar plantilla ${p.nombre}`} className="grid-form recurring-template-form" onSubmit={event => {
               event.preventDefault()
@@ -58,5 +65,6 @@ export default function RecurringPage() {
       </div>
       {!templates.length && <EmptyState icon="repeat" title="No hay plantillas todavía" description="Creá una para los servicios, suscripciones o gastos que se repiten." />}
     </ResourceState></ResourceState>
+    <RecurringBatchTray batch={batch} members={members} onEmptyClose={() => requestAnimationFrame(() => pageRef.current?.querySelector('[data-page-heading]')?.focus())} />
   </div>
 }

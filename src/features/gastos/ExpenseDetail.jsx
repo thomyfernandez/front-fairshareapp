@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Badge, Button, Icon, LoadingState, Modal } from '../../components/ui'
 import { dateLabel, money } from '../../lib/format'
+import { expenseIcon } from '../../components/ui/expense-icons'
 import { useWorkspace } from '../../app/useWorkspace'
 
 /**
@@ -243,7 +244,7 @@ export function ExpenseDetail({
     <Modal
       open={open}
       onClose={onClose}
-      title={gasto?.descripcion || 'Detalle del gasto'}
+      title={<span className="expense-detail-title"><Icon name={expenseIcon(gasto?.categoriaNombre, gasto?.descripcion, gasto?.icono)} size={24} />{gasto?.descripcion || 'Detalle del gasto'}</span>}
       description="Desglose del pago y distribución entre miembros."
       footer={
         <>{onRepeat && <Button disabled={loading || Boolean(error) || !gasto} onClick={() => onRepeat(gasto)}><Icon name="repeat" size={16} />Repetir gasto</Button>}<Button variant="secondary" onClick={onClose}>

@@ -127,6 +127,32 @@
   .recurring-item__name .ui-badge { margin-top: var(--spacing-2); }
   .recurring-item__amount { max-width: 100%; font-size: var(--text-lg); overflow-wrap: anywhere; }
   .recurring-item .ui-panel-disclosure { background: var(--color-workspace); }
+  .recurring-item--selected { border-color: var(--color-brand-primary); }
+  .recurring-page :is(button, summary, input, select) { scroll-margin-block-end: 12rem; }
+  .recurring-item__hint { margin: 0; color: var(--color-text-secondary); font-size: var(--text-sm); }
+  .recurring-tray { position: sticky; bottom: var(--spacing-3); z-index: 2; display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-3) var(--spacing-5); margin-top: var(--spacing-6); padding: var(--spacing-4); background: var(--color-canvas); border: 1px solid var(--color-brand-primary); border-radius: var(--radius-xl); box-shadow: var(--shadow-panel); }
+  .recurring-tray__info { display: flex; align-items: center; gap: var(--spacing-3); flex: 1 1 7rem; min-width: 0; }
+  .recurring-tray__info > svg { color: var(--color-brand-primary); flex-shrink: 0; }
+  .recurring-tray__info > div, .recurring-tray__total { display: grid; gap: var(--spacing-1); }
+  .recurring-tray__info strong { font-size: var(--text-sm); }
+  .recurring-tray__info span, .recurring-tray__total > span { color: var(--color-text-secondary); font-size: var(--text-xs); }
+  .recurring-tray__total { max-width: 100%; }
+  .recurring-tray__total > strong { font-size: var(--text-md); overflow-wrap: anywhere; }
+  .recurring-tray__actions { display: flex; flex-wrap: wrap; gap: var(--spacing-2); width: 100%; }
+  .recurring-tray__actions > .ui-button { flex: 1; }
+  .recurring-tray-list { display: grid; gap: var(--spacing-4); list-style: none; margin: 0; padding: 0; }
+  .recurring-tray-list > li { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-2) var(--spacing-3); padding-bottom: var(--spacing-4); border-bottom: 1px solid var(--color-border-subtle); }
+  .recurring-tray-list > li > div { flex: 1 1 12rem; min-width: 0; overflow-wrap: anywhere; }
+  .recurring-tray-list p, .recurring-tray-note { font-size: var(--text-sm); color: var(--color-text-secondary); margin: var(--spacing-1) 0 0; }
+  .recurring-tray-list > li > strong { max-width: 100%; overflow-wrap: anywhere; }
+  .recurring-tray-dialog-total { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--spacing-3); margin-top: var(--spacing-5); }
+  .recurring-tray-note { margin-top: var(--spacing-4); }
+  .recurring-tray-dialog-total strong { overflow-wrap: anywhere; max-width: 100%; }
+  @media (min-width: 48rem) {
+    .recurring-tray__actions { width: auto; }
+    .recurring-tray__actions > .ui-button { flex: none; }
+  }
+  @media (max-height: 35rem) { .recurring-tray { position: static; } }
   .income-page .ui-panel-disclosure { margin: var(--spacing-4) 0; }
   .legacy-feature .income-item, .legacy-feature .settlement-history__item { flex-wrap: wrap; border-bottom: 0; gap: var(--spacing-4); }
   .income-item > div:first-of-type, .settlement-history__item > div { flex: 1 1 12rem; min-width: 0; overflow-wrap: anywhere; }

@@ -1,0 +1,210 @@
+[
+  {
+    "id": 16,
+    "espacioId": 3,
+    "espacioNombre": "Oficina compartida",
+    "montoTotal": 904120.74,
+    "fechaLiquidacion": "2026-05-28",
+    "mes": 5,
+    "anio": 2026,
+    "descripcion": "Cierre de oficina compartida",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      30001,
+      30002,
+      30003,
+      30004,
+      30005,
+      30006,
+      30007,
+      30008,
+      30009,
+      30010,
+      30011,
+      30012
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 904120.74,
+      "presupuestoAnterior": 5113843.82,
+      "presupuestoRestante": 4209723.08,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-05-28"
+    }
+  },
+  {
+    "id": 17,
+    "espacioId": 3,
+    "espacioNombre": "Oficina compartida",
+    "montoTotal": 904497.18,
+    "fechaLiquidacion": "2026-06-28",
+    "mes": 6,
+    "anio": 2026,
+    "descripcion": "Cierre de oficina compartida",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      30013,
+      30014,
+      30015,
+      30016,
+      30017,
+      30018,
+      30019,
+      30020,
+      30021,
+      30022,
+      30023,
+      30024
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 904497.18,
+      "presupuestoAnterior": 4209723.08,
+      "presupuestoRestante": 3305225.9,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-06-28"
+    }
+  },
+  {
+    "id": 18,
+    "espacioId": 3,
+    "espacioNombre": "Oficina compartida",
+    "montoTotal": 904873.62,
+    "fechaLiquidacion": "2026-07-28",
+    "mes": 7,
+    "anio": 2026,
+    "descripcion": "Cierre de oficina compartida",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      30025,
+      30026,
+      30027,
+      30028,
+      30029,
+      30030,
+      30031,
+      30032,
+      30033,
+      30034,
+      30035,
+      30036
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 904873.62,
+      "presupuestoAnterior": 3305225.9,
+      "presupuestoRestante": 2400352.28,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-07-28"
+    }
+  },
+  {
+    "id": 19,
+    "espacioId": 3,
+    "espacioNombre": "Oficina compartida",
+    "montoTotal": 905250.06,
+    "fechaLiquidacion": "2026-08-28",
+    "mes": 8,
+    "anio": 2026,
+    "descripcion": "Cierre de oficina compartida",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      30037,
+      30038,
+      30039,
+      30040,
+      30041,
+      30042,
+      30043,
+      30044,
+      30045,
+      30046,
+      30047,
+      30048
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 905250.06,
+      "presupuestoAnterior": 2400352.28,
+      "presupuestoRestante": 1495102.22,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-08-28"
+    }
+  },
+  {
+    "id": 20,
+    "espacioId": 3,
+    "espacioNombre": "Oficina compartida",
+    "montoTotal": 905626.5,
+    "fechaLiquidacion": "2026-09-28",
+    "mes": 9,
+    "anio": 2026,
+    "descripcion": "Cierre de oficina compartida",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      30049,
+      30050,
+      30051,
+      30052,
+      30053,
+      30054,
+      30055,
+      30056,
+      30057,
+      30058,
+      30059,
+      30060
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 905626.5,
+      "presupuestoAnterior": 1495102.22,
+      "presupuestoRestante": 589475.72,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-09-28"
+    }
+  },
+  {
+    "id": 21,
+    "espacioId": 3,
+    "espacioNombre": "Oficina compartida",
+    "montoTotal": 377074.74,
+    "fechaLiquidacion": "2026-10-06",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de oficina compartida",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      30061,
+      30062,
+      30063,
+      30064
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 377074.74,
+      "presupuestoAnterior": 589475.72,
+      "presupuestoRestante": 212400.98,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-06"
+    }
+  },
+  {
+    "id": 22,
+    "espacioId": 3,
+    "espacioNombre": "Oficina compartida",
+    "montoTotal": 132400.98,
+    "fechaLiquidacion": "2026-10-10",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de oficina compartida",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      30065,
+      30066,
+      30067,
+      30068
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 132400.98,
+      "presupuestoAnterior": 212400.98,
+      "presupuestoRestante": 80000,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-10"
+    }
+  }
+]

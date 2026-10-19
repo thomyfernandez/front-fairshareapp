@@ -1,0 +1,26 @@
+[
+  {
+    "servicioId": 302,
+    "nombreServicio": "Internet",
+    "fechaVencimiento": "2026-10-15",
+    "montoBase": 32000,
+    "montoVariable": 2000,
+    "diasVencido": 4
+  },
+  {
+    "servicioId": 305,
+    "nombreServicio": "Expensas",
+    "fechaVencimiento": "2026-10-14",
+    "montoBase": 92500,
+    "montoVariable": 2000,
+    "diasVencido": 5
+  },
+  {
+    "servicioId": 308,
+    "nombreServicio": "Agua",
+    "fechaVencimiento": "2026-10-17",
+    "montoBase": 15800,
+    "montoVariable": 2000,
+    "diasVencido": 2
+  }
+]

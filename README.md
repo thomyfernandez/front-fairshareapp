@@ -41,8 +41,8 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
    - Declaracion de sueldos mensuales para el calculo de distribuciones proporcionales equitativas segun ingresos.
 
 4. **Registro y Clasificacion de Gastos**:
-   - Carga de gastos individuales y por lote con seleccion de pagador y desglose automatico entre participantes.
-   - Consulta del listado historico de gastos con filtrado por rango de fechas.
+   - Carga de gastos individuales y varios juntos con selección de pagador, desglose entre participantes y un ícono opcional elegido por el usuario (14 opciones y Automático). La elección se conserva en borradores, al repetir y al consultar el gasto.
+   - Consulta del listado historico de gastos con búsqueda, filtros de fechas y paginación de 10, 20 o 50 registros; conserva la página al volver al espacio.
 
 5. **Matriz de Balances y Deudas Simplificadas**:
    - Visualizacion consolidada del balance del grupo y representacion grafica de deudas pendientes.
@@ -63,7 +63,20 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
 
 - **Node.js**: Version 22.12 o superior (compatible con Vite 8; recomendado Node.js 22 LTS).
 - **npm**: Version 9.0.0 o superior (incluido con la instalacion de Node.js).
-- **Backend FairShare**: Servidor Spring Boot activo en `http://localhost:8080`.
+- **Backend FairShare**: Servidor Spring Boot activo en `http://localhost:8080` para el modo normal. No se necesita para `start:mock`.
+
+---
+
+## Demostración sin backend (Mock Data)
+
+```bash
+npm install
+npm run start:mock
+```
+
+La aplicación carga JSON locales desde `public/data/` con la estructura de los DTOs Java. El login trae completada la cuenta ficticia `demo@fairshare.test` / `FairShare123!`. Se pueden probar las operaciones habituales y sus resultados en memoria; recargar reinicia los movimientos y la sesión. Incluye 6 espacios, 12 personas, 485 gastos, 48 plantillas, 43 cierres y 72 registros de ingresos de mayo a octubre de 2026.
+
+Ver [contratos, archivos, flujos y límites de la simulación](./docs/MOCK_DATA.md). Validación local: `npm run mock:check`; contraste con el backend hermano: `npm run mock:check:java`. El inicio normal con `npm run dev` sigue usando Java.
 
 ---
 
@@ -104,6 +117,10 @@ Durante el desarrollo, Vite intercepta todas las peticiones a rutas relativas `/
 
 | Comando | Descripcion |
 | :--- | :--- |
+| `npm run start:mock` | Inicia la aplicación con JSON locales y operaciones simuladas en memoria, sin backend |
+| `npm run mock:generate` | Reconstruye el conjunto amplio de datos ficticios; sobrescribe los JSON de demostración |
+| `npm run mock:check` | Valida los archivos JSON contra los contratos de respuesta Java |
+| `npm run mock:check:java` | Además compara el contrato con los DTOs del backend hermano `../fairshareapp` |
 | `npm run dev` | Inicia el servidor de desarrollo local con recarga en caliente (HMR) en el puerto 5173 |
 | `npm run build` | Compila y optimiza la aplicacion para produccion, generando los artefactos estaticos en `dist/` |
 | `npm run preview` | Levanta un servidor local para previsualizar los archivos compilados en `dist/` |

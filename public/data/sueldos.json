@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "usuarioId": 1,
+    "monto": 1200000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Ana Ruiz"
+  },
+  {
+    "id": 2,
+    "usuarioId": 1,
+    "monto": 1180000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Ana Ruiz"
+  },
+  {
+    "id": 3,
+    "usuarioId": 2,
+    "monto": 1800000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Thomas Fernandez"
+  },
+  {
+    "id": 4,
+    "usuarioId": 3,
+    "monto": 1000000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Sol García"
+  },
+  {
+    "id": 5,
+    "usuarioId": 1,
+    "monto": 1100000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Ana Ruiz"
+  },
+  {
+    "id": 6,
+    "usuarioId": 1,
+    "monto": 1120000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Ana Ruiz"
+  },
+  {
+    "id": 7,
+    "usuarioId": 1,
+    "monto": 1140000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Ana Ruiz"
+  },
+  {
+    "id": 8,
+    "usuarioId": 1,
+    "monto": 1160000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Ana Ruiz"
+  },
+  {
+    "id": 9,
+    "usuarioId": 2,
+    "monto": 1700000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Thomas Fernandez"
+  },
+  {
+    "id": 10,
+    "usuarioId": 2,
+    "monto": 1720000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Thomas Fernandez"
+  },
+  {
+    "id": 11,
+    "usuarioId": 2,
+    "monto": 1740000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Thomas Fernandez"
+  },
+  {
+    "id": 12,
+    "usuarioId": 2,
+    "monto": 1760000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Thomas Fernandez"
+  },
+  {
+    "id": 13,
+    "usuarioId": 2,
+    "monto": 1780000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Thomas Fernandez"
+  },
+  {
+    "id": 14,
+    "usuarioId": 3,
+    "monto": 900000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Sol García"
+  },
+  {
+    "id": 15,
+    "usuarioId": 3,
+    "monto": 920000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Sol García"
+  },
+  {
+    "id": 16,
+    "usuarioId": 3,
+    "monto": 940000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Sol García"
+  },
+  {
+    "id": 17,
+    "usuarioId": 3,
+    "monto": 960000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Sol García"
+  },
+  {
+    "id": 18,
+    "usuarioId": 3,
+    "monto": 980000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Sol García"
+  },
+  {
+    "id": 19,
+    "usuarioId": 4,
+    "monto": 1250000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Lucía Pérez"
+  },
+  {
+    "id": 20,
+    "usuarioId": 4,
+    "monto": 1270000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Lucía Pérez"
+  },
+  {
+    "id": 21,
+    "usuarioId": 4,
+    "monto": 1290000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Lucía Pérez"
+  },
+  {
+    "id": 22,
+    "usuarioId": 4,
+    "monto": 1310000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Lucía Pérez"
+  },
+  {
+    "id": 23,
+    "usuarioId": 4,
+    "monto": 1330000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Lucía Pérez"
+  },
+  {
+    "id": 24,
+    "usuarioId": 4,
+    "monto": 1350000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Lucía Pérez"
+  },
+  {
+    "id": 25,
+    "usuarioId": 5,
+    "monto": 1450000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Martín López"
+  },
+  {
+    "id": 26,
+    "usuarioId": 5,
+    "monto": 1470000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Martín López"
+  },
+  {
+    "id": 27,
+    "usuarioId": 5,
+    "monto": 1490000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Martín López"
+  },
+  {
+    "id": 28,
+    "usuarioId": 5,
+    "monto": 1510000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Martín López"
+  },
+  {
+    "id": 29,
+    "usuarioId": 5,
+    "monto": 1530000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Martín López"
+  },
+  {
+    "id": 30,
+    "usuarioId": 5,
+    "monto": 1550000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Martín López"
+  },
+  {
+    "id": 31,
+    "usuarioId": 6,
+    "monto": 1000000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Valentina Torres"
+  },
+  {
+    "id": 32,
+    "usuarioId": 6,
+    "monto": 1020000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Valentina Torres"
+  },
+  {
+    "id": 33,
+    "usuarioId": 6,
+    "monto": 1040000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Valentina Torres"
+  },
+  {
+    "id": 34,
+    "usuarioId": 6,
+    "monto": 1060000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Valentina Torres"
+  },
+  {
+    "id": 35,
+    "usuarioId": 6,
+    "monto": 1080000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Valentina Torres"
+  },
+  {
+    "id": 36,
+    "usuarioId": 6,
+    "monto": 1100000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Valentina Torres"
+  },
+  {
+    "id": 37,
+    "usuarioId": 7,
+    "monto": 1550000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Nicolás Romero"
+  },
+  {
+    "id": 38,
+    "usuarioId": 7,
+    "monto": 1570000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Nicolás Romero"
+  },
+  {
+    "id": 39,
+    "usuarioId": 7,
+    "monto": 1590000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Nicolás Romero"
+  },
+  {
+    "id": 40,
+    "usuarioId": 7,
+    "monto": 1610000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Nicolás Romero"
+  },
+  {
+    "id": 41,
+    "usuarioId": 7,
+    "monto": 1630000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Nicolás Romero"
+  },
+  {
+    "id": 42,
+    "usuarioId": 7,
+    "monto": 1650000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Nicolás Romero"
+  },
+  {
+    "id": 43,
+    "usuarioId": 8,
+    "monto": 1350000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Camila Díaz"
+  },
+  {
+    "id": 44,
+    "usuarioId": 8,
+    "monto": 1370000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Camila Díaz"
+  },
+  {
+    "id": 45,
+    "usuarioId": 8,
+    "monto": 1390000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Camila Díaz"
+  },
+  {
+    "id": 46,
+    "usuarioId": 8,
+    "monto": 1410000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Camila Díaz"
+  },
+  {
+    "id": 47,
+    "usuarioId": 8,
+    "monto": 1430000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Camila Díaz"
+  },
+  {
+    "id": 48,
+    "usuarioId": 8,
+    "monto": 1450000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Camila Díaz"
+  },
+  {
+    "id": 49,
+    "usuarioId": 9,
+    "monto": 2000000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Mateo Herrera"
+  },
+  {
+    "id": 50,
+    "usuarioId": 9,
+    "monto": 2020000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Mateo Herrera"
+  },
+  {
+    "id": 51,
+    "usuarioId": 9,
+    "monto": 2040000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Mateo Herrera"
+  },
+  {
+    "id": 52,
+    "usuarioId": 9,
+    "monto": 2060000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Mateo Herrera"
+  },
+  {
+    "id": 53,
+    "usuarioId": 9,
+    "monto": 2080000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Mateo Herrera"
+  },
+  {
+    "id": 54,
+    "usuarioId": 9,
+    "monto": 2100000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Mateo Herrera"
+  },
+  {
+    "id": 55,
+    "usuarioId": 10,
+    "monto": 1650000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Julieta Castro"
+  },
+  {
+    "id": 56,
+    "usuarioId": 10,
+    "monto": 1670000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Julieta Castro"
+  },
+  {
+    "id": 57,
+    "usuarioId": 10,
+    "monto": 1690000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Julieta Castro"
+  },
+  {
+    "id": 58,
+    "usuarioId": 10,
+    "monto": 1710000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Julieta Castro"
+  },
+  {
+    "id": 59,
+    "usuarioId": 10,
+    "monto": 1730000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Julieta Castro"
+  },
+  {
+    "id": 60,
+    "usuarioId": 10,
+    "monto": 1750000,
+    "tipo": "FIJO",
+    "frecuencia": "QUINCENAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Julieta Castro"
+  },
+  {
+    "id": 61,
+    "usuarioId": 11,
+    "monto": 1150000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Santiago Acosta"
+  },
+  {
+    "id": 62,
+    "usuarioId": 11,
+    "monto": 1170000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Santiago Acosta"
+  },
+  {
+    "id": 63,
+    "usuarioId": 11,
+    "monto": 1190000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Santiago Acosta"
+  },
+  {
+    "id": 64,
+    "usuarioId": 11,
+    "monto": 1210000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Santiago Acosta"
+  },
+  {
+    "id": 65,
+    "usuarioId": 11,
+    "monto": 1230000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Santiago Acosta"
+  },
+  {
+    "id": 66,
+    "usuarioId": 11,
+    "monto": 1250000,
+    "tipo": "FIJO",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Santiago Acosta"
+  },
+  {
+    "id": 67,
+    "usuarioId": 12,
+    "monto": 850000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 5,
+    "anio": 2026,
+    "usuarioNombre": "Emilia Vega"
+  },
+  {
+    "id": 68,
+    "usuarioId": 12,
+    "monto": 870000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 6,
+    "anio": 2026,
+    "usuarioNombre": "Emilia Vega"
+  },
+  {
+    "id": 69,
+    "usuarioId": 12,
+    "monto": 890000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 7,
+    "anio": 2026,
+    "usuarioNombre": "Emilia Vega"
+  },
+  {
+    "id": 70,
+    "usuarioId": 12,
+    "monto": 910000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 8,
+    "anio": 2026,
+    "usuarioNombre": "Emilia Vega"
+  },
+  {
+    "id": 71,
+    "usuarioId": 12,
+    "monto": 930000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 9,
+    "anio": 2026,
+    "usuarioNombre": "Emilia Vega"
+  },
+  {
+    "id": 72,
+    "usuarioId": 12,
+    "monto": 950000,
+    "tipo": "VARIABLE",
+    "frecuencia": "MENSUAL",
+    "mes": 10,
+    "anio": 2026,
+    "usuarioNombre": "Emilia Vega"
+  }
+]

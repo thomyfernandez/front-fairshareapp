@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Button } from './Button'
 import { Modal } from './Modal'
-import { Icon } from './Icon'
+import { Notification } from './Notification'
 
 import { UIContext } from './ui-context'
 
@@ -24,10 +24,7 @@ export function UIProvider({ children }) {
   useEffect(() => () => resolver.current?.(false), [])
   return <UIContext.Provider value={{ notify, confirm }}>
     {children}
-    <div className="notification-stack" aria-label="Notificaciones">{notices.map(item => <div key={item.id} className={`ui-notice ui-notice--${item.tone}`}>
-      <div role={item.tone === 'error' ? 'alert' : 'status'}><Icon name={item.tone === 'success' ? 'check' : 'info'} /><span>{item.message}</span></div>
-      <Button variant="ghost" size="icon" aria-label="Cerrar notificación" onClick={() => dismiss(item.id)}><Icon name="close" size={16} /></Button>
-    </div>)}</div>
+    <div className="notification-stack" aria-label="Notificaciones">{notices.map(item => <Notification key={item.id} notice={item} onDismiss={dismiss} />)}</div>
     <Modal open={Boolean(question)} title={question?.title || 'Confirmar acción'} description={question?.description} onClose={() => answer(false)} footer={<><Button variant="secondary" data-autofocus onClick={() => answer(false)}>Cancelar</Button><Button variant={question?.danger ? 'danger' : 'primary'} onClick={() => answer(true)}>{question?.confirmLabel || 'Confirmar'}</Button></>} />
   </UIContext.Provider>
 }

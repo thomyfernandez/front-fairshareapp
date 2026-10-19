@@ -22,6 +22,12 @@ Este catálogo define qué hace cada componente, qué información recibe y cuá
 | `LoadingState`, `ErrorState`, `EmptyState` | Comunicar estados de un recurso. | Una consulta fallida no es una lista vacía. El error ofrece reintento; el vacío ofrece una acción útil cuando corresponde. |
 | `InlineAlert` | Explicar una consecuencia o un resultado junto al flujo. | Reservar `error` para errores; no reemplazarlo por un color o un ícono sin texto. |
 
+## RecurringBatchTray
+
+**Responsabilidad:** mantener visibles los gastos seleccionados desde Recurrentes y conducir a su revisión. Componente de la funcionalidad, construido con `Button`, `Money`, `Modal`, `InlineAlert` y `EmptyState` compartidos.
+
+Recibe `batch` (borrador, ubicación de guardado, error, anuncio y acciones de quitar/revisar), `members` para identificar pagadores y `onEmptyClose` para devolver el foco cuando desaparece el disparador. El hook `useRecurringBatch` conserva el borrador existente de Gastos; la bandeja no llama al servidor ni presenta una selección como registro confirmado. Incluye estados vacío, seleccionado, importe incompleto y error; anuncia altas y bajas y permite operar el diálogo con teclado. El total suma centavos y el layout se apila en móvil.
+
 ## Card
 
 **Responsabilidad:** dar una superficie a un grupo que la necesita. No es el contenedor automático de todas las secciones.
@@ -152,3 +158,25 @@ Contrato: las propiedades de contenido de `ExpenseRow`, más `checked`, `onChang
 - `ExpenseForm` y `ExpenseBatchForm` admiten `onDraftChange`, `draftLocation` e `initialValues`. El lote recibe `{ gastos, removed }`; los borradores conservan las entradas del selector de participantes además del reparto calculado. `onSuccess` se ejecuta solo después del éxito de la API. Sin gestión de borrador externa siguen funcionando como formularios independientes.
 - `ParticipantsSelector` admite `initialSelection` para restaurar selección, porcentajes e importes incompletos. La modalidad proporcional permite elegir participantes y explica que el reparto se calcula al registrar; no muestra una cuota local como si fuera el resultado del servidor.
 - `ExpenseDetail` acepta `onRepeat`; ofrece la acción cuando el detalle está disponible. Un gasto pendiente significa pendiente de liquidar, no un pago personal pendiente.
+
+## Confirmación de varios gastos
+
+`BatchExpenseBreakdown({ expenses, members })` es un componente del dominio de gastos. Recibe la instantánea confirmable y los miembros, y reutiliza `PanelDisclosure`, `Icon`, `Avatar` y `Money`. No calcula repartos ni modifica el borrador. Empieza cerrado, conserva apertura nativa con teclado y organiza cada gasto con su contexto, importe completo y participantes. El reparto proporcional explica el cálculo pendiente una sola vez por gasto; los demás muestran sus importes estimados y, cuando corresponde, porcentajes. Los nombres e importes se distribuyen sin recortarlos.
+
+El editor termina con “Registrar N gastos”. `ExpenseBatchForm` valida y conserva una instantánea antes de abrir `Modal` con el título “Confirmar registro”, la cantidad, el espacio y el total. El desglose se mantiene cerrado en `Disclosure`; consultarlo es opcional. Los duplicados se advierten siempre y requieren “Registrar de todos modos”. Solo la confirmación envía la instantánea; cancelar o fallar conserva el borrador.
+
+## Notification
+
+`UIProvider` muestra hasta tres notificaciones con cierre manual y automático a los cinco segundos. Cada aviso tiene un temporizador independiente. El tiempo se pausa con el cursor encima o mientras un control del aviso tiene foco, y retoma el tiempo restante al salir. Los temporizadores se limpian al quitar o desmontar avisos. Los errores de formularios y las confirmaciones de acciones permanecen en sus propios componentes.
+
+## ExpensePagination
+
+Componente de Gastos en `src/features/gastos/ExpensePagination.jsx`, compuesto con `Button`, `Icon` y selectores nativos. Recibe `total`, `page`, `pageSize`, `onPageChange`, `onPageSizeChange` y `listId`. El padre controla el filtrado, orden por fecha reciente e ID, selección de filas, URL y restauración del contexto. Presenta “Mostrando X–Y de N gastos” como estado accesible, cantidades 10/20/50 y, cuando hay más de una página, navegación anterior/siguiente y selector directo de página. Los extremos se deshabilitan. No se muestra para resultados vacíos ni errores; carga y errores pertenecen al recurso de Gastos. Usar `aria-controls` con el ID del listado y devolver el foco a su comienzo después de paginar.
+
+Los selectores del paginado conservan el control nativo para teclado y menú. La flecha decorativa usa `Icon`, separada 12px del borde; el campo reserva 40px al final para evitar que el texto se superponga con ella.
+
+## ExpenseIconPicker e íconos explícitos
+
+`src/features/gastos/ExpenseIconPicker.jsx`: recibe `value` (valor de `IconoGasto` o `null`), `onChange`, `description`, `category`, `disabled`, `compact` y `label`. La variante compacta se usa por gasto en la carga de varios; ambas reutilizan `Button`, `Icon` y `Modal`. No carga archivos, no admite SVG arbitrario ni modifica la categoría: selecciona uno de los 14 símbolos del catálogo `expenseIconChoices`. El diálogo vuelve el foco al disparador al elegir o cancelar y mantiene el menú accesible con teclado.
+
+`ExpenseRow` y `SelectableExpenseRow` reciben `icon` como elección explícita del DTO `icono`; `category` conserva su función de alternativa automática. `expenseIcon(category, description, selected)` prioriza esa elección validada. Los detalles, el resumen y el desglose de varios gastos usan la misma resolución.

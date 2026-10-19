@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nombre": "Nuestro hogar",
+    "descripcion": "Compras, servicios y convivencia.",
+    "codigo": "CASA-2026",
+    "tipo": "HOGAR",
+    "reglaReparto": "PROPORCIONAL",
+    "presupuestoBase": 2000000
+  },
+  {
+    "id": 2,
+    "nombre": "Viaje al sur",
+    "descripcion": "Alojamiento, comidas y excursiones en equipo.",
+    "codigo": "VIAJE-2026",
+    "tipo": "VIAJE",
+    "reglaReparto": "CINCUENTA_CINCUENTA",
+    "presupuestoBase": 950000
+  },
+  {
+    "id": 3,
+    "nombre": "Oficina compartida",
+    "descripcion": "Los gastos del estudio y sus proyectos.",
+    "codigo": "OFICINA-2026",
+    "tipo": "TRABAJO",
+    "reglaReparto": "PROPORCIONAL",
+    "presupuestoBase": 80000
+  },
+  {
+    "id": 4,
+    "nombre": "Equipo de fútbol",
+    "descripcion": "Cancha, camisetas y tercer tiempo.",
+    "codigo": "EQUIPO-2026",
+    "tipo": "OTRO",
+    "reglaReparto": "CINCUENTA_CINCUENTA",
+    "presupuestoBase": 600000
+  },
+  {
+    "id": 5,
+    "nombre": "Proyecto final",
+    "descripcion": "Materiales, herramientas y entregas de la facultad.",
+    "codigo": "PROYECTO-2026",
+    "tipo": "OTRO",
+    "reglaReparto": "CINCUENTA_CINCUENTA",
+    "presupuestoBase": 350000
+  },
+  {
+    "id": 6,
+    "nombre": "Planes en pareja",
+    "descripcion": "Salidas y proyectos de a dos.",
+    "codigo": "PAREJA-2026",
+    "tipo": "PAREJA",
+    "reglaReparto": "PROPORCIONAL",
+    "presupuestoBase": 1200000
+  }
+]
