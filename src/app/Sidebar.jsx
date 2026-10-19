@@ -1,12 +1,12 @@
 import { Link, NavLink } from 'react-router'
-import { Icon } from '../components/ui'
+import { BrandMark, Icon } from '../components/ui'
 import { useWorkspace } from './useWorkspace'
 import { expenseDestination, incomeDestination, spaceSections } from './navigation'
 import { SpaceSwitcher } from './SpaceSwitcher'
 import { UserMenu } from '../features/auth/UserMenu'
 
 export function Brand() {
-  return <NavLink to="/" className="app-brand" aria-label="FairShare, ir al inicio"><span className="app-brand__mark">F<span /></span><span>fairshare<span className="app-brand__dot">.</span></span></NavLink>
+  return <NavLink to="/" className="app-brand" aria-label="FairShare, ir al inicio"><BrandMark className="app-brand__mark" /><span>fairshare<span className="app-brand__dot">.</span></span></NavLink>
 }
 
 export function Sidebar({ compact = false, onNavigate }) {
