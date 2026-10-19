@@ -394,7 +394,7 @@ export function ParticipantsSelector({
               className="participant-choice"
             >
               {/* Información del miembro */}
-              <div className="flex items-center gap-3 min-w-0 flex-1">
+              <div className="participant-choice__member flex items-center gap-3 min-w-0">
                 <span
                   className="w-8 h-8 rounded-full bg-header text-brand-primary text-xs font-semibold flex items-center justify-center shrink-0 border border-subtle"
                   aria-hidden="true"
@@ -447,14 +447,14 @@ export function ParticipantsSelector({
 
               {/* Modo PORCENTUAL */}
               {tipoReparto === 'PORCENTUAL' && (
-                <div className="flex items-center gap-3">
+                <div className="participant-choice__allocation flex items-center gap-3">
                   <div className="text-right min-w-[80px]">
                     <span className="text-sm font-medium text-primary block">
                       {money((numericMonto * (parseFloat(pctVal) || 0)) / 100)}
                     </span>
                     <span className="text-xs text-secondary">estimado</span>
                   </div>
-                  <div className="flex items-center gap-1 w-24">
+                  <div className="participant-choice__percentage">
                     <input
                       type="number"
                       min="0"
@@ -467,17 +467,17 @@ export function ParticipantsSelector({
                         const val = e.target.value
                         setPorcentajes(prev => ({ ...prev, [m.usuarioId]: val }))
                       }}
-                      className="ui-input text-right py-1 px-2 h-9 text-sm"
+                      className="ui-input text-right text-sm"
                       aria-label={`Porcentaje para ${m.nombreUsuario}`}
                     />
-                    <span className="text-xs font-semibold text-secondary">%</span>
+                    <span className="participant-choice__percentage-unit" aria-hidden="true">%</span>
                   </div>
                 </div>
               )}
 
               {/* Modo MONTOS_FIJOS */}
               {tipoReparto === 'MONTOS_FIJOS' && (
-                <div className="flex items-center gap-3">
+                <div className="participant-choice__allocation flex items-center gap-3">
                   <div className="text-right min-w-[65px]">
                     <span className="text-xs font-medium text-secondary block">
                       {numericMonto > 0
@@ -485,8 +485,8 @@ export function ParticipantsSelector({
                         : '0%'}
                     </span>
                   </div>
-                  <div className="flex items-center gap-1 w-32">
-                    <span className="text-xs font-semibold text-secondary">$</span>
+                  <div className="participant-choice__amount">
+                    <span className="participant-choice__amount-unit" aria-hidden="true">$</span>
                     <input
                       type="number"
                       min="0"
@@ -498,7 +498,7 @@ export function ParticipantsSelector({
                         const val = e.target.value
                         setImportes(prev => ({ ...prev, [m.usuarioId]: val }))
                       }}
-                      className="ui-input text-right py-1 px-2 h-9 text-sm"
+                      className="ui-input text-right text-sm"
                       aria-label={`Importe fijo para ${m.nombreUsuario}`}
                     />
                   </div>

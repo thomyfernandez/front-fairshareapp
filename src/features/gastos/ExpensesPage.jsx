@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Navigate, useSearchParams } from 'react-router'
-import { ActionNotice, Button, EmptyState, Icon, InlineAlert, PageHeader, ResourceState, useUI } from '../../components/ui'
+import { Button, EmptyState, Icon, InlineAlert, PageHeader, ResourceState, useUI } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
 import { useApiResource } from '../../hooks/useApiResource'
 import { useWorkspace } from '../../app/useWorkspace'
@@ -119,13 +119,13 @@ function ExpenseScreen() {
     closeForm()
   }
   async function discard(kind) {
-    if (!await confirm({ title: '¿Descartar este borrador?', description: 'Se quitarán los datos sin registrar de este borrador. Tus gastos registrados no cambian.', confirmLabel: 'Descartar borrador' })) return
+    if (!await confirm({ title: kind === 'lote' ? '¿Descartar el borrador del lote?' : '¿Descartar el borrador individual?', description: 'Se quitarán los datos sin registrar de este borrador. Tus gastos registrados no cambian.', confirmLabel: 'Descartar borrador' })) return
     removeDraft(userId, spaceId, kind)
     setGeneration(value => value + 1)
   }
 
   return <div className={`feature-page expenses-page${tab !== 'lista' ? ' expenses-page--entry' : ''}`}>
-    <PageHeader title={tab === 'lista' ? 'Gastos' : tab === 'individual' ? 'Registrar gasto' : 'Registrar por lote'} description={tab === 'lista' ? 'Lo que compartieron, en un solo lugar.' : 'Revisá el importe, la fecha y los participantes antes de registrar.'} actions={tab === 'lista' && <><Button variant="secondary" onClick={() => openForm('lote')}>{batchDraft ? 'Retomar lote' : 'Registrar por lote'}</Button><Button onClick={() => openForm('individual')}><Icon name="plus" size={18} />{singleDraft ? 'Retomar gasto' : 'Registrar gasto'}</Button></>} />
+    <PageHeader title={tab === 'lista' ? 'Gastos' : tab === 'individual' ? 'Registrar gasto' : 'Registrar por lote'} description={tab === 'lista' ? 'Lo que compartieron, en un solo lugar.' : 'Revisá el importe, la fecha y los participantes antes de registrar.'} actions={tab === 'lista' && (!batchDraft || !singleDraft) && <>{!batchDraft && <Button variant="secondary" onClick={() => openForm('lote')}>Registrar por lote</Button>}{!singleDraft && <Button onClick={() => openForm('individual')}><Icon name="plus" size={18} />Registrar gasto</Button>}</>} />
     {tab !== 'lista' ? <section className="space-y-4">
       <Button variant="ghost" className="expense-entry__back" onClick={closeForm}>Volver al listado</Button>
       {history.error && <InlineAlert tone="warning">No pudimos consultar los gastos anteriores para sugerir frecuentes o advertir coincidencias. Podés continuar revisando los datos.</InlineAlert>}
@@ -135,7 +135,15 @@ function ExpenseScreen() {
         : <ExpenseBatchForm key={`batch-${generation}`} spaceId={spaceId} members={members} initialValues={values[tab] || {}} onDraftChange={saveBatch} draftLocation={draftLocation} existingExpenses={history.data} onSuccess={saved} onCancel={closeForm} />}</ResourceState>
     </section> : <>
       <ExpenseReceipt expenses={receipt} onOpen={setDetail} onClose={() => setReceipt(null)} />
-      {(singleDraft || batchDraft) && <ActionNotice icon="receipt" title="Tenés gastos sin registrar" description="Tus borradores están separados de los gastos del espacio. Podés retomarlos o descartarlos." action={<div className="expense-draft-actions">{singleDraft && <Button variant="ghost" onClick={() => discard('individual')}>Descartar borrador individual</Button>}{batchDraft && <Button variant="ghost" onClick={() => discard('lote')}>Descartar borrador del lote</Button>}</div>} />}
+      {(singleDraft || batchDraft) && <section className="expense-drafts" aria-labelledby="expense-drafts-heading">
+        <header className="expense-drafts__heading"><Icon name="receipt" /><div><h2 id="expense-drafts-heading">Tenés gastos sin registrar</h2><p>Todavía no forman parte de los gastos del espacio.</p></div></header>
+        <div className="expense-drafts__list">
+          {[singleDraft && { kind: 'individual', title: 'Gasto individual', description: singleDraft.descripcion.trim() || 'Sin descripción', resumeLabel: 'Retomar gasto', discardLabel: 'Descartar borrador individual' }, batchDraft && { kind: 'lote', title: 'Lote de gastos', description: `${batchDraft.gastos.length} ${batchDraft.gastos.length === 1 ? 'gasto' : 'gastos'} en el borrador`, resumeLabel: 'Retomar lote', discardLabel: 'Descartar borrador del lote' }].filter(Boolean).map(draft => <div key={draft.kind} className="expense-draft-row" role="group" aria-label={draft.title}>
+            <div className="expense-draft-row__info"><h3>{draft.title}</h3><p>{draft.description}</p></div>
+            <div className="expense-draft-actions"><Button aria-label={draft.resumeLabel} onClick={() => openForm(draft.kind)}>Retomar</Button><Button variant="secondary" className="expense-draft-discard" aria-label={draft.discardLabel} onClick={() => discard(draft.kind)}><Icon name="trash" size={16} />Descartar</Button></div>
+          </div>)}
+        </div>
+      </section>}
       <ResourceState resource={resource}><ResourceState resource={membersState}><div className="space-y-4">
         <ExpenseFilters search={params.get('q') || ''} onSearchChange={value => changeFilter('q', value)} desde={params.get('desde') || ''} onDesdeChange={value => changeFilter('desde', value)} hasta={params.get('hasta') || ''} onHastaChange={value => changeFilter('hasta', value)} onClear={clearFilters} totalResults={expenses.length} />
         {!expenses.length && (term || dates.size) ? <EmptyState icon="receipt" title="No encontramos gastos con estos filtros" description="Probá otra búsqueda o limpiá los filtros." action={<Button variant="secondary" onClick={clearFilters}>Limpiar filtros</Button>} /> : <ExpenseList expenses={expenses} members={members} spaceId={spaceId} onRepeat={expense => openForm('individual', expense)} onRegisterClick={() => openForm('individual')} />}

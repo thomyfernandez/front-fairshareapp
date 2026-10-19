@@ -3,6 +3,7 @@ import { useFeature } from '../../hooks/useFeature'
 import { dateLabel, nextMonth, formData } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
 import { useSearchParams } from 'react-router'
+import { RecurringAmountFields } from './RecurringAmountFields'
 
 export default function RecurringPage() {
   const { spaceId } = useWorkspace()
@@ -14,7 +15,7 @@ export default function RecurringPage() {
     <PageHeader title="Gastos recurrentes" description="Los gastos que vuelven, sin empezar de cero." />
     <ResourceState resource={resource}><ResourceState resource={membersState}>
       <PanelDisclosure title="Crear plantilla" icon="plus" className="recurring-create">
-        <form className="grid-form" onSubmit={event => {
+        <form aria-label="Crear plantilla recurrente" className="grid-form recurring-template-form" onSubmit={event => {
           event.preventDefault()
           const d = formData(event)
           for (const k of ['pagadorId', 'montoBase', 'montoVariable', 'frecuenciaAjusteMeses']) d[k] = Number(d[k])
@@ -22,12 +23,11 @@ export default function RecurringPage() {
         }}>
           <Field label="Nombre" name="nombre" required minLength={2} maxLength={100} />
           <Field label="Pagador"><select name="pagadorId" defaultValue={session.usuario.id} required>{members.map(m => <option key={m.usuarioId} value={m.usuarioId}>{m.nombreUsuario}</option>)}</select></Field>
-          <Field label="Monto base" name="montoBase" type="number" min="0" step="0.01" required />
-          <Field label="Monto variable" name="montoVariable" type="number" min="0" step="0.01" defaultValue="0" required />
+          <RecurringAmountFields key={`create-${spaceId}`} amountName="montoBase" additionalName="montoVariable" disabled={busy} />
           <Field label="Revisar cada (meses)" name="frecuenciaAjusteMeses" type="number" min="1" defaultValue="1" required />
           <Field label="Próxima revisión" name="fechaProximaRevision" type="date" defaultValue={nextMonth()} required />
           <Field label="Reparto"><select name="reglaDivision"><option value="EQUITATIVA">Equitativo</option><option value="PROPORCIONAL_INGRESOS">Proporcional a ingresos</option></select></Field>
-          <Submit busy={busy}>Crear plantilla</Submit>
+          <div className="recurring-template-form__actions"><Submit busy={busy}>Crear plantilla</Submit></div>
         </form>
       </PanelDisclosure>
       <div className="recurring-list">
@@ -42,17 +42,16 @@ export default function RecurringPage() {
             <Button variant="ghost" disabled={busy} onClick={async () => { if (await confirm('¿Eliminar esta plantilla?')) mutate(`/api/v1/favoritos/${p.id}`, 'DELETE', undefined, 'Plantilla eliminada.') }}>Eliminar</Button>
           </div>
           <PanelDisclosure title="Actualizar monto y revisión" icon="settings" open={String(p.id) === query.get('revisar') || undefined}>
-            <form className="grid-form" onSubmit={event => {
+            <form aria-label={`Actualizar plantilla ${p.nombre}`} className="grid-form recurring-template-form" onSubmit={event => {
               event.preventDefault()
               const d = formData(event)
               d.nuevoMontoBase = Number(d.nuevoMontoBase)
               d.nuevoMontoVariable = Number(d.nuevoMontoVariable)
               mutate(`/api/v1/favoritos/${p.id}/actualizar-monto`, 'PUT', d, 'Plantilla actualizada.')
             }}>
-              <Field label="Monto base" name="nuevoMontoBase" type="number" min="0" step="0.01" defaultValue={p.montoBase} required />
-              <Field label="Variable" name="nuevoMontoVariable" type="number" min="0" step="0.01" defaultValue={p.montoVariable} required />
+              <RecurringAmountFields key={`${p.id}-${p.montoBase}-${p.montoVariable}`} amountName="nuevoMontoBase" additionalName="nuevoMontoVariable" initialAmount={p.montoBase} initialAdditional={p.montoVariable} disabled={busy} />
               <Field label="Nueva revisión" name="nuevaFechaProximaRevision" type="date" defaultValue={nextMonth()} required />
-              <Submit busy={busy}>Actualizar</Submit>
+              <div className="recurring-template-form__actions"><Submit busy={busy}>Actualizar</Submit></div>
             </form>
           </PanelDisclosure>
         </Card>)}

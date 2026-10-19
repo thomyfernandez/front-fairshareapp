@@ -80,6 +80,18 @@
   .participant-choice { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-3); padding: var(--spacing-3); background: var(--color-canvas); border-radius: var(--radius-md); min-width: 0; }
   .participant-choice > div { min-width: 0; max-width: 100%; }
   .participant-choice input[type=checkbox] { min-height: 20px; }
+  .participant-choice__member { flex: 1 1 12rem; }
+  .participant-choice__allocation { margin-inline-start: auto; }
+  .participant-choice__percentage, .participant-choice__amount { position: relative; }
+  .participant-choice__percentage { flex: 0 0 6rem; width: 6rem; }
+  .participant-choice__percentage .ui-input { padding-inline-end: var(--spacing-8); }
+  .participant-choice__amount { flex: 0 0 8rem; width: 8rem; }
+  .participant-choice__amount .ui-input { padding-inline-start: var(--spacing-8); }
+  .participant-choice__percentage .ui-input, .participant-choice__amount .ui-input { appearance: textfield; }
+  :is(.participant-choice__percentage, .participant-choice__amount) .ui-input::-webkit-inner-spin-button, :is(.participant-choice__percentage, .participant-choice__amount) .ui-input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+  .participant-choice__percentage-unit, .participant-choice__amount-unit { position: absolute; top: 50%; transform: translateY(-50%); color: var(--color-text-secondary); font-size: var(--text-sm); pointer-events: none; user-select: none; }
+  .participant-choice__percentage-unit { inset-inline-end: var(--spacing-3); }
+  .participant-choice__amount-unit { inset-inline-start: var(--spacing-3); }
   .balance-content { display: grid; gap: var(--spacing-4); }
   .balance-content > .ui-section-heading { margin: var(--spacing-6) 0 0; }
   .debt-item { display: flex; align-items: center; flex-wrap: wrap; gap: var(--spacing-4); padding: var(--spacing-4); border-radius: var(--radius-xl); background: var(--color-canvas); }
@@ -87,6 +99,25 @@
   .debt-item__person .ui-badge { justify-self: start; }
   .debt-item__amount { overflow-wrap: anywhere; max-width: 100%; }
   .recurring-create { margin-bottom: var(--spacing-6); }
+  .recurring-page.legacy-feature .recurring-template-form { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .recurring-template-form__actions { grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-top: var(--spacing-3); border-top: 1px solid var(--color-border-subtle); }
+  .recurring-template-form__actions > .ui-button { width: 100%; }
+  .recurring-amounts { display: grid; grid-column: 1 / -1; grid-template-areas: 'amount' 'additional' 'total'; gap: var(--spacing-3) var(--spacing-4); min-width: 0; }
+  .recurring-amounts > .ui-field { grid-area: amount; }
+  .recurring-amounts__additional.ui-disclosure { grid-area: additional; min-width: 0; border: 0; }
+  .recurring-amounts__additional > summary { display: flex; align-items: center; min-height: 44px; color: var(--color-brand-primary); gap: var(--spacing-2); }
+  .recurring-amounts__additional > summary::before { content: '+'; font-size: var(--text-lg); }
+  .recurring-amounts__additional[open] > summary::before { content: '−'; }
+  .recurring-amounts__additional > .ui-disclosure__body { padding-block: var(--spacing-2); }
+  .recurring-amounts__total { grid-area: total; display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--spacing-2) var(--spacing-4); padding-block: var(--spacing-3); border-top: 1px solid var(--color-border-subtle); font-size: var(--text-sm); }
+  .recurring-amounts__total > strong { font-size: var(--text-md); overflow-wrap: anywhere; }
+  @media (min-width: 41rem) {
+    .recurring-page.legacy-feature .recurring-template-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .recurring-template-form__actions > .ui-button { width: auto; }
+    .recurring-amounts { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-areas: 'amount total' 'additional total'; }
+    .recurring-amounts__total { display: grid; justify-content: start; align-self: start; gap: var(--spacing-2); padding: 0; border: 0; }
+    .recurring-amounts__total > strong { display: flex; align-items: center; min-height: 44px; font-size: var(--text-lg); color: var(--color-brand-primary); }
+  }
   .recurring-list { display: grid; gap: var(--spacing-4); }
   .recurring-item { display: grid; gap: var(--spacing-5); }
   .recurring-item__header { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-4); }

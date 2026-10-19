@@ -2,7 +2,23 @@
   .expenses-page--entry .expense-form-container, .expenses-page--entry .expense-batch-container, .expenses-page--entry .expense-frequents { max-width: none; margin-inline: 0; }
   .expenses-page--entry .expense-entry__back { padding-inline: 0; }
   .expense-draft-hint { margin: 0 0 var(--spacing-4); font-size: var(--text-xs); color: var(--color-text-secondary); }
+  .expense-drafts { margin-bottom: var(--spacing-6); padding: var(--spacing-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); background: var(--color-canvas); }
+  .expense-drafts__heading { display: flex; align-items: start; gap: var(--spacing-3); }
+  .expense-drafts__heading > svg { flex-shrink: 0; margin-top: var(--spacing-1); color: var(--color-text-secondary); }
+  .expense-drafts__heading h2 { margin: 0; font-size: var(--text-base); font-weight: var(--font-weight-semibold); }
+  .expense-drafts__heading p, .expense-draft-row__info p { margin: var(--spacing-1) 0 0; color: var(--color-text-secondary); font-size: var(--text-sm); overflow-wrap: anywhere; }
+  .expense-drafts__list { list-style: none; margin: var(--spacing-4) 0 0; padding: 0; }
+  .expense-draft-row { display: grid; align-items: center; gap: var(--spacing-3); padding-block: var(--spacing-4); }
+  .expense-draft-row + .expense-draft-row { border-top: 1px solid var(--color-border-subtle); }
+  .expense-draft-row:first-child { padding-top: 0; }
+  .expense-draft-row:last-child { padding-bottom: 0; }
+  .expense-draft-row__info { min-width: 0; }
+  .expense-draft-row__info h3 { margin: 0; font-size: var(--text-sm); font-weight: var(--font-weight-semibold); }
   .expense-draft-actions { display: flex; flex-wrap: wrap; gap: var(--spacing-2); }
+  .expense-draft-actions .ui-button { flex: 1 0 auto; white-space: nowrap; }
+  .expense-draft-discard { border-color: var(--color-border-strong); }
+  .expense-draft-discard:not(:disabled):hover { color: var(--color-error-foreground); border-color: var(--color-error); background: var(--color-error-background); }
+  @media (min-width: 40rem) { .expense-draft-row { grid-template-columns: minmax(0, 1fr) auto; } }
   .expense-frequents { max-width: 52rem; margin-inline: auto; padding: var(--spacing-4); background: var(--color-canvas); border-radius: var(--radius-lg); }
   .expense-frequents h2 { margin: 0 0 var(--spacing-1); font-size: var(--text-base); }
   .expense-frequents p { margin: 0 0 var(--spacing-3); font-size: var(--text-xs); color: var(--color-text-secondary); }
