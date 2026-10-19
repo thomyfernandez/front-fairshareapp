@@ -1,0 +1,210 @@
+[
+  {
+    "id": 37,
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "montoTotal": 748120.74,
+    "fechaLiquidacion": "2026-05-28",
+    "mes": 5,
+    "anio": 2026,
+    "descripcion": "Cierre de planes en pareja",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      60001,
+      60002,
+      60003,
+      60004,
+      60005,
+      60006,
+      60007,
+      60008,
+      60009,
+      60010,
+      60011,
+      60012
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 748120.74,
+      "presupuestoAnterior": 5424943.82,
+      "presupuestoRestante": 4676823.08,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-05-28"
+    }
+  },
+  {
+    "id": 38,
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "montoTotal": 748497.18,
+    "fechaLiquidacion": "2026-06-28",
+    "mes": 6,
+    "anio": 2026,
+    "descripcion": "Cierre de planes en pareja",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      60013,
+      60014,
+      60015,
+      60016,
+      60017,
+      60018,
+      60019,
+      60020,
+      60021,
+      60022,
+      60023,
+      60024
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 748497.18,
+      "presupuestoAnterior": 4676823.08,
+      "presupuestoRestante": 3928325.9,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-06-28"
+    }
+  },
+  {
+    "id": 39,
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "montoTotal": 748873.62,
+    "fechaLiquidacion": "2026-07-28",
+    "mes": 7,
+    "anio": 2026,
+    "descripcion": "Cierre de planes en pareja",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      60025,
+      60026,
+      60027,
+      60028,
+      60029,
+      60030,
+      60031,
+      60032,
+      60033,
+      60034,
+      60035,
+      60036
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 748873.62,
+      "presupuestoAnterior": 3928325.9,
+      "presupuestoRestante": 3179452.28,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-07-28"
+    }
+  },
+  {
+    "id": 40,
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "montoTotal": 749250.06,
+    "fechaLiquidacion": "2026-08-28",
+    "mes": 8,
+    "anio": 2026,
+    "descripcion": "Cierre de planes en pareja",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      60037,
+      60038,
+      60039,
+      60040,
+      60041,
+      60042,
+      60043,
+      60044,
+      60045,
+      60046,
+      60047,
+      60048
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 749250.06,
+      "presupuestoAnterior": 3179452.28,
+      "presupuestoRestante": 2430202.22,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-08-28"
+    }
+  },
+  {
+    "id": 41,
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "montoTotal": 749626.5,
+    "fechaLiquidacion": "2026-09-28",
+    "mes": 9,
+    "anio": 2026,
+    "descripcion": "Cierre de planes en pareja",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      60049,
+      60050,
+      60051,
+      60052,
+      60053,
+      60054,
+      60055,
+      60056,
+      60057,
+      60058,
+      60059,
+      60060
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 749626.5,
+      "presupuestoAnterior": 2430202.22,
+      "presupuestoRestante": 1680575.72,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-09-28"
+    }
+  },
+  {
+    "id": 42,
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "montoTotal": 329674.74,
+    "fechaLiquidacion": "2026-10-06",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de planes en pareja",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      60061,
+      60062,
+      60063,
+      60064
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 329674.74,
+      "presupuestoAnterior": 1680575.72,
+      "presupuestoRestante": 1350900.98,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-06"
+    }
+  },
+  {
+    "id": 43,
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "montoTotal": 150900.98,
+    "fechaLiquidacion": "2026-10-10",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de planes en pareja",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      60065,
+      60066,
+      60067,
+      60068
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 150900.98,
+      "presupuestoAnterior": 1350900.98,
+      "presupuestoRestante": 1200000,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-10"
+    }
+  }
+]

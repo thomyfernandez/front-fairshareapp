@@ -1,0 +1,5672 @@
+[
+  {
+    "id": 20080,
+    "descripcion": "Pasajes",
+    "icono": null,
+    "monto": 125306.76,
+    "fecha": "2026-10-19",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2008001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 25061.36,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2008002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 25061.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2008003,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 25061.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2008004,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 25061.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2008005,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 25061.35,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20079,
+    "descripcion": "Seguro de viaje",
+    "icono": "TRANSPORTE",
+    "monto": 34298.87,
+    "fecha": "2026-10-18",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5727.92,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2007902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5714.19,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2007903,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5714.19,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2007904,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5714.19,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2007905,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5714.19,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2007906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5714.19,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20078,
+    "descripcion": "Desayuno en ruta",
+    "icono": null,
+    "monto": 26790.98,
+    "fecha": "2026-10-17",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3920.66,
+        "porcentaje": 14.63,
+        "sueldo": null
+      },
+      {
+        "id": 2007802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5880.94,
+        "porcentaje": 21.95,
+        "sueldo": null
+      },
+      {
+        "id": 2007803,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3267.19,
+        "porcentaje": 12.2,
+        "sueldo": null
+      },
+      {
+        "id": 2007804,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 3593.91,
+        "porcentaje": 13.41,
+        "sueldo": null
+      },
+      {
+        "id": 2007805,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5390.86,
+        "porcentaje": 20.12,
+        "sueldo": null
+      },
+      {
+        "id": 2007806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 4737.42,
+        "porcentaje": 17.68,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20077,
+    "descripcion": "Alquiler de equipo",
+    "icono": null,
+    "monto": 45783.09,
+    "fecha": "2026-10-16",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7630.54,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7630.51,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007703,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7630.51,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007704,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 7630.51,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007705,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7630.51,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 7630.51,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20076,
+    "descripcion": "Estacionamiento",
+    "icono": "TRANSPORTE",
+    "monto": 12275.2,
+    "fecha": "2026-10-15",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2455.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2007602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2455.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2007603,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2455.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2007604,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 2455.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2007605,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2455.04,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20075,
+    "descripcion": "Compras para el viaje",
+    "icono": null,
+    "monto": 56267.31,
+    "fecha": "2026-10-14",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9377.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9377.88,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007503,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 9377.88,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007504,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9377.88,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007505,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 9377.88,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 9377.88,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20074,
+    "descripcion": "Cena en el centro",
+    "icono": null,
+    "monto": 72259.42,
+    "fecha": "2026-10-13",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10574.57,
+        "porcentaje": 14.63,
+        "sueldo": null
+      },
+      {
+        "id": 2007402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15861.82,
+        "porcentaje": 21.95,
+        "sueldo": null
+      },
+      {
+        "id": 2007403,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 8812.12,
+        "porcentaje": 12.2,
+        "sueldo": null
+      },
+      {
+        "id": 2007404,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9693.33,
+        "porcentaje": 13.41,
+        "sueldo": null
+      },
+      {
+        "id": 2007405,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 14540,
+        "porcentaje": 20.12,
+        "sueldo": null
+      },
+      {
+        "id": 2007406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12777.58,
+        "porcentaje": 17.68,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 202,
+    "descripcion": "Hospedaje",
+    "icono": null,
+    "monto": 300000,
+    "fecha": "2026-10-13",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": null,
+    "categoriaNombre": null,
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 20201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 100000,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 20202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 100000,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 20203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 100000,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20073,
+    "descripcion": "Excursión al lago",
+    "icono": "OCIO",
+    "monto": 95251.53,
+    "fecha": "2026-10-12",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 15875.28,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15875.25,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007303,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15875.25,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007304,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 15875.25,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007305,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 15875.25,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2007306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 15875.25,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 201,
+    "descripcion": "Transporte",
+    "icono": null,
+    "monto": 90000,
+    "fecha": "2026-10-12",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 20101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30000,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 20102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30000,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 20103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30000,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20072,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68243.64,
+    "fecha": "2026-10-11",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 13648.76,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2007202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 13648.72,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2007203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 13648.72,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2007204,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 13648.72,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2007205,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13648.72,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20071,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": null,
+    "monto": 180235.75,
+    "fecha": "2026-10-10",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30099.35,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2007102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30027.28,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2007103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30027.28,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2007104,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30027.28,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2007105,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30027.28,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2007106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30027.28,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20070,
+    "descripcion": "Pasajes",
+    "icono": "TRANSPORTE",
+    "monto": 125227.86,
+    "fecha": "2026-10-09",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2007001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18326.05,
+        "porcentaje": 14.63,
+        "sueldo": null
+      },
+      {
+        "id": 2007002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 27489.04,
+        "porcentaje": 21.95,
+        "sueldo": null
+      },
+      {
+        "id": 2007003,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15271.69,
+        "porcentaje": 12.2,
+        "sueldo": null
+      },
+      {
+        "id": 2007004,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 16798.85,
+        "porcentaje": 13.41,
+        "sueldo": null
+      },
+      {
+        "id": 2007005,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 25198.28,
+        "porcentaje": 20.12,
+        "sueldo": null
+      },
+      {
+        "id": 2007006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 22143.95,
+        "porcentaje": 17.68,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20069,
+    "descripcion": "Seguro de viaje",
+    "icono": null,
+    "monto": 34219.97,
+    "fecha": "2026-10-08",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 2006901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5703.37,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5703.32,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006903,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5703.32,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006904,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5703.32,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006905,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5703.32,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5703.32,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20068,
+    "descripcion": "Desayuno en ruta",
+    "icono": null,
+    "monto": 26712.08,
+    "fecha": "2026-10-07",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5342.44,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5342.41,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006803,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5342.41,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006804,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5342.41,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006805,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5342.41,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20067,
+    "descripcion": "Alquiler de equipo",
+    "icono": "OCIO",
+    "monto": 45704.19,
+    "fecha": "2026-10-06",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7617.39,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7617.36,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006703,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7617.36,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006704,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 7617.36,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006705,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7617.36,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 7617.36,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20066,
+    "descripcion": "Estacionamiento",
+    "icono": null,
+    "monto": 12196.3,
+    "fecha": "2026-10-05",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1784.85,
+        "porcentaje": 14.63,
+        "sueldo": null
+      },
+      {
+        "id": 2006602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2677.23,
+        "porcentaje": 21.95,
+        "sueldo": null
+      },
+      {
+        "id": 2006603,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1487.35,
+        "porcentaje": 12.2,
+        "sueldo": null
+      },
+      {
+        "id": 2006604,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1636.08,
+        "porcentaje": 13.41,
+        "sueldo": null
+      },
+      {
+        "id": 2006605,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2454.13,
+        "porcentaje": 20.12,
+        "sueldo": null
+      },
+      {
+        "id": 2006606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2156.66,
+        "porcentaje": 17.68,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20065,
+    "descripcion": "Compras para el viaje",
+    "icono": null,
+    "monto": 56188.41,
+    "fecha": "2026-10-04",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9364.76,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9364.73,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006503,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 9364.73,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006504,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9364.73,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006505,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 9364.73,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 9364.73,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20064,
+    "descripcion": "Cena en el centro",
+    "icono": "COMIDAS",
+    "monto": 72180.52,
+    "fecha": "2026-10-03",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 14436.12,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14436.1,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006403,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 14436.1,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006404,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 14436.1,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006405,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 14436.1,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20063,
+    "descripcion": "Excursión al lago",
+    "icono": null,
+    "monto": 95172.63,
+    "fecha": "2026-10-02",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 15893.83,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2006302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15855.76,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2006303,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15855.76,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2006304,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 15855.76,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2006305,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 15855.76,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2006306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 15855.76,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20062,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68164.74,
+    "fecha": "2026-10-01",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9975.34,
+        "porcentaje": 14.63,
+        "sueldo": null
+      },
+      {
+        "id": 2006202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14962.99,
+        "porcentaje": 21.95,
+        "sueldo": null
+      },
+      {
+        "id": 2006203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 8312.77,
+        "porcentaje": 12.2,
+        "sueldo": null
+      },
+      {
+        "id": 2006204,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9144.05,
+        "porcentaje": 13.41,
+        "sueldo": null
+      },
+      {
+        "id": 2006205,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13716.07,
+        "porcentaje": 20.12,
+        "sueldo": null
+      },
+      {
+        "id": 2006206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12053.52,
+        "porcentaje": 17.68,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20061,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": "HOGAR",
+    "monto": 180156.85,
+    "fecha": "2026-10-01",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30026.15,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006104,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006105,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2006106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20060,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68212.27,
+    "fecha": "2026-09-23",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2006001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 13642.47,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 13642.45,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006003,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 13642.45,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006004,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 13642.45,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2006005,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13642.45,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20059,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": null,
+    "monto": 180204.38,
+    "fecha": "2026-09-21",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30094.13,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2005902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30022.05,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2005903,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30022.05,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2005904,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30022.05,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2005905,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30022.05,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2005906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30022.05,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20058,
+    "descripcion": "Pasajes",
+    "icono": "TRANSPORTE",
+    "monto": 125196.49,
+    "fecha": "2026-09-19",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18283.67,
+        "porcentaje": 14.6,
+        "sueldo": null
+      },
+      {
+        "id": 2005802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 27580.41,
+        "porcentaje": 22.03,
+        "sueldo": null
+      },
+      {
+        "id": 2005803,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15184.72,
+        "porcentaje": 12.13,
+        "sueldo": null
+      },
+      {
+        "id": 2005804,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 16734.18,
+        "porcentaje": 13.37,
+        "sueldo": null
+      },
+      {
+        "id": 2005805,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 25256.22,
+        "porcentaje": 20.17,
+        "sueldo": null
+      },
+      {
+        "id": 2005806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 22157.29,
+        "porcentaje": 17.7,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20057,
+    "descripcion": "Seguro de viaje",
+    "icono": null,
+    "monto": 34188.6,
+    "fecha": "2026-09-17",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5698.1,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5698.1,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005703,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5698.1,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005704,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5698.1,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005705,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5698.1,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5698.1,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20056,
+    "descripcion": "Desayuno en ruta",
+    "icono": null,
+    "monto": 26680.71,
+    "fecha": "2026-09-15",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5336.15,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2005602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5336.14,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2005603,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5336.14,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2005604,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5336.14,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2005605,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5336.14,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20055,
+    "descripcion": "Alquiler de equipo",
+    "icono": "OCIO",
+    "monto": 45672.82,
+    "fecha": "2026-09-13",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7612.17,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7612.13,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005503,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7612.13,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005504,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 7612.13,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005505,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7612.13,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 7612.13,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20054,
+    "descripcion": "Estacionamiento",
+    "icono": null,
+    "monto": 12164.93,
+    "fecha": "2026-09-11",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1776.59,
+        "porcentaje": 14.6,
+        "sueldo": null
+      },
+      {
+        "id": 2005402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2679.89,
+        "porcentaje": 22.03,
+        "sueldo": null
+      },
+      {
+        "id": 2005403,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1475.44,
+        "porcentaje": 12.13,
+        "sueldo": null
+      },
+      {
+        "id": 2005404,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1626,
+        "porcentaje": 13.37,
+        "sueldo": null
+      },
+      {
+        "id": 2005405,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2454.06,
+        "porcentaje": 20.17,
+        "sueldo": null
+      },
+      {
+        "id": 2005406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2152.95,
+        "porcentaje": 17.7,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20053,
+    "descripcion": "Compras para el viaje",
+    "icono": null,
+    "monto": 56157.04,
+    "fecha": "2026-09-09",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9359.54,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9359.5,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005303,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 9359.5,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005304,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9359.5,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005305,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 9359.5,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2005306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 9359.5,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20052,
+    "descripcion": "Cena en el centro",
+    "icono": "COMIDAS",
+    "monto": 72149.15,
+    "fecha": "2026-09-07",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 14429.83,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2005202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14429.83,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2005203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 14429.83,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2005204,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 14429.83,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2005205,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 14429.83,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20051,
+    "descripcion": "Excursión al lago",
+    "icono": null,
+    "monto": 95141.26,
+    "fecha": "2026-09-05",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 15888.61,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2005102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15850.53,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2005103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15850.53,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2005104,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 15850.53,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2005105,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 15850.53,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2005106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 15850.53,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20050,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68133.37,
+    "fecha": "2026-09-03",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2005001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9950.2,
+        "porcentaje": 14.6,
+        "sueldo": null
+      },
+      {
+        "id": 2005002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15009.57,
+        "porcentaje": 22.03,
+        "sueldo": null
+      },
+      {
+        "id": 2005003,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 8263.7,
+        "porcentaje": 12.13,
+        "sueldo": null
+      },
+      {
+        "id": 2005004,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9106.93,
+        "porcentaje": 13.37,
+        "sueldo": null
+      },
+      {
+        "id": 2005005,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13744.72,
+        "porcentaje": 20.17,
+        "sueldo": null
+      },
+      {
+        "id": 2005006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12058.25,
+        "porcentaje": 17.7,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20049,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": "HOGAR",
+    "monto": 180125.48,
+    "fecha": "2026-09-01",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30020.93,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004903,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004904,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004905,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20048,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68180.9,
+    "fecha": "2026-08-23",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 13636.18,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 13636.18,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004803,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 13636.18,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004804,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 13636.18,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004805,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13636.18,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20047,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": null,
+    "monto": 180173.01,
+    "fecha": "2026-08-21",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30088.91,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2004702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30016.82,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2004703,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30016.82,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2004704,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30016.82,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2004705,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30016.82,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2004706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30016.82,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20046,
+    "descripcion": "Pasajes",
+    "icono": "TRANSPORTE",
+    "monto": 125165.12,
+    "fecha": "2026-08-19",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18240.17,
+        "porcentaje": 14.57,
+        "sueldo": null
+      },
+      {
+        "id": 2004602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 27674.69,
+        "porcentaje": 22.11,
+        "sueldo": null
+      },
+      {
+        "id": 2004603,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15095.29,
+        "porcentaje": 12.06,
+        "sueldo": null
+      },
+      {
+        "id": 2004604,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 16667.71,
+        "porcentaje": 13.32,
+        "sueldo": null
+      },
+      {
+        "id": 2004605,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 25316.06,
+        "porcentaje": 20.23,
+        "sueldo": null
+      },
+      {
+        "id": 2004606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 22171.2,
+        "porcentaje": 17.71,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20045,
+    "descripcion": "Seguro de viaje",
+    "icono": null,
+    "monto": 34157.23,
+    "fecha": "2026-08-17",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5692.88,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5692.87,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004503,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5692.87,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004504,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5692.87,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004505,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5692.87,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5692.87,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20044,
+    "descripcion": "Desayuno en ruta",
+    "icono": null,
+    "monto": 26649.34,
+    "fecha": "2026-08-15",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5329.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5329.86,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004403,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5329.86,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004404,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5329.86,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004405,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5329.86,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20043,
+    "descripcion": "Alquiler de equipo",
+    "icono": "OCIO",
+    "monto": 45641.45,
+    "fecha": "2026-08-13",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7606.95,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7606.9,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004303,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7606.9,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004304,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 7606.9,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004305,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7606.9,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 7606.9,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20042,
+    "descripcion": "Estacionamiento",
+    "icono": null,
+    "monto": 12133.56,
+    "fecha": "2026-08-11",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1768.24,
+        "porcentaje": 14.57,
+        "sueldo": null
+      },
+      {
+        "id": 2004202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2682.79,
+        "porcentaje": 22.11,
+        "sueldo": null
+      },
+      {
+        "id": 2004203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1463.34,
+        "porcentaje": 12.06,
+        "sueldo": null
+      },
+      {
+        "id": 2004204,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1615.77,
+        "porcentaje": 13.32,
+        "sueldo": null
+      },
+      {
+        "id": 2004205,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2454.14,
+        "porcentaje": 20.23,
+        "sueldo": null
+      },
+      {
+        "id": 2004206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2149.28,
+        "porcentaje": 17.71,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20041,
+    "descripcion": "Compras para el viaje",
+    "icono": null,
+    "monto": 56125.67,
+    "fecha": "2026-08-09",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9354.32,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9354.27,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 9354.27,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004104,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9354.27,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004105,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 9354.27,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2004106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 9354.27,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20040,
+    "descripcion": "Cena en el centro",
+    "icono": "COMIDAS",
+    "monto": 72117.78,
+    "fecha": "2026-08-07",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2004001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 14423.58,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14423.55,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004003,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 14423.55,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004004,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 14423.55,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2004005,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 14423.55,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20039,
+    "descripcion": "Excursión al lago",
+    "icono": null,
+    "monto": 95109.89,
+    "fecha": "2026-08-05",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 15883.34,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2003902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15845.31,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2003903,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15845.31,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2003904,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 15845.31,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2003905,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 15845.31,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2003906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 15845.31,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20038,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68102,
+    "fecha": "2026-08-03",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9924.45,
+        "porcentaje": 14.57,
+        "sueldo": null
+      },
+      {
+        "id": 2003802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15057.72,
+        "porcentaje": 22.11,
+        "sueldo": null
+      },
+      {
+        "id": 2003803,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 8213.3,
+        "porcentaje": 12.06,
+        "sueldo": null
+      },
+      {
+        "id": 2003804,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9068.85,
+        "porcentaje": 13.32,
+        "sueldo": null
+      },
+      {
+        "id": 2003805,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13774.39,
+        "porcentaje": 20.23,
+        "sueldo": null
+      },
+      {
+        "id": 2003806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12063.29,
+        "porcentaje": 17.71,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20037,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": "HOGAR",
+    "monto": 180094.11,
+    "fecha": "2026-08-01",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30015.71,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003703,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003704,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003705,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20036,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68149.53,
+    "fecha": "2026-07-23",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 13629.93,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2003602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 13629.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2003603,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 13629.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2003604,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 13629.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2003605,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13629.9,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20035,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": null,
+    "monto": 180141.64,
+    "fecha": "2026-07-21",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30083.64,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2003502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30011.6,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2003503,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30011.6,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2003504,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30011.6,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2003505,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30011.6,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2003506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30011.6,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20034,
+    "descripcion": "Pasajes",
+    "icono": "TRANSPORTE",
+    "monto": 125133.75,
+    "fecha": "2026-07-19",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18195.48,
+        "porcentaje": 14.54,
+        "sueldo": null
+      },
+      {
+        "id": 2003402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 27772.03,
+        "porcentaje": 22.19,
+        "sueldo": null
+      },
+      {
+        "id": 2003403,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15003.28,
+        "porcentaje": 11.99,
+        "sueldo": null
+      },
+      {
+        "id": 2003404,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 16599.37,
+        "porcentaje": 13.27,
+        "sueldo": null
+      },
+      {
+        "id": 2003405,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 25377.89,
+        "porcentaje": 20.28,
+        "sueldo": null
+      },
+      {
+        "id": 2003406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 22185.7,
+        "porcentaje": 17.73,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20033,
+    "descripcion": "Seguro de viaje",
+    "icono": null,
+    "monto": 34125.86,
+    "fecha": "2026-07-17",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5687.66,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5687.64,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003303,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5687.64,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003304,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5687.64,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003305,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5687.64,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5687.64,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20032,
+    "descripcion": "Desayuno en ruta",
+    "icono": null,
+    "monto": 26617.97,
+    "fecha": "2026-07-15",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5323.61,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2003202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5323.59,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2003203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5323.59,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2003204,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5323.59,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2003205,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5323.59,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20031,
+    "descripcion": "Alquiler de equipo",
+    "icono": "OCIO",
+    "monto": 45610.08,
+    "fecha": "2026-07-13",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7601.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7601.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7601.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003104,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 7601.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003105,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7601.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2003106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 7601.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20030,
+    "descripcion": "Estacionamiento",
+    "icono": null,
+    "monto": 12102.19,
+    "fecha": "2026-07-11",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2003001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1759.79,
+        "porcentaje": 14.54,
+        "sueldo": null
+      },
+      {
+        "id": 2003002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2685.94,
+        "porcentaje": 22.19,
+        "sueldo": null
+      },
+      {
+        "id": 2003003,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1451.02,
+        "porcentaje": 11.99,
+        "sueldo": null
+      },
+      {
+        "id": 2003004,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1605.39,
+        "porcentaje": 13.27,
+        "sueldo": null
+      },
+      {
+        "id": 2003005,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2454.39,
+        "porcentaje": 20.28,
+        "sueldo": null
+      },
+      {
+        "id": 2003006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2145.66,
+        "porcentaje": 17.73,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20029,
+    "descripcion": "Compras para el viaje",
+    "icono": null,
+    "monto": 56094.3,
+    "fecha": "2026-07-09",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9349.05,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9349.05,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002903,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 9349.05,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002904,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9349.05,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002905,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 9349.05,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 9349.05,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20028,
+    "descripcion": "Cena en el centro",
+    "icono": "COMIDAS",
+    "monto": 72086.41,
+    "fecha": "2026-07-07",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 14417.29,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14417.28,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002803,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 14417.28,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002804,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 14417.28,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002805,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 14417.28,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20027,
+    "descripcion": "Excursión al lago",
+    "icono": null,
+    "monto": 95078.52,
+    "fecha": "2026-07-05",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 15878.12,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2002702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15840.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2002703,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15840.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2002704,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 15840.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2002705,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 15840.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2002706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 15840.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20026,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68070.63,
+    "fecha": "2026-07-03",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9898.05,
+        "porcentaje": 14.54,
+        "sueldo": null
+      },
+      {
+        "id": 2002602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15107.51,
+        "porcentaje": 22.19,
+        "sueldo": null
+      },
+      {
+        "id": 2002603,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 8161.52,
+        "porcentaje": 11.99,
+        "sueldo": null
+      },
+      {
+        "id": 2002604,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9029.77,
+        "porcentaje": 13.27,
+        "sueldo": null
+      },
+      {
+        "id": 2002605,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13805.14,
+        "porcentaje": 20.28,
+        "sueldo": null
+      },
+      {
+        "id": 2002606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12068.64,
+        "porcentaje": 17.73,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20025,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": "HOGAR",
+    "monto": 180062.74,
+    "fecha": "2026-07-01",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30010.49,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002503,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002504,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002505,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20024,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68118.16,
+    "fecha": "2026-06-23",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 13623.64,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 13623.63,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002403,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 13623.63,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002404,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 13623.63,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002405,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13623.63,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20023,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": null,
+    "monto": 180110.27,
+    "fecha": "2026-06-21",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30078.42,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2002302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30006.37,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2002303,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30006.37,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2002304,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30006.37,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2002305,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30006.37,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2002306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30006.37,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20022,
+    "descripcion": "Pasajes",
+    "icono": "TRANSPORTE",
+    "monto": 125102.38,
+    "fecha": "2026-06-19",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18149.58,
+        "porcentaje": 14.51,
+        "sueldo": null
+      },
+      {
+        "id": 2002202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 27872.55,
+        "porcentaje": 22.28,
+        "sueldo": null
+      },
+      {
+        "id": 2002203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 14908.57,
+        "porcentaje": 11.92,
+        "sueldo": null
+      },
+      {
+        "id": 2002204,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 16529.07,
+        "porcentaje": 13.21,
+        "sueldo": null
+      },
+      {
+        "id": 2002205,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 25441.8,
+        "porcentaje": 20.34,
+        "sueldo": null
+      },
+      {
+        "id": 2002206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 22200.81,
+        "porcentaje": 17.75,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20021,
+    "descripcion": "Seguro de viaje",
+    "icono": null,
+    "monto": 34094.49,
+    "fecha": "2026-06-17",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5682.44,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5682.41,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5682.41,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002104,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5682.41,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002105,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5682.41,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2002106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5682.41,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20020,
+    "descripcion": "Desayuno en ruta",
+    "icono": null,
+    "monto": 26586.6,
+    "fecha": "2026-06-15",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2002001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5317.32,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5317.32,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002003,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5317.32,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002004,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5317.32,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2002005,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5317.32,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20019,
+    "descripcion": "Alquiler de equipo",
+    "icono": "OCIO",
+    "monto": 45578.71,
+    "fecha": "2026-06-13",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7596.46,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7596.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001903,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7596.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001904,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 7596.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001905,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7596.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 7596.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20018,
+    "descripcion": "Estacionamiento",
+    "icono": null,
+    "monto": 12070.82,
+    "fecha": "2026-06-11",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1751.23,
+        "porcentaje": 14.51,
+        "sueldo": null
+      },
+      {
+        "id": 2001802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2689.35,
+        "porcentaje": 22.28,
+        "sueldo": null
+      },
+      {
+        "id": 2001803,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1438.49,
+        "porcentaje": 11.92,
+        "sueldo": null
+      },
+      {
+        "id": 2001804,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1594.84,
+        "porcentaje": 13.21,
+        "sueldo": null
+      },
+      {
+        "id": 2001805,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2454.81,
+        "porcentaje": 20.34,
+        "sueldo": null
+      },
+      {
+        "id": 2001806,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2142.1,
+        "porcentaje": 17.75,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20017,
+    "descripcion": "Compras para el viaje",
+    "icono": null,
+    "monto": 56062.93,
+    "fecha": "2026-06-09",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9343.83,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9343.82,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001703,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 9343.82,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001704,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9343.82,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001705,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 9343.82,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 9343.82,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20016,
+    "descripcion": "Cena en el centro",
+    "icono": "COMIDAS",
+    "monto": 72055.04,
+    "fecha": "2026-06-07",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 14411.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2001602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14411,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2001603,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 14411,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2001604,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 14411,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2001605,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 14411,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20015,
+    "descripcion": "Excursión al lago",
+    "icono": null,
+    "monto": 95047.15,
+    "fecha": "2026-06-05",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 15872.85,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2001502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15834.86,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2001503,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15834.86,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2001504,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 15834.86,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2001505,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 15834.86,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2001506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 15834.86,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20014,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68039.26,
+    "fecha": "2026-06-03",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9871.01,
+        "porcentaje": 14.51,
+        "sueldo": null
+      },
+      {
+        "id": 2001402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15159,
+        "porcentaje": 22.28,
+        "sueldo": null
+      },
+      {
+        "id": 2001403,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 8108.3,
+        "porcentaje": 11.92,
+        "sueldo": null
+      },
+      {
+        "id": 2001404,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8989.64,
+        "porcentaje": 13.21,
+        "sueldo": null
+      },
+      {
+        "id": 2001405,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13836.99,
+        "porcentaje": 20.34,
+        "sueldo": null
+      },
+      {
+        "id": 2001406,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12074.32,
+        "porcentaje": 17.75,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20013,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": "HOGAR",
+    "monto": 180031.37,
+    "fecha": "2026-06-01",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30005.27,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001303,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001304,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001305,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2001306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20012,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68086.79,
+    "fecha": "2026-05-23",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 13617.39,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2001202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 13617.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2001203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 13617.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2001204,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 13617.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2001205,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13617.35,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20011,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": null,
+    "monto": 180078.9,
+    "fecha": "2026-05-21",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30073.2,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2001102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30001.14,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2001103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30001.14,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2001104,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30001.14,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2001105,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30001.14,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2001106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30001.14,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20010,
+    "descripcion": "Pasajes",
+    "icono": "TRANSPORTE",
+    "monto": 125071.01,
+    "fecha": "2026-05-19",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2001001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18102.39,
+        "porcentaje": 14.47,
+        "sueldo": null
+      },
+      {
+        "id": 2001002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 27976.41,
+        "porcentaje": 22.37,
+        "sueldo": null
+      },
+      {
+        "id": 2001003,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 14811.04,
+        "porcentaje": 11.84,
+        "sueldo": null
+      },
+      {
+        "id": 2001004,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 16456.71,
+        "porcentaje": 13.16,
+        "sueldo": null
+      },
+      {
+        "id": 2001005,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 25507.9,
+        "porcentaje": 20.39,
+        "sueldo": null
+      },
+      {
+        "id": 2001006,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 22216.56,
+        "porcentaje": 17.76,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20009,
+    "descripcion": "Seguro de viaje",
+    "icono": null,
+    "monto": 34063.12,
+    "fecha": "2026-05-17",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5677.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5677.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000903,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5677.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000904,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5677.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000905,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5677.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000906,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 5677.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20008,
+    "descripcion": "Desayuno en ruta",
+    "icono": null,
+    "monto": 26555.23,
+    "fecha": "2026-05-15",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5311.07,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2000802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5311.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2000803,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 5311.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2000804,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 5311.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2000805,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 5311.04,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20007,
+    "descripcion": "Alquiler de equipo",
+    "icono": "OCIO",
+    "monto": 45547.34,
+    "fecha": "2026-05-13",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7591.24,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7591.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000703,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7591.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000704,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 7591.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000705,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7591.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000706,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 7591.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20006,
+    "descripcion": "Estacionamiento",
+    "icono": null,
+    "monto": 12039.45,
+    "fecha": "2026-05-11",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1742.58,
+        "porcentaje": 14.47,
+        "sueldo": null
+      },
+      {
+        "id": 2000602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 2693.03,
+        "porcentaje": 22.37,
+        "sueldo": null
+      },
+      {
+        "id": 2000603,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1425.72,
+        "porcentaje": 11.84,
+        "sueldo": null
+      },
+      {
+        "id": 2000604,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 1584.13,
+        "porcentaje": 13.16,
+        "sueldo": null
+      },
+      {
+        "id": 2000605,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2455.41,
+        "porcentaje": 20.39,
+        "sueldo": null
+      },
+      {
+        "id": 2000606,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 2138.58,
+        "porcentaje": 17.76,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20005,
+    "descripcion": "Compras para el viaje",
+    "icono": null,
+    "monto": 56031.56,
+    "fecha": "2026-05-09",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9338.61,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9338.59,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000503,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 9338.59,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000504,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 9338.59,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000505,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 9338.59,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000506,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 9338.59,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20004,
+    "descripcion": "Cena en el centro",
+    "icono": "COMIDAS",
+    "monto": 72023.67,
+    "fecha": "2026-05-07",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 8,
+    "pagadorNombre": "Camila Díaz",
+    "pagadorEmail": "camila@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 14404.75,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2000402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14404.73,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2000403,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 14404.73,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2000404,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 14404.73,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 2000405,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 14404.73,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20003,
+    "descripcion": "Excursión al lago",
+    "icono": null,
+    "monto": 95015.78,
+    "fecha": "2026-05-05",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 15867.63,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 2000302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15829.63,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2000303,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 15829.63,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2000304,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 15829.63,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2000305,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 15829.63,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 2000306,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 15829.63,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20002,
+    "descripcion": "Combustible",
+    "icono": null,
+    "monto": 68007.89,
+    "fecha": "2026-05-03",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 6,
+    "pagadorNombre": "Valentina Torres",
+    "pagadorEmail": "valentina@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9843.27,
+        "porcentaje": 14.47,
+        "sueldo": null
+      },
+      {
+        "id": 2000202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 15212.29,
+        "porcentaje": 22.37,
+        "sueldo": null
+      },
+      {
+        "id": 2000203,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 8053.56,
+        "porcentaje": 11.84,
+        "sueldo": null
+      },
+      {
+        "id": 2000204,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 8948.4,
+        "porcentaje": 13.16,
+        "sueldo": null
+      },
+      {
+        "id": 2000205,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 13870.03,
+        "porcentaje": 20.39,
+        "sueldo": null
+      },
+      {
+        "id": 2000206,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 12080.34,
+        "porcentaje": 17.76,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 20001,
+    "descripcion": "Cabaña en Bariloche",
+    "icono": "HOGAR",
+    "monto": 180000,
+    "fecha": "2026-05-01",
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 2000101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000103,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 30000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000104,
+        "usuarioId": 6,
+        "usuarioNombre": "Valentina Torres",
+        "usuarioEmail": "valentina@example.test",
+        "importe": 30000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000105,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 30000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 2000106,
+        "usuarioId": 8,
+        "usuarioNombre": "Camila Díaz",
+        "usuarioEmail": "camila@example.test",
+        "importe": 30000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  }
+]

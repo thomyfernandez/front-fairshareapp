@@ -1,5 +1,7 @@
 @layer components {
-  .ui-button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 44px; padding: 10px 16px; border: 1px solid transparent; border-radius: var(--radius-md); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); line-height: 1.4; text-decoration: none; white-space: nowrap; transition: background-color var(--motion-duration-fast) var(--ease-standard), box-shadow var(--motion-duration-fast) var(--ease-standard); }
+  .money { font-variant-numeric: tabular-nums; }
+  .money__decimals { font-size: .72em; color: var(--color-text-secondary); font-weight: var(--font-weight-medium); }
+  .ui-button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 44px; max-width: 100%; padding: 10px 16px; border: 1px solid transparent; border-radius: var(--radius-md); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); line-height: 1.4; text-align: center; text-decoration: none; white-space: normal; overflow-wrap: anywhere; transition: background-color var(--motion-duration-fast) var(--ease-standard), box-shadow var(--motion-duration-fast) var(--ease-standard); }
   .ui-button--primary { background: var(--color-brand-primary); color: var(--color-text-inverse); box-shadow: var(--shadow-subtle); }
   .ui-button--primary:not(:disabled):hover { background: var(--color-brand-hover); }
   .ui-button--secondary { background: var(--color-canvas); border-color: var(--color-border-strong); color: var(--color-text-primary); box-shadow: var(--shadow-subtle); }
@@ -27,7 +29,7 @@
   .ui-checkbox input { width: 18px; height: 18px; min-height: 0; accent-color: var(--color-brand-primary); flex: 0 0 auto; }
   .ui-card { background: var(--color-canvas); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-subtle); min-width: 0; }
   .ui-badge { display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 6px; font-size: var(--text-xs); font-weight: var(--font-weight-medium); line-height: 1.5; color: var(--color-text-secondary); background: var(--color-panel); white-space: nowrap; }
-  .ui-badge--brand { background: color-mix(in srgb, var(--color-brand-primary) 9%, white); color: var(--color-brand-hover); }
+  .ui-badge--brand { background: var(--color-brand-soft); color: var(--color-brand-ink); }
   .ui-badge--success { background: var(--color-success-background); color: var(--color-success-foreground); }
   .ui-badge--warning { background: var(--color-warning-background); color: var(--color-warning-foreground); }
   .ui-badge--error { background: var(--color-error-background); color: var(--color-error-foreground); }
@@ -56,7 +58,7 @@
   .ui-alert--success { background: var(--color-success-background); color: var(--color-success-foreground); }
   .ui-alert--warning { background: var(--color-warning-background); color: var(--color-warning-foreground); }
   .ui-modal { width: min(560px, calc(100% - 32px)); max-height: min(90dvh, 850px); margin: auto; padding: 0; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); color: var(--color-text-primary); background: var(--color-canvas); box-shadow: var(--shadow-panel); overflow-y: auto; }
-  .ui-modal::backdrop { background: rgba(10, 37, 64, .32); }
+  .ui-modal::backdrop { background: var(--color-overlay); }
   .ui-modal__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 24px; border-bottom: 1px solid var(--color-border-subtle); background: var(--color-panel); }
   .ui-modal__header h2 { margin: 0; }
   .ui-modal__header p { margin: 8px 0 0; font-size: var(--text-sm); }

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2026-10-19T15:00:00Z",
+  "status": 404,
+  "code": "RECURSO_NO_ENCONTRADO",
+  "message": "No encontramos el recurso solicitado.",
+  "path": "/api/v1/gastos/999999"
+}

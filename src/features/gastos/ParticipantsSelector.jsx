@@ -1,4 +1,4 @@
-import { useId, useMemo, useState, useEffect } from 'react'
+import { useMemo, useState, useEffect, useId } from 'react'
 import { Badge, Button, Icon } from '../../components/ui'
 import { cents, money } from '../../lib/format'
 
@@ -26,11 +26,15 @@ export function ParticipantsSelector({
   tipoReparto = 'EQUITATIVA',
   monto = 0,
   value,
+  initialSelection,
+  onInteraction,
   onChange,
   disabled = false,
+  compact = false,
   error: externalError,
 }) {
   const normalizedMembers = useMemo(() => normalizeMembers(members), [members])
+  const selectionId = useId()
   const numericMonto = Math.max(0, Number(monto) || 0)
   const totalCents = cents(numericMonto)
 
@@ -38,7 +42,7 @@ export function ParticipantsSelector({
   const [selectedEquitativa, setSelectedEquitativa] = useState(() => {
     const initial = {}
     normalizedMembers.forEach(m => {
-      initial[m.usuarioId] = true
+      initial[m.usuarioId] = initialSelection?.equal?.[m.usuarioId] ?? (value?.length ? value.some(part => Number(part.usuarioId) === m.usuarioId) : true)
     })
     return initial
   })
@@ -49,7 +53,7 @@ export function ParticipantsSelector({
     const count = normalizedMembers.length || 1
     const basePct = (100 / count).toFixed(2)
     normalizedMembers.forEach(m => {
-      initial[m.usuarioId] = basePct
+      initial[m.usuarioId] = initialSelection?.percentages?.[m.usuarioId] ?? (value?.length ? String(value.find(part => Number(part.usuarioId) === m.usuarioId)?.porcentaje ?? 0) : basePct)
     })
     return initial
   })
@@ -58,7 +62,7 @@ export function ParticipantsSelector({
   const [importes, setImportes] = useState(() => {
     const initial = {}
     normalizedMembers.forEach(m => {
-      initial[m.usuarioId] = ''
+      initial[m.usuarioId] = initialSelection?.amounts?.[m.usuarioId] ?? String(value?.find(part => Number(part.usuarioId) === m.usuarioId)?.importe ?? '')
     })
     return initial
   })
@@ -99,7 +103,7 @@ export function ParticipantsSelector({
       }
     }
 
-    if (tipoReparto === 'EQUITATIVA') {
+    if (tipoReparto === 'EQUITATIVA' || tipoReparto === 'PROPORCIONAL_INGRESOS') {
       const activeMembers = normalizedMembers.filter(m => selectedEquitativa[m.usuarioId])
       const count = activeMembers.length
 
@@ -111,6 +115,8 @@ export function ParticipantsSelector({
           statusBadge: <Badge tone="error">0 seleccionados</Badge>,
         }
       }
+
+      if (tipoReparto === 'PROPORCIONAL_INGRESOS') return { participantes: activeMembers.map(member => ({ usuarioId: member.usuarioId })), isValid: true, validationError: null, statusBadge: <Badge>Reparto según ingresos al registrar</Badge> }
 
       // Distribución precisa de centavos para que la suma siempre coincida con el monto
       const baseCents = count > 0 ? Math.floor(totalCents / count) : 0
@@ -266,18 +272,20 @@ export function ParticipantsSelector({
   // Notificar al componente padre cuando cambie el resultado
   useEffect(() => {
     if (onChange) {
-      onChange(participantes, { isValid, error: validationError })
+      onChange(participantes, { isValid, error: validationError, selection: { equal: selectedEquitativa, percentages: porcentajes, amounts: importes } })
     }
-  }, [participantes, isValid, validationError, onChange])
+  }, [participantes, isValid, validationError, onChange, selectedEquitativa, porcentajes, importes])
 
   // Acciones rápidas para EQUITATIVA
   const selectAll = () => {
+    onInteraction?.()
     const next = {}
     normalizedMembers.forEach(m => { next[m.usuarioId] = true })
     setSelectedEquitativa(next)
   }
 
   const deselectAll = () => {
+    onInteraction?.()
     const next = {}
     normalizedMembers.forEach(m => { next[m.usuarioId] = false })
     setSelectedEquitativa(next)
@@ -285,6 +293,7 @@ export function ParticipantsSelector({
 
   // Acción rápida para PORCENTUAL: Repartir equitativamente
   const distributeEvenlyPct = () => {
+    onInteraction?.()
     const count = normalizedMembers.length
     if (count === 0) return
     const basePct = Math.floor((100 / count) * 100) / 100
@@ -299,6 +308,7 @@ export function ParticipantsSelector({
 
   // Acción rápida para MONTOS_FIJOS: Asignar monto total distribuido
   const distributeEvenlyAmount = () => {
+    onInteraction?.()
     const count = normalizedMembers.length
     if (count === 0 || totalCents === 0) return
     const baseCents = Math.floor(totalCents / count)
@@ -314,23 +324,23 @@ export function ParticipantsSelector({
   const activeError = externalError || validationError
 
   return (
-    <div className="space-y-3">
+    <div className={`participants-selector space-y-3${compact ? ' participants-selector--compact' : ''}`}>
       {/* Cabecera del selector */}
-      <div className="flex items-center justify-between flex-wrap gap-2 pt-2 border-t border-subtle">
+      <div className={`flex items-center justify-between flex-wrap gap-2${compact ? '' : ' pt-2 border-t border-subtle'}`}>
         <div className="flex items-center gap-2">
           <Icon name="users" size={18} className="text-secondary" />
           <span className="text-sm font-semibold text-primary">Participantes del reparto</span>
         </div>
         <div className="flex items-center gap-2 flex-wrap">
           {statusBadge}
-          {tipoReparto === 'EQUITATIVA' && (
+          {['EQUITATIVA', 'PROPORCIONAL_INGRESOS'].includes(tipoReparto) && (
             <div className="flex gap-1">
               <Button
                 variant="ghost"
                 size="small"
                 onClick={selectAll}
                 disabled={disabled}
-                className="text-xs px-2 py-1 min-h-[32px]"
+                className="text-xs px-2 py-1 min-h-[44px]"
               >
                 Todos
               </Button>
@@ -339,7 +349,7 @@ export function ParticipantsSelector({
                 size="small"
                 onClick={deselectAll}
                 disabled={disabled}
-                className="text-xs px-2 py-1 min-h-[32px]"
+                className="text-xs px-2 py-1 min-h-[44px]"
               >
                 Ninguno
               </Button>
@@ -351,7 +361,7 @@ export function ParticipantsSelector({
               size="small"
               onClick={distributeEvenlyPct}
               disabled={disabled}
-              className="text-xs px-2 py-1 min-h-[32px]"
+              className="text-xs px-2 py-1 min-h-[44px]"
             >
               Distribuir 100%
             </Button>
@@ -362,7 +372,7 @@ export function ParticipantsSelector({
               size="small"
               onClick={distributeEvenlyAmount}
               disabled={disabled}
-              className="text-xs px-2 py-1 min-h-[32px]"
+              className="text-xs px-2 py-1 min-h-[44px]"
             >
               Distribuir total
             </Button>
@@ -371,7 +381,7 @@ export function ParticipantsSelector({
       </div>
 
       {/* Lista de participantes */}
-      <div className="space-y-2 bg-panel p-3 rounded-lg border border-subtle">
+      <div className={compact ? "space-y-2" : "space-y-2 bg-panel p-3 rounded-lg border border-subtle"}>
         {normalizedMembers.map(m => {
           const isSelected = selectedEquitativa[m.usuarioId]
           const pctVal = porcentajes[m.usuarioId] || ''
@@ -381,10 +391,10 @@ export function ParticipantsSelector({
           return (
             <div
               key={m.usuarioId}
-              className="flex items-center justify-between gap-3 p-2 bg-canvas rounded-md border border-subtle"
+              className="participant-choice"
             >
               {/* Información del miembro */}
-              <div className="flex items-center gap-3 min-w-0 flex-1">
+              <div className="participant-choice__member flex items-center gap-3 min-w-0">
                 <span
                   className="w-8 h-8 rounded-full bg-header text-brand-primary text-xs font-semibold flex items-center justify-center shrink-0 border border-subtle"
                   aria-hidden="true"
@@ -392,26 +402,26 @@ export function ParticipantsSelector({
                   {m.nombreUsuario.slice(0, 2).toUpperCase()}
                 </span>
                 <div className="min-w-0">
-                  <span className="text-sm font-medium text-primary block truncate">
+                  <span className="text-sm font-medium text-primary block break-words">
                     {m.nombreUsuario}
                   </span>
-                  {m.rol && (
+                  {m.rol && !compact && (
                     <span className="text-xs text-secondary block capitalize">{m.rol.toLowerCase()}</span>
                   )}
                 </div>
               </div>
 
               {/* Modo EQUITATIVA */}
-              {tipoReparto === 'EQUITATIVA' && (
+              {['EQUITATIVA', 'PROPORCIONAL_INGRESOS'].includes(tipoReparto) && (
                 <div className="flex items-center gap-3">
                   <div className="text-right">
                     {isSelected ? (
                       <div>
                         <span className="text-sm font-semibold text-brand-primary block">
-                          {money(partInfo?.importe ?? (numericMonto / (participantes.length || 1)))}
+                          {tipoReparto === 'PROPORCIONAL_INGRESOS' ? 'Según ingresos' : money(partInfo?.importe ?? (numericMonto / (participantes.length || 1)))}
                         </span>
                         <span className="text-xs text-secondary">
-                          {partInfo?.porcentaje || 0}%
+                          {tipoReparto === 'PROPORCIONAL_INGRESOS' ? 'Se calcula al registrar' : `${partInfo?.porcentaje || 0}%`}
                         </span>
                       </div>
                     ) : (
@@ -420,7 +430,7 @@ export function ParticipantsSelector({
                   </div>
                   <input
                     type="checkbox"
-                    id={`participant-check-${m.usuarioId}`}
+                    id={`participant-${selectionId}-${m.usuarioId}`}
                     checked={!!isSelected}
                     disabled={disabled}
                     onChange={e => {
@@ -437,14 +447,14 @@ export function ParticipantsSelector({
 
               {/* Modo PORCENTUAL */}
               {tipoReparto === 'PORCENTUAL' && (
-                <div className="flex items-center gap-3">
+                <div className="participant-choice__allocation flex items-center gap-3">
                   <div className="text-right min-w-[80px]">
                     <span className="text-sm font-medium text-primary block">
                       {money((numericMonto * (parseFloat(pctVal) || 0)) / 100)}
                     </span>
                     <span className="text-xs text-secondary">estimado</span>
                   </div>
-                  <div className="flex items-center gap-1 w-24">
+                  <div className="participant-choice__percentage">
                     <input
                       type="number"
                       min="0"
@@ -457,17 +467,17 @@ export function ParticipantsSelector({
                         const val = e.target.value
                         setPorcentajes(prev => ({ ...prev, [m.usuarioId]: val }))
                       }}
-                      className="ui-input text-right py-1 px-2 h-9 text-sm"
+                      className="ui-input text-right text-sm"
                       aria-label={`Porcentaje para ${m.nombreUsuario}`}
                     />
-                    <span className="text-xs font-semibold text-secondary">%</span>
+                    <span className="participant-choice__percentage-unit" aria-hidden="true">%</span>
                   </div>
                 </div>
               )}
 
               {/* Modo MONTOS_FIJOS */}
               {tipoReparto === 'MONTOS_FIJOS' && (
-                <div className="flex items-center gap-3">
+                <div className="participant-choice__allocation flex items-center gap-3">
                   <div className="text-right min-w-[65px]">
                     <span className="text-xs font-medium text-secondary block">
                       {numericMonto > 0
@@ -475,8 +485,8 @@ export function ParticipantsSelector({
                         : '0%'}
                     </span>
                   </div>
-                  <div className="flex items-center gap-1 w-32">
-                    <span className="text-xs font-semibold text-secondary">$</span>
+                  <div className="participant-choice__amount">
+                    <span className="participant-choice__amount-unit" aria-hidden="true">$</span>
                     <input
                       type="number"
                       min="0"
@@ -488,7 +498,7 @@ export function ParticipantsSelector({
                         const val = e.target.value
                         setImportes(prev => ({ ...prev, [m.usuarioId]: val }))
                       }}
-                      className="ui-input text-right py-1 px-2 h-9 text-sm"
+                      className="ui-input text-right text-sm"
                       aria-label={`Importe fijo para ${m.nombreUsuario}`}
                     />
                   </div>

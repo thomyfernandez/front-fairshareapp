@@ -71,23 +71,31 @@ const variable = path => {
   if (group === 'motion') return subgroup === 'easing' ? `--ease-${name}` : `--motion-duration-${name}`
   return fail(path.join('.'), 'unmapped token group')
 }
-const walk = (group, path = []) => {
+const walk = (group, path = [], output = declarations) => {
   for (const [name, entry] of Object.entries(group)) {
     if (name.startsWith('$')) continue
     if (!entry || typeof entry !== 'object') fail([...path, name].join('.'), 'expected a token or group')
     const next = [...path, name]
-    if ('$value' in entry) declarations.push(`  ${variable(next)}: ${toCss(entry, next.join('.'))};`)
-    else walk(entry, next)
+    if ('$value' in entry) output.push(`  ${variable(next)}: ${toCss(entry, next.join('.'))};`)
+    else walk(entry, next, output)
   }
 }
-walk(tokens)
+const { themes = {}, ...baseTokens } = tokens
+walk(baseTokens)
 // Short semantic names requested for text-primary and border-subtle.
 // Brand actions retain the explicit brand-primary name to avoid a color collision.
 for (const name of ['primary', 'secondary', 'tertiary', 'inverse']) {
   declarations.push(`  --color-${name}: var(--color-text-${name});`)
 }
 for (const name of ['subtle', 'strong']) declarations.push(`  --color-${name}: var(--color-border-${name});`)
-const css = `/* Generated from tokens.json by npm run tokens:build. Do not edit manually. */\n@theme static {\n${declarations.join('\n')}\n}\n`
+// Cada tema conserva los mismos nombres semánticos, incluidos los modales que usan portal.
+const themeBlocks = Object.entries(themes).filter(([name]) => !name.startsWith('$')).map(([name, theme]) => {
+  if (!['dark'].includes(name)) fail(name, 'unsupported theme')
+  const overrides = []
+  walk(theme, [], overrides)
+  return `@layer base {\n  :root[data-theme="${name}"] {\n${overrides.map(line => `  ${line}`).join('\n')}\n    color-scheme: ${name};\n  }\n}\n`
+})
+const css = `/* Generated from tokens.json by npm run tokens:build. Do not edit manually. */\n@theme static {\n${declarations.join('\n')}\n}\n${themeBlocks.join('\n')}`
 if (process.argv.includes('--check')) {
   if (readFileSync(target, 'utf8') !== css) throw new Error('theme.css is stale. Run npm run tokens:build.')
   console.log(`Theme verified: ${declarations.length} variables.`)

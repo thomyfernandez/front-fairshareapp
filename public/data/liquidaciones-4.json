@@ -1,0 +1,210 @@
+[
+  {
+    "id": 23,
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "montoTotal": 549220.74,
+    "fechaLiquidacion": "2026-05-28",
+    "mes": 5,
+    "anio": 2026,
+    "descripcion": "Cierre de equipo de fútbol",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      40001,
+      40002,
+      40003,
+      40004,
+      40005,
+      40006,
+      40007,
+      40008,
+      40009,
+      40010,
+      40011,
+      40012
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 549220.74,
+      "presupuestoAnterior": 3766043.82,
+      "presupuestoRestante": 3216823.08,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-05-28"
+    }
+  },
+  {
+    "id": 24,
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "montoTotal": 549597.18,
+    "fechaLiquidacion": "2026-06-28",
+    "mes": 6,
+    "anio": 2026,
+    "descripcion": "Cierre de equipo de fútbol",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      40013,
+      40014,
+      40015,
+      40016,
+      40017,
+      40018,
+      40019,
+      40020,
+      40021,
+      40022,
+      40023,
+      40024
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 549597.18,
+      "presupuestoAnterior": 3216823.08,
+      "presupuestoRestante": 2667225.9,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-06-28"
+    }
+  },
+  {
+    "id": 25,
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "montoTotal": 549973.62,
+    "fechaLiquidacion": "2026-07-28",
+    "mes": 7,
+    "anio": 2026,
+    "descripcion": "Cierre de equipo de fútbol",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      40025,
+      40026,
+      40027,
+      40028,
+      40029,
+      40030,
+      40031,
+      40032,
+      40033,
+      40034,
+      40035,
+      40036
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 549973.62,
+      "presupuestoAnterior": 2667225.9,
+      "presupuestoRestante": 2117252.28,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-07-28"
+    }
+  },
+  {
+    "id": 26,
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "montoTotal": 550350.06,
+    "fechaLiquidacion": "2026-08-28",
+    "mes": 8,
+    "anio": 2026,
+    "descripcion": "Cierre de equipo de fútbol",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      40037,
+      40038,
+      40039,
+      40040,
+      40041,
+      40042,
+      40043,
+      40044,
+      40045,
+      40046,
+      40047,
+      40048
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 550350.06,
+      "presupuestoAnterior": 2117252.28,
+      "presupuestoRestante": 1566902.22,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-08-28"
+    }
+  },
+  {
+    "id": 27,
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "montoTotal": 550726.5,
+    "fechaLiquidacion": "2026-09-28",
+    "mes": 9,
+    "anio": 2026,
+    "descripcion": "Cierre de equipo de fútbol",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      40049,
+      40050,
+      40051,
+      40052,
+      40053,
+      40054,
+      40055,
+      40056,
+      40057,
+      40058,
+      40059,
+      40060
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 550726.5,
+      "presupuestoAnterior": 1566902.22,
+      "presupuestoRestante": 1016175.72,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-09-28"
+    }
+  },
+  {
+    "id": 28,
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "montoTotal": 209174.74,
+    "fechaLiquidacion": "2026-10-06",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de equipo de fútbol",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      40061,
+      40062,
+      40063,
+      40064
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 209174.74,
+      "presupuestoAnterior": 1016175.72,
+      "presupuestoRestante": 807000.98,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-06"
+    }
+  },
+  {
+    "id": 29,
+    "espacioId": 4,
+    "espacioNombre": "Equipo de fútbol",
+    "montoTotal": 207000.98,
+    "fechaLiquidacion": "2026-10-10",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de equipo de fútbol",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      40065,
+      40066,
+      40067,
+      40068
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 207000.98,
+      "presupuestoAnterior": 807000.98,
+      "presupuestoRestante": 600000,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-10"
+    }
+  }
+]

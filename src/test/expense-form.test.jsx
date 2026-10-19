@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { UIProvider } from '../components/ui'
 import { ExpenseForm } from '../features/gastos/ExpenseForm.jsx'
 import { ParticipantsSelector } from '../features/gastos/ParticipantsSelector.jsx'
+import { WorkspaceContext } from '../app/workspace-context'
 import { ApiError } from '../api'
 
 const mockMembers = [
@@ -13,7 +14,7 @@ const mockMembers = [
 ]
 
 function renderWithUI(ui) {
-  return render(<UIProvider>{ui}</UIProvider>)
+  return render(<UIProvider><WorkspaceContext.Provider value={{ spaceId: '1', members: mockMembers, session: { usuario: { id: 1 } }, isAdmin: true, api: ui.props.api || vi.fn(), invalidate: vi.fn() }}>{ui}</WorkspaceContext.Provider></UIProvider>)
 }
 
 describe('ExpenseForm & ParticipantsSelector', () => {
@@ -135,11 +136,11 @@ describe('ExpenseForm & ParticipantsSelector', () => {
       monto: 3000,
       fecha: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
       pagadorId: 1,
-      tipoReparto: 'EQUITATIVA',
+      regla: 'EQUITATIVA',
       participantes: [
-        { usuarioId: 1, porcentaje: 33.33, importe: 1000 },
-        { usuarioId: 2, porcentaje: 33.33, importe: 1000 },
-        { usuarioId: 3, porcentaje: 33.33, importe: 1000 },
+        { usuarioId: 1 },
+        { usuarioId: 2 },
+        { usuarioId: 3 },
       ],
     })
     expect(onSuccess).toHaveBeenCalled()
@@ -175,7 +176,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
     await user.click(screen.getByRole('button', { name: 'Registrar gasto' }))
 
     // Verificar que se mostró el error
-    expect(await screen.findByText('Error 400: El servicio rechazó la operación.')).toBeInTheDocument()
+    expect((await screen.findAllByText('Error 400: El servicio rechazó la operación.')).some(element => element.getAttribute('aria-hidden') !== 'true')).toBe(true)
 
     // VERIFICACIÓN CRÍTICA DE UX:
     // Los campos NO deben haberse borrado ni reseteado

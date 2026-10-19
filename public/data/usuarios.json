@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "usuario": "ana",
+    "email": "demo@fairshare.test",
+    "nombre": "Ana",
+    "apellido": "Ruiz",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 2,
+    "usuario": "thomas",
+    "email": "thomas@example.test",
+    "nombre": "Thomas",
+    "apellido": "Fernandez",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 3,
+    "usuario": "sol",
+    "email": "sol@example.test",
+    "nombre": "Sol",
+    "apellido": "García",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 4,
+    "usuario": "lucia",
+    "email": "lucia@example.test",
+    "nombre": "Lucía",
+    "apellido": "Pérez",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 5,
+    "usuario": "martin",
+    "email": "martin@example.test",
+    "nombre": "Martín",
+    "apellido": "López",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 6,
+    "usuario": "valentina",
+    "email": "valentina@example.test",
+    "nombre": "Valentina",
+    "apellido": "Torres",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 7,
+    "usuario": "nicolas",
+    "email": "nicolas@example.test",
+    "nombre": "Nicolás",
+    "apellido": "Romero",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 8,
+    "usuario": "camila",
+    "email": "camila@example.test",
+    "nombre": "Camila",
+    "apellido": "Díaz",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 9,
+    "usuario": "mateo",
+    "email": "mateo@example.test",
+    "nombre": "Mateo",
+    "apellido": "Herrera",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 10,
+    "usuario": "julieta",
+    "email": "julieta@example.test",
+    "nombre": "Julieta",
+    "apellido": "Castro",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 11,
+    "usuario": "santiago",
+    "email": "santiago@example.test",
+    "nombre": "Santiago",
+    "apellido": "Acosta",
+    "rol": "USUARIO"
+  },
+  {
+    "id": 12,
+    "usuario": "emilia",
+    "email": "emilia@example.test",
+    "nombre": "Emilia",
+    "apellido": "Vega",
+    "rol": "USUARIO"
+  }
+]

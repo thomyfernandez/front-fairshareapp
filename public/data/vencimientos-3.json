@@ -1,0 +1,26 @@
+[
+  {
+    "servicioId": 502,
+    "nombreServicio": "Café y té",
+    "fechaVencimiento": "2026-10-11",
+    "montoBase": 18400,
+    "montoVariable": 2000,
+    "diasVencido": 8
+  },
+  {
+    "servicioId": 505,
+    "nombreServicio": "Papelería",
+    "fechaVencimiento": "2026-10-14",
+    "montoBase": 12600,
+    "montoVariable": 2000,
+    "diasVencido": 5
+  },
+  {
+    "servicioId": 508,
+    "nombreServicio": "Almuerzo del equipo",
+    "fechaVencimiento": "2026-10-17",
+    "montoBase": 48500,
+    "montoVariable": 2000,
+    "diasVencido": 2
+  }
+]

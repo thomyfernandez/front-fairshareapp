@@ -1,8 +1,10 @@
-import { useState, useCallback } from 'react'
-import { Button, Card, Field, Icon, InlineAlert, Submit, useUI } from '../../components/ui'
-import { cents, money, today } from '../../lib/format'
+import { useState, useCallback, useEffect, useRef } from 'react'
+import { Button, Disclosure, Icon, InlineAlert, Modal, Submit, useUI } from '../../components/ui'
+import { cents, dateLabel, money, today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
-import { ParticipantsSelector } from './ParticipantsSelector.jsx'
+import { expenseErrorMessage, expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
+import { BatchExpenseItem } from './BatchExpenseItem'
+import { BatchExpenseBreakdown } from './BatchExpenseBreakdown'
 
 /**
  * Genera un nuevo objeto de gasto vacío con valores por defecto.
@@ -26,7 +28,7 @@ function createEmptyExpense(tempId, defaultPayerId = '') {
  * Formulario para el registro masivo ("por lote") de múltiples gastos.
  *
  * Características clave:
- * - Envío en una única petición POST con payload: { "gastos": [ ... ] }
+ * - Envío de un array en una única petición POST.
  * - Advertencia visual de atomicidad: si uno falla, el backend rechaza el lote completo.
  * - Validación integral de cada elemento del lote antes del envío.
  * - UX Crítica: Conservación total de todos los gastos ingresados si la petición falla (ej. error 400).
@@ -36,11 +38,17 @@ export function ExpenseBatchForm({
   members: propMembers,
   api: propApi,
   onSuccess,
+  initialValues,
+  onDraftChange,
+  draftLocation,
+  existingExpenses = [],
   onCancel,
   className = '',
 }) {
   const workspace = useWorkspace()
   const { notify } = useUI()
+  const submitting = useRef(false)
+  const errorRef = useRef(null)
 
   const effectiveSpaceId = propSpaceId || workspace?.spaceId
   const effectiveMembers = propMembers || workspace?.members || []
@@ -55,23 +63,36 @@ export function ExpenseBatchForm({
       : ''
 
   // Array dinámico de gastos en el lote
-  const [gastos, setGastos] = useState(() => [
+  const [gastos, setGastos] = useState(() => initialValues?.gastos?.length ? initialValues.gastos.map(item => ({ ...item, errors: {}, validationState: { isValid: false } })) : [
     createEmptyExpense(1, defaultPayerId),
-    createEmptyExpense(2, defaultPayerId),
   ])
 
+  const [removed, setRemoved] = useState(initialValues?.removed || null)
+  const nextId = useRef(Math.max(2, ...gastos.map(item => Number(item.tempId) || 0), Number(removed?.expense?.tempId) || 0) + 1)
+  useEffect(() => {
+    onDraftChange?.({ gastos: gastos.map(({ errors: _errors, validationState: _validation, ...value }) => value), removed })
+  }, [gastos, removed, onDraftChange])
+
+  const [collapsed, setCollapsed] = useState({})
+  const [focusId, setFocusId] = useState(null)
+  const [review, setReview] = useState(null)
   const [busy, setBusy] = useState(false)
   const [serverError, setServerError] = useState(null)
+  useEffect(() => { if (serverError) errorRef.current?.scrollIntoView?.({ block: 'center', behavior: 'instant' }) }, [serverError])
 
   // Agregar nuevo gasto al lote
   const handleAddExpense = () => {
-    const nextId = Date.now()
-    setGastos(prev => [...prev, createEmptyExpense(nextId, defaultPayerId)])
+    if (gastos.length + (removed ? 1 : 0) >= 100) return
+    const id = nextId.current++
+    setCollapsed(Object.fromEntries(gastos.map(g => [g.tempId, Object.keys(validateExpense(g)).length === 0])))
+    setGastos(prev => [...prev, { ...createEmptyExpense(id, defaultPayerId), touched: true }])
+    setFocusId(id)
   }
 
   // Eliminar un gasto del lote
   const handleRemoveExpense = (tempId) => {
     if (gastos.length <= 1) return
+    setRemoved({ expense: { ...gastos.find(item => item.tempId === tempId), touched: true }, index: gastos.findIndex(item => item.tempId === tempId) })
     setGastos(prev => prev.filter(g => g.tempId !== tempId))
   }
 
@@ -100,6 +121,7 @@ export function ExpenseBatchForm({
           ...g,
           participantes: calculatedParticipants,
           validationState,
+          selection: validationState.selection,
           errors: nextErrors,
         }
       })
@@ -110,322 +132,124 @@ export function ExpenseBatchForm({
   const totalLoteCents = gastos.reduce((sum, g) => sum + cents(g.monto), 0)
   const totalLote = totalLoteCents / 100
 
+  function validateExpense(g) {
+    const itemErrors = {}
+
+    if (!g.descripcion.trim() || g.descripcion.trim().length > 255) {
+      itemErrors.descripcion = 'La descripción es obligatoria.'
+    }
+
+    if (!validExpenseAmount(g.monto)) {
+      itemErrors.monto = 'El importe debe ser mayor a 0.'
+    }
+
+    if (!g.fecha) {
+      itemErrors.fecha = 'La fecha es requerida.'
+    }
+
+    if (!g.pagadorId || !effectiveMembers.some(member => Number(member.usuarioId ?? member.id) === Number(g.pagadorId))) {
+      itemErrors.pagadorId = 'Indica quién pagó.'
+    }
+
+    if (!g.participantes || g.participantes.length === 0) {
+      itemErrors.participantes = 'Incluye al menos un participante.'
+    } else if (!g.validationState.isValid) {
+      itemErrors.participantes = g.validationState.error || 'Revisa la distribución del gasto.'
+    } else {
+      const uids = g.participantes.map(p => Number(p.usuarioId))
+      if (new Set(uids).size !== uids.length) {
+        itemErrors.participantes = 'Hay participantes duplicados en este gasto.'
+      }
+    }
+
+    return itemErrors
+  }
+
   // Envío del lote con validación estricta
   const handleSubmit = async (event) => {
     event.preventDefault()
+    if (submitting.current) return
     setServerError(null)
 
-    let hasAnyError = false
-    const updatedGastos = gastos.map((g, index) => {
-      const itemErrors = {}
-
-      if (!g.descripcion.trim()) {
-        itemErrors.descripcion = 'La descripción es obligatoria.'
-      }
-
-      const numMonto = parseFloat(g.monto)
-      if (isNaN(numMonto) || numMonto <= 0) {
-        itemErrors.monto = 'El importe debe ser mayor a 0.'
-      }
-
-      if (!g.fecha) {
-        itemErrors.fecha = 'La fecha es requerida.'
-      }
-
-      if (!g.pagadorId || Number(g.pagadorId) <= 0) {
-        itemErrors.pagadorId = 'Indica quién pagó.'
-      }
-
-      if (!g.participantes || g.participantes.length === 0) {
-        itemErrors.participantes = 'Incluye al menos un participante.'
-      } else if (!g.validationState.isValid) {
-        itemErrors.participantes = g.validationState.error || 'Revisa la distribución del gasto.'
-      } else {
-        const uids = g.participantes.map(p => Number(p.usuarioId))
-        if (new Set(uids).size !== uids.length) {
-          itemErrors.participantes = 'Hay participantes duplicados en este gasto.'
-        }
-      }
-
-      if (Object.keys(itemErrors).length > 0) {
-        hasAnyError = true
-      }
-
-      return { ...g, errors: itemErrors }
-    })
-
-    if (hasAnyError) {
+    const updatedGastos = gastos.map(g => ({ ...g, errors: validateExpense(g) }))
+    if (updatedGastos.some(g => Object.keys(g.errors).length)) {
       setGastos(updatedGastos)
-      notify('Hay errores en uno o más gastos del lote. Revisa los campos resaltados.', 'error')
+      setCollapsed({})
+      setServerError('Hay errores en uno o más gastos. Revisá los campos resaltados.')
       return
     }
+    const payload = gastos.map(expensePayload)
+    const duplicates = payload.filter((expense, index) => similarExpenses(expense, [...existingExpenses, ...payload.slice(0, index)]).length > 0)
+    setReview({ payload, items: gastos.map(g => ({ ...g, participantes: g.participantes.map(part => ({ ...part })) })), total: totalLote, duplicates })
+  }
 
+  const handleRegister = async () => {
+    if (!review || submitting.current) return
+    const snapshot = review
+    submitting.current = true
     setBusy(true)
 
-    // Contrato estricto: { "gastos": [ { ... }, ... ] }
-    const payload = {
-      gastos: gastos.map(g => ({
-        descripcion: g.descripcion.trim(),
-        monto: Number(parseFloat(g.monto).toFixed(2)),
-        fecha: g.fecha,
-        pagadorId: Number(g.pagadorId),
-        tipoReparto: g.tipoReparto,
-        participantes: g.participantes.map(p => ({
-          usuarioId: Number(p.usuarioId),
-          porcentaje: Number(Number(p.porcentaje).toFixed(2)),
-          importe: Number(Number(p.importe).toFixed(2)),
-        })),
-      })),
-    }
+    // El endpoint recibe directamente un array de gastos.
+    const payload = snapshot.payload
 
     try {
       if (!effectiveSpaceId) {
         throw new Error('No se identificó el espacio activo.')
       }
 
-      // Endpoint de lote en backend
-      const endpoint = `/api/v1/espacios/${effectiveSpaceId}/gastos/lote`
-      let response
-      try {
-        response = await effectiveApi(endpoint, {
-          method: 'POST',
-          body: payload,
-        })
-      } catch (err) {
-        // Soporte de fallback a endpoint /batch si el backend lo expone con ese nombre
-        if (err.status === 404) {
-          response = await effectiveApi(`/api/v1/espacios/${effectiveSpaceId}/gastos/batch`, {
-            method: 'POST',
-            body: payload,
-          })
-        } else {
-          throw err
-        }
-      }
+      const response = await effectiveApi(`/api/v1/espacios/${effectiveSpaceId}/gastos/lote`, { method: 'POST', body: payload })
 
-      notify(`Lote de ${gastos.length} gastos registrado con éxito.`, 'success')
+      if (!onSuccess) notify(`${snapshot.items.length} ${snapshot.items.length === 1 ? 'gasto registrado' : 'gastos registrados'} con éxito.`, 'success')
+      setReview(null)
       workspace?.invalidate?.()
 
       if (onSuccess) {
-        onSuccess(response)
+        onSuccess(response, payload)
       } else {
         // Limpiar solo en caso de éxito
-        setGastos([
-          createEmptyExpense(1, defaultPayerId),
-          createEmptyExpense(2, defaultPayerId),
-        ])
+        setGastos([createEmptyExpense(1, defaultPayerId)])
+        setCollapsed({})
+        setRemoved(null)
+        setFocusId(null)
       }
     } catch (error) {
       // UX CRÍTICA: Conservar todos los datos del lote en caso de error
-      const errorMsg =
-        error?.message ||
-        'No se pudo registrar el lote. Revisa los datos ingresados e intenta nuevamente.'
+      const errorMsg = expenseErrorMessage(error, effectiveMembers, 'No se pudieron registrar los gastos. Revisá los datos e intentá nuevamente.')
+      setReview(null)
       setServerError(errorMsg)
-      notify(errorMsg, 'error')
+
     } finally {
+      submitting.current = false
       setBusy(false)
     }
   }
 
   return (
-    <Card className={`expense-batch-container space-y-6 ${className}`}>
-      {/* Cabecera y Alerta Crítica de Atomicidad */}
-      <div className="space-y-3">
-        <div className="flex items-center justify-between flex-wrap gap-2">
-          <div>
-            <h2 className="text-xl font-bold text-primary">Registro de gastos por lote</h2>
-            <p className="text-sm text-secondary">
-              Agrega múltiples gastos y envíalos en una sola operación compartida.
-            </p>
-          </div>
-
-          <div className="text-right">
-            <span className="text-xs text-secondary block">Total del lote ({gastos.length} gastos)</span>
-            <strong className="text-xl font-bold text-brand-primary block">{money(totalLote)}</strong>
-          </div>
-        </div>
-
-        {/* Notificación visual de la regla de lote transaccional */}
-        <InlineAlert tone="info">
-          <strong>Registro transaccional en lote:</strong> Si cualquiera de los gastos del lote falla
-          o contiene información inválida, <strong>el lote completo será rechazado</strong> por el servidor.
-          Revisa que todos los gastos estén completos.
-        </InlineAlert>
-
-        {serverError && (
-          <InlineAlert tone="error">
-            {serverError}
-          </InlineAlert>
-        )}
+    <div className={`expense-batch-container expense-batch-workspace ${className}`}>
+      <div className="expense-batch-context">
+        {onDraftChange && <p className="expense-draft-hint">{draftLocation === 'memory' ? 'Borrador conservado durante esta sesión.' : draftLocation === 'unavailable' ? 'No pudimos conservar el borrador. Mantené esta pantalla abierta.' : 'Borrador guardado en esta pestaña.'}</p>}
+        <Disclosure title="Cómo funciona" className="expense-batch-help"><p>Los gastos se registran juntos. Si uno tiene un error, ninguno se guarda. Revisá los datos antes de confirmar.</p></Disclosure>
       </div>
-
-      <form onSubmit={handleSubmit} noValidate className="space-y-6">
-        {/* Listado dinámico de formularios de gasto */}
-        <div className="space-y-4">
-          {gastos.map((g, index) => {
-            const numericMonto = Math.max(0, parseFloat(g.monto) || 0)
-
-            return (
-              <div
-                key={g.tempId}
-                className="p-4 border border-subtle rounded-xl bg-panel space-y-4 relative transition-shadow hover:shadow-subtle"
-              >
-                {/* Cabecera del ítem de lote */}
-                <div className="flex items-center justify-between border-b border-subtle pb-2">
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-brand-primary text-white text-xs font-semibold flex items-center justify-center">
-                      {index + 1}
-                    </span>
-                    <strong className="text-sm font-semibold text-primary">
-                      Gasto #{index + 1}
-                    </strong>
-                    {g.monto > 0 && (
-                      <span className="text-xs font-semibold text-secondary">
-                        · {money(g.monto)}
-                      </span>
-                    )}
-                  </div>
-
-                  {gastos.length > 1 && (
-                    <Button
-                      variant="ghost"
-                      size="small"
-                      onClick={() => handleRemoveExpense(g.tempId)}
-                      disabled={busy}
-                      className="text-xs text-error hover:bg-error-background px-2 py-1 min-h-[32px]"
-                      aria-label={`Quitar gasto número ${index + 1} del lote`}
-                    >
-                      <Icon name="close" size={14} />
-                      Quitar
-                    </Button>
-                  )}
-                </div>
-
-                {/* Campos del gasto individual */}
-                <Field
-                  label="Descripción"
-                  value={g.descripcion}
-                  onChange={e => handleFieldChange(g.tempId, 'descripcion', e.target.value)}
-                  error={g.errors.descripcion}
-                  placeholder="Ej. Supermercado, Almuerzo grupal"
-                  required
-                  disabled={busy}
-                />
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                  <Field
-                    label="Monto ($)"
-                    type="number"
-                    min="0.01"
-                    step="0.01"
-                    value={g.monto}
-                    onChange={e => handleFieldChange(g.tempId, 'monto', e.target.value)}
-                    error={g.errors.monto}
-                    placeholder="0.00"
-                    required
-                    disabled={busy}
-                  />
-
-                  <Field
-                    label="Fecha"
-                    type="date"
-                    value={g.fecha}
-                    onChange={e => handleFieldChange(g.tempId, 'fecha', e.target.value)}
-                    error={g.errors.fecha}
-                    required
-                    disabled={busy}
-                  />
-
-                  <Field label="Pagó" error={g.errors.pagadorId} required>
-                    <select
-                      value={g.pagadorId}
-                      onChange={e => handleFieldChange(g.tempId, 'pagadorId', e.target.value)}
-                      disabled={busy}
-                      required
-                      className="ui-input"
-                    >
-                      <option value="">Seleccionar...</option>
-                      {effectiveMembers.map(m => {
-                        const id = m.usuarioId ?? m.id
-                        return (
-                          <option key={id} value={id}>
-                            {m.nombreUsuario ?? m.nombre ?? `Usuario ${id}`}
-                          </option>
-                        )
-                      })}
-                    </select>
-                  </Field>
-
-                  <Field label="Reparto">
-                    <select
-                      value={g.tipoReparto}
-                      onChange={e => handleFieldChange(g.tempId, 'tipoReparto', e.target.value)}
-                      disabled={busy}
-                      className="ui-input"
-                    >
-                      <option value="EQUITATIVA">Equitativo</option>
-                      <option value="PORCENTUAL">Porcentual (%)</option>
-                      <option value="MONTOS_FIJOS">Montos fijos ($)</option>
-                    </select>
-                  </Field>
-                </div>
-
-                {/* Selector dinámico de participantes para este gasto */}
-                <div className="bg-canvas p-3 rounded-lg border border-subtle">
-                  <ParticipantsSelector
-                    members={effectiveMembers}
-                    tipoReparto={g.tipoReparto}
-                    monto={numericMonto}
-                    value={g.participantes}
-                    onChange={(parts, validState) =>
-                      handleParticipantsChange(g.tempId, parts, validState)
-                    }
-                    disabled={busy}
-                    error={g.errors.participantes}
-                  />
-                </div>
-              </div>
-            )
-          })}
+      {removed && <div className="expense-undo"><p role="status">Quitaste «{removed.expense.descripcion || 'Gasto sin descripción'}» del borrador.</p><Button variant="secondary" disabled={busy} onClick={() => { setGastos(previous => { const next = [...previous]; next.splice(Math.min(removed.index, next.length), 0, removed.expense); return next }); setCollapsed(previous => ({ ...previous, [removed.expense.tempId]: false })); setFocusId(removed.expense.tempId); setRemoved(null) }}>Deshacer</Button></div>}
+      {serverError && <div ref={errorRef}><InlineAlert tone="error">{serverError}</InlineAlert></div>}
+      <form onSubmit={handleSubmit} noValidate className="expense-batch-form">
+        <div className="expense-batch-items">
+          {gastos.map((g, index) => <BatchExpenseItem key={g.tempId} expense={g} index={index} members={effectiveMembers} busy={busy} removable={gastos.length > 1} complete={Object.keys(validateExpense(g)).length === 0} collapsed={collapsed[g.tempId]} focus={focusId === g.tempId} onCollapse={(id, value) => setCollapsed(previous => ({ ...previous, [id]: value }))} onRemove={handleRemoveExpense} onFieldChange={handleFieldChange} onParticipantsChange={handleParticipantsChange} />)}
         </div>
-
-        {/* Botón para agregar otro gasto al lote */}
-        <div>
-          <Button
-            variant="secondary"
-            onClick={handleAddExpense}
-            disabled={busy}
-            className="w-full sm:w-auto"
-          >
-            <Icon name="plus" size={16} />
-            Agregar otro gasto al lote
-          </Button>
-        </div>
-
-        {/* Acciones finales */}
-        <div className="flex items-center justify-between flex-wrap gap-4 pt-4 border-t border-subtle">
-          <div className="text-sm text-secondary">
-            Total a registrar: <strong className="text-primary">{money(totalLote)}</strong> en{' '}
-            <strong>{gastos.length}</strong> {gastos.length === 1 ? 'gasto' : 'gastos'}.
-          </div>
-
-          <div className="flex items-center gap-2">
-            {onCancel && (
-              <Button
-                variant="secondary"
-                type="button"
-                onClick={onCancel}
-                disabled={busy}
-              >
-                Cancelar
-              </Button>
-            )}
-            <Submit busy={busy}>
-              Registrar lote ({gastos.length} {gastos.length === 1 ? 'gasto' : 'gastos'})
-            </Submit>
-          </div>
+        <Button variant="secondary" onClick={handleAddExpense} disabled={busy || gastos.length + (removed ? 1 : 0) >= 100} className="expense-batch-add"><Icon name="plus" size={16} />Agregar otro gasto</Button>
+        <div className="expense-batch-footer">
+          <div><span>{gastos.length} {gastos.length === 1 ? 'gasto para registrar' : 'gastos para registrar'}</span><strong>{money(totalLote)}</strong></div>
+          <div className="expense-batch-footer__actions">{onCancel && <Button variant="ghost" onClick={onCancel} disabled={busy}>{onDraftChange ? 'Guardar borrador y salir' : 'Cancelar'}</Button>}<Submit busy={busy}>Registrar {gastos.length} {gastos.length === 1 ? 'gasto' : 'gastos'}</Submit></div>
         </div>
       </form>
-    </Card>
+      <Modal open={Boolean(review)} title="Confirmar registro" description={review ? `Vas a registrar ${review.items.length} ${review.items.length === 1 ? 'gasto' : 'gastos'} en ${workspace?.space?.nombre || 'este espacio'}.` : undefined} dismissible={!busy} onClose={() => { if (!busy) setReview(null) }} className="expense-batch-review" footer={<><Button variant="secondary" data-autofocus disabled={busy} onClick={() => setReview(null)}>Volver a editar</Button><Button loading={busy} onClick={handleRegister}>{review?.duplicates.length ? 'Registrar de todos modos' : 'Confirmar registro'}</Button></>}>
+        {review && <>
+          {review.duplicates.length > 0 && <InlineAlert tone="warning"><strong>Posibles gastos repetidos</strong><p>Hay coincidencias en descripción, fecha e importe con otro registro o con otro de los gastos que estás agregando: {review.duplicates.map((item, index) => <span key={index}>{index > 0 ? '; ' : ''}{item.descripcion} ({money(item.monto)}, {dateLabel(item.fecha)})</span>)}. Podés volver a editar o registrarlos de todos modos.</p></InlineAlert>}
+          <div className="expense-batch-review__total"><span>Total a registrar</span><strong>{money(review.total)}</strong></div>
+          <p className="text-sm text-secondary">Se guardan todos juntos en este espacio. Este registro no confirma pagos entre personas.</p>
+          <BatchExpenseBreakdown expenses={review.items} members={effectiveMembers} />
+        </>}
+      </Modal>
+    </div>
   )
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Button, Card, EmptyState, Field, InlineAlert, ResourceState } from '../../components/ui'
-import { dateLabel, money, monthOptions, periodLabel } from '../../lib/format'
+import { Button, EmptyState, Field, Icon, InlineAlert, Money, PanelDisclosure, ResourceState, SectionHeading } from '../../components/ui'
+import { dateLabel, monthOptions, periodLabel } from '../../lib/format'
 import { FILTER_KEYS, historyQuery } from './model'
 
 function HistoryFilters({ filters, onApply, onClear }) {
@@ -18,12 +18,12 @@ function HistoryFilters({ filters, onApply, onClear }) {
   }
 
   return <form onSubmit={submit} aria-label="Filtrar historial">
-    <fieldset className="filters">
+    <fieldset className="settlement-history__filter-mode">
       <legend className="sr-only">Tipo de filtro</legend>
-      <label className="check"><input type="radio" name="modo" value="periodo" checked={modo === 'periodo'} onChange={() => setModo('periodo')} />Por período</label>
-      <label className="check"><input type="radio" name="modo" value="fechas" checked={modo === 'fechas'} onChange={() => setModo('fechas')} />Por fechas de cierre</label>
+      <label className="settlement-history__radio"><input type="radio" name="modo" value="periodo" checked={modo === 'periodo'} onChange={() => setModo('periodo')} />Por período</label>
+      <label className="settlement-history__radio"><input type="radio" name="modo" value="fechas" checked={modo === 'fechas'} onChange={() => setModo('fechas')} />Por fechas de cierre</label>
     </fieldset>
-    <div className="filters">
+    <div className="settlement-history__filter-fields">
       {modo === 'periodo' ? <>
         <Field label="Mes"><select name="mes" defaultValue={filters.mes || now.getMonth() + 1}>{monthOptions.map(option => <option key={option.value} value={option.value}>{option.label}</option>)}</select></Field>
         <Field label="Año" name="anio" type="number" min="2000" max="9999" required defaultValue={filters.anio || now.getFullYear()} />
@@ -43,16 +43,18 @@ function filterSummary(filters) {
   return null
 }
 
-export function SettlementHistory({ resource, filters, onApply, onClear, onOpen }) {
+export function SettlementHistory({ resource, filters, onApply, onClear, onOpen, onPending }) {
   const settlements = resource.data
   const summary = filterSummary(filters)
-  return <Card>
-    <h2>Historial de cierres</h2>
-    <HistoryFilters key={FILTER_KEYS.map(key => filters[key]).join('|')} filters={filters} onApply={onApply} onClear={onClear} />
+  return <section className="settlement-history">
+    {(settlements.length > 0 || summary) && <>
+      <SectionHeading title="Historial de cierres" />
+      <PanelDisclosure title="Filtrar cierres" icon="receipt" open={summary ? true : undefined}><HistoryFilters key={FILTER_KEYS.map(key => filters[key]).join('|')} filters={filters} onApply={onApply} onClear={onClear} /></PanelDisclosure>
+    </>}
     {summary && <InlineAlert tone="info">Mostrando cierres filtrados. {summary}.</InlineAlert>}
     <ResourceState resource={resource}>
-      {settlements.length ? <ul aria-label="Liquidaciones" className="list-none m-0 p-0">
-        {settlements.map(settlement => <li className="row" key={settlement.id}>
+      {settlements.length ? <ul aria-label="Liquidaciones" className="settlement-history__list">
+        {settlements.map(settlement => <li className="settlement-history__item" key={settlement.id}><span className="ui-item-icon"><Icon name="check" /></span>
           <div>
             <strong>Liquidación #{settlement.id}</strong>
             <small className="block text-secondary">
@@ -60,12 +62,12 @@ export function SettlementHistory({ resource, filters, onApply, onClear, onOpen 
             </small>
             {settlement.descripcion && <small className="block text-secondary">{settlement.descripcion}</small>}
           </div>
-          <strong>{money(settlement.montoTotal)}</strong>
+          <strong><Money value={settlement.montoTotal} hideZeroDecimals /></strong>
           <Button variant="secondary" onClick={() => onOpen(settlement)} aria-label={`Ver detalle de la liquidación #${settlement.id}`}>Ver detalle</Button>
         </li>)}
       </ul> : summary
         ? <EmptyState title="No hay cierres para este filtro" description="Probá con otro período o limpiá los filtros." action={<Button variant="secondary" onClick={onClear}>Limpiar filtros</Button>} />
-        : <EmptyState icon="check" title="Todavía no se realizaron cierres" description="Cuando un administrador liquide gastos, el cierre aparecerá acá." />}
+        : <EmptyState icon="archive" title="Tu historial empieza con el primer cierre" description="Los gastos que liquides van a quedar registrados acá, con su período y su detalle." action={onPending && <Button variant="secondary" onClick={onPending}>Ver gastos pendientes</Button>} />}
     </ResourceState>
-  </Card>
+  </section>
 }

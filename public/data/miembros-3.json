@@ -1,0 +1,47 @@
+[
+  {
+    "id": 301,
+    "espacioId": 3,
+    "usuarioId": 1,
+    "nombreUsuario": "Ana Ruiz",
+    "emailUsuario": "demo@fairshare.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1200000
+  },
+  {
+    "id": 303,
+    "espacioId": 3,
+    "usuarioId": 3,
+    "nombreUsuario": "Sol García",
+    "emailUsuario": "sol@example.test",
+    "rol": "ADMIN",
+    "sueldoDeclarado": 1000000
+  },
+  {
+    "id": 304,
+    "espacioId": 3,
+    "usuarioId": 4,
+    "nombreUsuario": "Lucía Pérez",
+    "emailUsuario": "lucia@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1350000
+  },
+  {
+    "id": 309,
+    "espacioId": 3,
+    "usuarioId": 9,
+    "nombreUsuario": "Mateo Herrera",
+    "emailUsuario": "mateo@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 2100000
+  },
+  {
+    "id": 310,
+    "espacioId": 3,
+    "usuarioId": 10,
+    "nombreUsuario": "Julieta Castro",
+    "emailUsuario": "julieta@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1750000
+  }
+]

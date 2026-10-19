@@ -1,0 +1,26 @@
+[
+  {
+    "servicioId": 702,
+    "nombreServicio": "Materiales para maqueta",
+    "fechaVencimiento": "2026-10-11",
+    "montoBase": 34500,
+    "montoVariable": 2000,
+    "diasVencido": 8
+  },
+  {
+    "servicioId": 705,
+    "nombreServicio": "Merienda de estudio",
+    "fechaVencimiento": "2026-10-14",
+    "montoBase": 14500,
+    "montoVariable": 2000,
+    "diasVencido": 5
+  },
+  {
+    "servicioId": 708,
+    "nombreServicio": "Compra de cartón",
+    "fechaVencimiento": "2026-10-17",
+    "montoBase": 8600,
+    "montoVariable": 2000,
+    "diasVencido": 2
+  }
+]

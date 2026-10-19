@@ -1,0 +1,2882 @@
+[
+  {
+    "id": 60080,
+    "descripcion": "Fondo para vacaciones",
+    "icono": null,
+    "monto": 120306.76,
+    "fecha": "2026-10-19",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6008001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 60153.38,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6008002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 60153.38,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60079,
+    "descripcion": "Comida para cocinar",
+    "icono": "COMPRAS",
+    "monto": 32298.87,
+    "fecha": "2026-10-18",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 16149.43,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6007902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 16149.44,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60078,
+    "descripcion": "Entradas al teatro",
+    "icono": null,
+    "monto": 68290.98,
+    "fecha": "2026-10-17",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 27316.4,
+        "porcentaje": 40,
+        "sueldo": null
+      },
+      {
+        "id": 6007802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 40974.58,
+        "porcentaje": 60,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60077,
+    "descripcion": "Transporte de la salida",
+    "icono": null,
+    "monto": 15883.09,
+    "fecha": "2026-10-16",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7941.55,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6007702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7941.54,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60076,
+    "descripcion": "Regalo compartido",
+    "icono": "OCIO",
+    "monto": 48275.2,
+    "fecha": "2026-10-15",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 24137.6,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6007602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 24137.6,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60075,
+    "descripcion": "Café y merienda",
+    "icono": null,
+    "monto": 18767.31,
+    "fecha": "2026-10-14",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9383.66,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6007502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9383.65,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60074,
+    "descripcion": "Escapada de fin de semana",
+    "icono": null,
+    "monto": 150259.42,
+    "fecha": "2026-10-13",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 60103.77,
+        "porcentaje": 40,
+        "sueldo": null
+      },
+      {
+        "id": 6007402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 90155.65,
+        "porcentaje": 60,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60073,
+    "descripcion": "Compra del fin de semana",
+    "icono": "COMPRAS",
+    "monto": 62751.53,
+    "fecha": "2026-10-12",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 31375.77,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6007302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 31375.76,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60072,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24743.64,
+    "fecha": "2026-10-11",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12371.82,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6007202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12371.82,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60071,
+    "descripcion": "Cena de aniversario",
+    "icono": null,
+    "monto": 92235.75,
+    "fecha": "2026-10-10",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46117.87,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6007102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46117.88,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60070,
+    "descripcion": "Fondo para vacaciones",
+    "icono": "OCIO",
+    "monto": 120227.86,
+    "fecha": "2026-10-09",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6007001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 48091.15,
+        "porcentaje": 40,
+        "sueldo": null
+      },
+      {
+        "id": 6007002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 72136.71,
+        "porcentaje": 60,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60069,
+    "descripcion": "Comida para cocinar",
+    "icono": null,
+    "monto": 32219.97,
+    "fecha": "2026-10-08",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 6006901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 16109.99,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6006902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 16109.98,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60068,
+    "descripcion": "Entradas al teatro",
+    "icono": null,
+    "monto": 68212.08,
+    "fecha": "2026-10-07",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 34106.04,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6006802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 34106.04,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60067,
+    "descripcion": "Transporte de la salida",
+    "icono": "TRANSPORTE",
+    "monto": 15804.19,
+    "fecha": "2026-10-06",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7902.1,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6006702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7902.09,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60066,
+    "descripcion": "Regalo compartido",
+    "icono": null,
+    "monto": 48196.3,
+    "fecha": "2026-10-05",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 19278.52,
+        "porcentaje": 40,
+        "sueldo": null
+      },
+      {
+        "id": 6006602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 28917.78,
+        "porcentaje": 60,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60065,
+    "descripcion": "Café y merienda",
+    "icono": null,
+    "monto": 18688.41,
+    "fecha": "2026-10-04",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9344.21,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6006502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9344.2,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60064,
+    "descripcion": "Escapada de fin de semana",
+    "icono": "OCIO",
+    "monto": 150180.52,
+    "fecha": "2026-10-03",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 75090.26,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6006402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 75090.26,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60063,
+    "descripcion": "Compra del fin de semana",
+    "icono": null,
+    "monto": 62672.63,
+    "fecha": "2026-10-02",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 31336.31,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6006302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 31336.32,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60062,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24664.74,
+    "fecha": "2026-10-01",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9865.9,
+        "porcentaje": 40,
+        "sueldo": null
+      },
+      {
+        "id": 6006202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14798.84,
+        "porcentaje": 60,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60061,
+    "descripcion": "Cena de aniversario",
+    "icono": "COMIDAS",
+    "monto": 92156.85,
+    "fecha": "2026-10-01",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46078.43,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6006102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46078.42,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60060,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24712.27,
+    "fecha": "2026-09-23",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6006001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12356.14,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6006002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12356.13,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60059,
+    "descripcion": "Cena de aniversario",
+    "icono": null,
+    "monto": 92204.38,
+    "fecha": "2026-09-21",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46102.19,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6005902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46102.19,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60058,
+    "descripcion": "Fondo para vacaciones",
+    "icono": "OCIO",
+    "monto": 120196.49,
+    "fecha": "2026-09-19",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 47916.17,
+        "porcentaje": 39.86,
+        "sueldo": null
+      },
+      {
+        "id": 6005802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 72280.32,
+        "porcentaje": 60.14,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60057,
+    "descripcion": "Comida para cocinar",
+    "icono": null,
+    "monto": 32188.6,
+    "fecha": "2026-09-17",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 16094.3,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6005702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 16094.3,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60056,
+    "descripcion": "Entradas al teatro",
+    "icono": null,
+    "monto": 68180.71,
+    "fecha": "2026-09-15",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 34090.36,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6005602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 34090.35,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60055,
+    "descripcion": "Transporte de la salida",
+    "icono": "TRANSPORTE",
+    "monto": 15772.82,
+    "fecha": "2026-09-13",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7886.41,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6005502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7886.41,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60054,
+    "descripcion": "Regalo compartido",
+    "icono": null,
+    "monto": 48164.93,
+    "fecha": "2026-09-11",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 19200.89,
+        "porcentaje": 39.86,
+        "sueldo": null
+      },
+      {
+        "id": 6005402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 28964.04,
+        "porcentaje": 60.14,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60053,
+    "descripcion": "Café y merienda",
+    "icono": null,
+    "monto": 18657.04,
+    "fecha": "2026-09-09",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9328.52,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6005302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9328.52,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60052,
+    "descripcion": "Escapada de fin de semana",
+    "icono": "OCIO",
+    "monto": 150149.15,
+    "fecha": "2026-09-07",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 75074.58,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6005202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 75074.57,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60051,
+    "descripcion": "Compra del fin de semana",
+    "icono": null,
+    "monto": 62641.26,
+    "fecha": "2026-09-05",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 31320.63,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6005102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 31320.63,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60050,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24633.37,
+    "fecha": "2026-09-03",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6005001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9820.06,
+        "porcentaje": 39.86,
+        "sueldo": null
+      },
+      {
+        "id": 6005002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14813.31,
+        "porcentaje": 60.14,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60049,
+    "descripcion": "Cena de aniversario",
+    "icono": "COMIDAS",
+    "monto": 92125.48,
+    "fecha": "2026-09-01",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46062.74,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6004902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46062.74,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60048,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24680.9,
+    "fecha": "2026-08-23",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12340.45,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6004802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12340.45,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60047,
+    "descripcion": "Cena de aniversario",
+    "icono": null,
+    "monto": 92173.01,
+    "fecha": "2026-08-21",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46086.5,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6004702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46086.51,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60046,
+    "descripcion": "Fondo para vacaciones",
+    "icono": "OCIO",
+    "monto": 120165.12,
+    "fecha": "2026-08-19",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 47736.83,
+        "porcentaje": 39.73,
+        "sueldo": null
+      },
+      {
+        "id": 6004602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 72428.29,
+        "porcentaje": 60.27,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60045,
+    "descripcion": "Comida para cocinar",
+    "icono": null,
+    "monto": 32157.23,
+    "fecha": "2026-08-17",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 16078.62,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6004502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 16078.61,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60044,
+    "descripcion": "Entradas al teatro",
+    "icono": null,
+    "monto": 68149.34,
+    "fecha": "2026-08-15",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 34074.67,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6004402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 34074.67,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60043,
+    "descripcion": "Transporte de la salida",
+    "icono": "TRANSPORTE",
+    "monto": 15741.45,
+    "fecha": "2026-08-13",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7870.73,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6004302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7870.72,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60042,
+    "descripcion": "Regalo compartido",
+    "icono": null,
+    "monto": 48133.56,
+    "fecha": "2026-08-11",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 19121.56,
+        "porcentaje": 39.73,
+        "sueldo": null
+      },
+      {
+        "id": 6004202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 29012,
+        "porcentaje": 60.27,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60041,
+    "descripcion": "Café y merienda",
+    "icono": null,
+    "monto": 18625.67,
+    "fecha": "2026-08-09",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9312.84,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6004102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9312.83,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60040,
+    "descripcion": "Escapada de fin de semana",
+    "icono": "OCIO",
+    "monto": 150117.78,
+    "fecha": "2026-08-07",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6004001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 75058.89,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6004002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 75058.89,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60039,
+    "descripcion": "Compra del fin de semana",
+    "icono": null,
+    "monto": 62609.89,
+    "fecha": "2026-08-05",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 31304.94,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6003902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 31304.95,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60038,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24602,
+    "fecha": "2026-08-03",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9773.4,
+        "porcentaje": 39.73,
+        "sueldo": null
+      },
+      {
+        "id": 6003802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14828.6,
+        "porcentaje": 60.27,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60037,
+    "descripcion": "Cena de aniversario",
+    "icono": "COMIDAS",
+    "monto": 92094.11,
+    "fecha": "2026-08-01",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46047.06,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6003702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46047.05,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60036,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24649.53,
+    "fecha": "2026-07-23",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12324.77,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6003602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12324.76,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60035,
+    "descripcion": "Cena de aniversario",
+    "icono": null,
+    "monto": 92141.64,
+    "fecha": "2026-07-21",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46070.82,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6003502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46070.82,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60034,
+    "descripcion": "Fondo para vacaciones",
+    "icono": "OCIO",
+    "monto": 120133.75,
+    "fecha": "2026-07-19",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 47552.95,
+        "porcentaje": 39.58,
+        "sueldo": null
+      },
+      {
+        "id": 6003402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 72580.8,
+        "porcentaje": 60.42,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60033,
+    "descripcion": "Comida para cocinar",
+    "icono": null,
+    "monto": 32125.86,
+    "fecha": "2026-07-17",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 16062.93,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6003302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 16062.93,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60032,
+    "descripcion": "Entradas al teatro",
+    "icono": null,
+    "monto": 68117.97,
+    "fecha": "2026-07-15",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 34058.99,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6003202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 34058.98,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60031,
+    "descripcion": "Transporte de la salida",
+    "icono": "TRANSPORTE",
+    "monto": 15710.08,
+    "fecha": "2026-07-13",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7855.04,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6003102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7855.04,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60030,
+    "descripcion": "Regalo compartido",
+    "icono": null,
+    "monto": 48102.19,
+    "fecha": "2026-07-11",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6003001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 19040.46,
+        "porcentaje": 39.58,
+        "sueldo": null
+      },
+      {
+        "id": 6003002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 29061.73,
+        "porcentaje": 60.42,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60029,
+    "descripcion": "Café y merienda",
+    "icono": null,
+    "monto": 18594.3,
+    "fecha": "2026-07-09",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9297.15,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6002902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9297.15,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60028,
+    "descripcion": "Escapada de fin de semana",
+    "icono": "OCIO",
+    "monto": 150086.41,
+    "fecha": "2026-07-07",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 75043.21,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6002802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 75043.2,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60027,
+    "descripcion": "Compra del fin de semana",
+    "icono": null,
+    "monto": 62578.52,
+    "fecha": "2026-07-05",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 31289.26,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6002702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 31289.26,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60026,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24570.63,
+    "fecha": "2026-07-03",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9725.88,
+        "porcentaje": 39.58,
+        "sueldo": null
+      },
+      {
+        "id": 6002602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14844.75,
+        "porcentaje": 60.42,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60025,
+    "descripcion": "Cena de aniversario",
+    "icono": "COMIDAS",
+    "monto": 92062.74,
+    "fecha": "2026-07-01",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46031.37,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6002502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46031.37,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60024,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24618.16,
+    "fecha": "2026-06-23",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12309.08,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6002402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12309.08,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60023,
+    "descripcion": "Cena de aniversario",
+    "icono": null,
+    "monto": 92110.27,
+    "fecha": "2026-06-21",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46055.13,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6002302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46055.14,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60022,
+    "descripcion": "Fondo para vacaciones",
+    "icono": "OCIO",
+    "monto": 120102.38,
+    "fecha": "2026-06-19",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 47364.32,
+        "porcentaje": 39.44,
+        "sueldo": null
+      },
+      {
+        "id": 6002202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 72738.06,
+        "porcentaje": 60.56,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60021,
+    "descripcion": "Comida para cocinar",
+    "icono": null,
+    "monto": 32094.49,
+    "fecha": "2026-06-17",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 16047.25,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6002102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 16047.24,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60020,
+    "descripcion": "Entradas al teatro",
+    "icono": null,
+    "monto": 68086.6,
+    "fecha": "2026-06-15",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6002001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 34043.3,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6002002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 34043.3,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60019,
+    "descripcion": "Transporte de la salida",
+    "icono": "TRANSPORTE",
+    "monto": 15678.71,
+    "fecha": "2026-06-13",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7839.36,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6001902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7839.35,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60018,
+    "descripcion": "Regalo compartido",
+    "icono": null,
+    "monto": 48070.82,
+    "fecha": "2026-06-11",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18957.51,
+        "porcentaje": 39.44,
+        "sueldo": null
+      },
+      {
+        "id": 6001802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 29113.31,
+        "porcentaje": 60.56,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60017,
+    "descripcion": "Café y merienda",
+    "icono": null,
+    "monto": 18562.93,
+    "fecha": "2026-06-09",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9281.47,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6001702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9281.46,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60016,
+    "descripcion": "Escapada de fin de semana",
+    "icono": "OCIO",
+    "monto": 150055.04,
+    "fecha": "2026-06-07",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 75027.52,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6001602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 75027.52,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60015,
+    "descripcion": "Compra del fin de semana",
+    "icono": null,
+    "monto": 62547.15,
+    "fecha": "2026-06-05",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 31273.57,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6001502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 31273.58,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60014,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24539.26,
+    "fecha": "2026-06-03",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9677.46,
+        "porcentaje": 39.44,
+        "sueldo": null
+      },
+      {
+        "id": 6001402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14861.8,
+        "porcentaje": 60.56,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60013,
+    "descripcion": "Cena de aniversario",
+    "icono": "COMIDAS",
+    "monto": 92031.37,
+    "fecha": "2026-06-01",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46015.69,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6001302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46015.68,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60012,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24586.79,
+    "fecha": "2026-05-23",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 12293.4,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6001202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 12293.39,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60011,
+    "descripcion": "Cena de aniversario",
+    "icono": null,
+    "monto": 92078.9,
+    "fecha": "2026-05-21",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46039.45,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6001102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46039.45,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60010,
+    "descripcion": "Fondo para vacaciones",
+    "icono": "OCIO",
+    "monto": 120071.01,
+    "fecha": "2026-05-19",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6001001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 47170.76,
+        "porcentaje": 39.29,
+        "sueldo": null
+      },
+      {
+        "id": 6001002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 72900.25,
+        "porcentaje": 60.71,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60009,
+    "descripcion": "Comida para cocinar",
+    "icono": null,
+    "monto": 32063.12,
+    "fecha": "2026-05-17",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 16031.56,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6000902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 16031.56,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60008,
+    "descripcion": "Entradas al teatro",
+    "icono": null,
+    "monto": 68055.23,
+    "fecha": "2026-05-15",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 34027.62,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6000802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 34027.61,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60007,
+    "descripcion": "Transporte de la salida",
+    "icono": "TRANSPORTE",
+    "monto": 15647.34,
+    "fecha": "2026-05-13",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7823.67,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6000702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7823.67,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60006,
+    "descripcion": "Regalo compartido",
+    "icono": null,
+    "monto": 48039.45,
+    "fecha": "2026-05-11",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18872.65,
+        "porcentaje": 39.29,
+        "sueldo": null
+      },
+      {
+        "id": 6000602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 29166.8,
+        "porcentaje": 60.71,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60005,
+    "descripcion": "Café y merienda",
+    "icono": null,
+    "monto": 18531.56,
+    "fecha": "2026-05-09",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9265.78,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6000502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9265.78,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60004,
+    "descripcion": "Escapada de fin de semana",
+    "icono": "OCIO",
+    "monto": 150023.67,
+    "fecha": "2026-05-07",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 75011.84,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6000402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 75011.83,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60003,
+    "descripcion": "Compra del fin de semana",
+    "icono": null,
+    "monto": 62515.78,
+    "fecha": "2026-05-05",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 31257.89,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6000302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 31257.89,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60002,
+    "descripcion": "Entradas de cine",
+    "icono": null,
+    "monto": 24507.89,
+    "fecha": "2026-05-03",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 8,
+    "categoriaNombre": "Ocio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 9628.1,
+        "porcentaje": 39.29,
+        "sueldo": null
+      },
+      {
+        "id": 6000202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 14879.79,
+        "porcentaje": 60.71,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 60001,
+    "descripcion": "Cena de aniversario",
+    "icono": "COMIDAS",
+    "monto": 92000,
+    "fecha": "2026-05-01",
+    "espacioId": 6,
+    "espacioNombre": "Planes en pareja",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 6000101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 46000,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 6000102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 46000,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  }
+]

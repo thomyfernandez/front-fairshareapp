@@ -1,0 +1,170 @@
+{
+  "description": "Manifiesto de archivos; los DTOs se encuentran sin envoltorios en cada archivo indicado.",
+  "referenceDate": "2026-10-19",
+  "fixtures": {
+    "login": {
+      "file": "login.json",
+      "dto": "LoginResponse"
+    },
+    "users": {
+      "file": "usuarios.json",
+      "dto": "UsuarioResponse[]"
+    },
+    "spaces": {
+      "file": "espacios.json",
+      "dto": "EspacioResponseDTO[]"
+    },
+    "incomes": {
+      "file": "sueldos.json",
+      "dto": "SueldoResponse[]"
+    },
+    "members1": {
+      "file": "miembros-1.json",
+      "dto": "MiembroResponseDTO[]"
+    },
+    "expenses1": {
+      "file": "gastos-1.json",
+      "dto": "GastoDetalleDTO[]"
+    },
+    "balance1": {
+      "file": "balance-1.json",
+      "dto": "BalanceDTO"
+    },
+    "templates1": {
+      "file": "recurrentes-1.json",
+      "dto": "PlantillaGastoResponseDTO[]"
+    },
+    "history1": {
+      "file": "liquidaciones-1.json",
+      "dto": "LiquidacionResponseDTO[]"
+    },
+    "overdue1": {
+      "file": "vencimientos-1.json",
+      "dto": "ServicioVencimientoDTO[]"
+    },
+    "members2": {
+      "file": "miembros-2.json",
+      "dto": "MiembroResponseDTO[]"
+    },
+    "expenses2": {
+      "file": "gastos-2.json",
+      "dto": "GastoDetalleDTO[]"
+    },
+    "balance2": {
+      "file": "balance-2.json",
+      "dto": "BalanceDTO"
+    },
+    "templates2": {
+      "file": "recurrentes-2.json",
+      "dto": "PlantillaGastoResponseDTO[]"
+    },
+    "history2": {
+      "file": "liquidaciones-2.json",
+      "dto": "LiquidacionResponseDTO[]"
+    },
+    "overdue2": {
+      "file": "vencimientos-2.json",
+      "dto": "ServicioVencimientoDTO[]"
+    },
+    "members3": {
+      "file": "miembros-3.json",
+      "dto": "MiembroResponseDTO[]"
+    },
+    "expenses3": {
+      "file": "gastos-3.json",
+      "dto": "GastoDetalleDTO[]"
+    },
+    "balance3": {
+      "file": "balance-3.json",
+      "dto": "BalanceDTO"
+    },
+    "templates3": {
+      "file": "recurrentes-3.json",
+      "dto": "PlantillaGastoResponseDTO[]"
+    },
+    "history3": {
+      "file": "liquidaciones-3.json",
+      "dto": "LiquidacionResponseDTO[]"
+    },
+    "overdue3": {
+      "file": "vencimientos-3.json",
+      "dto": "ServicioVencimientoDTO[]"
+    },
+    "members4": {
+      "file": "miembros-4.json",
+      "dto": "MiembroResponseDTO[]"
+    },
+    "expenses4": {
+      "file": "gastos-4.json",
+      "dto": "GastoDetalleDTO[]"
+    },
+    "balance4": {
+      "file": "balance-4.json",
+      "dto": "BalanceDTO"
+    },
+    "templates4": {
+      "file": "recurrentes-4.json",
+      "dto": "PlantillaGastoResponseDTO[]"
+    },
+    "history4": {
+      "file": "liquidaciones-4.json",
+      "dto": "LiquidacionResponseDTO[]"
+    },
+    "overdue4": {
+      "file": "vencimientos-4.json",
+      "dto": "ServicioVencimientoDTO[]"
+    },
+    "members5": {
+      "file": "miembros-5.json",
+      "dto": "MiembroResponseDTO[]"
+    },
+    "expenses5": {
+      "file": "gastos-5.json",
+      "dto": "GastoDetalleDTO[]"
+    },
+    "balance5": {
+      "file": "balance-5.json",
+      "dto": "BalanceDTO"
+    },
+    "templates5": {
+      "file": "recurrentes-5.json",
+      "dto": "PlantillaGastoResponseDTO[]"
+    },
+    "history5": {
+      "file": "liquidaciones-5.json",
+      "dto": "LiquidacionResponseDTO[]"
+    },
+    "overdue5": {
+      "file": "vencimientos-5.json",
+      "dto": "ServicioVencimientoDTO[]"
+    },
+    "members6": {
+      "file": "miembros-6.json",
+      "dto": "MiembroResponseDTO[]"
+    },
+    "expenses6": {
+      "file": "gastos-6.json",
+      "dto": "GastoDetalleDTO[]"
+    },
+    "balance6": {
+      "file": "balance-6.json",
+      "dto": "BalanceDTO"
+    },
+    "templates6": {
+      "file": "recurrentes-6.json",
+      "dto": "PlantillaGastoResponseDTO[]"
+    },
+    "history6": {
+      "file": "liquidaciones-6.json",
+      "dto": "LiquidacionResponseDTO[]"
+    },
+    "overdue6": {
+      "file": "vencimientos-6.json",
+      "dto": "ServicioVencimientoDTO[]"
+    },
+    "error": {
+      "file": "error.json",
+      "dto": "ErrorResponseDTO"
+    }
+  }
+}

@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  return { plugins: [react(), tailwindcss()], server: { port: 5173, proxy: {
+  return { plugins: [react(), tailwindcss()], server: { port: 5173, proxy: mode === 'mock' ? undefined : {
     '/api': { target: env.API_PROXY_TARGET || 'http://localhost:8080', changeOrigin: true }
   } } }
 })

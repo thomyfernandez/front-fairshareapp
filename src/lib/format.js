@@ -5,10 +5,12 @@ export const money = value => new Intl.NumberFormat('es-AR', {
 // Sum the API's two-decimal monetary amounts as integer cents.
 export const cents = value => Math.round((Number(value) || 0) * 100)
 export const sumMoney = values => values.reduce((total, value) => total + cents(value), 0) / 100
-export function dateLabel(value) {
+export function dateLabel(value, { compact = false } = {}) {
   if (!value) return 'Sin fecha'
   const [year, month, day] = value.slice(0, 10).split('-').map(Number)
-  return new Intl.DateTimeFormat('es-AR', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(year, month - 1, day))
+  const date = new Date(year, month - 1, day)
+  const formatter = new Intl.DateTimeFormat('es-AR', { day: 'numeric', month: 'short', ...(!compact && { year: 'numeric' }) })
+  return compact ? formatter.formatToParts(date).filter(part => part.type === 'day' || part.type === 'month').map(part => part.value).join(' ') : formatter.format(date)
 }
 export function localDate(date = new Date()) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`

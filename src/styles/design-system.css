@@ -1,0 +1,45 @@
+@layer components {
+  .ds-gallery { max-width: 72rem; margin-inline: auto; }
+  .ds-section { margin-top: var(--spacing-10); scroll-margin-top: var(--spacing-6); }
+  .ds-section-nav { display: flex; flex-wrap: wrap; gap: var(--spacing-3); }
+  .ds-section-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: var(--spacing-2) var(--spacing-3); color: var(--color-brand-hover); font-size: var(--text-sm); background: var(--color-canvas); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); }
+  .ds-section-nav a:hover { background: var(--color-brand-soft); }
+  .ds-summary-layout { display: grid; gap: var(--spacing-6); align-items: start; }
+  .ds-summary-preview { min-width: 0; background: var(--color-workspace); border-radius: var(--radius-xl); padding: var(--spacing-4); }
+  .ds-summary-preview__header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--spacing-4); margin-bottom: var(--spacing-6); }
+  .ds-summary-preview__header h3 { font-size: var(--text-xl); margin: 0; }
+  .ds-caption { font-size: var(--text-sm); margin: 0 0 var(--spacing-1); }
+  .ds-summary-preview__month { margin-top: var(--spacing-8); }
+  .ds-summary-preview__month .ui-section-heading { margin-bottom: var(--spacing-4); }
+  .ds-month-total { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--spacing-2); margin: 0 0 var(--spacing-2); }
+  .ds-month-total strong { font-size: var(--text-xl); font-weight: var(--font-weight-semibold); color: var(--color-text-primary); }
+  .ds-month-total > span { font-size: var(--text-sm); }
+  .ds-preview-options { display: grid; gap: var(--spacing-4); }
+  .ds-preview-options h3, .ds-preview-options p { margin: 0; }
+  .ds-preview-options p { font-size: var(--text-sm); }
+  .ds-palette { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); gap: var(--spacing-4); padding: 0; margin: 0; list-style: none; }
+  .ds-palette li { display: flex; gap: var(--spacing-3); align-items: flex-start; min-width: 0; }
+  .ds-palette li > div { display: grid; min-width: 0; }
+  .ds-palette strong { font-size: var(--text-sm); font-weight: var(--font-weight-medium); }
+  .ds-palette code, .ds-palette li > div > span { font-size: var(--text-xs); color: var(--color-text-secondary); overflow-wrap: anywhere; }
+  .ds-swatch { width: var(--spacing-10); height: var(--spacing-10); flex-shrink: 0; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); }
+  .ds-foundations-grid { display: grid; gap: var(--spacing-8); margin-top: var(--spacing-8); }
+  .ds-foundations-grid > div { min-width: 0; }
+  .ds-foundations-grid p { font-size: var(--text-sm); }
+  .ds-foundations-grid .ds-type-title { font-size: var(--text-xl); color: var(--color-text-primary); font-weight: var(--font-weight-semibold); }
+  .ds-money-examples { display: flex; flex-wrap: wrap; gap: var(--spacing-5); margin-bottom: var(--spacing-3); font-size: var(--text-lg); }
+  .ds-spacing { display: flex; flex-wrap: wrap; gap: var(--spacing-2); margin-bottom: var(--spacing-4); }
+  .ds-spacing span { display: grid; place-items: center; width: var(--spacing-10); height: var(--spacing-10); background: var(--color-brand-soft); color: var(--color-brand-ink); border-radius: var(--radius-sm); font-size: var(--text-sm); }
+  .ds-avatar-examples { display: flex; flex-wrap: wrap; align-items: center; gap: var(--spacing-3); font-size: var(--text-sm); color: var(--color-text-secondary); }
+  .ds-avatar-examples > span:last-child { flex: 1 1 10rem; }
+  .ds-expense-detail { display: grid; gap: var(--spacing-4); }
+  .ds-expense-detail dt { font-size: var(--text-sm); color: var(--color-text-secondary); }
+  .ds-expense-detail dd { margin: var(--spacing-1) 0 0; font-weight: var(--font-weight-medium); overflow-wrap: anywhere; }
+  @media (min-width: 48rem) {
+    .ds-summary-preview { padding: var(--spacing-6); }
+    .ds-foundations-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 68rem) {
+    .ds-summary-layout { grid-template-columns: minmax(0, 1fr) 16rem; }
+  }
+}

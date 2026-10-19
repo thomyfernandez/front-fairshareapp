@@ -1,0 +1,16 @@
+{
+  "espacioId": 6,
+  "espacioNombre": "Planes en pareja",
+  "deudas": [
+    {
+      "id": 25,
+      "deudorId": 1,
+      "deudorNombre": "Ana Ruiz",
+      "acreedorId": 2,
+      "acreedorNombre": "Thomas Fernandez",
+      "monto": 354436.55,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    }
+  ]
+}

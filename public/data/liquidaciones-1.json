@@ -1,0 +1,231 @@
+[
+  {
+    "id": 2,
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "montoTotal": 810316.74,
+    "fechaLiquidacion": "2026-05-28",
+    "mes": 5,
+    "anio": 2026,
+    "descripcion": "Cierre de nuestro hogar",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      10001,
+      10002,
+      10003,
+      10004,
+      10005,
+      10006,
+      10007,
+      10008,
+      10009,
+      10010,
+      10011,
+      10012
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 810316.74,
+      "presupuestoAnterior": 6719569.82,
+      "presupuestoRestante": 5909253.08,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-05-28"
+    }
+  },
+  {
+    "id": 3,
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "montoTotal": 810693.18,
+    "fechaLiquidacion": "2026-06-28",
+    "mes": 6,
+    "anio": 2026,
+    "descripcion": "Cierre de nuestro hogar",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      10013,
+      10014,
+      10015,
+      10016,
+      10017,
+      10018,
+      10019,
+      10020,
+      10021,
+      10022,
+      10023,
+      10024
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 810693.18,
+      "presupuestoAnterior": 5909253.08,
+      "presupuestoRestante": 5098559.9,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-06-28"
+    }
+  },
+  {
+    "id": 4,
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "montoTotal": 811069.62,
+    "fechaLiquidacion": "2026-07-28",
+    "mes": 7,
+    "anio": 2026,
+    "descripcion": "Cierre de nuestro hogar",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      10025,
+      10026,
+      10027,
+      10028,
+      10029,
+      10030,
+      10031,
+      10032,
+      10033,
+      10034,
+      10035,
+      10036
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 811069.62,
+      "presupuestoAnterior": 5098559.9,
+      "presupuestoRestante": 4287490.28,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-07-28"
+    }
+  },
+  {
+    "id": 5,
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "montoTotal": 811446.06,
+    "fechaLiquidacion": "2026-08-28",
+    "mes": 8,
+    "anio": 2026,
+    "descripcion": "Cierre de nuestro hogar",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      10037,
+      10038,
+      10039,
+      10040,
+      10041,
+      10042,
+      10043,
+      10044,
+      10045,
+      10046,
+      10047,
+      10048
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 811446.06,
+      "presupuestoAnterior": 4287490.28,
+      "presupuestoRestante": 3476044.22,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-08-28"
+    }
+  },
+  {
+    "id": 6,
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "montoTotal": 811822.5,
+    "fechaLiquidacion": "2026-09-28",
+    "mes": 9,
+    "anio": 2026,
+    "descripcion": "Cierre de nuestro hogar",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      10049,
+      10050,
+      10051,
+      10052,
+      10053,
+      10054,
+      10055,
+      10056,
+      10057,
+      10058,
+      10059,
+      10060
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 811822.5,
+      "presupuestoAnterior": 3476044.22,
+      "presupuestoRestante": 2664221.72,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-09-28"
+    }
+  },
+  {
+    "id": 1,
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "montoTotal": 32000,
+    "fechaLiquidacion": "2026-10-03",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de nuestro hogar",
+    "cantidadGastos": 1,
+    "gastosLiquidadosIds": [
+      103
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 32000,
+      "presupuestoAnterior": 2664221.72,
+      "presupuestoRestante": 2632221.72,
+      "cantidadGastosCerrados": 1,
+      "fechaCierre": "2026-10-03"
+    }
+  },
+  {
+    "id": 7,
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "montoTotal": 543190.74,
+    "fechaLiquidacion": "2026-10-06",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de nuestro hogar",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      10061,
+      10062,
+      10063,
+      10064
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 543190.74,
+      "presupuestoAnterior": 2632221.72,
+      "presupuestoRestante": 2089030.98,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-06"
+    }
+  },
+  {
+    "id": 8,
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "montoTotal": 89030.98,
+    "fechaLiquidacion": "2026-10-10",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de nuestro hogar",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      10065,
+      10066,
+      10067,
+      10068
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 89030.98,
+      "presupuestoAnterior": 2089030.98,
+      "presupuestoRestante": 2000000,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-10"
+    }
+  }
+]

@@ -1,0 +1,76 @@
+{
+  "espacioId": 4,
+  "espacioNombre": "Equipo de fútbol",
+  "deudas": [
+    {
+      "id": 13,
+      "deudorId": 5,
+      "deudorNombre": "Martín López",
+      "acreedorId": 1,
+      "acreedorNombre": "Ana Ruiz",
+      "monto": 59589.76,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 14,
+      "deudorId": 5,
+      "deudorNombre": "Martín López",
+      "acreedorId": 4,
+      "acreedorNombre": "Lucía Pérez",
+      "monto": 179782.88,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 15,
+      "deudorId": 2,
+      "deudorNombre": "Thomas Fernandez",
+      "acreedorId": 4,
+      "acreedorNombre": "Lucía Pérez",
+      "monto": 65351.97,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 16,
+      "deudorId": 2,
+      "deudorNombre": "Thomas Fernandez",
+      "acreedorId": 6,
+      "acreedorNombre": "Valentina Torres",
+      "monto": 81609.33,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 17,
+      "deudorId": 2,
+      "deudorNombre": "Thomas Fernandez",
+      "acreedorId": 11,
+      "acreedorNombre": "Santiago Acosta",
+      "monto": 35227.08,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 18,
+      "deudorId": 8,
+      "deudorNombre": "Camila Díaz",
+      "acreedorId": 11,
+      "acreedorNombre": "Santiago Acosta",
+      "monto": 157712.87,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 19,
+      "deudorId": 12,
+      "deudorNombre": "Emilia Vega",
+      "acreedorId": 11,
+      "acreedorNombre": "Santiago Acosta",
+      "monto": 96012.44,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    }
+  ]
+}

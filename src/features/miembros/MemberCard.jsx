@@ -1,22 +1,17 @@
-import { Badge, Button, Card, Icon } from '../../components/ui'
+import { Badge, Button, Card, Avatar } from '../../components/ui'
 import { changeRoleActionLabel, roleLabel, roleTone } from './model'
 
 export function MemberCard({ member, isSelf, canManageRoles, onChangeRole }) {
   return (
-    <Card as="li" className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <Card as="li" className="member-item">
       <div className="flex items-center gap-3 min-w-0">
-        <span
-          className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-panel text-brand-primary"
-          aria-hidden="true"
-        >
-          <Icon name="users" size={20} />
-        </span>
+        <Avatar name={member.nombreUsuario} />
         <div className="min-w-0">
-          <p className="font-medium text-primary truncate">
+          <p className="font-medium text-primary break-words">
             {member.nombreUsuario}
             {isSelf && <span className="font-normal text-secondary"> (vos)</span>}
           </p>
-          <p className="text-sm text-secondary truncate">{member.emailUsuario}</p>
+          <p className="text-sm text-secondary break-all">{member.emailUsuario}</p>
         </div>
       </div>
 
@@ -24,7 +19,7 @@ export function MemberCard({ member, isSelf, canManageRoles, onChangeRole }) {
         <Badge tone={roleTone(member.rol)}>{roleLabel(member.rol)}</Badge>
         {canManageRoles && (
           <Button
-            variant="secondary"
+            variant="ghost"
             onClick={() => onChangeRole(member)}
             aria-label={`${changeRoleActionLabel(member.rol)} a ${member.nombreUsuario}`}
           >

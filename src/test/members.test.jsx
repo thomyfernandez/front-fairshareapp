@@ -182,7 +182,8 @@ describe('MembersPage', () => {
     const membersConSueldo = [{ ...members[0], sueldoDeclarado: 500000 }, members[1]]
     renderMembersPage({ members: membersConSueldo })
     expect(screen.getByText('$ 500.000,00')).toBeInTheDocument()
-    expect(screen.getByText(/declaredincomeform/i)).toBeInTheDocument()
+    fireEvent.click(screen.getByText('Tu ingreso declarado en este espacio', { exact: true }))
+    expect(screen.getByText(/La edición del ingreso declarado todavía no está disponible/)).toBeVisible()
   })
 
   it('muestra un estado honesto cuando todavía no se declaró ingreso en el espacio', () => {
