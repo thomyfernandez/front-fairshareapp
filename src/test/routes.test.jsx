@@ -51,7 +51,8 @@ async function logIn() {
 it('returns to a protected deep link after login, switches space and supports back navigation', async () => {
   setup('/espacios/2/gastos?desde=2026-01-01')
   const user = await logIn()
-  await screen.findByRole('heading', { name: 'Gastos', level: 1 })
+  // Gastos se carga de forma diferida; la primera transformación del módulo puede superar el segundo por defecto.
+  await screen.findByRole('heading', { name: 'Gastos', level: 1 }, { timeout: 5000 })
   expect(screen.getByTestId('route')).toHaveTextContent('/espacios/2/gastos?desde=2026-01-01')
   await user.click(screen.getByLabelText('Cambiar espacio activo'))
   await user.click(screen.getByRole('link', { name: 'Casa del equipo' }))
