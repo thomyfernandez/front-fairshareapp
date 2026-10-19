@@ -2,13 +2,13 @@
 
 La dirección visual de FairShare es Cercana: una experiencia tranquila, personal y clara para compartir gastos. La pantalla parte de la situación del usuario y de la próxima tarea que necesita resolver. Un balance protagonista, secciones abiertas y detalles a demanda reemplazan la acumulación de indicadores y tarjetas equivalentes.
 
-La referencia de todo el producto es el prototipo oscuro de Cercana: fondo #17171f, navegación y listas #22222c, balance #30264e y acciones lavanda #b3a1ff. Inter se sirve localmente. Todas las pantallas, incluidos acceso, registro, menús, diálogos y galería, comparten este tema. El color no indica por sí solo una deuda o un cobro: siempre lo explica el texto. Los componentes reales y sus estados se pueden revisar en `/componentes` con datos de demostración.
+La referencia de todo el producto es el prototipo oscuro de Cercana: fondo #17171f, navegación y listas #22222c, balance #30264e y acciones lavanda #b3a1ff. Inter se sirve localmente. Todas las pantallas, incluidos acceso, registro, menús, diálogos y galería, comparten el tema elegido: el oscuro de referencia o el claro, que usa los valores base de `tokens.json`. El color no indica por sí solo una deuda o un cobro: siempre lo explica el texto. Los componentes reales y sus estados se pueden revisar en `/componentes` con datos de demostración.
 
 Los componentes se aplican al resumen, gastos, balance, recurrentes, liquidaciones, miembros, configuración, espacios e ingresos, conservando los contratos de API y las confirmaciones existentes. Consultá el [catálogo de componentes](docs/DESIGN_SYSTEM_COMPONENTS.md) para los contratos, estados y criterios de uso.
 
 ## Archivos y mantenimiento
 
-- `tokens.json`: fuente de valores en formato DTCG 2025.10. `themes.dark` contiene las variantes semánticas del prototipo oscuro; no mantener una paleta paralela en CSS. Cada token declara `$type` y `$value`. Colores en sRGB normalizado con `hex` de respaldo; dimensiones como objetos y sombras como composiciones, no cadenas CSS.
+- `tokens.json`: fuente de valores en formato DTCG 2025.10. Los valores base forman el tema claro y `themes.dark` contiene las variantes semánticas del prototipo oscuro con los mismos nombres; no mantener una paleta paralela en CSS. Cada token declara `$type` y `$value`. Colores en sRGB normalizado con `hex` de respaldo; dimensiones como objetos y sombras como composiciones, no cadenas CSS.
 - `scripts/generate-theme.mjs`: adapta los tipos concretos utilizados por FairShare al tema de Tailwind.
 - `src/styles/theme.css`: salida generada con `@theme static`; no editar directamente.
 - `vite.config.js`: integra `@tailwindcss/vite`.
@@ -117,7 +117,7 @@ Los tokens existentes de formularios, texto, estados y elevación siguen disponi
 
 ## Tema y navegación de la referencia
 
-- `useAppTheme` aplica `data-theme="dark"` desde `AppLayout` y `AuthLayout`; `index.html` establece el mismo tema para la primera pintura. La raíz incluye modales y avisos que usan portal. No cambia la apariencia del sistema operativo ni guarda preferencias del usuario.
+- El tema se elige con “Usar modo claro” u “Usar modo oscuro” (`ThemeToggle`), al pie de la navegación y en la cabecera de acceso y registro. El texto nombra la acción disponible, sin depender del ícono. La preferencia se guarda en el navegador (`fairshare.theme`); sin una elección se respeta la apariencia del sistema y, si no se conoce, se usa el oscuro de referencia. `useAppTheme` aplica `data-theme` desde `AppLayout` y `AuthLayout`, y `index.html` replica la resolución para la primera pintura. La raíz incluye modales y avisos que usan portal. Al agregar estilos, usar siempre variables semánticas y revisar la pantalla en ambos temas.
 - El generador conserva las variables semánticas entre temas y emite las variantes oscuras desde `tokens.json`. No editar directamente `theme.css`.
 - En las secciones de un espacio, la navegación muestra Inicio, Gastos, Balance, Recurrentes y Liquidaciones en el grupo principal. Miembros y Configuración forman un segundo grupo visible, separado por espacio y un borde sutil. Mis ingresos, cuenta y espacios permanecen accesibles al pie. No ocultar destinos detrás de Más. Configuración usa un engranaje, sin rayos de sol. En móvil se reutiliza el menú accesible.
 - Las pantallas usan un área de trabajo de hasta 960px y una navegación de 176px desde 721px. En móvil, el menú usa el diálogo compartido. No se agrega una cabecera de migas de pan en escritorio. La composición usa espacio del grupo, título, balance, mes, presupuesto desplegable y aviso de revisión. El título usa `page` (26px), el total mensual `metric` (28px) y el ícono `brand.tint`.
