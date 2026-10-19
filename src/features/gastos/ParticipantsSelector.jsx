@@ -30,6 +30,7 @@ export function ParticipantsSelector({
   onInteraction,
   onChange,
   disabled = false,
+  compact = false,
   error: externalError,
 }) {
   const normalizedMembers = useMemo(() => normalizeMembers(members), [members])
@@ -323,9 +324,9 @@ export function ParticipantsSelector({
   const activeError = externalError || validationError
 
   return (
-    <div className="participants-selector space-y-3">
+    <div className={`participants-selector space-y-3${compact ? ' participants-selector--compact' : ''}`}>
       {/* Cabecera del selector */}
-      <div className="flex items-center justify-between flex-wrap gap-2 pt-2 border-t border-subtle">
+      <div className={`flex items-center justify-between flex-wrap gap-2${compact ? '' : ' pt-2 border-t border-subtle'}`}>
         <div className="flex items-center gap-2">
           <Icon name="users" size={18} className="text-secondary" />
           <span className="text-sm font-semibold text-primary">Participantes del reparto</span>
@@ -380,7 +381,7 @@ export function ParticipantsSelector({
       </div>
 
       {/* Lista de participantes */}
-      <div className="space-y-2 bg-panel p-3 rounded-lg border border-subtle">
+      <div className={compact ? "space-y-2" : "space-y-2 bg-panel p-3 rounded-lg border border-subtle"}>
         {normalizedMembers.map(m => {
           const isSelected = selectedEquitativa[m.usuarioId]
           const pctVal = porcentajes[m.usuarioId] || ''
@@ -404,7 +405,7 @@ export function ParticipantsSelector({
                   <span className="text-sm font-medium text-primary block break-words">
                     {m.nombreUsuario}
                   </span>
-                  {m.rol && (
+                  {m.rol && !compact && (
                     <span className="text-xs text-secondary block capitalize">{m.rol.toLowerCase()}</span>
                   )}
                 </div>

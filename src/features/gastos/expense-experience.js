@@ -41,3 +41,9 @@ export function expensePayload(value) {
 }
 
 export const validExpenseAmount = value => /^\d+(?:\.\d{1,2})?$/.test(String(value)) && Number(value) > 0 && Number(value) <= 9999999999.99
+
+export const batchMemberName = (members, id) => {
+  const member = members.find(item => Number(item.usuarioId ?? item.id) === Number(id))
+  return member?.nombreUsuario ?? member?.nombre ?? `Usuario ${id}`
+}
+export const batchSplitLabel = mode => ({ EQUITATIVA: 'Partes iguales', PROPORCIONAL_INGRESOS: 'Según los ingresos', PORCENTUAL: 'Porcentajes', MONTOS_FIJOS: 'Montos fijos' }[mode] || mode)

@@ -143,9 +143,10 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
       />
     )
 
-    expect(screen.getByRole('heading', { name: 'Los gastos del lote' })).toBeInTheDocument()
-    await user.click(screen.getByText('Cómo funciona el registro por lote', { exact: true }))
-    expect(screen.getByText(/si uno tiene un error, el lote completo queda sin guardar/)).toBeVisible()
+    expect(screen.getAllByLabelText(/^Descripción/)).toHaveLength(1)
+    await user.click(screen.getByRole('button', { name: 'Agregar otro gasto al lote' }))
+    await user.click(screen.getByText('Cómo funciona', { exact: true }))
+    expect(screen.getByText(/Si uno tiene un error, el lote completo queda sin guardar/)).toBeVisible()
 
     // Completar el primer gasto
     const descInputs = screen.getAllByLabelText(/^Descripción/)
@@ -161,8 +162,10 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     await user.selectOptions(pagadorSelects[1], '2')
 
     // Enviar lote
-    const submitBtn = screen.getByRole('button', { name: /Registrar lote/i })
+    const submitBtn = screen.getByRole('button', { name: 'Revisar lote' })
     await user.click(submitBtn)
+    expect(mockApi).not.toHaveBeenCalled()
+    await user.click(screen.getByRole('button', { name: 'Registrar lote', exact: true }))
 
     await waitFor(() => {
       expect(mockApi).toHaveBeenCalledTimes(1)
@@ -191,6 +194,7 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
       />
     )
 
+    await user.click(screen.getByRole('button', { name: 'Agregar otro gasto al lote' }))
     const descInputs = screen.getAllByLabelText(/^Descripción/)
     const montoInputs = screen.getAllByLabelText(/^Monto/)
 
@@ -199,8 +203,10 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     await user.type(descInputs[1], 'Segunda compra no confirmada')
     await user.type(montoInputs[1], '200')
 
-    const submitBtn = screen.getByRole('button', { name: /Registrar lote/i })
+    const submitBtn = screen.getByRole('button', { name: 'Revisar lote' })
     await user.click(submitBtn)
+    expect(mockApi).not.toHaveBeenCalled()
+    await user.click(screen.getByRole('button', { name: 'Registrar lote', exact: true }))
 
     // Mensaje de error visible
     expect(await screen.findAllByText('Error 400: Lote rechazado por datos inconsistentes.')).not.toHaveLength(0)

@@ -149,6 +149,12 @@ Mis ingresos pertenece a la cuenta y se aplica a todos los espacios. Al abrirlo 
 
 ### Continuidad en el registro de gastos
 
+La carga por lote empieza con un gasto y agrega filas a demanda. El encabezado, el regreso al listado y los gastos comparten el ancho del área de trabajo; no hay tarjeta exterior ni un segundo título que repita la tarea. El borrador y la ayuda ocupan una línea discreta. Cada gasto usa una sola superficie.
+
+`BatchExpenseItem` conserva el selector montado al plegar el editor para no perder selecciones ni repartos. El reparto equitativo y proporcional presenta los nombres y permite editar; los repartos personalizados y los errores permanecen desplegados. `ParticipantsSelector` admite `compact` para eliminar superficies anidadas y roles que no intervienen en la carga, sin cambiar sus cálculos. Los gastos completos pueden plegarse con “Listo” y se pliegan al agregar otro; los incompletos siguen abiertos. Los nombres largos del pagador se muestran también como ayuda cuando pueden quedar cortados en el selector.
+
+El total aparece una sola vez en la barra final con “Revisar lote”. La barra permanece en el flujo en móvil y se fija al pie en escritorio con altura suficiente; los controles reservan margen de desplazamiento para no quedar cubiertos. La revisión usa el diálogo compartido, presenta importes, fechas, pagadores y repartos, y conserva una instantánea exacta para el envío. Las coincidencias se explican allí y requieren “Registrar de todos modos”. Cerrar o volver a editar no envía datos. Un fallo del servidor conserva el lote. El reparto proporcional siempre aclara que se calcula al registrar.
+
 En el lote, la descripción junto al número funciona como título editable: conserva `Field`, su etiqueta para lectores de pantalla y validación, con fondo transparente y sin borde para reducir el peso visual de la cabecera. El campo vacío invita a escribir con “Escribí una descripción…”, sin una etiqueta visible encima. El foco usa un subrayado lavanda de 2px, sin recuadro alrededor del texto. Cuando contiene un error, el subrayado pasa a rojo y se conserva el mensaje escrito.
 
 Repetir vive en el detalle y en hasta cuatro accesos frecuentes dentro de la carga individual, calculados del historial real del espacio. No agregar un panel de sugerencias en el resumen. Las sugerencias abren una carga revisable; si existe un borrador, pedir confirmación antes de reemplazarlo. La fecha se actualiza y los participantes se restringen a miembros actuales.
