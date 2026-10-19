@@ -30,6 +30,7 @@
   .account-menu__panel strong { font-size: var(--text-sm); }
   .account-menu__panel > span { color: var(--color-text-secondary); font-size: var(--text-xs); overflow-wrap: anywhere; }
   .account-menu__panel .ui-button { justify-content: flex-start; margin-top: 4px; }
+  .theme-toggle.ui-button { justify-content: flex-start; gap: var(--spacing-2); padding-inline: var(--spacing-2); font-weight: var(--font-weight-medium); }
   .mobile-menu-button { display: none; }
   .app-main { max-width: 1400px; width: 100%; margin: 0 auto; padding: 36px 40px 48px; outline: none; flex: 1; }
   .app-footer { display: flex; justify-content: space-between; gap: 12px; padding: 20px 40px; border-top: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); font-size: 11px; }
