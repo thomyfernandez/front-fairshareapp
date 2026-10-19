@@ -7,6 +7,7 @@ import { UIProvider } from '../components/ui'
 import { SessionProvider } from '../features/auth/SessionProvider'
 import { saveDraft, readDraft } from '../lib/draft-storage'
 import { localDate } from '../lib/format'
+import { THEME_STORAGE_KEY } from '../app/theme-preference'
 
 const spaces = [
   { id: 1, nombre: 'Casa del equipo', presupuestoBase: 5000, reglaReparto: 'CINCUENTA_CINCUENTA' },
@@ -174,4 +175,20 @@ it('elimina los borradores de gastos al cerrar sesión', async () => {
   await user.click(screen.getByRole('button', { name: 'Cerrar sesión' }))
   await screen.findByRole('heading', { name: 'Ingresá a FairShare' })
   expect(readDraft(1, 1, 'individual')).toBeNull()
+})
+
+it('permite elegir el modo claro desde el acceso y lo conserva dentro de la app', async () => {
+  setup('/espacios/1/resumen')
+  const user = userEvent.setup()
+  try {
+    await user.click(await screen.findByRole('button', { name: 'Usar modo claro' }))
+    expect(document.documentElement).toHaveAttribute('data-theme', 'light')
+    await logIn()
+    await screen.findByRole('heading', { name: 'Tus cuentas, claras.', level: 1 })
+    expect(document.documentElement).toHaveAttribute('data-theme', 'light')
+    await user.click(screen.getByRole('button', { name: 'Usar modo oscuro' }))
+    expect(document.documentElement).toHaveAttribute('data-theme', 'dark')
+  } finally {
+    window.localStorage.removeItem(THEME_STORAGE_KEY)
+  }
 })

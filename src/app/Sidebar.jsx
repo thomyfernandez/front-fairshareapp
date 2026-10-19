@@ -3,6 +3,7 @@ import { Icon } from '../components/ui'
 import { useWorkspace } from './useWorkspace'
 import { expenseDestination, incomeDestination, spaceSections } from './navigation'
 import { SpaceSwitcher } from './SpaceSwitcher'
+import { ThemeToggle } from './ThemeToggle'
 import { UserMenu } from '../features/auth/UserMenu'
 
 export function Brand() {
@@ -32,6 +33,6 @@ export function Sidebar({ compact = false, onNavigate }) {
         : <span key={section.slug} className="nav-item nav-item--disabled" aria-disabled="true"><Icon name={section.icon} />{section.label}</span>)}
       {!spaceId && <p className="nav-help">Elegí un espacio para ver sus gastos y movimientos.</p>}</>}
     </nav>
-    <div className={`sidebar-account${compact ? ' sidebar-account--compact' : ''}`}>{compact && spaceId && <nav aria-label="Tu cuenta" className="sidebar-account__navigation"><NavLink to={incomeDestination(spaceId)} onClick={onNavigate} className={({ isActive }) => `nav-item ${isActive ? 'nav-item--active' : ''}`}><Icon name="wallet" />Mis ingresos</NavLink></nav>}{compact ? <><p>{accountName}</p><div className="sidebar-account__links"><UserMenu compact />{spaceId && <><span aria-hidden="true">·</span><Link to="/espacios" onClick={onNavigate}>Mis espacios</Link></>}</div></> : <UserMenu />}</div>
+    <div className={`sidebar-account${compact ? ' sidebar-account--compact' : ''}`}>{compact && spaceId && <nav aria-label="Tu cuenta" className="sidebar-account__navigation"><NavLink to={incomeDestination(spaceId)} onClick={onNavigate} className={({ isActive }) => `nav-item ${isActive ? 'nav-item--active' : ''}`}><Icon name="wallet" />Mis ingresos</NavLink></nav>}{compact ? <><p>{accountName}</p><div className="sidebar-account__links"><UserMenu compact />{spaceId && <><span aria-hidden="true">·</span><Link to="/espacios" onClick={onNavigate}>Mis espacios</Link></>}</div></> : <UserMenu />}<ThemeToggle className="sidebar-account__theme" /></div>
   </div>
 }
