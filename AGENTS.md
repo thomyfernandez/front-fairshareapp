@@ -15,7 +15,7 @@ Estas instrucciones se aplican a todo el repositorio `front-fairshareapp` y a cu
 - Leer `DESIGN_SYSTEM.md` antes de crear o modificar interfaces. Consultar los componentes existentes y la galería `/componentes` para mantener consistencia.
 - Usar `tokens.json` como fuente de valores visuales: colores, tipografía, espaciado, radios y sombras. Consumir las variables y utilidades semánticas del tema, evitando valores arbitrarios cuando exista un token adecuado.
 - No editar directamente `src/styles/theme.css`: es un archivo generado. Modificar los tokens y ejecutar `npm run tokens:build`; verificar con `npm run tokens:check`.
-- Aplicar los temas definidos en el sistema de diseño: todas las pantallas, incluidos acceso, registro y diálogos, usan la referencia oscura de Cercana. Mantener Inter local y las reglas de contraste y movimiento.
+- Aplicar los temas definidos en el sistema de diseño: todas las pantallas, incluidos acceso, registro y diálogos, usan el tema elegido por el usuario: la referencia oscura de Cercana o el tema claro. Revisar los cambios visuales en ambos temas. Mantener Inter local y las reglas de contraste y movimiento.
 - Usar índigo para acciones principales, enlaces y foco. Reservar verde para pago rápido y estados positivos, según `DESIGN_SYSTEM.md`.
 - No usar `text-tertiary` para texto pequeño esencial sobre blanco. Utilizar colores semánticos con contraste suficiente.
 - Reutilizar y, cuando corresponda, extender los componentes de `src/components/ui` antes de crear alternativas. Evitar variantes de botones, campos, tarjetas y modales que resuelvan lo mismo de maneras distintas.

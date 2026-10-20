@@ -123,10 +123,10 @@ describe('ExpenseForm & ParticipantsSelector', () => {
     await user.click(screen.getByRole('button', { name: 'Registrar gasto' }))
 
     await waitFor(() => {
-      expect(mockApi).toHaveBeenCalledTimes(1)
+      expect(mockApi.mock.calls.filter(([, options]) => options?.method === 'POST')).toHaveLength(1)
     })
 
-    const [calledPath, calledOptions] = mockApi.mock.calls[0]
+    const [calledPath, calledOptions] = mockApi.mock.calls.find(([, options]) => options?.method === 'POST')
     expect(calledPath).toBe('/api/v1/espacios/1/gastos')
     expect(calledOptions.method).toBe('POST')
 

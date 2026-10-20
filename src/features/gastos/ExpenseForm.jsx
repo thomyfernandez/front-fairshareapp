@@ -3,8 +3,8 @@ import { Button, Card, Field, InlineAlert, Submit, useUI } from '../../component
 import { money, today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
 import { expenseErrorMessage, expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
-import { ExpenseIconPicker } from './ExpenseIconPicker'
-import { isExpenseIcon } from '../../components/ui/expense-icons'
+import { ExpenseCategoryPicker } from './ExpenseCategoryPicker'
+import { useExpenseCategories } from './useExpenseCategories'
 import { ParticipantsSelector } from './ParticipantsSelector.jsx'
 
 /**
@@ -53,9 +53,9 @@ export function ExpenseForm({
 
   // Estados controlados para preservar los datos ante cualquier fallo
   const [touched, setTouched] = useState(Boolean(initialValues.touched))
-  const [icono, setIcono] = useState(isExpenseIcon(initialValues.icono) ? initialValues.icono : null)
-  const [categoriaId] = useState(initialValues.categoriaId)
-  const [categoriaNombre] = useState(initialValues.categoriaNombre)
+  const categories = useExpenseCategories(effectiveApi)
+  const [categoriaId, setCategoriaId] = useState(initialValues.categoriaId)
+  const [categoriaNombre, setCategoriaNombre] = useState(initialValues.categoriaNombre)
   const [descripcion, setDescripcion] = useState(initialValues.descripcion || '')
   const [monto, setMonto] = useState(initialValues.monto !== undefined ? String(initialValues.monto) : '')
   const [fecha, setFecha] = useState(initialValues.fecha || today())
@@ -96,8 +96,8 @@ export function ExpenseForm({
   }, [])
 
   useEffect(() => {
-    onDraftChange?.({ descripcion, icono, categoriaId, categoriaNombre, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched })
-  }, [descripcion, icono, categoriaId, categoriaNombre, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched, onDraftChange])
+    onDraftChange?.({ descripcion, categoriaId, categoriaNombre, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched })
+  }, [descripcion, categoriaId, categoriaNombre, monto, fecha, pagadorId, tipoReparto, participantes, selection, touched, onDraftChange])
 
   // Validación y envío del formulario
   const handleSubmit = async (event) => {
@@ -155,7 +155,7 @@ export function ExpenseForm({
     setBusy(true)
 
     // Construcción del contrato JSON estricto
-    const payload = expensePayload({ descripcion: trimmedDescripcion, icono, categoriaId, monto, fecha, pagadorId, tipoReparto, participantes })
+    const payload = expensePayload({ descripcion: trimmedDescripcion, categoriaId, monto, fecha, pagadorId, tipoReparto, participantes })
     submitting.current = true
 
     try {
@@ -184,7 +184,8 @@ export function ExpenseForm({
       } else {
         // En caso de formulario persistente sin navegación/cierre, limpiar valores solo en éxito
         setDescripcion('')
-        setIcono(null)
+        setCategoriaId(null)
+        setCategoriaNombre(null)
         setMonto('')
         setFecha(today())
       }
@@ -220,7 +221,7 @@ export function ExpenseForm({
         {onDraftChange && <p className="expense-draft-hint">{draftLocation === 'memory' ? 'El borrador se conserva mientras mantengas esta sesión abierta.' : draftLocation === 'unavailable' ? 'No pudimos conservar un borrador. Mantené esta pantalla abierta.' : 'El borrador se guarda en esta pestaña. Podés salir y retomarlo después.'}</p>}
         {/* Fila 1: Ícono y descripción */}
         <div className="expense-description">
-        <ExpenseIconPicker value={icono} onChange={value => { setIcono(value); setTouched(true) }} description={descripcion} category={categoriaNombre} disabled={busy} />
+        <ExpenseCategoryPicker categories={categories} value={categoriaId} onChange={value => { setCategoriaId(value.id); setCategoriaNombre(value.id == null ? null : value.nombre); setTouched(true) }} description={descripcion} category={categoriaNombre} disabled={busy} />
         <Field
           label="Descripción del gasto"
           name="descripcion"

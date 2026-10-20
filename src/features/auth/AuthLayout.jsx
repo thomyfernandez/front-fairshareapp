@@ -2,12 +2,13 @@ import { useEffect } from 'react'
 import { Card } from '../../components/ui'
 import { useAppTheme } from '../../app/useAppTheme'
 import { Brand } from '../../app/Sidebar'
+import { ThemeToggle } from '../../app/ThemeToggle'
 
 export function AuthLayout({ pageTitle, title, description, children }) {
   useAppTheme()
   useEffect(() => { document.title = `${pageTitle} · FairShare` }, [pageTitle])
   return <div className="auth-shell">
-    <header className="auth-brand"><Brand /></header>
+    <header className="auth-brand"><Brand /><ThemeToggle /></header>
     <main className="auth">
       <div className="auth-intro">
         <p className="ui-eyebrow">TU DINERO, EN EQUIPO</p>

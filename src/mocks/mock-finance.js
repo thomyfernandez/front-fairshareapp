@@ -56,11 +56,12 @@ export function buildExpense(state, space, body, id, now) {
     percentages = weights.map(weight => Math.round(weight * 10000 / weightTotal) / 100)
   }
   amounts[0] += total - amounts.reduce((sum, amount) => sum + amount, 0)
-  const existing = state.expenses.find(expense => expense.categoriaId === body.categoriaId && expense.categoriaNombre)
+  const category = state.categories?.find(item => item.id === body.categoriaId)
+  requireMock(body.categoriaId == null || category, 'Categoría no encontrada.', 404, 'RECURSO_NO_ENCONTRADO')
   return {
     id, descripcion: body.descripcion.trim(), icono: body.icono ?? null, monto: total / 100, fecha: date, espacioId: space.id, espacioNombre: space.nombre,
     pagadorId: payer.id, pagadorNombre: fullName(payer), pagadorEmail: payer.email,
-    categoriaId: body.categoriaId ?? null, categoriaNombre: existing?.categoriaNombre ?? null,
+    categoriaId: body.categoriaId ?? null, categoriaNombre: category?.nombre ?? null,
     regla: rule, estado: 'PENDIENTE', participantes: parts.map((part, index) => {
       const user = state.users.find(item => item.id === part.usuarioId)
       return { id: id * 100 + index + 1, usuarioId: user.id, usuarioNombre: fullName(user), usuarioEmail: user.email, importe: amounts[index] / 100, porcentaje: percentages[index], sueldo: part.sueldo ?? null }

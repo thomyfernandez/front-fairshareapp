@@ -6,6 +6,10 @@
       "file": "login.json",
       "dto": "LoginResponse"
     },
+    "categories": {
+      "file": "categorias.json",
+      "dto": "CategoriaResponseDTO[]"
+    },
     "users": {
       "file": "usuarios.json",
       "dto": "UsuarioResponse[]"

@@ -15,6 +15,7 @@
   .auth-form__row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
   .auth-submit { width: 100%; margin-top: 4px; }
   .auth-switch { text-align: center; font-size: var(--text-sm); margin: 20px 0 0; line-height: 1.8; }
+  .auth-brand { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--spacing-2); }
   .auth-footer { text-align: center; color: var(--color-text-secondary); font-size: var(--text-xs); }
   .auth-card .ui-alert .ui-link { display: inline; }
 
