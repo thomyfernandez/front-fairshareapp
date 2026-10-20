@@ -42,7 +42,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
   })
 
   it('ParticipantsSelector: modo PORCENTUAL valida en tiempo real que la suma sea exactamente 100%', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const onChange = vi.fn()
 
     renderWithUI(
@@ -75,7 +75,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
   })
 
   it('ParticipantsSelector: modo MONTOS_FIJOS valida que la suma coincida con el total del gasto', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const onChange = vi.fn()
 
     renderWithUI(
@@ -100,7 +100,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
   })
 
   it('ExpenseForm: construye y envía la estructura JSON exacta requerida por el backend', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const mockApi = vi.fn().mockResolvedValue({ id: 101, status: 'CREATED' })
     const onSuccess = vi.fn()
 
@@ -123,10 +123,10 @@ describe('ExpenseForm & ParticipantsSelector', () => {
     await user.click(screen.getByRole('button', { name: 'Registrar gasto' }))
 
     await waitFor(() => {
-      expect(mockApi).toHaveBeenCalledTimes(1)
+      expect(mockApi.mock.calls.filter(([, options]) => options?.method === 'POST')).toHaveLength(1)
     })
 
-    const [calledPath, calledOptions] = mockApi.mock.calls[0]
+    const [calledPath, calledOptions] = mockApi.mock.calls.find(([, options]) => options?.method === 'POST')
     expect(calledPath).toBe('/api/v1/espacios/1/gastos')
     expect(calledOptions.method).toBe('POST')
 
@@ -147,7 +147,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
   })
 
   it('UX Crítica: si la petición falla (ej. error 400), conserva TODOS los datos para que el usuario pueda corregirlos', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const mockApi = vi.fn().mockRejectedValue(
       new ApiError('Error 400: El servicio rechazó la operación.', {
         status: 400,

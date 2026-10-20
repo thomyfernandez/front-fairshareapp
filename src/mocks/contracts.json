@@ -180,6 +180,13 @@
         "anio": "Integer",
         "usuarioNombre": "String"
       }
+    },
+    "CategoriaResponseDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/CategoriaResponseDTO.java",
+      "fields": {
+        "id": "Long",
+        "nombre": "String"
+      }
     }
   },
   "enums": {

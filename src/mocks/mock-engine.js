@@ -13,7 +13,7 @@ export function createMockEngine(fixtures, { now = () => new Date() } = {}) {
   const seed = structuredClone(fixtures)
   const values = prefix => Object.entries(seed).filter(([key]) => key.startsWith(prefix)).flatMap(([, rows]) => rows)
   const state = {
-    users: seed.users, spaces: seed.spaces, incomes: seed.incomes,
+    categories: seed.categories || [], users: seed.users, spaces: seed.spaces, incomes: seed.incomes,
     members: values('members'), expenses: values('expenses'), templates: values('templates'), history: values('history'),
     debts: Object.entries(seed).filter(([key]) => key.startsWith('balance')).flatMap(([, balance]) => balance.deudas.map(debt => ({ id: debt.id, key: `${balance.espacioId}:${debt.deudorId}:${debt.acreedorId}` }))),
     payments: [],
@@ -67,6 +67,8 @@ export function createMockEngine(fixtures, { now = () => new Date() } = {}) {
       user.avatarId = body.avatarId
       return ok(user)
     }
+
+    if (path === '/api/v1/categorias' && method === 'GET') return ok(state.categories)
     if (path === '/api/v1/usuarios/me' && method === 'GET') return ok(user)
     if (path === '/api/v1/usuarios' && method === 'GET') return ok(state.users)
 

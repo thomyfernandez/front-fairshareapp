@@ -26,7 +26,7 @@ const budgetField = () => screen.getByRole('textbox', { name: /Saldo disponible/
 
 describe('Space settings', () => {
   it('starts clean, shows formatted budget and activates save only for a real change', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderSettings()
     expect(budgetField()).toHaveValue('2.000.000,00')
     expect(saveButton()).toBeDisabled()
@@ -39,7 +39,7 @@ describe('Space settings', () => {
     expect(saveButton()).toBeDisabled()
   })
   it('updates only modified fields and waits for server confirmation before reporting success', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api, invalidate } = renderSettings()
     await user.clear(screen.getByRole('textbox', { name: /Nombre del espacio/ }))
     await user.type(screen.getByRole('textbox', { name: /Nombre del espacio/ }), 'Casa nueva')
@@ -51,7 +51,7 @@ describe('Space settings', () => {
     expect(invalidate).toHaveBeenCalledOnce()
   })
   it('uses confirmed server values after a save', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderSettings({ result: { ...initial, nombre: 'Casa normalizada' } })
     await user.type(screen.getByRole('textbox', { name: /Nombre del espacio/ }), ' x')
     await user.click(saveButton())
@@ -59,7 +59,7 @@ describe('Space settings', () => {
     expect(saveButton()).toBeDisabled()
   })
   it('validates name locally and preserves edits on server failures', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api } = renderSettings({ failure: new ApiError('Ese nombre ya está en uso.', { status: 409 }) })
     const name = screen.getByRole('textbox', { name: /Nombre del espacio/ })
     await user.clear(name)
@@ -77,7 +77,7 @@ describe('Space settings', () => {
     expect(saveButton()).toBeEnabled()
   })
   it('reviews a budget replacement with exact cents, supports cancel and posts only after accepting', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api } = renderSettings()
     await user.clear(budgetField())
     await user.type(budgetField(), '1500000,25')
@@ -96,7 +96,7 @@ describe('Space settings', () => {
     expect(api).toHaveBeenCalledWith(expect.any(String), { method: 'PUT', body: { presupuestoBase: 1500000.25 } })
   })
   it('keeps invalid and missing budgets unavailable instead of silently using zero', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderSettings({ space: { ...initial, presupuestoBase: null } })
     expect(budgetField()).toHaveValue('')
     expect(screen.getByText('Sin cambios pendientes')).toBeVisible()
@@ -111,7 +111,7 @@ describe('Space settings', () => {
     expect(saveButton()).toBeEnabled()
   })
   it('reviews the new split before sending it, with native radio keyboard selection', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api } = renderSettings()
     await user.click(screen.getByRole('radio', { name: /Según los ingresos/ }))
     await user.keyboard('{ArrowLeft}')
@@ -124,7 +124,7 @@ describe('Space settings', () => {
     expect(api).toHaveBeenCalledWith(expect.any(String), { method: 'PUT', body: { reglaReparto: 'CINCUENTA_CINCUENTA' } })
   })
   it('requires a new review when the budget changes while the confirmation is open', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api, update } = renderSettings()
     await user.clear(budgetField()); await user.type(budgetField(), '500,50')
     await user.click(saveButton())
@@ -135,7 +135,7 @@ describe('Space settings', () => {
     expect(budgetField()).toHaveValue('500,50')
   })
   it('reflects fresh unedited values without overwriting a draft or posting an old budget', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api, update } = renderSettings()
     await user.type(screen.getByRole('textbox', { name: /Nombre del espacio/ }), ' nuevo')
     update({ space: { ...initial, presupuestoBase: 1745536 } })
@@ -151,7 +151,7 @@ describe('Space settings', () => {
     expect(screen.getByRole('button', { name: 'Copiar invitación' })).toBeVisible()
   })
   it('reviews deletion and never deletes on cancellation', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api } = renderSettings()
     await user.click(screen.getByRole('button', { name: 'Eliminar este espacio' }))
     const dialog = screen.getByRole('dialog', { name: '¿Eliminar «Nuestro hogar»?' })
@@ -161,7 +161,7 @@ describe('Space settings', () => {
     expect(api).not.toHaveBeenCalled()
   })
   it('shows other invitation methods on demand and copies the full join link', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const copy = vi.spyOn(navigator.clipboard, 'writeText').mockResolvedValue()
     renderSettings()
     expect(screen.getByRole('button', { name: 'Copiar solo el código' })).not.toBeVisible()
@@ -172,7 +172,7 @@ describe('Space settings', () => {
     expect(copy).toHaveBeenLastCalledWith('CASA-2026')
   })
   it('reports clipboard failures without claiming the invitation was copied', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     vi.spyOn(navigator.clipboard, 'writeText').mockRejectedValue(new Error('Sin acceso'))
     renderSettings()
     await user.click(screen.getByRole('button', { name: 'Copiar invitación' }))

@@ -13,7 +13,7 @@ Vite muestra la URL disponible (por defecto `http://localhost:5173`). No requier
 
 ## Cómo se alimenta la interfaz
 
-La interfaz conserva sus pantallas, servicios, requests y manejo de errores. `src/api.js` selecciona un transporte de demostración que realiza peticiones HTTP a `/data/index.json` y a los 41 archivos JSON declarados allí. Los archivos están en `public/data/`; no se importan como constantes JavaScript.
+La interfaz conserva sus pantallas, servicios, requests y manejo de errores. `src/api.js` selecciona un transporte de demostración que realiza peticiones HTTP a `/data/index.json` y a los 42 archivos JSON declarados allí. Los archivos están en `public/data/`; no se importan como constantes JavaScript.
 
 Cada archivo de datos contiene directamente un DTO de respuesta o su array, sin agregar envoltorios, propiedades de UI ni nombres alternativos. `index.json` es únicamente el manifiesto del cargador y no representa un DTO de endpoint. `src/mocks/contracts.json` conserva los campos y tipos de los DTOs Java, incluidos los DTOs anidados y los enums.
 
@@ -72,7 +72,7 @@ Este comando **sobrescribe los JSON de demostración** con el conjunto reproduci
 
 
 ```bash
-# Valida los 41 archivos contra la copia del contrato incluida en el frontend.
+# Valida los 42 archivos contra la copia del contrato incluida en el frontend.
 npm run mock:check
 
 # Además contrasta campos, tipos y enums con los fuentes del backend hermano.
@@ -99,3 +99,7 @@ Los archivos de `public/` son públicos y Vite también los copia al build norma
 ## Avatares de cuenta
 
 Los DTOs `UsuarioResponse` y `MiembroResponseDTO` incluyen `avatarId` (`String` o `null`). Los JSON locales contienen ejemplos del catálogo y cuentas con iniciales. `PATCH /api/v1/usuarios/me/avatar` exige sesión y el campo explícito `avatarId`, acepta solo el catálogo o `null`, y modifica exclusivamente al usuario autenticado. Login, `/me` y consultas de miembros devuelven la elección actual, también desde otra sesión. La simulación mantiene el cambio en memoria hasta recargar; no usa `localStorage` ni pretende persistir en Java.
+
+## Categorías
+
+`categorias.json` contiene el catálogo `CategoriaResponseDTO[]` (`id`, `nombre`) y alimenta `GET /api/v1/categorias`. Elegir una categoría guarda `categoriaId`; el motor devuelve el nombre del catálogo y rechaza IDs inexistentes con 404, también de forma atómica en registros múltiples. El ícono visible depende de la categoría, con prioridad sobre el campo legado `icono`. En Java el catálogo se completa al iniciar sin reemplazar categorías existentes; reiniciar el backend para activar el nuevo endpoint.

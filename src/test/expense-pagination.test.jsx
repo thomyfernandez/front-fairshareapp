@@ -34,7 +34,7 @@ const page = () => screen.getByLabelText('Página', { exact: true })
 beforeEach(() => { sessionStorage.clear(); window.scrollTo = vi.fn(); Element.prototype.scrollIntoView = vi.fn() })
 
 it('muestra diez gastos recientes y cambia de página sin pedir páginas inventadas al backend', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const api = setup()
   await screen.findByText('Mostrando 1–10 de 53 gastos')
   expect(within(list()).getAllByRole('listitem')).toHaveLength(10)
@@ -56,7 +56,7 @@ it('muestra diez gastos recientes y cambia de página sin pedir páginas inventa
 })
 
 it('filtra sobre todos los gastos y vuelve a la primera página sin perder el tamaño elegido', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   setup({ route: '/espacios/1/gastos?pagina=3&cantidad=20' })
   await screen.findByText('Mostrando 41–53 de 53 gastos')
   await user.type(screen.getByRole('searchbox'), 'Único')
@@ -74,7 +74,7 @@ it('filtra sobre todos los gastos y vuelve a la primera página sin perder el ta
 })
 
 it('cambia la cantidad por página y mantiene la página al navegar a ingresos y regresar', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   setup()
   await screen.findByText('Mostrando 1–10 de 53 gastos')
   await user.selectOptions(size(), '20')
@@ -100,7 +100,7 @@ it('corrige parámetros inválidos y limita una página que excede el resultado 
 })
 
 it('vuelve a la última página disponible después de eliminar su único gasto', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   setup({ route: '/espacios/1/gastos?pagina=3', count: 21 })
   await screen.findByText('Mostrando 21–21 de 21 gastos')
   await user.click(within(list()).getByRole('button', { name: 'Eliminar Compra 01' }))
@@ -112,7 +112,7 @@ it('vuelve a la última página disponible después de eliminar su único gasto'
 })
 
 it('respeta los botones atrás y adelante del navegador para recorrer páginas', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   setup()
   await screen.findByText('Mostrando 1–10 de 53 gastos')
   await user.click(screen.getByRole('button', { name: 'Página siguiente de gastos' }))

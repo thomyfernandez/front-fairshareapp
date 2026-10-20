@@ -14,6 +14,7 @@ Este catálogo define qué hace cada componente, qué información recibe y cuá
 
 | Componente | Responsabilidad | Variantes y reglas |
 | --- | --- | --- |
+| `BrandMark` | Isotipo F igual de FairShare. | Decorativo (`aria-hidden`); el nombre accesible lo da el enlace que lo contiene. Toma los colores del tema activo; `size` define el tamaño. |
 | `Button` | Ejecutar una acción. | `primary`, `secondary`, `ghost`, `danger`; `loading` impide envíos repetidos. Una acción principal por contexto. Para navegar, usar un enlace con las clases equivalentes. |
 | `Field` | Etiqueta persistente, campo, ayuda y error asociados. | Reutilizarlo para entradas y selectores. `Checkbox` y `PasswordField` cubren sus controles específicos. |
 | `Modal` | Presentar detalle o confirmación sin perder contexto. | Reutiliza la gestión existente de foco, Escape, cierre y retorno al disparador. No usarlo para mensajes breves. |
@@ -175,8 +176,15 @@ Componente de Gastos en `src/features/gastos/ExpensePagination.jsx`, compuesto c
 
 Los selectores del paginado conservan el control nativo para teclado y menú. La flecha decorativa usa `Icon`, separada 12px del borde; el campo reserva 40px al final para evitar que el texto se superponga con ella.
 
-## ExpenseIconPicker e íconos explícitos
+## ExpenseCategoryPicker
 
-`src/features/gastos/ExpenseIconPicker.jsx`: recibe `value` (valor de `IconoGasto` o `null`), `onChange`, `description`, `category`, `disabled`, `compact` y `label`. La variante compacta se usa por gasto en la carga de varios; ambas reutilizan `Button`, `Icon` y `Modal`. No carga archivos, no admite SVG arbitrario ni modifica la categoría: selecciona uno de los 14 símbolos del catálogo `expenseIconChoices`. El diálogo vuelve el foco al disparador al elegir o cancelar y mantiene el menú accesible con teclado.
+`src/features/gastos/ExpenseCategoryPicker.jsx`: recibe `value` (ID real de categoría o `null`), `onChange` (categoría elegida), `categories` (recurso compartido con `data`, `loading`, `error` y `reload`), `description`, `category`, `disabled`, `compact` y `label`. La variante compacta se usa por gasto en la carga de varios; ambas reutilizan `Button`, `Icon` y `Modal`. Consulta `GET /api/v1/categorias` y guarda `categoriaId`; el ícono se asigna por nombre de categoría. Elegir o cancelar devuelve el foco al disparador. La carga, error con reintento y catálogo vacío mantienen el formulario disponible.
 
-`ExpenseRow` y `SelectableExpenseRow` reciben `icon` como elección explícita del DTO `icono`; `category` conserva su función de alternativa automática. `expenseIcon(category, description, selected)` prioriza esa elección validada. Los detalles, el resumen y el desglose de varios gastos usan la misma resolución.
+`expenseIcon(category, description, selected)` prioriza la categoría confirmada sobre valores antiguos de `icono`. Sin categoría conserva la representación anterior. Los detalles, el resumen y el desglose usan la misma resolución.
+
+
+## Composición de Recurrentes
+
+`RecurringPage` conecta los recursos y la bandeja compartida. `RecurringForm` crea plantillas; `RecurringCard` presenta su vigencia y acciones; `UpdateRecurringDialog` conserva la edición desplegable y los importes originales, incluso si la revisión venció. Los dos formularios usan `RecurringAmountFields`, los campos de Java y los estados de envío compartidos.
+
+`RecurringSelectionButton` agrega o quita una copia del borrador. El registro y su confirmación pertenecen al flujo de Gastos y a `RecurringBatchTray`; no ejecutar directamente la plantilla al seleccionarla ni agregar otra confirmación. Eliminar una plantilla exige confirmación y conserva los gastos registrados y borradores. Una plantilla que vence hoy requiere revisión aunque el indicador recibido esté desactualizado.

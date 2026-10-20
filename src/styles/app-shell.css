@@ -4,8 +4,7 @@
   .sidebar-content { display: flex; flex-direction: column; height: calc(100dvh - var(--mock-notice-height, 0px)); min-height: 0; padding: 24px 18px 16px; position: sticky; top: var(--mock-notice-height, 0px); }
   .sidebar-brand { padding: 0 10px 24px; }
   .app-brand { display: inline-flex; align-items: center; gap: 10px; font-size: 23px; font-weight: var(--font-weight-bold); letter-spacing: -.9px; color: var(--color-brand-secondary); }
-  .app-brand__mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--color-brand-primary); color: var(--color-text-inverse); border-radius: 9px; font-size: 22px; letter-spacing: -1px; position: relative; }
-  .app-brand__mark > span { position: absolute; height: 4px; width: 6px; right: 5px; bottom: 7px; background: var(--color-text-inverse); border-radius: 2px; }
+  .app-brand__mark { flex-shrink: 0; width: 34px; height: 34px; }
   .app-brand__dot { color: var(--color-brand-primary); }
   .sidebar-nav { display: grid; gap: 5px; min-height: 0; overflow-y: auto; scrollbar-width: thin; align-content: start; }
   .sidebar-brand, .sidebar-content > .workspace-switcher, .sidebar-account { flex-shrink: 0; }
@@ -31,6 +30,9 @@
   .account-menu__panel strong { font-size: var(--text-sm); }
   .account-menu__panel > span { color: var(--color-text-secondary); font-size: var(--text-xs); overflow-wrap: anywhere; }
   .account-menu__panel .ui-button { justify-content: flex-start; margin-top: 4px; }
+  .theme-toggle > svg { flex-shrink: 0; }
+  .theme-toggle > span { min-width: 0; }
+  .theme-toggle.ui-button { justify-content: flex-start; gap: var(--spacing-2); padding-inline: var(--spacing-2); font-weight: var(--font-weight-medium); text-align: left; }
   .mobile-menu-button { display: none; }
   .app-main { max-width: 1400px; width: 100%; margin: 0 auto; padding: 36px 40px 48px; outline: none; flex: 1; }
   .app-footer { display: flex; justify-content: space-between; gap: 12px; padding: 20px 40px; border-top: 1px solid var(--color-border-subtle); color: var(--color-text-secondary); font-size: 11px; }

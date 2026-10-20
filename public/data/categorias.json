@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nombre": "Supermercado"
+  },
+  {
+    "id": 2,
+    "nombre": "Internet"
+  },
+  {
+    "id": 3,
+    "nombre": "Transporte"
+  },
+  {
+    "id": 4,
+    "nombre": "Servicios"
+  },
+  {
+    "id": 5,
+    "nombre": "Comidas"
+  },
+  {
+    "id": 6,
+    "nombre": "Hogar"
+  },
+  {
+    "id": 7,
+    "nombre": "Trabajo"
+  },
+  {
+    "id": 8,
+    "nombre": "Ocio"
+  },
+  {
+    "id": 9,
+    "nombre": "Estudio"
+  },
+  {
+    "id": 10,
+    "nombre": "Deportes"
+  },
+  {
+    "id": 11,
+    "nombre": "Salud"
+  },
+  {
+    "id": 12,
+    "nombre": "Regalos"
+  },
+  {
+    "id": 13,
+    "nombre": "Mascotas"
+  },
+  {
+    "id": 14,
+    "nombre": "Otros"
+  }
+]

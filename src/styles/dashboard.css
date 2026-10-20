@@ -104,6 +104,8 @@
   .sidebar-account--compact .account-menu > summary { align-items: flex-start; border: 0; padding: 0; font-size: var(--text-xs); color: var(--color-text-secondary); cursor: pointer; }
   .sidebar-account--compact .account-menu > summary:hover { color: var(--color-text-primary); text-decoration: underline; }
   .sidebar-account--compact .account-menu__panel { width: 100%; min-width: 0; max-width: 100%; left: 0; right: 0; bottom: calc(100% + var(--spacing-2)); }
+  .sidebar-account__theme.ui-button { width: 100%; margin: var(--spacing-2) 0 0; gap: var(--spacing-3); padding: var(--spacing-3) var(--spacing-4); color: var(--color-text-secondary); }
+  .sidebar-account__theme.ui-button:hover { background: var(--color-brand-tint); color: var(--color-text-primary); }
   @media (min-width: 45.0625rem) {
     .app-layout--cercana { grid-template-columns: var(--sidebar-width) minmax(0, 1fr); transition: grid-template-columns var(--motion-duration-normal) var(--ease-standard); }
     .summary .ui-balance-summary__amount { font-size: clamp(var(--text-xl), calc(100cqi * 1.6 / var(--balance-characters)), var(--text-balance-lg)); }

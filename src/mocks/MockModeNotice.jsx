@@ -3,6 +3,7 @@ import { useLayoutEffect, useRef } from 'react'
 export function MockModeNotice() {
   const notice = useRef(null)
   useLayoutEffect(() => {
+    // La altura cambia al envolver el texto en móvil o ampliar la fuente.
     const root = document.documentElement
     const updateHeight = () => root.style.setProperty('--mock-notice-height', `${notice.current.getBoundingClientRect().height}px`)
     updateHeight()

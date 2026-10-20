@@ -43,4 +43,3 @@ export function useRecurringBatch({ userId, spaceId, members }) {
     review: () => { navigate(`/espacios/${spaceId}/gastos?nuevo=1&modo=lote`); window.scrollTo({ top: 0, behavior: 'instant' }) },
   }
 }
-

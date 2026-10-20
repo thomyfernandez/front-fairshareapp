@@ -7,6 +7,7 @@ import { UIProvider } from '../components/ui'
 import { SessionProvider } from '../features/auth/SessionProvider'
 import { saveDraft, readDraft } from '../lib/draft-storage'
 import { localDate } from '../lib/format'
+import { THEME_STORAGE_KEY } from '../app/theme-preference'
 
 const spaces = [
   { id: 1, nombre: 'Casa del equipo', presupuestoBase: 5000, reglaReparto: 'CINCUENTA_CINCUENTA' },
@@ -41,7 +42,7 @@ function setup(route, options) {
   return fetcher
 }
 async function logIn() {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   await user.type(await screen.findByRole('textbox', { name: /^Email/ }), 'ana@example.test')
   await user.type(screen.getByLabelText(/^Contraseña/), 'password-test')
   await user.click(screen.getByRole('button', { name: 'Iniciar sesión' }))
@@ -86,7 +87,8 @@ it('si falla la comprobación permite reintentar sin abrir un espacio ni suponer
 it('returns to a protected deep link after login, switches space and supports back navigation', async () => {
   setup('/espacios/2/gastos?desde=2026-01-01')
   const user = await logIn()
-  await screen.findByRole('heading', { name: 'Gastos', level: 1 })
+  // Gastos se carga de forma diferida; la primera transformación del módulo puede superar el segundo por defecto.
+  await screen.findByRole('heading', { name: 'Gastos', level: 1 }, { timeout: 5000 })
   expect(screen.getByTestId('route')).toHaveTextContent('/espacios/2/gastos?desde=2026-01-01')
   await user.click(screen.getByLabelText('Cambiar espacio activo'))
   await user.click(screen.getByRole('link', { name: 'Casa del equipo' }))
@@ -208,4 +210,20 @@ it('elimina los borradores de gastos al cerrar sesión', async () => {
   await user.click(screen.getByRole('button', { name: 'Cerrar sesión' }))
   await screen.findByRole('heading', { name: 'Ingresá a FairShare' })
   expect(readDraft(1, 1, 'individual')).toBeNull()
+})
+
+it('permite elegir el modo claro desde el acceso y lo conserva dentro de la app', async () => {
+  setup('/espacios/1/resumen')
+  const user = userEvent.setup()
+  try {
+    await user.click(await screen.findByRole('button', { name: 'Usar modo claro' }))
+    expect(document.documentElement).toHaveAttribute('data-theme', 'light')
+    await logIn()
+    await screen.findByRole('heading', { name: 'Tus cuentas, claras.', level: 1 })
+    expect(document.documentElement).toHaveAttribute('data-theme', 'light')
+    await user.click(screen.getByRole('button', { name: 'Usar modo oscuro' }))
+    expect(document.documentElement).toHaveAttribute('data-theme', 'dark')
+  } finally {
+    window.localStorage.removeItem(THEME_STORAGE_KEY)
+  }
 })
