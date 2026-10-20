@@ -115,6 +115,13 @@ Los tokens existentes de formularios, texto, estados y elevación siguen disponi
 2. **Resumen — implementado:** componentes conectados al modelo actual, sin importes repetidos, filtro mensual separado del balance y flujos reales de detalle y pago total o parcial. Presupuesto a demanda y avisos por revisiones reales o saldo insuficiente. Un error en un recurso no bloquea los demás.
 3. **Resto del producto — implementado:** navegación compacta en todas las secciones, tema oscuro en acceso y registro, filas de gastos con categoría y acciones separadas, balance compartido sin neto redundante, recurrentes con edición a demanda y paneles de ingresos, miembros, espacios y configuración. Liquidaciones separa Pendientes e Historial, agrupa los gastos por mes y muestra total, período, nota y saldo estimado en un resumen lateral que se apila en móvil. Conserva la revisión exacta antes de confirmar y no presupone un saldo disponible en cero ante datos ausentes.
 
+## Marca
+
+- El isotipo es una **F cuyos dos brazos forman un signo igual**: la F de FairShare y la idea de repartir en partes justas. Se dibuja con `BrandMark` (SVG) usando `brand-primary` de fondo y `text-inverse` para la figura, por eso se adapta solo a cada tema.
+- `Brand` combina el isotipo con el nombre en minúsculas `fairshare.`; el punto violeta pertenece solo al nombre y no se repite en el ícono. El enlace se anuncia como “FairShare, ir al inicio” y el isotipo queda oculto para lectores de pantalla.
+- `public/favicon.svg` repite la misma geometría con los valores de `tokens.json` y cambia a la variante oscura según la apariencia del sistema. Si cambia el isotipo, actualizar ambos archivos.
+- No deformar, rotar ni recolorear el isotipo fuera de los tokens de marca, ni agregarle texto o efectos.
+
 ## Tema y navegación de la referencia
 
 - El tema se elige con “Usar modo claro” u “Usar modo oscuro” (`ThemeToggle`), al pie de la navegación y en la cabecera de acceso y registro. En la barra lateral se usan las etiquetas breves “Modo claro” y “Modo oscuro”, alineadas con los demás destinos; el nombre accesible conserva la acción completa. El texto nombra la acción disponible, sin depender del ícono. La preferencia se guarda en el navegador (`fairshare.theme`); sin una elección se respeta la apariencia del sistema y, si no se conoce, se usa el oscuro de referencia. `useAppTheme` aplica `data-theme` desde `AppLayout` y `AuthLayout`, y `index.html` replica la resolución para la primera pintura. La raíz incluye modales y avisos que usan portal. Al agregar estilos, usar siempre variables semánticas y revisar la pantalla en ambos temas.

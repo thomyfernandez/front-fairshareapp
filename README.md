@@ -152,8 +152,7 @@ La aplicacion estara accesible en el navegador en `http://localhost:3000`.
 ```text
 front-fairshareapp/
 ├── public/                 # Recursos publicos estaticos e iconos SVG
-│   ├── favicon.svg
-│   └── icons.svg
+│   └── favicon.svg         # Isotipo F igual para la pestaña del navegador
 ├── src/                    # Codigo fuente de la aplicacion
 │   ├── assets/             # Imagenes y logotipos
 │   ├── api.js              # Modulo centralizado de comunicacion HTTP con la API REST

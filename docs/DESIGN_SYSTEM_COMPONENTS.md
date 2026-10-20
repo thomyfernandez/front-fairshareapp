@@ -14,6 +14,7 @@ Este catálogo define qué hace cada componente, qué información recibe y cuá
 
 | Componente | Responsabilidad | Variantes y reglas |
 | --- | --- | --- |
+| `BrandMark` | Isotipo F igual de FairShare. | Decorativo (`aria-hidden`); el nombre accesible lo da el enlace que lo contiene. Toma los colores del tema activo; `size` define el tamaño. |
 | `Button` | Ejecutar una acción. | `primary`, `secondary`, `ghost`, `danger`; `loading` impide envíos repetidos. Una acción principal por contexto. Para navegar, usar un enlace con las clases equivalentes. |
 | `Field` | Etiqueta persistente, campo, ayuda y error asociados. | Reutilizarlo para entradas y selectores. `Checkbox` y `PasswordField` cubren sus controles específicos. |
 | `Modal` | Presentar detalle o confirmación sin perder contexto. | Reutiliza la gestión existente de foco, Escape, cierre y retorno al disparador. No usarlo para mensajes breves. |
