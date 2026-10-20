@@ -11,7 +11,7 @@ import { localDate } from '../lib/format'
 // Simula los contratos reales y conserva el efecto de pagos parciales e invalidación.
 function setup({ debts, balanceError, recurringError, expensesError, paymentError, overdue = true, budget = 1000, balanceData, extraExpenses = 0 } = {}) {
   const now = localDate()
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const payments = debts || [{ id: 9, deudorId: 1, deudorNombre: 'Ana', acreedorId: 2, acreedorNombre: 'Thomas', monto: 75, estado: 'PENDIENTE' }]
   const api = vi.fn(async (path, options = {}) => {
     if (options.method === 'POST') {

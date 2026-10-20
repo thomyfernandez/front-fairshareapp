@@ -8,7 +8,7 @@ import { SummaryPreview } from '../features/design-system/SummaryPreview'
 describe('balance protagonista', () => {
   it('muestra la deuda una sola vez y permite iniciar el registro sin ejecutar un pago', async () => {
     const register = vi.fn()
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     render(<BalanceSummary payable={111382} receivable={0} counterpart="A Thomas Fernandez" onRegisterPayment={register} detailAction={<Button variant="ghost">Ver balance</Button>} />)
     const region = screen.getByRole('region', { name: 'Tu balance acumulado' })
     expect(within(region).getByRole('heading', { name: 'Te queda por pagar' })).toBeInTheDocument()
@@ -51,7 +51,7 @@ describe('balance protagonista', () => {
 
   it('oculta el saldo anterior durante la carga y ofrece reintentar un error', async () => {
     const retry = vi.fn()
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { rerender, container } = render(<BalanceSummary payable={125} receivable={0} loading onRegisterPayment={() => {}} />)
     expect(screen.getByRole('status')).toHaveTextContent('Consultando tu balance')
     expect(container.querySelector('.money')).toBeNull()
@@ -73,7 +73,7 @@ it('omite solo decimales cero sin redondear centavos ni cambiar la lectura acces
 })
 
 it('permite abrir un gasto con teclado y comunica la falta de importe', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const select = vi.fn()
   const { rerender } = render(<ExpenseRow description="DIA" payerName="Thomas" date="2026-10-08" amount={231232} onSelect={select} />)
   await user.tab()
@@ -86,7 +86,7 @@ it('permite abrir un gasto con teclado y comunica la falta de importe', async ()
 })
 
 it('mantiene el balance acumulado al cambiar el mes en la galería y permite probar estados', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   render(<UIProvider><SummaryPreview /></UIProvider>)
   await user.selectOptions(screen.getByRole('combobox', { name: 'Mes de los gastos' }), '2026-09')
   expect(screen.getByRole('heading', { name: 'Todavía no hay gastos este mes' })).toBeInTheDocument()
@@ -99,7 +99,7 @@ it('mantiene el balance acumulado al cambiar el mes en la galería y permite pro
 })
 
 it('abre el detalle desde la fila de demostración y permite cerrarlo', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   render(<UIProvider><SummaryPreview /></UIProvider>)
   await user.click(screen.getByRole('button', { name: 'Ver detalle de DIA' }))
   const dialog = screen.getByRole('dialog', { name: 'DIA' })

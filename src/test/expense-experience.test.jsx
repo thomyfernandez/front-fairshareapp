@@ -90,7 +90,7 @@ describe('expense experience model and drafts', () => {
 
 describe('expense flows', () => {
   it('repeats an expense from its detail and preserves the participant subset', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api } = setup()
     await user.click(await screen.findByRole('button', { name: 'Ver detalle de Supermercado' }))
     await user.click(screen.getByRole('button', { name: 'Repetir gasto' }))
@@ -102,7 +102,7 @@ describe('expense flows', () => {
     expect(posts(api)).toHaveLength(0)
   })
   it('retains individual draft values and participant selections after leaving and remounting', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const first = setup()
     await newExpense(user)
     await user.type(screen.getByRole('textbox', { name: /Descripción del gasto/ }), 'Compra pendiente')
@@ -118,7 +118,7 @@ describe('expense flows', () => {
     expect(screen.getByRole('checkbox', { name: /Incluir a Sol/ })).not.toBeChecked()
   })
   it('restores raw invalid percentage allocations so a draft can be corrected', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const view = setup()
     await newExpense(user)
     await user.type(screen.getByRole('textbox', { name: /Descripción del gasto/ }), 'Distribución pendiente')
@@ -131,7 +131,7 @@ describe('expense flows', () => {
     expect(screen.getByLabelText('Porcentaje para Luis')).toHaveValue(10)
   })
   it('warns about duplicates, preserves input on cancel, then records only after accepting', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api } = setup()
     await newExpense(user)
     await screen.findByRole('heading', { name: 'Repetir un gasto anterior' })
@@ -150,7 +150,7 @@ describe('expense flows', () => {
     expect(readDraft(1, 1, 'individual')).toBeNull()
   })
   it('shows only the server-confirmed amount in the receipt and opens the actual detail', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     setup({ responseAmount: 777 })
     await newExpense(user)
     await user.type(screen.getByRole('textbox', { name: /Descripción del gasto/ }), 'Cena')
@@ -163,7 +163,7 @@ describe('expense flows', () => {
     expect(screen.getByRole('dialog', { name: 'Cena' })).toHaveTextContent('777,00')
   })
   it('keeps filters in the URL and restores them after visiting incomes and returning', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     setup()
     await user.type(await screen.findByRole('searchbox', { name: 'Buscar gastos por texto' }), 'Super')
     fireEvent.change(screen.getByLabelText('Fecha desde'), { target: { value: '2026-01-01' } })
@@ -177,7 +177,7 @@ describe('expense flows', () => {
     expect(screen.getByRole('searchbox', { name: 'Buscar gastos por texto' })).toHaveValue('')
   })
   it('restores list scroll when returning from the form', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const scroll = vi.fn()
     window.scrollTo = scroll
     vi.spyOn(window, 'scrollY', 'get').mockReturnValue(480)
@@ -187,7 +187,7 @@ describe('expense flows', () => {
     await waitFor(() => expect(scroll).toHaveBeenCalledWith({ top: 480, behavior: 'instant' }))
   })
   it('preserves the batch draft and can undo a removed row before sending the real array payload', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api } = setup()
     await user.click(await screen.findByRole('button', { name: 'Agregar varios gastos' }))
     await user.click(await screen.findByRole('button', { name: 'Agregar otro gasto' }))
@@ -213,7 +213,7 @@ describe('expense flows', () => {
     expect(readDraft(1, 1, 'lote')).toBeNull()
   })
   it('keeps drafts and avoids receipts when the server rejects the expense', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     setup({ failure: new Error('No se pudo guardar') })
     await newExpense(user)
     await user.type(screen.getByRole('textbox', { name: /Descripción del gasto/ }), 'Falla recuperable')
@@ -227,7 +227,7 @@ describe('expense flows', () => {
 
 
 it('detecta duplicados dentro del lote sin enviarlo hasta la confirmación', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const { api } = setup()
   await user.click(await screen.findByRole('button', { name: 'Agregar varios gastos' }))
   await user.click(await screen.findByRole('button', { name: 'Agregar otro gasto' }))
@@ -245,7 +245,7 @@ it('detecta duplicados dentro del lote sin enviarlo hasta la confirmación', asy
 })
 
 it('no mezcla borradores al cambiar de espacio', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   setup()
   await newExpense(user)
   await user.type(screen.getByRole('textbox', { name: /Descripción del gasto/ }), 'Solo en Casa')
@@ -260,7 +260,7 @@ it('no mezcla borradores al cambiar de espacio', async () => {
 })
 
 it('empieza con una fila y mantiene el reparto equitativo compacto hasta editarlo', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   setup({ route: '/espacios/1/gastos?nuevo=1&modo=lote' })
   expect(await screen.findAllByRole('textbox', { name: /^Descripción/ })).toHaveLength(1)
   expect(screen.queryByRole('heading', { name: 'Los gastos del lote' })).not.toBeInTheDocument()
@@ -274,7 +274,7 @@ it('empieza con una fila y mantiene el reparto equitativo compacto hasta editarl
 })
 
 it('plegar y agregar conservan los valores y el subconjunto de participantes', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const { api } = setup({ route: '/espacios/1/gastos?nuevo=1&modo=lote' })
   await user.type(await screen.findByRole('textbox', { name: /^Descripción/ }), 'Compras de casa')
   await user.type(screen.getByLabelText(/^Monto/), '101.01')
@@ -294,7 +294,7 @@ it('plegar y agregar conservan los valores y el subconjunto de participantes', a
 })
 
 it('revisa un snapshot, permite corregir y envía una sola vez los datos confirmados', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const { api } = setup({ route: '/espacios/1/gastos?nuevo=1&modo=lote' })
   await user.type(await screen.findByRole('textbox', { name: /^Descripción/ }), 'Cena')
   await user.type(screen.getByLabelText(/^Monto/), '30.01')
@@ -319,7 +319,7 @@ it('revisa un snapshot, permite corregir y envía una sola vez los datos confirm
 })
 
 it('muestra la distribución personalizada y abre los errores sin enviar un lote inválido', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const { api } = setup({ route: '/espacios/1/gastos?nuevo=1&modo=lote' })
   await user.type(await screen.findByRole('textbox', { name: /^Descripción/ }), 'Servicios')
   await user.type(screen.getByLabelText(/^Monto/), '120')
@@ -335,7 +335,7 @@ it('muestra la distribución personalizada y abre los errores sin enviar un lote
 })
 
 it('informa que el reparto proporcional se calcula al registrar sin inventar importes', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   setup({ route: '/espacios/1/gastos?nuevo=1&modo=lote' })
   await user.type(await screen.findByRole('textbox', { name: /^Descripción/ }), 'Alquiler')
   await user.type(screen.getByLabelText(/^Monto/), '300')
@@ -349,7 +349,7 @@ it('informa que el reparto proporcional se calcula al registrar sin inventar imp
 })
 
 it('expone un reparto sin participantes y exige confirmar explícitamente las coincidencias', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const { api } = setup({ route: '/espacios/1/gastos?nuevo=1&modo=lote' })
   await user.type(await screen.findByRole('textbox', { name: /^Descripción/ }), 'Supermercado')
   await user.type(screen.getByLabelText(/^Monto/), '600')
@@ -371,7 +371,7 @@ it('expone un reparto sin participantes y exige confirmar explícitamente las co
 
 
 it('identifica cada borrador y confirma el descarte sin afectar al otro', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const draft = { descripcion: 'Compra pendiente', monto: '100', fecha: today(), pagadorId: '1', tipoReparto: 'EQUITATIVA', participantes: original.participantes }
   saveDraft(1, 1, 'individual', draft)
   saveDraft(1, 1, 'lote', { gastos: [{ ...draft, tempId: 'a' }, { ...draft, tempId: 'b' }] })
