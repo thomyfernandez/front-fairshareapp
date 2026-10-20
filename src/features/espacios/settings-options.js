@@ -4,4 +4,3 @@ export const splitOptions = [
   { value: 'PROPORCIONAL', label: 'Según los ingresos', description: 'El aporte depende de los ingresos declarados de cada participante.' },
 ]
 export const splitLabel = value => splitOptions.find(option => option.value === value)?.label || 'Sin modalidad definida'
-

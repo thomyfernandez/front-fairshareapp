@@ -10,9 +10,11 @@ import { clearSessionDrafts, readDraft, saveDraft } from '../lib/draft-storage'
 
 beforeEach(clearSessionDrafts)
 
-function setup({ templates = [], failUpdate = false, failBatchOnce = false } = {}) {
+function setup({ templates = [], failUpdate = false, failBatchOnce = false, failCreate = false, failDelete = false, currentUserId = 1 } = {}) {
   const api = vi.fn(async (path, options = {}) => {
     if (options.method) {
+      if (failCreate && options.method === 'POST' && path.endsWith('/favoritos')) throw new Error('No pudimos crear la plantilla')
+      if (failDelete && options.method === 'DELETE') throw new Error('No pudimos eliminar la plantilla')
       if (failUpdate && options.method === 'PUT') throw new Error('No pudimos actualizar la plantilla')
       if (path.endsWith('/gastos/lote')) {
         if (failBatchOnce) { failBatchOnce = false; throw new Error('No pudimos registrar los gastos') }
@@ -26,7 +28,7 @@ function setup({ templates = [], failUpdate = false, failBatchOnce = false } = {
     if (path.endsWith('/favoritos')) return templates
     return []
   })
-  render(<MemoryRouter initialEntries={['/espacios/1/recurrentes']}><SessionContext.Provider value={{ session: { usuario: { id: 1, nombre: 'Ana' } }, api }}><UIProvider><AppRoutes /></UIProvider></SessionContext.Provider></MemoryRouter>)
+  render(<MemoryRouter initialEntries={['/espacios/1/recurrentes']}><SessionContext.Provider value={{ session: { usuario: { id: currentUserId, nombre: 'Ana' } }, api }}><UIProvider><AppRoutes /></UIProvider></SessionContext.Provider></MemoryRouter>)
   return api
 }
 
@@ -148,7 +150,7 @@ it('suma el adicional con centavos y conserva su valor al plegarlo', async () =>
 
 it('muestra los adicionales existentes al actualizar y preserva los importes si falla el envío', async () => {
   const user = userEvent.setup({ delay: null })
-  const api = setup({ templates: [{ id: 9, nombre: 'Internet', montoBase: 100, montoVariable: 20, fechaProximaRevision: nextMonth(), vencido: false }], failUpdate: true })
+  const api = setup({ templates: [{ id: 9, nombre: 'Internet', montoBase: 100, montoVariable: 20, fechaProximaRevision: today(), vencido: true }], failUpdate: true })
   await user.click(await screen.findByText('Actualizar monto y revisión', { selector: 'summary span' }))
   const form = screen.getByRole('form', { name: 'Actualizar plantilla Internet' })
   const additional = within(form).getByLabelText(/^Importe adicional/)
@@ -161,4 +163,46 @@ it('muestra los adicionales existentes al actualizar y preserva los importes si 
   expect(await screen.findByText('No pudimos actualizar la plantilla')).toBeVisible()
   expect(within(form).getByLabelText(/^Monto del gasto/)).toHaveValue(200)
   expect(additional).toHaveValue(20)
+})
+
+
+it('conserva los datos de creación ante un rechazo y propone un pagador que pertenece al espacio', async () => {
+  const user = userEvent.setup({ delay: null })
+  const api = setup({ failCreate: true, currentUserId: 99 })
+  const form = await createForm(user)
+  expect(within(form).getByLabelText('Pagador')).toHaveValue('1')
+  const amount = within(form).getByLabelText(/^Monto del gasto/)
+  fireEvent.change(amount, { target: { value: '500.50' } })
+  const frequency = within(form).getByLabelText(/^Revisar cada/)
+  fireEvent.change(frequency, { target: { value: '0' } })
+  await user.click(within(form).getByRole('button', { name: 'Crear plantilla' }))
+  expect(api.mock.calls.filter(([, options]) => options?.method === 'POST')).toHaveLength(0)
+  fireEvent.change(frequency, { target: { value: '1' } })
+  await user.click(within(form).getByRole('button', { name: 'Crear plantilla' }))
+  expect(await screen.findByText('No pudimos crear la plantilla')).toBeVisible()
+  expect(within(form).getByLabelText(/^Nombre/)).toHaveValue('Luz')
+  expect(amount).toHaveValue(500.5)
+})
+
+it('bloquea una revisión que vence hoy aunque el indicador recibido no esté actualizado', async () => {
+  setup({ templates: [template({ fechaProximaRevision: today(), vencido: false })] })
+  expect(await screen.findByText('Necesita revisión')).toBeVisible()
+  expect(screen.getByRole('button', { name: 'Agregar Luz para registrar' })).toBeDisabled()
+})
+
+it.each([false, true])('confirma la eliminación y conserva el borrador seleccionado (fallo: %s)', async failDelete => {
+  const user = userEvent.setup({ delay: null })
+  const api = setup({ templates: [template()], failDelete })
+  await user.click(await screen.findByRole('button', { name: 'Agregar Luz para registrar' }))
+  await user.click(screen.getByRole('button', { name: 'Eliminar plantilla Luz' }))
+  const dialog = screen.getByRole('dialog', { name: 'Eliminar plantilla Luz' })
+  expect(dialog).toHaveTextContent('Los gastos ya registrados y los borradores se conservan.')
+  expect(api.mock.calls.filter(([, options]) => options?.method === 'DELETE')).toHaveLength(0)
+  await user.click(within(dialog).getByRole('button', { name: 'Cancelar' }))
+  expect(api.mock.calls.filter(([, options]) => options?.method === 'DELETE')).toHaveLength(0)
+  await user.click(screen.getByRole('button', { name: 'Eliminar plantilla Luz' }))
+  await user.click(within(screen.getByRole('dialog', { name: 'Eliminar plantilla Luz' })).getByRole('button', { name: 'Eliminar plantilla', exact: true }))
+  await waitFor(() => expect(api).toHaveBeenCalledWith('/api/v1/favoritos/9', expect.objectContaining({ method: 'DELETE' })))
+  if (failDelete) expect(await screen.findByText('No pudimos eliminar la plantilla')).toBeVisible()
+  expect(readDraft(1, 1, 'lote').gastos[0]).toMatchObject({ sourceTemplateId: 9, monto: '120.3' })
 })

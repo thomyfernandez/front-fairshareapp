@@ -32,9 +32,9 @@ it('deriva el ícono de la categoría y envía su ID real, sin una elección ind
   expect(repeatExpense(value, members)).toMatchObject({ categoriaId: 91, categoriaNombre: 'Mascotas' })
 })
 
-it('ofrece selección, automático, cancelación y retorno del foco con el diálogo compartido', async () => {
+it('ofrece selección de categoría, cancelación y retorno del foco con el diálogo compartido', async () => {
   const user = userEvent.setup({ delay: null })
-  function Picker() { const [value, setValue] = useState(null); return <ExpenseIconPicker value={value} onChange={setValue} description="Coto" /> }
+  function Picker() { const [value, setValue] = useState(null); return <ExpenseCategoryPicker value={value} onChange={next => setValue(next.id)} categories={resource} description="Coto" /> }
   wrap(<Picker />)
   await user.click(screen.getByRole('button', { name: 'Cambiar categoría: Sin categoría' }))
   const dialog = screen.getByRole('dialog', { name: 'Elegí una categoría' })
@@ -51,7 +51,7 @@ it('ofrece selección, automático, cancelación y retorno del foco con el diál
   expect(screen.getByRole('button', { name: 'Cambiar categoría: Sin categoría' })).toHaveFocus()
 })
 
-it('mantiene el ícono elegido al guardar y retomar un borrador individual', async () => {
+it('mantiene la categoría al guardar y retomar un borrador individual', async () => {
   const user = userEvent.setup({ delay: null })
   const saveDraft = vi.fn()
   const initial = { descripcion: 'Comida de mascota', monto: '200', fecha: today(), pagadorId: '1', tipoReparto: 'EQUITATIVA', participantes: [{ usuarioId: 1 }, { usuarioId: 2 }] }
@@ -69,9 +69,9 @@ it('mantiene el ícono elegido al guardar y retomar un borrador individual', asy
   expect(api).toHaveBeenCalledWith('/api/v1/espacios/1/gastos', expect.objectContaining({ body: expect.objectContaining({ categoriaId: 91 }) }))
 })
 
-it('envía un ícono independiente por gasto al registrar varios juntos', async () => {
+it('envía la categoría de cada gasto al registrar varios juntos', async () => {
   const user = userEvent.setup({ delay: null })
-  const api = vi.fn().mockResolvedValue([{ id: 1 }, { id: 2 }])
+  const api = apiWith(() => Promise.resolve([{ id: 1 }, { id: 2 }]))
   const values = { gastos: ['Regalo de cumpleaños', 'Taxi'].map((descripcion, index) => ({ tempId: index + 1, descripcion, monto: '100', fecha: today(), pagadorId: '1', tipoReparto: 'EQUITATIVA', participantes: [{ usuarioId: 1 }, { usuarioId: 2 }] })) }
   wrap(<ExpenseBatchForm spaceId="1" members={members} api={api} initialValues={values} />)
   await choose(user, screen.getByRole('button', { name: 'Cambiar categoría del gasto 1: Sin categoría' }), 'Regalos')
@@ -86,7 +86,7 @@ it('envía un ícono independiente por gasto al registrar varios juntos', async 
 })
 
 it('muestra el error del catálogo y permite reintentar sin perder el gasto', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   let attempts = 0
   const api = vi.fn(() => ++attempts === 1 ? Promise.reject(new Error('Sin conexión')) : Promise.resolve(data))
   wrap(<ExpenseForm spaceId="1" members={members} api={api} initialValues={{ descripcion: 'Mi gasto' }} />)

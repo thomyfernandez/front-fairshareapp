@@ -1,3 +1,4 @@
+import { requiresReview } from './model'
 import { cents, today } from '../../lib/format'
 import { validExpenseAmount } from '../gastos/expense-experience'
 
@@ -8,7 +9,7 @@ export function templateAmount(template) {
 }
 
 export function templateUnavailable(template, members) {
-  if (template.vencido || (template.fechaProximaRevision && template.fechaProximaRevision <= today())) return 'Actualizá el monto y la revisión antes de agregarla.'
+  if (requiresReview(template)) return 'Actualizá el monto y la revisión antes de agregarla.'
   if (!validExpenseAmount(templateAmount(template))) return 'Actualizá el monto antes de agregarla.'
   if (!members.some(member => Number(member.usuarioId ?? member.id) === Number(template.pagadorId))) return 'El pagador ya no pertenece al espacio. Creá una plantilla con un pagador actual.'
   if (template.reglaDivision && !['EQUITATIVA', 'PROPORCIONAL_INGRESOS'].includes(template.reglaDivision)) return 'Esta plantilla necesita un reparto compatible antes de agregarla.'
