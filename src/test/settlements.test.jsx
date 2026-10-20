@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor, within } from '@testing-library/react'
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, useLocation } from 'react-router'
 import { describe, expect, it, vi } from 'vitest'
@@ -50,7 +50,7 @@ function renderPage({ isAdmin = true, presupuesto = 1000, closeResult, historyDa
   const api = vi.fn(async (path, { method = 'GET' } = {}) => {
     if (method === 'POST') { if (closeResult instanceof Error) throw closeResult; return closeResult }
     if (path.includes('/historial')) { if (historyError) throw historyError; return historyData }
-    if (path.endsWith('/gastos')) { if (expenseError) throw expenseError; return expenseData }
+    if (path.endsWith('/gastos')) { if (expenseError) throw expenseError; return typeof expenseData === 'function' ? expenseData(path) : expenseData }
     return []
   })
   let workspace = {
@@ -70,6 +70,48 @@ async function openReview(user, name = /Internet/) {
 }
 
 describe('SettlementsPage', () => {
+  it('muestra a los miembros los mismos pendientes del contador sin ofrecer acciones de cierre', async () => {
+    const { api } = renderPage({ isAdmin: false, route: '/?vista=pendientes' })
+    const list = await screen.findByRole('list', { name: 'Pendientes de octubre 2026' })
+    expect(within(list).getAllByRole('listitem')).toHaveLength(2)
+    expect(list).toHaveTextContent('Supermercado')
+    expect(list).toHaveTextContent('Internet')
+    expect(list).not.toHaveTextContent('Luz')
+    expect(screen.getByRole('tab', { name: 'Pendientes' })).toHaveTextContent('2')
+    expect(screen.getByText(/Solo los administradores/)).toBeVisible()
+    expect(screen.queryByRole('checkbox')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /Revisar cierre|Confirmar cierre|Seleccionar todos/ })).not.toBeInTheDocument()
+    expect(postCalls(api)).toHaveLength(0)
+  })
+
+  it('al cambiar de espacio retira el contador y los pendientes anteriores mientras carga los nuevos', async () => {
+    let resolveNext
+    const page = renderPage({ isAdmin: false, route: '/?vista=pendientes', expenseData: path => path.includes('/69/') ? new Promise(resolve => { resolveNext = resolve }) : expenses })
+    await screen.findByText('Supermercado')
+    page.update({ spaceId: '69', space: { id: 69 } })
+    expect(screen.queryByText('Supermercado')).not.toBeInTheDocument()
+    expect(screen.getByRole('tab', { name: 'Pendientes' })).not.toHaveTextContent('2')
+    await waitFor(() => expect(resolveNext).toBeTypeOf('function'))
+    await act(async () => resolveNext([{ ...expenses[0], id: 69, descripcion: 'Gasto del nuevo espacio' }]))
+    expect(await screen.findByText('Gasto del nuevo espacio')).toBeVisible()
+    expect(screen.getByRole('tab', { name: 'Pendientes' })).toHaveTextContent('1')
+    expect(screen.queryByText('Internet')).not.toBeInTheDocument()
+  })
+
+  it('muestra un vacío real para miembros cuando no quedan pendientes', async () => {
+    renderPage({ isAdmin: false, route: '/?vista=pendientes', expenseData: [expenses[2]] })
+    expect(await screen.findByRole('heading', { name: 'No hay gastos pendientes de liquidar' })).toBeVisible()
+    expect(screen.getByRole('tab', { name: 'Pendientes' })).toHaveTextContent(/^Pendientes$/)
+  })
+
+  it('muestra el error y reintento a los miembros sin un contador viejo ni un falso vacío', async () => {
+    renderPage({ isAdmin: false, route: '/?vista=pendientes', expenseError: new ApiError('No pudimos cargar los gastos', { status: 500 }) })
+    expect(await screen.findByRole('alert')).toHaveTextContent('No pudimos cargar los gastos')
+    expect(screen.getByRole('button', { name: 'Reintentar' })).toBeVisible()
+    expect(screen.getByRole('tab', { name: 'Pendientes' })).toHaveTextContent(/^Pendientes$/)
+    expect(screen.queryByRole('heading', { name: 'No hay gastos pendientes de liquidar' })).not.toBeInTheDocument()
+  })
+
   it('closes exactly the reviewed expenses, period and note only after confirmation', async () => {
     const user = userEvent.setup({ delay: null })
     const { api, invalidate } = renderPage({ closeResult: { id: 8, resumenCierre: { cantidadGastosCerrados: 1, totalLiquidado: 200.2, presupuestoRestante: 799.8 } } })

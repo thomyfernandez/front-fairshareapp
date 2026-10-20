@@ -5,7 +5,8 @@
     "email": "demo@fairshare.test",
     "nombre": "Ana",
     "apellido": "Ruiz",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "carpincho"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "email": "thomas@example.test",
     "nombre": "Thomas",
     "apellido": "Fernandez",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "tero"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "email": "sol@example.test",
     "nombre": "Sol",
     "apellido": "García",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "bot"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "email": "lucia@example.test",
     "nombre": "Lucía",
     "apellido": "Pérez",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "ninja"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "email": "martin@example.test",
     "nombre": "Martín",
     "apellido": "López",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "detective"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "email": "valentina@example.test",
     "nombre": "Valentina",
     "apellido": "Torres",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "chef"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "email": "nicolas@example.test",
     "nombre": "Nicolás",
     "apellido": "Romero",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "gamer"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "email": "camila@example.test",
     "nombre": "Camila",
     "apellido": "Díaz",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "coffee"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "email": "mateo@example.test",
     "nombre": "Mateo",
     "apellido": "Herrera",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "plant"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "email": "julieta@example.test",
     "nombre": "Julieta",
     "apellido": "Castro",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "artist"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "email": "santiago@example.test",
     "nombre": "Santiago",
     "apellido": "Acosta",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": null
   },
   {
     "id": 12,
@@ -93,6 +104,7 @@
     "email": "emilia@example.test",
     "nombre": "Emilia",
     "apellido": "Vega",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": null
   }
 ]

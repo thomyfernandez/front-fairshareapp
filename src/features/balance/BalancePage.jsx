@@ -10,7 +10,7 @@ import { sortByRelevance } from './model'
 
 export default function BalancePage() {
   const { spaceId } = useWorkspace()
-  const { resource, busy, isAdmin, session, run, refresh, error, mutate } = useFeature(`/api/v1/espacios/${spaceId}/balance`, { initialData: null })
+  const { resource, busy, isAdmin, session, run, refresh, error, mutate, members } = useFeature(`/api/v1/espacios/${spaceId}/balance`, { initialData: null })
   const debts = resource.data?.deudas || []
   const userId = session.usuario.id
   const [selected, setSelected] = useState(null)
@@ -47,6 +47,7 @@ export default function BalancePage() {
               key={debt.id}
               debt={debt}
               userId={userId}
+              members={members}
               canRegistrarPago={isAdmin || debt.deudorId === userId}
               onRegistrarPago={abrirPago}
             />

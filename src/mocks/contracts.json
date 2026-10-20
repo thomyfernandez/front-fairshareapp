@@ -21,7 +21,8 @@
         "nombreUsuario": "String",
         "emailUsuario": "String",
         "rol": "RolMiembro",
-        "sueldoDeclarado": "BigDecimal"
+        "sueldoDeclarado": "BigDecimal",
+        "avatarId": "String"
       }
     },
     "GastoDetalleDTO": {
@@ -163,7 +164,8 @@
         "email": "String",
         "nombre": "String",
         "apellido": "String",
-        "rol": "String"
+        "rol": "String",
+        "avatarId": "String"
       }
     },
     "SueldoResponse": {

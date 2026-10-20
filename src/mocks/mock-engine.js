@@ -1,3 +1,4 @@
+import { isUserAvatar } from '../components/ui/user-avatars.js'
 import { DEMO_ACCOUNT } from './config'
 import { buildExpense, calculateBalance, fullName, MockFailure, requireMock, validMoney } from './mock-finance'
 import { cents, localDate } from '../lib/format'
@@ -20,6 +21,7 @@ export function createMockEngine(fixtures, { now = () => new Date() } = {}) {
   const passwords = new Map(state.users.map(user => [user.email, DEMO_ACCOUNT.contra]))
   const tokens = new Map()
   const found = (rows, id) => { const row = rows.find(item => item.id === Number(id)); requireMock(row, 'Recurso no encontrado.', 404, 'RECURSO_NO_ENCONTRADO'); return row }
+  const memberDTO = item => ({ ...item, avatarId: state.users.find(user => user.id === item.usuarioId)?.avatarId ?? null })
   const member = (spaceId, userId) => state.members.find(item => item.espacioId === spaceId && item.usuarioId === userId)
   const access = (spaceId, user, admin = false) => {
     const space = found(state.spaces, spaceId)
@@ -54,12 +56,18 @@ export function createMockEngine(fixtures, { now = () => new Date() } = {}) {
     if (path === '/api/v1/usuarios/registro' && method === 'POST') {
       requireMock(body.nombre?.trim() && body.apellido?.trim() && body.usuario?.length >= 2 && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(body.email || '') && body.contra?.length >= 8, 'Revisá los datos de registro.', 400, 'VALIDATION_ERROR')
       requireMock(!state.users.some(user => user.email.toLowerCase() === body.email.toLowerCase() || user.usuario === body.usuario), 'El email o usuario ya está registrado.', 409, 'RECURSO_DUPLICADO')
-      const user = { id: nextId(state.users), ...pick(body, ['usuario', 'email', 'nombre', 'apellido']), rol: 'USUARIO' }
+      const user = { id: nextId(state.users), ...pick(body, ['usuario', 'email', 'nombre', 'apellido']), rol: 'USUARIO', avatarId: null }
       state.users.push(user); passwords.set(user.email, body.contra)
       return ok(user, 201)
     }
     const user = state.users.find(item => item.id === tokens.get(token))
     requireMock(user, 'Iniciá sesión para continuar.', 401, 'CREDENCIALES_INVALIDAS')
+    if (path === '/api/v1/usuarios/me/avatar' && method === 'PATCH') {
+      requireMock(body && Object.hasOwn(body, 'avatarId') && (body.avatarId === null || isUserAvatar(body.avatarId)), 'Elegí un avatar del catálogo disponible.')
+      user.avatarId = body.avatarId
+      return ok(user)
+    }
+
     if (path === '/api/v1/categorias' && method === 'GET') return ok(state.categories)
     if (path === '/api/v1/usuarios/me' && method === 'GET') return ok(user)
     if (path === '/api/v1/usuarios' && method === 'GET') return ok(state.users)
@@ -82,7 +90,7 @@ export function createMockEngine(fixtures, { now = () => new Date() } = {}) {
       requireMock(!member(space.id, user.id), 'Ya formás parte de este espacio.', 409, 'CONFLICTO')
       const joined = { id: nextId(state.members), espacioId: space.id, usuarioId: user.id, nombreUsuario: fullName(user), emailUsuario: user.email, rol: 'MIEMBRO', sueldoDeclarado: null }
       state.members.push(joined)
-      return ok(joined, 201)
+      return ok(memberDTO(joined), 201)
     }
     let match = path.match(/^\/api\/v1\/espacios\/codigo\/([^/]+)$/)
     if (match && method === 'GET') { const space = state.spaces.find(item => item.codigo === decodeURIComponent(match[1])); requireMock(space, 'Código no encontrado.', 404, 'RECURSO_NO_ENCONTRADO'); return ok(space) }
@@ -105,7 +113,7 @@ export function createMockEngine(fixtures, { now = () => new Date() } = {}) {
           return ok(null, 204)
         }
       }
-      if (action === 'miembros' && method === 'GET') return ok(state.members.filter(item => item.espacioId === space.id))
+      if (action === 'miembros' && method === 'GET') return ok(state.members.filter(item => item.espacioId === space.id).map(memberDTO))
       const role = action.match(/^miembros\/(\d+)\/rol$/)
       if (role && method === 'PATCH') {
         const target = state.members.find(item => item.espacioId === space.id && item.usuarioId === Number(role[1]))
@@ -113,7 +121,7 @@ export function createMockEngine(fixtures, { now = () => new Date() } = {}) {
         const nextRole = query.get('rol')
         requireMock(['ADMIN', 'MIEMBRO'].includes(nextRole), 'Rol inválido.')
         requireMock(!(target.rol === 'ADMIN' && nextRole !== 'ADMIN' && state.members.filter(item => item.espacioId === space.id && item.rol === 'ADMIN').length === 1), 'El espacio debe conservar al menos un administrador.')
-        target.rol = nextRole; return ok(target)
+        target.rol = nextRole; return ok(memberDTO(target))
       }
       if (action === 'regla-distribucion' && method === 'PATCH') { const updated = { ...space, reglaReparto: query.get('reglaReparto') }; checkSpace(updated); Object.assign(space, updated); return ok(space) }
       if (action === 'presupuesto-base' && method === 'PATCH') { const updated = { ...space, presupuestoBase: Number(query.get('presupuestoBase')) }; checkSpace(updated); Object.assign(space, updated); return ok(space) }

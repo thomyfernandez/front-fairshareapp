@@ -95,6 +95,11 @@ Los archivos de `public/` son públicos y Vite también los copia al build norma
 
 `CrearGastoDTO` acepta `icono` y `GastoDetalleDTO` lo devuelve como `IconoGasto` o `null`. El motor valida el mismo catálogo de Java y mantiene la elección al registrar y consultar. El generador incluye elecciones explícitas y gastos automáticos; el contrato local incluye el enum y se contrasta con Java. Para usar esta función contra una instancia Java ya iniciada, reiniciala con los fuentes actualizados. Los datos anteriores conservan el valor nulo y su ícono automático.
 
+
+## Avatares de cuenta
+
+Los DTOs `UsuarioResponse` y `MiembroResponseDTO` incluyen `avatarId` (`String` o `null`). Los JSON locales contienen ejemplos del catálogo y cuentas con iniciales. `PATCH /api/v1/usuarios/me/avatar` exige sesión y el campo explícito `avatarId`, acepta solo el catálogo o `null`, y modifica exclusivamente al usuario autenticado. Login, `/me` y consultas de miembros devuelven la elección actual, también desde otra sesión. La simulación mantiene el cambio en memoria hasta recargar; no usa `localStorage` ni pretende persistir en Java.
+
 ## Categorías
 
 `categorias.json` contiene el catálogo `CategoriaResponseDTO[]` (`id`, `nombre`) y alimenta `GET /api/v1/categorias`. Elegir una categoría guarda `categoriaId`; el motor devuelve el nombre del catálogo y rechaza IDs inexistentes con 404, también de forma atómica en registros múltiples. El ícono visible depende de la categoría, con prioridad sobre el campo legado `icono`. En Java el catálogo se completa al iniciar sin reemplazar categorías existentes; reiniciar el backend para activar el nuevo endpoint.

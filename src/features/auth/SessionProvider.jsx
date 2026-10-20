@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { createApi } from '../../api'
+import { ApiError, createApi } from '../../api'
 
 import { SessionContext } from './session-context'
 import { tokenExpiry } from './session'
+import { isUserAvatar } from '../../components/ui/user-avatars'
 import { clearSessionDrafts } from '../../lib/draft-storage'
 
 // setTimeout overflows above ~24.8 days; longer tokens rely on the server's 401 instead.
@@ -26,6 +27,7 @@ export function SessionProvider({ children }) {
       apellido: auth.apellido || '',
       email: auth.email || '',
       usuario: auth.usuario || auth.nombre || 'usuario',
+      avatarId: auth.avatarId ?? null,
     }
     const sessionData = {
       ...auth,
@@ -60,5 +62,18 @@ export function SessionProvider({ children }) {
       endSession('expired')
     },
   }), [session?.token, endSession])
-  return <SessionContext.Provider value={{ session, api, signIn, signOut, notice }}>{children}</SessionContext.Provider>
+  const updateAvatar = useCallback(async avatarId => {
+    const current = active.current
+    if (!current) throw new ApiError('Iniciá sesión para cambiar tu avatar.', { status: 401 })
+    const usuario = await api('/api/v1/usuarios/me/avatar', { method: 'PATCH', body: { avatarId } })
+    if (active.current?.token !== current.token || active.current?.usuario?.id !== current.usuario.id)
+      throw new ApiError('La sesión cambió. Volvé a abrir tu cuenta.')
+    if (usuario?.id !== current.usuario.id || !Object.hasOwn(usuario, 'avatarId') || (usuario.avatarId !== null && !isUserAvatar(usuario.avatarId)))
+      throw new ApiError('No pudimos confirmar el avatar guardado.', { code: 'INVALID_RESPONSE' })
+    const next = { ...active.current, usuario: { ...active.current.usuario, ...usuario } }
+    active.current = next
+    setSession(next)
+    return usuario
+  }, [api])
+  return <SessionContext.Provider value={{ session, api, signIn, signOut, updateAvatar, notice }}>{children}</SessionContext.Provider>
 }

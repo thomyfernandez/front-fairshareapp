@@ -11,6 +11,7 @@
     "email": "demo@fairshare.test",
     "nombre": "Ana",
     "apellido": "Ruiz",
-    "rol": "USUARIO"
+    "rol": "USUARIO",
+    "avatarId": "carpincho"
   }
 }

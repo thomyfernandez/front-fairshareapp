@@ -264,6 +264,28 @@ it('guarda el ícono elegido, conserva automático y rechaza íconos fuera del c
   expect(request('/api/v1/espacios/1/gastos').body).toHaveLength(before)
 })
 
+it('guarda el avatar de la cuenta autenticada y lo comparte mediante login y miembros', () => {
+  const { engine, request, auth } = setup()
+  expect(engine('/api/v1/usuarios/me/avatar', { method: 'PATCH', body: { avatarId: 'astro' } }).status).toBe(401)
+  const thomas = engine('/api/v1/usuarios/login', { method: 'POST', body: { ...DEMO_ACCOUNT, email: 'thomas@example.test' } }).body
+  const before = engine('/api/v1/usuarios/me', { token: thomas.token }).body.avatarId
+  const updated = request('/api/v1/usuarios/me/avatar', { method: 'PATCH', body: { avatarId: 'rocket', usuarioId: 2 } })
+  expect(updated.status).toBe(200)
+  assertContract('UsuarioResponse', updated.body)
+  expect(updated.body.id).toBe(auth.usuario.id)
+  expect(updated.body.avatarId).toBe('rocket')
+  const newLogin = engine('/api/v1/usuarios/login', { method: 'POST', body: DEMO_ACCOUNT }).body
+  expect(newLogin.usuario.avatarId).toBe('rocket')
+  const members = engine('/api/v1/espacios/1/miembros', { token: thomas.token }).body
+  assertContract('MiembroResponseDTO[]', members)
+  expect(members.find(member => member.usuarioId === 1).avatarId).toBe('rocket')
+  expect(engine('/api/v1/usuarios/me', { token: thomas.token }).body.avatarId).toBe(before)
+  for (const body of [{}, { avatarId: 'inexistente' }, { avatarId: '../astro.svg' }])
+    expect(request('/api/v1/usuarios/me/avatar', { method: 'PATCH', body }).status).toBe(400)
+  expect(request('/api/v1/usuarios/me').body.avatarId).toBe('rocket')
+  expect(request('/api/v1/usuarios/me/avatar', { method: 'PATCH', body: { avatarId: null } }).body.avatarId).toBeNull()
+})
+
 it('consume el catálogo JSON y guarda la categoría en registro, detalle y lote', () => {
   const { engine, request } = setup()
   expect(engine('/api/v1/categorias').status).toBe(401)

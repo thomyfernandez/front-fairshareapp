@@ -58,7 +58,7 @@ Las dimensiones de tipografía y espaciado se convierten a rem tomando 16px como
 - El índigo señala acciones principales, enlaces y foco. No usar el verde como color general de marca: está reservado para pago rápido y validaciones positivas.
 - Para un botón de pago rápido verde, usar `bg-success text-primary`. Para mensajes positivos, usar `bg-success-background text-success-foreground`. Se agregan variantes oscuras de texto para éxito, advertencia e información.
 - `text-tertiary` sobre blanco no alcanza contraste suficiente para texto pequeño esencial. Usar `text-secondary` en etiquetas, ayudas e información necesaria.
-- Transiciones de 150–200ms, sin animación de tamaño ni desplazamiento. Los estilos base desactivan las transiciones con `prefers-reduced-motion: reduce`; para nuevas utilidades animadas, usar también `motion-reduce:transition-none`.
+- Transiciones de 150–200ms. El plegado de la navegación lateral es una excepción de tamaño y desplazamiento: dura 200ms y conserva el ancho interno para que sus textos no se compriman. Los estilos base desactivan las transiciones con `prefers-reduced-motion: reduce`; para nuevas utilidades animadas, usar también `motion-reduce:transition-none`.
 - Los controles base tienen una altura mínima de 44px y foco visible. Los errores deben comunicarse con texto, no solamente con color.
 - Para contraseñas, usar `PasswordField` (en `src/components/ui`): mantiene la estructura de `Field` (etiqueta, ayuda y error asociados) y agrega dentro del campo un botón de 44px «Mostrar/Ocultar» con nombre accesible «Mostrar contraseña»/«Ocultar contraseña». No crear toggles propios en cada formulario.
 - `InlineAlert` admite los tonos `info` (predeterminado), `success`, `warning` y `error`. Usar `warning` para consecuencias que el usuario debe revisar antes de confirmar (por ejemplo, presupuesto insuficiente o un período que se va a reemplazar); usa `bg-warning-background` y `text-warning-foreground`.
@@ -203,3 +203,23 @@ El listado muestra 10 gastos recientes por página, con tamaños de 10, 20 y 50.
 `ExpenseCategoryPicker` acompaña la descripción del registro individual y el encabezado de cada gasto en la carga de varios. El disparador muestra la categoría y su ícono, y abre el `Modal` compartido con el catálogo de la API y “Sin categoría”. Elegir aplica el cambio y cierra el diálogo; Cancelar y Escape conservan la elección anterior. El foco vuelve al disparador. La cuadrícula usa dos columnas en móvil y cuatro en escritorio, opciones táctiles amplias y selección indicada por borde, `aria-pressed` y marca de verificación.
 
 La categoría confirmada determina el ícono en Inicio, Gastos, detalles y Liquidaciones; sin categoría se conserva la compatibilidad con íconos anteriores y la inferencia de comercios. El diálogo incluye carga, error con reintento y catálogo vacío. Cada formulario comparte una sola consulta del catálogo entre sus gastos. El borrador y Repetir conservan `categoriaId` y `categoriaNombre`; la API recibe `categoriaId`.
+
+
+
+### Alineación de Mis espacios
+
+Las tarjetas de cada fila comparten seis secciones mediante subgrid: tipo e icono, nombre, descripción, reparto, datos y acceso. Las alturas se adaptan al contenido más largo de la fila, sin truncar descripciones ni imponer alturas fijas. Los desplegables permanecen alineados arriba y los accesos al pie; en una sola columna cada tarjeta recupera la altura que necesita su contenido.
+
+### Consulta de liquidaciones por miembros
+
+En Liquidaciones, los miembros pueden consultar los gastos pendientes agrupados por mes, con el mismo conjunto de datos que alimenta el contador. La selección, el resumen y la confirmación de cierre están reservados a administradores. Los estados de carga y error retiran el contador; cambiar de espacio no conserva los gastos del anterior.
+
+### Perfil y altura de la navegación
+
+El sidebar descuenta la altura real del aviso de demostración y mantiene el perfil visible al pie. En ventanas bajas se desplaza solo la navegación central. El menú de cuenta se ancla al ancho del perfil para no quedar recortado ni agregar otro scroll. El avatar conserva un tamaño de 40px y el nombre y enlaces comparten una alineación estable.
+
+El nombre y los enlaces del perfil forman dos líneas próximas, centradas visualmente respecto del avatar. Los enlaces alinean su texto arriba y conservan sus áreas de interacción de 44px hacia abajo, sin introducir espacio entre ambas líneas.
+
+En escritorio, ocultar y mostrar desplaza la navegación y adapta su columna en 200ms; la cabecera aparece de forma gradual. El contenido oculto queda inerte y el foco pasa al control de reapertura; al mostrarlo vuelve al botón de cierre. Con movimiento reducido, el cambio es inmediato. Los enlaces tienen 16px de espacio interior horizontal y los iconos conservan su ancho, tanto en escritorio como en el menú móvil.
+
+El selector de avatar guarda la elección en la cuenta mediante la API. Deshabilita sus controles durante el envío y conserva la selección ante un error. Solo actualiza la cuenta después de una confirmación real del servidor. Cancelar descarta la selección provisional y volver a abrir recupera el valor guardado para la cuenta actual.

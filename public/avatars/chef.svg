@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="50" cy="50" r="48" fill="#30264e" stroke="#b3a1ff" stroke-width="2" />
+  <path d="M24 90 C24 74 35 70 50 70 C65 70 76 74 76 90 Z" fill="#f0eef8" />
+  <path d="M42 70 L50 80 L58 70" fill="#b3a1ff" />
+  <!-- Cuello y cara -->
+  <circle cx="50" cy="52" r="17" fill="#f0eef8" />
+  <!-- Bigote simpático -->
+  <path d="M42 58 C45 56 49 57 50 60 C51 57 55 56 58 58 C60 59 60 62 57 61 C53 60 51 63 50 63 C49 63 47 60 43 61 C40 62 40 59 42 58 Z" fill="#17171f" />
+  <!-- Ojos alegres -->
+  <circle cx="43" cy="50" r="2" fill="#17171f" />
+  <circle cx="57" cy="50" r="2" fill="#17171f" />
+  <!-- Gorro de chef -->
+  <rect x="34" y="34" width="32" height="7" rx="2" fill="#f0eef8" stroke="#787187" stroke-width="1.2" />
+  <path d="M34 34 C30 30 30 20 38 18 C40 12 50 12 52 17 C58 13 66 17 66 24 C72 26 70 34 66 34 Z" fill="#f0eef8" stroke="#787187" stroke-width="1.2" />
+</svg>
