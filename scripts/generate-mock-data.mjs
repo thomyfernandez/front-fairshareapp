@@ -1,5 +1,6 @@
 import { writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
+import { userAvatarChoices } from '../src/components/ui/user-avatars.js'
 import { buildExpense, calculateBalance, fullName } from '../src/mocks/mock-finance.js'
 
 // Conjunto reproducible: regenerarlo no cambia las fechas ni introduce datos aleatorios.
@@ -10,7 +11,7 @@ const write = (file, value) => writeFile(`${directory}${file}`, `${JSON.stringif
 const date = (month, day) => `2026-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`
 const cents = value => Math.round(value * 100)
 const names = [['Ana', 'Ruiz', 'ana', 'demo@fairshare.test'], ['Thomas', 'Fernandez', 'thomas'], ['Sol', 'García', 'sol'], ['Lucía', 'Pérez', 'lucia'], ['Martín', 'López', 'martin'], ['Valentina', 'Torres', 'valentina'], ['Nicolás', 'Romero', 'nicolas'], ['Camila', 'Díaz', 'camila'], ['Mateo', 'Herrera', 'mateo'], ['Julieta', 'Castro', 'julieta'], ['Santiago', 'Acosta', 'santiago'], ['Emilia', 'Vega', 'emilia']]
-const users = names.map(([nombre, apellido, usuario, email], index) => ({ id: index + 1, usuario, email: email || `${usuario}@example.test`, nombre, apellido, rol: 'USUARIO' }))
+const users = names.map(([nombre, apellido, usuario, email], index) => ({ id: index + 1, usuario, email: email || `${usuario}@example.test`, nombre, apellido, rol: 'USUARIO', avatarId: index < 10 ? userAvatarChoices[(index + 3) % userAvatarChoices.length].id : null }))
 const configurations = [
   ['Nuestro hogar', 'Compras, servicios y convivencia.', 'CASA-2026', 'HOGAR', 'PROPORCIONAL', 2000000, [1, 2, 4, 5], 1],
   ['Viaje al sur', 'Alojamiento, comidas y excursiones en equipo.', 'VIAJE-2026', 'VIAJE', 'CINCUENTA_CINCUENTA', 950000, [1, 2, 3, 6, 7, 8], 1],
@@ -29,7 +30,7 @@ function addIncome(userId, month, id = incomes.length + 1) {
 }
 addIncome(1, 10); addIncome(1, 9); addIncome(2, 10); addIncome(3, 10)
 for (const user of users) for (let month = 5; month <= 10; month++) if (!incomes.some(row => row.usuarioId === user.id && row.mes === month)) addIncome(user.id, month)
-const members = configurations.flatMap((configuration, index) => configuration[6].map(userId => ({ id: (index + 1) * 100 + userId, espacioId: index + 1, usuarioId: userId, nombreUsuario: fullName(users[userId - 1]), emailUsuario: users[userId - 1].email, rol: userId === configuration[7] ? 'ADMIN' : 'MIEMBRO', sueldoDeclarado: incomeBase[userId - 1] })))
+const members = configurations.flatMap((configuration, index) => configuration[6].map(userId => ({ id: (index + 1) * 100 + userId, espacioId: index + 1, usuarioId: userId, nombreUsuario: fullName(users[userId - 1]), emailUsuario: users[userId - 1].email, avatarId: users[userId - 1].avatarId, rol: userId === configuration[7] ? 'ADMIN' : 'MIEMBRO', sueldoDeclarado: incomeBase[userId - 1] })))
 const categories = [[1, 'Supermercado'], [2, 'Internet'], [3, 'Transporte'], [4, 'Servicios'], [5, 'Comidas'], [6, 'Hogar'], [7, 'Trabajo'], [8, 'Ocio'], [9, 'Estudio'], [10, 'Deportes']]
 const concepts = [
   [['Coto', 1, 45200], ['Verdulería', 1, 12750], ['Alquiler', 6, 450000], ['Luz', 4, 34566], ['Gas', 4, 18350], ['Internet', 2, 32000], ['Artículos de limpieza', 6, 22400], ['Ferretería', 6, 15480], ['Delivery del viernes', 5, 28600], ['Expensas', 6, 92500]],

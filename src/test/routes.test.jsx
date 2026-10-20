@@ -12,14 +12,14 @@ const spaces = [
   { id: 1, nombre: 'Casa del equipo', presupuestoBase: 5000, reglaReparto: 'CINCUENTA_CINCUENTA' },
   { id: 2, nombre: 'Viaje del grupo', presupuestoBase: 10000, reglaReparto: 'PROPORCIONAL' },
 ]
-function mockApi({ balanceStatus = 200, spaceStatus = 200 } = {}) {
+function mockApi({ balanceStatus = 200, spaceStatus = 200, availableSpaces = spaces, spaceListStatus = () => 200 } = {}) {
   const fetcher = vi.fn(async (url, options = {}) => {
     const path = url.split('?')[0]
     let data
     let status = 200
     if (path.endsWith('/login')) data = { token: 'test-token', usuario: { id: 1, nombre: 'Ana', email: 'ana@example.test' } }
-    else if (path === '/api/v1/espacios') data = spaces
-    else if (/\/espacios\/\d+$/.test(path)) { status = spaceStatus; data = spaceStatus === 200 ? spaces.find(space => String(space.id) === path.split('/').at(-1)) : { message: 'No tenés acceso a este espacio' } }
+    else if (path === '/api/v1/espacios') { status = spaceListStatus(); data = status === 200 ? availableSpaces : { message: 'Servicio temporalmente no disponible' } }
+    else if (/\/espacios\/\d+$/.test(path)) { status = spaceStatus; data = spaceStatus === 200 ? availableSpaces.find(space => String(space.id) === path.split('/').at(-1)) : { message: 'No tenés acceso a este espacio' } }
     else if (path.endsWith('/miembros')) data = [{ id: 1, usuarioId: 1, nombreUsuario: 'Ana', rol: 'ADMIN' }]
     else if (path.endsWith('/gastos')) data = [{ id: 1, descripcion: 'Compras compartidas', monto: 1500, fecha: localDate(), estado: 'PENDIENTE', participantes: [] }]
     else if (path.endsWith('/balance')) { status = balanceStatus; data = balanceStatus === 200 ? { deudas: [] } : { message: 'Balance temporalmente no disponible', code: 'SERVER_ERROR' } }
@@ -47,6 +47,41 @@ async function logIn() {
   await user.click(screen.getByRole('button', { name: 'Iniciar sesión' }))
   return user
 }
+
+it('al iniciar sesión descarta un destino de otra cuenta y abre el espacio propio 69', async () => {
+  const fetcher = setup('/espacios/1/gastos?nuevo=1', { availableSpaces: [{ ...spaces[0], id: 69, nombre: 'Mi espacio propio' }] })
+  await logIn()
+  await screen.findByRole('heading', { name: 'Tus cuentas, claras.', level: 1 })
+  expect(screen.getByTestId('route')).toHaveTextContent('/espacios/69/resumen')
+  expect(screen.getByLabelText('Cambiar espacio activo')).toHaveTextContent('Mi espacio propio')
+  expect(fetcher.mock.calls.some(([url]) => /^\/api\/v1\/espacios\/1(?:\/|\?|$)/.test(url))).toBe(false)
+  expect(screen.queryByText('No tenés acceso a este espacio')).not.toBeInTheDocument()
+})
+
+it('el ingreso normal también elige el espacio real de la cuenta sin asumir el id 1', async () => {
+  setup('/login', { availableSpaces: [{ ...spaces[0], id: 69 }] })
+  await logIn()
+  await waitFor(() => expect(screen.getByTestId('route')).toHaveTextContent('/espacios/69/resumen'))
+})
+
+it('si la cuenta no tiene espacios vuelve a Mis espacios sin abrir el destino anterior', async () => {
+  const fetcher = setup('/espacios/1/resumen', { availableSpaces: [] })
+  await logIn()
+  await screen.findByRole('heading', { name: 'Mis espacios', level: 1 })
+  expect(screen.getByTestId('route')).toHaveTextContent('/espacios')
+  expect(fetcher.mock.calls.some(([url]) => /^\/api\/v1\/espacios\/1(?:\/|\?|$)/.test(url))).toBe(false)
+})
+
+it('si falla la comprobación permite reintentar sin abrir un espacio ni suponer que no hay espacios', async () => {
+  let attempts = 0
+  const fetcher = setup('/espacios/1/resumen', { availableSpaces: [{ ...spaces[0], id: 69 }], spaceListStatus: () => ++attempts === 1 ? 500 : 200 })
+  const user = await logIn()
+  await screen.findByText('No pudimos comprobar tus espacios')
+  expect(screen.getByTestId('route')).toHaveTextContent('/login')
+  expect(fetcher.mock.calls.some(([url]) => /^\/api\/v1\/espacios\/\d/.test(url))).toBe(false)
+  await user.click(screen.getByRole('button', { name: 'Reintentar' }))
+  await waitFor(() => expect(screen.getByTestId('route')).toHaveTextContent('/espacios/69/resumen'))
+})
 
 it('returns to a protected deep link after login, switches space and supports back navigation', async () => {
   setup('/espacios/2/gastos?desde=2026-01-01')

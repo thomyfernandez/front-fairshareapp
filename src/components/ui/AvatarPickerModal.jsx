@@ -1,21 +1,37 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Button } from './Button'
+import { InlineAlert } from './States'
 import { Icon } from './Icon'
 import { Modal } from './Modal'
-import { getUserAvatar, userAvatarChoices } from './user-avatars'
-import { readAvatar, saveAvatar } from '../../lib/avatar-storage'
+import { getUserAvatar, isUserAvatar, userAvatarChoices } from './user-avatars'
 
-export function AvatarPickerModal({ open, onClose, userId, userName = 'Tu perfil' }) {
-  const [selected, setSelected] = useState(() => (userId ? readAvatar(userId) : null))
+export function AvatarPickerModal(props) {
+  return props.open ? <AvatarPickerSession key={props.userId} {...props} /> : null
+}
+
+function AvatarPickerSession({ onClose, value = null, onSave, userName = 'Tu perfil' }) {
+  const [selected, setSelected] = useState(isUserAvatar(value) ? value : null)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState(null)
+  const pending = useRef(false)
 
   const selectedChoice = getUserAvatar(selected)
   const initials = userName.trim().split(/\s+/).filter(Boolean).slice(0, 2).map(part => part[0]).join('').toLocaleUpperCase('es-AR') || '?'
 
-  const handleSave = () => {
-    if (userId) {
-      saveAvatar(userId, selected)
+  const handleSave = async () => {
+    if (pending.current) return
+    pending.current = true
+    setBusy(true)
+    setError(null)
+    try {
+      await onSave(selected)
+      onClose()
+    } catch (failure) {
+      setError(failure.message || 'No pudimos guardar el avatar. Intentá nuevamente.')
+    } finally {
+      pending.current = false
+      setBusy(false)
     }
-    onClose()
   }
 
   const allChoices = [
@@ -25,19 +41,21 @@ export function AvatarPickerModal({ open, onClose, userId, userName = 'Tu perfil
 
   return (
     <Modal
-      open={open}
+      open
       onClose={onClose}
+      dismissible={!busy}
       title="Elegí tu avatar"
-      description="Personalizá tu imagen de perfil visible en el menú, balances y miembros."
+      description="Tu avatar se guarda en tu cuenta y se muestra a los integrantes de tus espacios."
       className="avatar-picker-modal"
       footer={
         <div className="avatar-picker-modal__footer">
-          <Button variant="secondary" onClick={onClose}>Cancelar</Button>
-          <Button variant="primary" onClick={handleSave}>Guardar avatar</Button>
+          <Button variant="secondary" onClick={onClose} disabled={busy}>Cancelar</Button>
+          <Button variant="primary" onClick={handleSave} loading={busy} disabled={!onSave}>Guardar avatar</Button>
         </div>
       }
     >
       <div className="avatar-picker-content">
+        {error && <InlineAlert tone="error">{error}</InlineAlert>}
         <div className="avatar-picker-preview" aria-live="polite">
           <div className="avatar-picker-preview__image">
             {selectedChoice ? (
@@ -59,6 +77,7 @@ export function AvatarPickerModal({ open, onClose, userId, userName = 'Tu perfil
               <button
                 key={choice.id || 'initials'}
                 type="button"
+                disabled={busy}
                 className={`avatar-picker-option ${isSelected ? 'avatar-picker-option--selected' : ''}`}
                 aria-pressed={isSelected}
                 aria-label={`Seleccionar avatar: ${choice.label}`}

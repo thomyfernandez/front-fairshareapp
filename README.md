@@ -26,6 +26,7 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
 
 1. **Autenticacion y Perfil de Usuario**:
    - Registro con validacion junto a cada campo; al crear la cuenta se vuelve al login con el email completado.
+   - Después del login, los enlaces a un espacio se retoman solo si pertenecen al listado de la cuenta autenticada. Si el destino era de otra cuenta, se abre el resumen del primer espacio propio; sin espacios, se muestra Mis espacios. Si falla la comprobación, se ofrece reintentar sin abrir el espacio anterior.
    - Mensajes claros para email ya registrado (409), credenciales incorrectas (401), errores del servidor y falta de conexion.
    - Inicio de sesion con JWT en memoria; recargar requiere autenticarse nuevamente.
    - Cierre de sesion desde el menu de usuario y aviso de sesion vencida (al recibir 401 o al llegar el `exp` del token).
@@ -218,3 +219,12 @@ La invitación prioriza copiar el enlace de ingreso y conserva las alternativas 
 - Búsqueda `q` y fechas permanecen en la URL. La navegación conserva el último filtro y posición de cada espacio durante la sesión, incluida la vuelta desde Mis ingresos o un formulario. Limpiar filtros elimina también el contexto recordado.
 
 El registro individual usa `POST /api/v1/espacios/{id}/gastos`; el lote usa `POST /api/v1/espacios/{id}/gastos/lote` con un **array directo**, según el controlador existente. Los formularios traducen los modos de edición a `regla`: equitativa, personalizada o proporcional a ingresos. En personalizada envían porcentajes **o** importes, sin mezclarlos; el reparto proporcional se calcula en el servidor. No se reintenta automáticamente un registro en un endpoint alternativo.
+
+
+### Avatares de la cuenta
+
+El avatar se guarda en Java como `Usuario.avatarId` y se recibe en `UsuarioResponse` y `MiembroResponseDTO`. El selector envía `PATCH /api/v1/usuarios/me/avatar` con `{ "avatarId": "carpincho" }`; enviar `null` restaura las iniciales. Solo el servidor confirma el cambio y, si falla, el selector conserva lo elegido para reintentar. La identidad procede del JWT: no se envía un usuario destino.
+
+La interfaz ya no lee el avatar de `localStorage`; las elecciones anteriores deben elegirse y guardarse una vez para asociarlas a la cuenta. En modo normal persiste en la base de datos. En `start:mock` se simula el mismo endpoint y contrato con los JSON locales; como los demás datos de demostración, sus cambios se reinician al recargar.
+
+Reiniciar Java para activar el endpoint y la columna `avatar_id` (nullable; cuentas anteriores usan iniciales). Con la configuración existente `ddl-auto=update`, Hibernate agrega la columna sin borrar datos. Si administrás el esquema manualmente en SQL Server, aplicar `../fairshareapp/docs/sql/2026-10-20-avatar-usuario.sql`.

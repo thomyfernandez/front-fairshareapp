@@ -19,6 +19,8 @@ export function AppLayout() {
   })
   const { pathname } = useLocation()
   const main = useRef(null)
+  const layout = useRef(null)
+  const focusToggle = useRef(false)
   useAppTheme()
   useEffect(() => {
     setMenuOpen(false)
@@ -28,7 +30,14 @@ export function AppLayout() {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [pathname])
 
+  useEffect(() => {
+    if (!focusToggle.current) return
+    focusToggle.current = false
+    layout.current?.querySelector(sidebarCollapsed ? '.desktop-sidebar-toggle' : '.sidebar-collapse-button')?.focus({ preventScroll: true })
+  }, [sidebarCollapsed])
+
   const toggleSidebar = () => {
+    focusToggle.current = true
     setSidebarCollapsed(prev => {
       const next = !prev
       try {
@@ -40,8 +49,8 @@ export function AppLayout() {
     })
   }
 
-  return <div className={`app-layout app-layout--cercana${sidebarCollapsed ? ' app-layout--sidebar-collapsed' : ''}`}><a className="skip-link" href="#main-content">Saltar al contenido</a>
-    <aside className="desktop-sidebar"><Sidebar compact onToggleCollapse={toggleSidebar} /></aside>
+  return <div ref={layout} className={`app-layout app-layout--cercana${sidebarCollapsed ? ' app-layout--sidebar-collapsed' : ''}`}><a className="skip-link" href="#main-content">Saltar al contenido</a>
+    <aside id="desktop-sidebar" className="desktop-sidebar" inert={sidebarCollapsed}><Sidebar compact onToggleCollapse={toggleSidebar} /></aside>
     <div className="app-workspace">
       <Header onOpenMenu={() => setMenuOpen(true)} onToggleSidebar={toggleSidebar} sidebarCollapsed={sidebarCollapsed} />
       <main id="main-content" ref={main} tabIndex={-1} className="app-main"><Outlet /></main>

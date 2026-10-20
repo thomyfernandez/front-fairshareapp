@@ -22,6 +22,8 @@ export function Sidebar({ compact = false, onNavigate, onToggleCollapse }) {
           size="icon"
           className="sidebar-collapse-button"
           aria-label="Ocultar barra lateral"
+          aria-controls="desktop-sidebar"
+          aria-expanded="true"
           onClick={onToggleCollapse}
         >
           <Icon name="panel-left-close" size={18} />
@@ -50,7 +52,7 @@ export function Sidebar({ compact = false, onNavigate, onToggleCollapse }) {
       {compact && spaceId && <nav aria-label="Tu cuenta" className="sidebar-account__navigation"><NavLink to={incomeDestination(spaceId)} onClick={onNavigate} className={({ isActive }) => `nav-item ${isActive ? 'nav-item--active' : ''}`}><Icon name="wallet" />Mis ingresos</NavLink></nav>}
       {compact ? (
         <div className="sidebar-account__profile">
-          <Avatar userId={session?.usuario?.id} name={accountName} size="small" className="sidebar-account__avatar" />
+          <Avatar avatarId={session?.usuario?.avatarId} name={accountName} size="small" className="sidebar-account__avatar" />
           <div className="sidebar-account__info">
             <p className="sidebar-account__name">{accountName}</p>
             <div className="sidebar-account__links">

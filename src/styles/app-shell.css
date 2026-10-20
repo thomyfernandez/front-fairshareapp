@@ -1,15 +1,14 @@
 @layer components {
-  .app-layout { display: grid; grid-template-columns: max(240px, 15vw) minmax(0, 1fr); min-height: 100dvh; }
-  .app-layout--sidebar-collapsed { grid-template-columns: minmax(0, 1fr) !important; }
-  .app-layout--sidebar-collapsed .desktop-sidebar { display: none !important; }
+  .app-layout { --sidebar-width: max(15rem, 15vw); display: grid; grid-template-columns: var(--sidebar-width) minmax(0, 1fr); min-height: calc(100dvh - var(--mock-notice-height, 0px)); }
   .desktop-sidebar { background: var(--color-panel); border-right: 1px solid var(--color-border-subtle); }
-  .sidebar-content { display: flex; flex-direction: column; height: 100dvh; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; padding: 24px 18px 16px; position: sticky; top: 0; }
+  .sidebar-content { display: flex; flex-direction: column; height: calc(100dvh - var(--mock-notice-height, 0px)); min-height: 0; padding: 24px 18px 16px; position: sticky; top: var(--mock-notice-height, 0px); }
   .sidebar-brand { padding: 0 10px 24px; }
   .app-brand { display: inline-flex; align-items: center; gap: 10px; font-size: 23px; font-weight: var(--font-weight-bold); letter-spacing: -.9px; color: var(--color-brand-secondary); }
   .app-brand__mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--color-brand-primary); color: var(--color-text-inverse); border-radius: 9px; font-size: 22px; letter-spacing: -1px; position: relative; }
   .app-brand__mark > span { position: absolute; height: 4px; width: 6px; right: 5px; bottom: 7px; background: var(--color-text-inverse); border-radius: 2px; }
   .app-brand__dot { color: var(--color-brand-primary); }
-  .sidebar-nav { display: grid; gap: 5px; }
+  .sidebar-nav { display: grid; gap: 5px; min-height: 0; overflow-y: auto; scrollbar-width: thin; align-content: start; }
+  .sidebar-brand, .sidebar-content > .workspace-switcher, .sidebar-account { flex-shrink: 0; }
   .nav-caption { margin: 0 10px 6px; font-size: 10px; letter-spacing: 1.4px; font-weight: var(--font-weight-semibold); color: var(--color-text-secondary); }
   .nav-caption--space { margin-top: 26px; }
   .nav-item { display: flex; gap: 12px; align-items: center; min-height: 44px; padding: 10px 12px; border-radius: var(--radius-md); font-size: var(--text-sm); color: var(--color-text-secondary); transition: background-color var(--motion-duration-fast) var(--ease-standard); }

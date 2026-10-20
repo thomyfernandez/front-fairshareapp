@@ -1,35 +1,30 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router'
-import { Avatar, AvatarPickerModal, Button, Icon } from '../../components/ui'
+import { Avatar, AvatarPickerModal, Button, Icon, useUI } from '../../components/ui'
 import { useSession } from './useSession'
-import { readAvatar, subscribeAvatarChanges } from '../../lib/avatar-storage'
+import { useWorkspace } from '../../app/useWorkspace'
 
 export function UserMenu({ compact = false }) {
-  const { session, signOut } = useSession()
+  const { session, signOut, updateAvatar } = useSession()
+  const workspace = useWorkspace()
+  const { notify } = useUI()
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const menu = useRef(null)
   const [pickerOpen, setPickerOpen] = useState(false)
 
   const usuario = session?.usuario
-  const [avatar, setAvatar] = useState(() => (usuario?.id ? readAvatar(usuario.id) : null))
-
-  useEffect(() => {
-    if (!usuario?.id) return
-    setAvatar(readAvatar(usuario.id))
-    return subscribeAvatarChanges((changedId, newAvatar) => {
-      if (String(changedId) === String(usuario.id)) {
-        setAvatar(newAvatar)
-      }
-    })
-  }, [usuario?.id])
-
   useEffect(() => { menu.current?.removeAttribute('open') }, [pathname])
   useEffect(() => {
     const closeOutside = event => { if (!menu.current?.contains(event.target)) menu.current?.removeAttribute('open') }
     document.addEventListener('pointerdown', closeOutside)
     return () => document.removeEventListener('pointerdown', closeOutside)
   }, [])
+
+  const closePicker = () => {
+    setPickerOpen(false)
+    requestAnimationFrame(() => menu.current?.querySelector('summary')?.focus())
+  }
 
   const name = usuario?.nombre || usuario?.usuario || 'Mi cuenta'
   const fullName = [usuario?.nombre, usuario?.apellido].filter(Boolean).join(' ') || name
@@ -44,7 +39,7 @@ export function UserMenu({ compact = false }) {
       <details ref={menu} className={`account-menu${compact ? ' account-menu--compact' : ''}`} onKeyDown={closeWithEscape}>
         <summary aria-label={`Cuenta de ${name}`}>
           {compact ? 'Mi cuenta' : <>
-            <Avatar name={name} avatar={avatar} size="small" className="avatar" />
+            <Avatar name={name} avatarId={usuario?.avatarId} size="small" className="avatar" />
             <span className="account-name">{name}</span>
           </>}
         </summary>
@@ -63,9 +58,15 @@ export function UserMenu({ compact = false }) {
       </details>
       <AvatarPickerModal
         open={pickerOpen}
-        onClose={() => setPickerOpen(false)}
+        onClose={closePicker}
         userId={usuario?.id}
-        userName={name}
+        userName={fullName}
+        value={usuario?.avatarId ?? null}
+        onSave={async avatarId => {
+          await updateAvatar(avatarId)
+          workspace?.invalidate?.()
+          notify('Avatar actualizado.', 'success')
+        }}
       />
     </>
   )

@@ -41,6 +41,12 @@
   .space-card dd { overflow-wrap: anywhere; }
   .space-card__action { margin-top: auto; padding-top: var(--spacing-2); }
   .space-card__action a { width: 100%; }
+  @supports (grid-template-rows: subgrid) {
+    /* Cada fila comparte sus seis secciones, sin recortar nombres o descripciones. */
+    .spaces-grid > .space-card { display: grid; grid-template-rows: subgrid; grid-row: span 6; row-gap: var(--spacing-4); }
+    .spaces-grid > .space-card > .ui-badge { align-self: start; justify-self: start; }
+    .spaces-grid > .space-card > .ui-panel-disclosure { align-self: start; }
+  }
   .ui-panel-disclosure { border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); min-width: 0; }
   .ui-panel-disclosure[open] { background: var(--color-canvas); }
   .ui-panel-disclosure > summary { display: flex; align-items: center; gap: var(--spacing-3); padding: var(--spacing-4); border-radius: var(--radius-xl); list-style: none; color: var(--color-text-primary); font-weight: var(--font-weight-medium); transition: background-color var(--motion-duration-fast) var(--ease-standard); }
