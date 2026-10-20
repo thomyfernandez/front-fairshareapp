@@ -3,11 +3,11 @@ import { Button, Field, Icon } from '../../components/ui'
 import { dateLabel, money } from '../../lib/format'
 import { ParticipantsSelector } from './ParticipantsSelector'
 
-import { ExpenseIconPicker } from './ExpenseIconPicker'
+import { ExpenseCategoryPicker } from './ExpenseCategoryPicker'
 import { expenseIcon } from '../../components/ui/expense-icons'
 import { batchMemberName } from './expense-experience'
 
-export function BatchExpenseItem({ expense: g, index, members, busy, removable, complete, collapsed, focus, onCollapse, onRemove, onFieldChange, onParticipantsChange }) {
+export function BatchExpenseItem({ expense: g, index, members, categories, busy, removable, complete, collapsed, focus, onCollapse, onRemove, onFieldChange, onParticipantsChange }) {
   const [splitOpen, setSplitOpen] = useState(false)
   const id = useId()
   const inputRef = useRef(null)
@@ -39,7 +39,7 @@ export function BatchExpenseItem({ expense: g, index, members, busy, removable, 
     {/* Se conserva montado el selector para no perder el reparto al plegar. */}
     <div hidden={isCollapsed} className="expense-batch-item__editor">
       <div className="expense-batch-item__header">
-        <div className="expense-batch-item__identity"><span className="expense-batch-item__number expense-batch-item__badge"><span className="sr-only">Gasto </span>{index + 1}</span><ExpenseIconPicker compact label={`Ícono del gasto ${index + 1}`} value={g.icono} onChange={value => { onFieldChange(g.tempId, 'icono', value); onFieldChange(g.tempId, 'touched', true) }} description={g.descripcion} category={g.categoriaNombre} disabled={busy} /></div>
+        <div className="expense-batch-item__identity"><span className="expense-batch-item__number expense-batch-item__badge"><span className="sr-only">Gasto </span>{index + 1}</span><ExpenseCategoryPicker categories={categories} compact label={`Categoría del gasto ${index + 1}`} value={g.categoriaId} onChange={value => { onFieldChange(g.tempId, 'categoriaId', value.id); onFieldChange(g.tempId, 'categoriaNombre', value.id == null ? null : value.nombre); onFieldChange(g.tempId, 'icono', null); onFieldChange(g.tempId, 'touched', true) }} description={g.descripcion} category={g.categoriaNombre} disabled={busy} /></div>
         <Field ref={inputRef} className="expense-batch-item__name" label="Descripción" maxLength={255} value={g.descripcion} onChange={e => onFieldChange(g.tempId, 'descripcion', e.target.value)} error={g.errors.descripcion} placeholder="Escribí una descripción…" required disabled={busy} />
         {removable && <Button variant="ghost" size="small" onClick={() => onRemove(g.tempId)} disabled={busy} className="expense-batch-item__remove text-error" aria-label={`Quitar gasto número ${index + 1} de la selección`}><Icon name="close" size={14} />Quitar</Button>}
       </div>

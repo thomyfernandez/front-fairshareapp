@@ -41,7 +41,7 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
    - Declaracion de sueldos mensuales para el calculo de distribuciones proporcionales equitativas segun ingresos.
 
 4. **Registro y Clasificacion de Gastos**:
-   - Carga de gastos individuales y varios juntos con selección de pagador, desglose entre participantes y un ícono opcional elegido por el usuario (14 opciones y Automático). La elección se conserva en borradores, al repetir y al consultar el gasto.
+   - Carga de gastos individuales y varios juntos con selección de pagador, desglose entre participantes y una categoría elegida desde el catálogo. El ícono se asigna según la categoría, que se conserva en borradores, al repetir y al consultar el gasto.
    - Consulta del listado historico de gastos con búsqueda, filtros de fechas y paginación de 10, 20 o 50 registros; conserva la página al volver al espacio.
 
 5. **Matriz de Balances y Deudas Simplificadas**:
@@ -218,3 +218,5 @@ La invitación prioriza copiar el enlace de ingreso y conserva las alternativas 
 - Búsqueda `q` y fechas permanecen en la URL. La navegación conserva el último filtro y posición de cada espacio durante la sesión, incluida la vuelta desde Mis ingresos o un formulario. Limpiar filtros elimina también el contexto recordado.
 
 El registro individual usa `POST /api/v1/espacios/{id}/gastos`; el lote usa `POST /api/v1/espacios/{id}/gastos/lote` con un **array directo**, según el controlador existente. Los formularios traducen los modos de edición a `regla`: equitativa, personalizada o proporcional a ingresos. En personalizada envían porcentajes **o** importes, sin mezclarlos; el reparto proporcional se calcula en el servidor. No se reintenta automáticamente un registro en un endpoint alternativo.
+
+Las categorías se consultan en `GET /api/v1/categorias` (`CategoriaResponseDTO`: `id`, `nombre`), también disponible desde `/public/data/categorias.json` en demostración. El registro individual y múltiple guardan `categoriaId`; el ícono se determina por la categoría, sin una selección independiente.

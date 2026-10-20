@@ -263,3 +263,23 @@ it('guarda el ícono elegido, conserva automático y rechaza íconos fuera del c
   expect(request('/api/v1/espacios/1/gastos/lote', { method: 'POST', body: [expense({ icono: 'REGALOS' }), expense({ icono: 'NO_EXISTE' })] }).status).toBe(400)
   expect(request('/api/v1/espacios/1/gastos').body).toHaveLength(before)
 })
+
+it('consume el catálogo JSON y guarda la categoría en registro, detalle y lote', () => {
+  const { engine, request } = setup()
+  expect(engine('/api/v1/categorias').status).toBe(401)
+  const categories = request('/api/v1/categorias')
+  assertContract('CategoriaResponseDTO[]', categories.body)
+  expect(categories.body).toEqual(fixtures.categories)
+  const pet = categories.body.find(category => category.nombre === 'Mascotas')
+  const body = expense({ categoriaId: pet.id })
+  const created = request('/api/v1/espacios/1/gastos', { method: 'POST', body })
+  expect(created.status).toBe(201)
+  expect(created.body).toMatchObject({ categoriaId: pet.id, categoriaNombre: 'Mascotas' })
+  expect(request(`/api/v1/gastos/${created.body.id}`).body.categoriaNombre).toBe('Mascotas')
+  const batch = request('/api/v1/espacios/1/gastos/lote', { method: 'POST', body: [body, expense()] })
+  expect(batch.body[0].categoriaNombre).toBe('Mascotas')
+  expect(batch.body[1].categoriaId).toBeNull()
+  const before = request('/api/v1/espacios/1/gastos').body.length
+  expect(request('/api/v1/espacios/1/gastos/lote', { method: 'POST', body: [body, expense({ categoriaId: 999999 })] }).status).toBe(404)
+  expect(request('/api/v1/espacios/1/gastos').body).toHaveLength(before)
+})

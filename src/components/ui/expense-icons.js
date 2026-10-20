@@ -1,4 +1,4 @@
-// Opciones del contrato IconoGasto de Java; los SVG pertenecen al sistema de diseño.
+// Mapa visual de categorías; los identificadores del catálogo se obtienen de la API.
 export const expenseIconChoices = [
   { value: 'RECIBO', label: 'Recibo', icon: 'receipt' },
   { value: 'COMPRAS', label: 'Compras', icon: 'basket' },
@@ -17,12 +17,15 @@ export const expenseIconChoices = [
 ]
 export const isExpenseIcon = value => expenseIconChoices.some(choice => choice.value === value)
 
-// La elección explícita tiene prioridad, sin modificar la categoría financiera.
+// La categoría confirmada determina el ícono; se conserva el valor antiguo solo sin categoría.
 export function expenseIcon(category, description, selected) {
   const choice = expenseIconChoices.find(item => item.value === selected)
-  if (choice) return choice.icon
+  if (!category && choice) return choice.icon
   const normalized = String(category || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('es-AR')
-  if (/supermercado|aliment|comida|compras/.test(normalized)) return 'basket'
+  if (/supermercado|aliment|compras/.test(normalized)) return 'basket'
+  if (/comida|restaurante/.test(normalized)) return 'utensils'
+  if (/mascota/.test(normalized)) return 'paw'
+  if (/regalo/.test(normalized)) return 'gift'
   if (/transporte|movilidad|viaje/.test(normalized)) return 'bus'
   if (/alquiler|vivienda|hogar/.test(normalized)) return 'home'
   if (/internet|conectividad/.test(normalized)) return 'wifi'

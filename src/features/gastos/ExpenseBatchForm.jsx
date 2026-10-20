@@ -3,6 +3,7 @@ import { Button, Disclosure, Icon, InlineAlert, Modal, Submit, useUI } from '../
 import { cents, dateLabel, money, today } from '../../lib/format'
 import { useWorkspace } from '../../app/useWorkspace'
 import { expenseErrorMessage, expensePayload, similarExpenses, validExpenseAmount } from './expense-experience'
+import { useExpenseCategories } from './useExpenseCategories'
 import { BatchExpenseItem } from './BatchExpenseItem'
 import { BatchExpenseBreakdown } from './BatchExpenseBreakdown'
 
@@ -53,6 +54,7 @@ export function ExpenseBatchForm({
   const effectiveSpaceId = propSpaceId || workspace?.spaceId
   const effectiveMembers = propMembers || workspace?.members || []
   const effectiveApi = propApi || workspace?.api
+  const categories = useExpenseCategories(effectiveApi)
   const currentUserId = workspace?.session?.usuario?.id
 
   const defaultPayerId =
@@ -234,7 +236,7 @@ export function ExpenseBatchForm({
       {serverError && <div ref={errorRef}><InlineAlert tone="error">{serverError}</InlineAlert></div>}
       <form onSubmit={handleSubmit} noValidate className="expense-batch-form">
         <div className="expense-batch-items">
-          {gastos.map((g, index) => <BatchExpenseItem key={g.tempId} expense={g} index={index} members={effectiveMembers} busy={busy} removable={gastos.length > 1} complete={Object.keys(validateExpense(g)).length === 0} collapsed={collapsed[g.tempId]} focus={focusId === g.tempId} onCollapse={(id, value) => setCollapsed(previous => ({ ...previous, [id]: value }))} onRemove={handleRemoveExpense} onFieldChange={handleFieldChange} onParticipantsChange={handleParticipantsChange} />)}
+          {gastos.map((g, index) => <BatchExpenseItem key={g.tempId} expense={g} categories={categories} index={index} members={effectiveMembers} busy={busy} removable={gastos.length > 1} complete={Object.keys(validateExpense(g)).length === 0} collapsed={collapsed[g.tempId]} focus={focusId === g.tempId} onCollapse={(id, value) => setCollapsed(previous => ({ ...previous, [id]: value }))} onRemove={handleRemoveExpense} onFieldChange={handleFieldChange} onParticipantsChange={handleParticipantsChange} />)}
         </div>
         <Button variant="secondary" onClick={handleAddExpense} disabled={busy || gastos.length + (removed ? 1 : 0) >= 100} className="expense-batch-add"><Icon name="plus" size={16} />Agregar otro gasto</Button>
         <div className="expense-batch-footer">

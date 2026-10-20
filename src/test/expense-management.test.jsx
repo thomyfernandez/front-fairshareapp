@@ -165,14 +165,14 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     // Enviar lote
     const submitBtn = screen.getByRole('button', { name: /^Registrar \d+ gastos?$/ })
     await user.click(submitBtn)
-    expect(mockApi).not.toHaveBeenCalled()
+    expect(mockApi.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(0)
     await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
 
     await waitFor(() => {
-      expect(mockApi).toHaveBeenCalledTimes(1)
+      expect(mockApi.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(1)
     })
 
-    const [calledUrl, calledOpts] = mockApi.mock.calls[0]
+    const [calledUrl, calledOpts] = mockApi.mock.calls.find(([, opts]) => opts?.method === 'POST')
     expect(calledUrl).toBe('/api/v1/espacios/1/gastos/lote')
     expect(calledOpts.body).toEqual(expect.arrayContaining([
         expect.objectContaining({ descripcion: 'Gasto Lote 1', monto: 1500 }),
@@ -206,12 +206,12 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
 
     const submitBtn = screen.getByRole('button', { name: /^Registrar \d+ gastos?$/ })
     await user.click(submitBtn)
-    expect(mockApi).not.toHaveBeenCalled()
+    expect(mockApi.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(0)
     await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
 
     // Mensaje de error visible
     expect(await screen.findAllByText('Error 400: Lote rechazado por datos inconsistentes.')).not.toHaveLength(0)
-    expect(mockApi).toHaveBeenCalledTimes(1)
+    expect(mockApi.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(1)
 
     // Los datos DEBEN preservarse
     expect(descInputs[0]).toHaveValue('Compra no confirmada')
@@ -235,6 +235,6 @@ for (const [label, Form] of [['individual', ExpenseForm], ['varios gastos', Expe
     expect(screen.queryByText(/El usuario con id 74/)).not.toBeInTheDocument()
     expect(screen.getByLabelText(/^Descripción/)).toHaveValue('Alquiler')
     expect(screen.getByLabelText(/^Monto/)).toHaveValue(21000)
-    expect(api).toHaveBeenCalledTimes(1)
+    expect(api.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(1)
   })
 }

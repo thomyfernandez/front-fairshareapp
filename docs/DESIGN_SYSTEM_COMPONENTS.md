@@ -175,8 +175,8 @@ Componente de Gastos en `src/features/gastos/ExpensePagination.jsx`, compuesto c
 
 Los selectores del paginado conservan el control nativo para teclado y menú. La flecha decorativa usa `Icon`, separada 12px del borde; el campo reserva 40px al final para evitar que el texto se superponga con ella.
 
-## ExpenseIconPicker e íconos explícitos
+## ExpenseCategoryPicker
 
-`src/features/gastos/ExpenseIconPicker.jsx`: recibe `value` (valor de `IconoGasto` o `null`), `onChange`, `description`, `category`, `disabled`, `compact` y `label`. La variante compacta se usa por gasto en la carga de varios; ambas reutilizan `Button`, `Icon` y `Modal`. No carga archivos, no admite SVG arbitrario ni modifica la categoría: selecciona uno de los 14 símbolos del catálogo `expenseIconChoices`. El diálogo vuelve el foco al disparador al elegir o cancelar y mantiene el menú accesible con teclado.
+`src/features/gastos/ExpenseCategoryPicker.jsx`: recibe `value` (ID real de categoría o `null`), `onChange` (categoría elegida), `categories` (recurso compartido con `data`, `loading`, `error` y `reload`), `description`, `category`, `disabled`, `compact` y `label`. La variante compacta se usa por gasto en la carga de varios; ambas reutilizan `Button`, `Icon` y `Modal`. Consulta `GET /api/v1/categorias` y guarda `categoriaId`; el ícono se asigna por nombre de categoría. Elegir o cancelar devuelve el foco al disparador. La carga, error con reintento y catálogo vacío mantienen el formulario disponible.
 
-`ExpenseRow` y `SelectableExpenseRow` reciben `icon` como elección explícita del DTO `icono`; `category` conserva su función de alternativa automática. `expenseIcon(category, description, selected)` prioriza esa elección validada. Los detalles, el resumen y el desglose de varios gastos usan la misma resolución.
+`expenseIcon(category, description, selected)` prioriza la categoría confirmada sobre valores antiguos de `icono`. Sin categoría conserva la representación anterior. Los detalles, el resumen y el desglose usan la misma resolución.
