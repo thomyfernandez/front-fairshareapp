@@ -30,7 +30,7 @@ describe('income model', () => {
 
 describe('IncomePage', () => {
   it('warns that saving an existing period updates its record', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const api = vi.fn(async (path, { method = 'GET' } = {}) => method === 'GET' ? incomes : { id: 2 })
     renderWith(<IncomePage />, api)
     await user.click(await screen.findByRole('button', { name: 'Agregar ingreso' }))
@@ -43,7 +43,7 @@ describe('IncomePage', () => {
   })
 
   it('edits with PUT and asks for confirmation before deleting', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const api = vi.fn(async (path, { method = 'GET' } = {}) => method === 'GET' ? incomes : null)
     renderWith(<IncomePage />, api)
     await user.click(await screen.findByRole('button', { name: 'Editar ingreso de Enero 2025' }))
@@ -60,7 +60,7 @@ describe('IncomePage', () => {
 
 describe('DeclaredIncomeForm', () => {
   it('saves the declared income of the current member in the space', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const api = vi.fn(async () => ({ sueldoDeclarado: 900 }))
     renderWith(<DeclaredIncomeForm spaceId={3} member={{ usuarioId: 5, sueldoDeclarado: 800 }} />, api)
     const input = screen.getByLabelText(/Ingreso declarado/)

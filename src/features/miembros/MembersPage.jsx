@@ -1,5 +1,7 @@
+import { incomeDestination } from '../../app/navigation'
 import { useState } from 'react'
-import { Card, InlineAlert, Modal, PageHeader, ResourceState } from '../../components/ui'
+import { Link } from 'react-router'
+import { PanelDisclosure, InlineAlert, Modal, PageHeader, ResourceState } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
 import { money } from '../../lib/format'
 import { ChangeRoleDialog } from './ChangeRoleDialog'
@@ -27,7 +29,7 @@ export default function MembersPage() {
   }
 
   return (
-    <div>
+    <div className="feature-page members-page">
       <PageHeader
         eyebrow="INTEGRANTES Y ACCESO"
         title="Miembros"
@@ -36,7 +38,6 @@ export default function MembersPage() {
 
       <ResourceState resource={membersState}>
         <div className="flex flex-col gap-6">
-          <InviteCard space={space} />
 
           <section>
             <div className="mb-4 flex items-center justify-between gap-4">
@@ -53,10 +54,10 @@ export default function MembersPage() {
             />
           </section>
 
-          <Card>
-            <h2 className="text-lg font-semibold text-primary">Tu ingreso declarado en este espacio</h2>
+          <InviteCard space={space} />
+          <PanelDisclosure title="Tu ingreso declarado en este espacio" icon="wallet">
             <p className="text-sm text-secondary">
-              Se usa para calcular el reparto proporcional de gastos en este espacio.
+              Es el ingreso que compartís como referencia en este espacio. Los repartos proporcionales usan tu ingreso mensual de <Link to={incomeDestination(spaceId)} className="ui-link">Mis ingresos</Link>.
             </p>
             <p className="mt-2 text-base font-medium text-primary">
               {currentMember?.sueldoDeclarado != null
@@ -65,11 +66,10 @@ export default function MembersPage() {
             </p>
             <div className="mt-3">
               <InlineAlert tone="info">
-                La edición todavía no está disponible desde esta pantalla: se va a incorporar acá el
-                formulario DeclaredIncomeForm que publica el equipo de Liquidaciones e ingresos.
+                La edición del ingreso declarado todavía no está disponible desde esta pantalla.
               </InlineAlert>
             </div>
-          </Card>
+          </PanelDisclosure>
         </div>
       </ResourceState>
 

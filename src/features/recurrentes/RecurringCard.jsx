@@ -1,51 +1,29 @@
-import { money } from '../../lib/format'
+import { Badge, Button, Card, Icon, Money } from '../../components/ui'
+import { dateLabel } from '../../lib/format'
 import { UpdateRecurringDialog } from './UpdateRecurringDialog'
-import { ExecuteRecurringDialog } from './ExecuteRecurringDialog'
-import { REGLAS_DIVISION } from './model'
+import { RecurringSelectionButton } from './RecurringSelectionButton'
+import { requiresReview } from './model'
+import { templateAmount, templateUnavailable } from './recurring-batch'
 
-export function RecurringCard({ template, members, mutate, confirm, busy }) {
-    const pagador = members?.find(m => (m.usuarioId || m.id) === template.pagadorId)
-    const nombrePagador = pagador ? (pagador.nombreUsuario || pagador.nombre) : 'No asignado'
-    const montoTotal = Number(template.montoBase) + Number(template.montoVariable)
-
-return (
-    <article className={`expense recurring-card ${template.vencido ? 'vencida-alert border-danger' : ''}`}>
-    <div className="row">
-        <div className="template-info">
-        <strong>{template.nombre}</strong>
-        <ul className="template-details mt-1 text-sm">
-            <li><strong>Pagador:</strong> {nombrePagador}</li>
-            <li><strong>Reparto:</strong> {REGLAS_DIVISION[template.reglaDivision] || template.reglaDivision}</li>
-            <li><strong>Monto Base:</strong> {money(Number(template.montoBase))} | <strong>Variable:</strong> {money(Number(template.montoVariable))}</li>
-            <li className={template.vencido ? 'text-danger font-weight-bold' : ''}>
-                <strong>Próxima Revisión:</strong> {template.fechaProximaRevision} 
-                {template.vencido && <span className="badge badge-danger ml-1"> ¡TARIFA VENCIDA!</span>}
-            </li>
-        </ul>
-        </div>
-        
-    <div className="template-total align-self-center">
-        <span className="text-muted text-xs d-block">Total estimado:</span>
-        <strong>{money(montoTotal)}</strong>
+export function RecurringCard({ template, members, mutate, confirm, busy, batch, reviewOpen }) {
+  const selected = batch.selected(template.id)
+  const unavailable = templateUnavailable(template, members)
+  const amount = templateAmount(template)
+  return <Card as="article" className={`recurring-item${selected ? ' recurring-item--selected' : ''}`}>
+    <div className="recurring-item__header">
+      <span className="ui-item-icon"><Icon name="repeat" /></span>
+      <div className="recurring-item__name"><h2>{template.nombre}</h2><p>Revisión: {dateLabel(template.fechaProximaRevision)}</p>{requiresReview(template) && <Badge tone="warning">Necesita revisión</Badge>}{selected && <Badge tone="brand">Agregado</Badge>}</div>
+      <strong className="recurring-item__amount">{amount === null ? 'Por completar' : <Money value={amount} hideZeroDecimals />}</strong>
     </div>
-
-    <div className="template-actions align-self-center">
-        <ExecuteRecurringDialog template={template} mutate={mutate} busy={busy} />
-        <button 
-            disabled={busy} 
-            className="danger ml-2" 
-            onClick={async () => { 
-            if (await confirm('¿Estás seguro de eliminar esta plantilla? Esta acción no afectará los gastos que ya hayan sido generados previamente.')) {
-                mutate(`/api/v1/favoritos/${template.id}`, 'DELETE', undefined, 'Plantilla eliminada correctamente.')
-            }
-            }}
-        >
-            Eliminar
-        </button>
-        </div>
+    <div className="feature-actions">
+      <RecurringSelectionButton template={template} members={members} batch={batch} busy={busy} />
+      <Button variant="ghost" disabled={busy} aria-label={`Eliminar plantilla ${template.nombre}`} onClick={async () => {
+        if (await confirm({ title: `Eliminar plantilla ${template.nombre}`, description: 'Se elimina la plantilla. Los gastos ya registrados y los borradores se conservan.', confirmLabel: 'Eliminar plantilla', danger: true })) {
+          await mutate(`/api/v1/favoritos/${template.id}`, 'DELETE', undefined, 'Plantilla eliminada.')
+        }
+      }}>Eliminar</Button>
     </div>
-    
-    <UpdateRecurringDialog template={template} mutate={mutate} busy={busy} />
-    </article>
-    )
+    {!selected && unavailable && <p className="recurring-item__hint">{unavailable}</p>}
+    <UpdateRecurringDialog template={template} mutate={mutate} busy={busy} open={reviewOpen} />
+  </Card>
 }

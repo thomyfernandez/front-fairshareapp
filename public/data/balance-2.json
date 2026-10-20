@@ -1,0 +1,56 @@
+{
+  "espacioId": 2,
+  "espacioNombre": "Viaje al sur",
+  "deudas": [
+    {
+      "id": 4,
+      "deudorId": 6,
+      "deudorNombre": "Valentina Torres",
+      "acreedorId": 1,
+      "acreedorNombre": "Ana Ruiz",
+      "monto": 268629.33,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 5,
+      "deudorId": 2,
+      "deudorNombre": "Thomas Fernandez",
+      "acreedorId": 1,
+      "acreedorNombre": "Ana Ruiz",
+      "monto": 102751.68,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 6,
+      "deudorId": 2,
+      "deudorNombre": "Thomas Fernandez",
+      "acreedorId": 3,
+      "acreedorNombre": "Sol García",
+      "monto": 336074.78,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 7,
+      "deudorId": 2,
+      "deudorNombre": "Thomas Fernandez",
+      "acreedorId": 8,
+      "acreedorNombre": "Camila Díaz",
+      "monto": 34901.57,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    },
+    {
+      "id": 8,
+      "deudorId": 7,
+      "deudorNombre": "Nicolás Romero",
+      "acreedorId": 8,
+      "acreedorNombre": "Camila Díaz",
+      "monto": 295313.83,
+      "estado": "PENDIENTE",
+      "liquidacionId": null
+    }
+  ]
+}

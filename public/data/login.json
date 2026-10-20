@@ -1,0 +1,16 @@
+{
+  "token": "mock-demo-ana-v1",
+  "tokenType": "Bearer",
+  "expiresIn": 3600,
+  "email": "demo@fairshare.test",
+  "nombre": "Ana",
+  "apellido": "Ruiz",
+  "usuario": {
+    "id": 1,
+    "usuario": "ana",
+    "email": "demo@fairshare.test",
+    "nombre": "Ana",
+    "apellido": "Ruiz",
+    "rol": "USUARIO"
+  }
+}

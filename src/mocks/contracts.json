@@ -1,0 +1,249 @@
+{
+  "models": {
+    "EspacioResponseDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/EspacioResponseDTO.java",
+      "fields": {
+        "id": "Long",
+        "nombre": "String",
+        "descripcion": "String",
+        "codigo": "String",
+        "tipo": "TipoEspacio",
+        "reglaReparto": "ReglaReparto",
+        "presupuestoBase": "BigDecimal"
+      }
+    },
+    "MiembroResponseDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/MiembroResponseDTO.java",
+      "fields": {
+        "id": "Long",
+        "espacioId": "Long",
+        "usuarioId": "Long",
+        "nombreUsuario": "String",
+        "emailUsuario": "String",
+        "rol": "RolMiembro",
+        "sueldoDeclarado": "BigDecimal"
+      }
+    },
+    "GastoDetalleDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/GastoDetalleDTO.java",
+      "fields": {
+        "id": "Long",
+        "descripcion": "String",
+        "monto": "BigDecimal",
+        "fecha": "LocalDate",
+        "espacioId": "Long",
+        "espacioNombre": "String",
+        "pagadorId": "Long",
+        "pagadorNombre": "String",
+        "pagadorEmail": "String",
+        "categoriaId": "Long",
+        "categoriaNombre": "String",
+        "regla": "ReglaDivision",
+        "estado": "EstadoGasto",
+        "participantes": "List<GastoParticipanteDTO>",
+        "icono": "IconoGasto"
+      }
+    },
+    "GastoParticipanteDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/GastoParticipanteDTO.java",
+      "fields": {
+        "id": "Long",
+        "usuarioId": "Long",
+        "usuarioNombre": "String",
+        "usuarioEmail": "String",
+        "importe": "BigDecimal",
+        "porcentaje": "BigDecimal",
+        "sueldo": "BigDecimal"
+      }
+    },
+    "BalanceDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/BalanceDTO.java",
+      "fields": {
+        "espacioId": "Long",
+        "espacioNombre": "String",
+        "deudas": "List<DeudaDetalleDTO>"
+      }
+    },
+    "DeudaDetalleDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/DeudaDetalleDTO.java",
+      "fields": {
+        "id": "Long",
+        "deudorId": "Long",
+        "deudorNombre": "String",
+        "acreedorId": "Long",
+        "acreedorNombre": "String",
+        "monto": "BigDecimal",
+        "estado": "EstadoDeuda",
+        "liquidacionId": "Long"
+      }
+    },
+    "LiquidacionResponseDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/LiquidacionResponseDTO.java",
+      "fields": {
+        "id": "Long",
+        "espacioId": "Long",
+        "espacioNombre": "String",
+        "montoTotal": "BigDecimal",
+        "fechaLiquidacion": "LocalDate",
+        "mes": "Integer",
+        "anio": "Integer",
+        "descripcion": "String",
+        "cantidadGastos": "int",
+        "gastosLiquidadosIds": "List<Long>",
+        "resumenCierre": "ResumenCierreDTO"
+      }
+    },
+    "ResumenCierreDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/ResumenCierreDTO.java",
+      "fields": {
+        "totalLiquidado": "BigDecimal",
+        "presupuestoAnterior": "BigDecimal",
+        "presupuestoRestante": "BigDecimal",
+        "cantidadGastosCerrados": "int",
+        "fechaCierre": "LocalDate"
+      }
+    },
+    "PlantillaGastoResponseDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/PlantillaGastoResponseDTO.java",
+      "fields": {
+        "id": "Long",
+        "nombre": "String",
+        "frecuenciaAjusteMeses": "Integer",
+        "montoBase": "BigDecimal",
+        "montoVariable": "BigDecimal",
+        "fechaProximaRevision": "LocalDate",
+        "espacioId": "Long",
+        "servicioId": "Long",
+        "nombreServicio": "String",
+        "pagadorId": "Long",
+        "categoriaId": "Long",
+        "reglaDivision": "ReglaDivision",
+        "vencido": "Boolean"
+      }
+    },
+    "ServicioVencimientoDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/ServicioVencimientoDTO.java",
+      "fields": {
+        "servicioId": "Long",
+        "nombreServicio": "String",
+        "fechaVencimiento": "LocalDate",
+        "montoBase": "BigDecimal",
+        "montoVariable": "BigDecimal",
+        "diasVencido": "Long"
+      }
+    },
+    "ErrorResponseDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/ErrorResponseDTO.java",
+      "fields": {
+        "timestamp": "Instant",
+        "status": "int",
+        "code": "String",
+        "message": "String",
+        "path": "String",
+        "fieldErrors": "Map<String,String>"
+      }
+    },
+    "LoginResponse": {
+      "source": "src/main/java/com/example/fairshareapp/model/response/LoginResponse.java",
+      "fields": {
+        "token": "String",
+        "email": "String",
+        "nombre": "String",
+        "apellido": "String",
+        "tokenType": "String",
+        "expiresIn": "long",
+        "usuario": "UsuarioResponse"
+      }
+    },
+    "UsuarioResponse": {
+      "source": "src/main/java/com/example/fairshareapp/model/response/UsuarioResponse.java",
+      "fields": {
+        "id": "Long",
+        "usuario": "String",
+        "email": "String",
+        "nombre": "String",
+        "apellido": "String",
+        "rol": "String"
+      }
+    },
+    "SueldoResponse": {
+      "source": "src/main/java/com/example/fairshareapp/model/response/SueldoResponse.java",
+      "fields": {
+        "id": "Long",
+        "usuarioId": "Long",
+        "monto": "BigDecimal",
+        "tipo": "TipoSueldo",
+        "frecuencia": "FrecuenciaSueldo",
+        "mes": "Integer",
+        "anio": "Integer",
+        "usuarioNombre": "String"
+      }
+    },
+    "CategoriaResponseDTO": {
+      "source": "src/main/java/com/example/fairshareapp/model/dto/CategoriaResponseDTO.java",
+      "fields": {
+        "id": "Long",
+        "nombre": "String"
+      }
+    }
+  },
+  "enums": {
+    "EstadoGasto": [
+      "PENDIENTE",
+      "LIQUIDADO"
+    ],
+    "EstadoDeuda": [
+      "PENDIENTE",
+      "SALDADO"
+    ],
+    "FrecuenciaSueldo": [
+      "MENSUAL",
+      "QUINCENAL"
+    ],
+    "RolMiembro": [
+      "ADMIN",
+      "MIEMBRO"
+    ],
+    "TipoSueldo": [
+      "FIJO",
+      "VARIABLE"
+    ],
+    "ReglaDivision": [
+      "EQUITATIVA",
+      "PROPORCIONAL_INGRESOS",
+      "PARTICIPACION_PARCIAL",
+      "PERSONALIZADA"
+    ],
+    "RolUsuario": [
+      "USUARIO",
+      "ADMIN"
+    ],
+    "TipoEspacio": [
+      "HOGAR",
+      "VIAJE",
+      "PAREJA",
+      "TRABAJO",
+      "OTRO"
+    ],
+    "ReglaReparto": [
+      "CINCUENTA_CINCUENTA",
+      "PROPORCIONAL"
+    ],
+    "IconoGasto": [
+      "RECIBO",
+      "COMPRAS",
+      "HOGAR",
+      "TRANSPORTE",
+      "SERVICIOS",
+      "INTERNET",
+      "COMIDAS",
+      "SALUD",
+      "OCIO",
+      "ESTUDIO",
+      "DEPORTES",
+      "TRABAJO",
+      "REGALOS",
+      "MASCOTAS"
+    ]
+  }
+}

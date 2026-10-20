@@ -1,0 +1,56 @@
+[
+  {
+    "id": 201,
+    "espacioId": 2,
+    "usuarioId": 1,
+    "nombreUsuario": "Ana Ruiz",
+    "emailUsuario": "demo@fairshare.test",
+    "rol": "ADMIN",
+    "sueldoDeclarado": 1200000
+  },
+  {
+    "id": 202,
+    "espacioId": 2,
+    "usuarioId": 2,
+    "nombreUsuario": "Thomas Fernandez",
+    "emailUsuario": "thomas@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1800000
+  },
+  {
+    "id": 203,
+    "espacioId": 2,
+    "usuarioId": 3,
+    "nombreUsuario": "Sol García",
+    "emailUsuario": "sol@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1000000
+  },
+  {
+    "id": 206,
+    "espacioId": 2,
+    "usuarioId": 6,
+    "nombreUsuario": "Valentina Torres",
+    "emailUsuario": "valentina@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1100000
+  },
+  {
+    "id": 207,
+    "espacioId": 2,
+    "usuarioId": 7,
+    "nombreUsuario": "Nicolás Romero",
+    "emailUsuario": "nicolas@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1650000
+  },
+  {
+    "id": 208,
+    "espacioId": 2,
+    "usuarioId": 8,
+    "nombreUsuario": "Camila Díaz",
+    "emailUsuario": "camila@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1450000
+  }
+]

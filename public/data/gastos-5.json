@@ -1,0 +1,5582 @@
+[
+  {
+    "id": 50080,
+    "descripcion": "Presentación final",
+    "icono": null,
+    "monto": 21806.76,
+    "fecha": "2026-10-19",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5008001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4361.36,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5008002,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4361.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5008003,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4361.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5008004,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4361.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5008005,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4361.35,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50079,
+    "descripcion": "Impresión 3D",
+    "icono": "ESTUDIO",
+    "monto": 42298.87,
+    "fecha": "2026-10-18",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7063.92,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5007902,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7046.99,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5007903,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7046.99,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5007904,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7046.99,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5007905,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 7046.99,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5007906,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 7046.99,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50078,
+    "descripcion": "Compra de cartón",
+    "icono": null,
+    "monto": 8890.98,
+    "fecha": "2026-10-17",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1262.66,
+        "porcentaje": 14.2,
+        "sueldo": null
+      },
+      {
+        "id": 5007802,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1052.18,
+        "porcentaje": 11.83,
+        "sueldo": null
+      },
+      {
+        "id": 5007803,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1630.88,
+        "porcentaje": 18.34,
+        "sueldo": null
+      },
+      {
+        "id": 5007804,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1736.1,
+        "porcentaje": 19.53,
+        "sueldo": null
+      },
+      {
+        "id": 5007805,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2209.59,
+        "porcentaje": 24.85,
+        "sueldo": null
+      },
+      {
+        "id": 5007806,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 999.57,
+        "porcentaje": 11.24,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50077,
+    "descripcion": "Hosting del proyecto",
+    "icono": null,
+    "monto": 12283.09,
+    "fecha": "2026-10-16",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2047.19,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007702,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2047.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007703,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2047.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007704,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2047.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007705,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2047.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007706,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2047.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50076,
+    "descripcion": "Traslado a la facultad",
+    "icono": "TRANSPORTE",
+    "monto": 10075.2,
+    "fecha": "2026-10-15",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2015.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5007602,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2015.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5007603,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2015.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5007604,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2015.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5007605,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2015.04,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50075,
+    "descripcion": "Merienda de estudio",
+    "icono": null,
+    "monto": 14767.31,
+    "fecha": "2026-10-14",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2461.26,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007502,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2461.21,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007503,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2461.21,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007504,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2461.21,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007505,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2461.21,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007506,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2461.21,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50074,
+    "descripcion": "Encuadernación",
+    "icono": null,
+    "monto": 16759.42,
+    "fecha": "2026-10-13",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2380.06,
+        "porcentaje": 14.2,
+        "sueldo": null
+      },
+      {
+        "id": 5007402,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1983.36,
+        "porcentaje": 11.83,
+        "sueldo": null
+      },
+      {
+        "id": 5007403,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3074.21,
+        "porcentaje": 18.34,
+        "sueldo": null
+      },
+      {
+        "id": 5007404,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3272.54,
+        "porcentaje": 19.53,
+        "sueldo": null
+      },
+      {
+        "id": 5007405,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4165.06,
+        "porcentaje": 24.85,
+        "sueldo": null
+      },
+      {
+        "id": 5007406,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1884.19,
+        "porcentaje": 11.24,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50073,
+    "descripcion": "Suscripción de prototipado",
+    "icono": "ESTUDIO",
+    "monto": 24251.53,
+    "fecha": "2026-10-12",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4041.93,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007302,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4041.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007303,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4041.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007304,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4041.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007305,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4041.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5007306,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4041.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50072,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34743.64,
+    "fecha": "2026-10-11",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6948.76,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5007202,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 6948.72,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5007203,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6948.72,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5007204,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6948.72,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5007205,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 6948.72,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50071,
+    "descripcion": "Impresión de láminas",
+    "icono": null,
+    "monto": 18235.75,
+    "fecha": "2026-10-10",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3045.35,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5007102,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3038.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5007103,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3038.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5007104,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3038.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5007105,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3038.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5007106,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3038.08,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50070,
+    "descripcion": "Presentación final",
+    "icono": "ESTUDIO",
+    "monto": 21727.86,
+    "fecha": "2026-10-09",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5007001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3085.64,
+        "porcentaje": 14.2,
+        "sueldo": null
+      },
+      {
+        "id": 5007002,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2571.34,
+        "porcentaje": 11.83,
+        "sueldo": null
+      },
+      {
+        "id": 5007003,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3985.58,
+        "porcentaje": 18.34,
+        "sueldo": null
+      },
+      {
+        "id": 5007004,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4242.71,
+        "porcentaje": 19.53,
+        "sueldo": null
+      },
+      {
+        "id": 5007005,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 5399.82,
+        "porcentaje": 24.85,
+        "sueldo": null
+      },
+      {
+        "id": 5007006,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2442.77,
+        "porcentaje": 11.24,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50069,
+    "descripcion": "Impresión 3D",
+    "icono": null,
+    "monto": 42219.97,
+    "fecha": "2026-10-08",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 5006901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7036.67,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006902,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7036.66,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006903,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7036.66,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006904,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7036.66,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006905,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 7036.66,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006906,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 7036.66,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50068,
+    "descripcion": "Compra de cartón",
+    "icono": null,
+    "monto": 8812.08,
+    "fecha": "2026-10-07",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1762.44,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006802,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1762.41,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006803,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1762.41,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006804,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1762.41,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006805,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 1762.41,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50067,
+    "descripcion": "Hosting del proyecto",
+    "icono": "ESTUDIO",
+    "monto": 12204.19,
+    "fecha": "2026-10-06",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2034.04,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006702,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2034.03,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006703,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2034.03,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006704,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2034.03,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006705,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2034.03,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006706,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2034.03,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50066,
+    "descripcion": "Traslado a la facultad",
+    "icono": null,
+    "monto": 9996.3,
+    "fecha": "2026-10-05",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1419.61,
+        "porcentaje": 14.2,
+        "sueldo": null
+      },
+      {
+        "id": 5006602,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1182.99,
+        "porcentaje": 11.83,
+        "sueldo": null
+      },
+      {
+        "id": 5006603,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1833.64,
+        "porcentaje": 18.34,
+        "sueldo": null
+      },
+      {
+        "id": 5006604,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1951.94,
+        "porcentaje": 19.53,
+        "sueldo": null
+      },
+      {
+        "id": 5006605,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2484.28,
+        "porcentaje": 24.85,
+        "sueldo": null
+      },
+      {
+        "id": 5006606,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1123.84,
+        "porcentaje": 11.24,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50065,
+    "descripcion": "Merienda de estudio",
+    "icono": null,
+    "monto": 14688.41,
+    "fecha": "2026-10-04",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2448.11,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006502,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2448.06,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006503,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2448.06,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006504,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2448.06,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006505,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2448.06,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006506,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2448.06,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50064,
+    "descripcion": "Encuadernación",
+    "icono": "ESTUDIO",
+    "monto": 16680.52,
+    "fecha": "2026-10-03",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3336.12,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006402,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3336.1,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006403,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3336.1,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006404,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3336.1,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006405,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3336.1,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50063,
+    "descripcion": "Suscripción de prototipado",
+    "icono": null,
+    "monto": 24172.63,
+    "fecha": "2026-10-02",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4036.83,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5006302,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4027.16,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5006303,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4027.16,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5006304,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4027.16,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5006305,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4027.16,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5006306,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4027.16,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50062,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34664.74,
+    "fecha": "2026-10-01",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4922.83,
+        "porcentaje": 14.2,
+        "sueldo": null
+      },
+      {
+        "id": 5006202,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4102.33,
+        "porcentaje": 11.83,
+        "sueldo": null
+      },
+      {
+        "id": 5006203,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6358.62,
+        "porcentaje": 18.34,
+        "sueldo": null
+      },
+      {
+        "id": 5006204,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6768.85,
+        "porcentaje": 19.53,
+        "sueldo": null
+      },
+      {
+        "id": 5006205,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 8614.9,
+        "porcentaje": 24.85,
+        "sueldo": null
+      },
+      {
+        "id": 5006206,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3897.21,
+        "porcentaje": 11.24,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50061,
+    "descripcion": "Impresión de láminas",
+    "icono": "ESTUDIO",
+    "monto": 18156.85,
+    "fecha": "2026-10-01",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3026.15,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006102,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006103,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006104,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006105,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5006106,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3026.14,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50060,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34712.27,
+    "fecha": "2026-09-23",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5006001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6942.47,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006002,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 6942.45,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006003,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6942.45,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006004,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6942.45,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5006005,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 6942.45,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50059,
+    "descripcion": "Impresión de láminas",
+    "icono": null,
+    "monto": 18204.38,
+    "fecha": "2026-09-21",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3040.13,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5005902,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3032.85,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5005903,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3032.85,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5005904,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3032.85,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5005905,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3032.85,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5005906,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3032.85,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50058,
+    "descripcion": "Presentación final",
+    "icono": "ESTUDIO",
+    "monto": 21696.49,
+    "fecha": "2026-09-19",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3073.48,
+        "porcentaje": 14.17,
+        "sueldo": null
+      },
+      {
+        "id": 5005802,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2552.52,
+        "porcentaje": 11.76,
+        "sueldo": null
+      },
+      {
+        "id": 5005803,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3985.06,
+        "porcentaje": 18.37,
+        "sueldo": null
+      },
+      {
+        "id": 5005804,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4245.53,
+        "porcentaje": 19.57,
+        "sueldo": null
+      },
+      {
+        "id": 5005805,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 5417.61,
+        "porcentaje": 24.97,
+        "sueldo": null
+      },
+      {
+        "id": 5005806,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2422.29,
+        "porcentaje": 11.16,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50057,
+    "descripcion": "Impresión 3D",
+    "icono": null,
+    "monto": 42188.6,
+    "fecha": "2026-09-17",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7031.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005702,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7031.43,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005703,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7031.43,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005704,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7031.43,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005705,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 7031.43,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005706,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 7031.43,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50056,
+    "descripcion": "Compra de cartón",
+    "icono": null,
+    "monto": 8780.71,
+    "fecha": "2026-09-15",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1756.15,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5005602,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1756.14,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5005603,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1756.14,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5005604,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1756.14,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5005605,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 1756.14,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50055,
+    "descripcion": "Hosting del proyecto",
+    "icono": "ESTUDIO",
+    "monto": 12172.82,
+    "fecha": "2026-09-13",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2028.82,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005502,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2028.8,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005503,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2028.8,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005504,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2028.8,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005505,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2028.8,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005506,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2028.8,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50054,
+    "descripcion": "Traslado a la facultad",
+    "icono": null,
+    "monto": 9964.93,
+    "fecha": "2026-09-11",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1411.61,
+        "porcentaje": 14.17,
+        "sueldo": null
+      },
+      {
+        "id": 5005402,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1172.34,
+        "porcentaje": 11.76,
+        "sueldo": null
+      },
+      {
+        "id": 5005403,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1830.29,
+        "porcentaje": 18.37,
+        "sueldo": null
+      },
+      {
+        "id": 5005404,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1949.92,
+        "porcentaje": 19.57,
+        "sueldo": null
+      },
+      {
+        "id": 5005405,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2488.24,
+        "porcentaje": 24.97,
+        "sueldo": null
+      },
+      {
+        "id": 5005406,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1112.53,
+        "porcentaje": 11.16,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50053,
+    "descripcion": "Merienda de estudio",
+    "icono": null,
+    "monto": 14657.04,
+    "fecha": "2026-09-09",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2442.84,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005302,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2442.84,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005303,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2442.84,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005304,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2442.84,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005305,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2442.84,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5005306,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2442.84,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50052,
+    "descripcion": "Encuadernación",
+    "icono": "ESTUDIO",
+    "monto": 16649.15,
+    "fecha": "2026-09-07",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3329.83,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5005202,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3329.83,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5005203,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3329.83,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5005204,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3329.83,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5005205,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3329.83,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50051,
+    "descripcion": "Suscripción de prototipado",
+    "icono": null,
+    "monto": 24141.26,
+    "fecha": "2026-09-05",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4031.61,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5005102,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4021.93,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5005103,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4021.93,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5005104,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4021.93,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5005105,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4021.93,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5005106,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4021.93,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50050,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34633.37,
+    "fecha": "2026-09-03",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5005001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4906.07,
+        "porcentaje": 14.17,
+        "sueldo": null
+      },
+      {
+        "id": 5005002,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4074.51,
+        "porcentaje": 11.76,
+        "sueldo": null
+      },
+      {
+        "id": 5005003,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6361.23,
+        "porcentaje": 18.37,
+        "sueldo": null
+      },
+      {
+        "id": 5005004,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6776.99,
+        "porcentaje": 19.57,
+        "sueldo": null
+      },
+      {
+        "id": 5005005,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 8647.94,
+        "porcentaje": 24.97,
+        "sueldo": null
+      },
+      {
+        "id": 5005006,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3866.63,
+        "porcentaje": 11.16,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50049,
+    "descripcion": "Impresión de láminas",
+    "icono": "ESTUDIO",
+    "monto": 18125.48,
+    "fecha": "2026-09-01",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3020.93,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004902,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004903,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004904,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004905,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004906,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3020.91,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50048,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34680.9,
+    "fecha": "2026-08-23",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6936.18,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004802,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 6936.18,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004803,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6936.18,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004804,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6936.18,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004805,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 6936.18,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50047,
+    "descripcion": "Impresión de láminas",
+    "icono": null,
+    "monto": 18173.01,
+    "fecha": "2026-08-21",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3034.91,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5004702,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3027.62,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5004703,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3027.62,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5004704,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3027.62,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5004705,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3027.62,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5004706,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3027.62,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50046,
+    "descripcion": "Presentación final",
+    "icono": "ESTUDIO",
+    "monto": 21665.12,
+    "fecha": "2026-08-19",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3061.1,
+        "porcentaje": 14.13,
+        "sueldo": null
+      },
+      {
+        "id": 5004602,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2533.31,
+        "porcentaje": 11.69,
+        "sueldo": null
+      },
+      {
+        "id": 5004603,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3984.69,
+        "porcentaje": 18.39,
+        "sueldo": null
+      },
+      {
+        "id": 5004604,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4248.58,
+        "porcentaje": 19.61,
+        "sueldo": null
+      },
+      {
+        "id": 5004605,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 5436.07,
+        "porcentaje": 25.09,
+        "sueldo": null
+      },
+      {
+        "id": 5004606,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2401.37,
+        "porcentaje": 11.08,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50045,
+    "descripcion": "Impresión 3D",
+    "icono": null,
+    "monto": 42157.23,
+    "fecha": "2026-08-17",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7026.23,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004502,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7026.2,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004503,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7026.2,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004504,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7026.2,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004505,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 7026.2,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004506,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 7026.2,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50044,
+    "descripcion": "Compra de cartón",
+    "icono": null,
+    "monto": 8749.34,
+    "fecha": "2026-08-15",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1749.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004402,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1749.86,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004403,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1749.86,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004404,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1749.86,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004405,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 1749.86,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50043,
+    "descripcion": "Hosting del proyecto",
+    "icono": "ESTUDIO",
+    "monto": 12141.45,
+    "fecha": "2026-08-13",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2023.6,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004302,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2023.57,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004303,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2023.57,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004304,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2023.57,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004305,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2023.57,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004306,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2023.57,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50042,
+    "descripcion": "Traslado a la facultad",
+    "icono": null,
+    "monto": 9933.56,
+    "fecha": "2026-08-11",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1403.54,
+        "porcentaje": 14.13,
+        "sueldo": null
+      },
+      {
+        "id": 5004202,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1161.53,
+        "porcentaje": 11.69,
+        "sueldo": null
+      },
+      {
+        "id": 5004203,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1827,
+        "porcentaje": 18.39,
+        "sueldo": null
+      },
+      {
+        "id": 5004204,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1947.99,
+        "porcentaje": 19.61,
+        "sueldo": null
+      },
+      {
+        "id": 5004205,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2492.46,
+        "porcentaje": 25.09,
+        "sueldo": null
+      },
+      {
+        "id": 5004206,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1101.04,
+        "porcentaje": 11.08,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50041,
+    "descripcion": "Merienda de estudio",
+    "icono": null,
+    "monto": 14625.67,
+    "fecha": "2026-08-09",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2437.62,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004102,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2437.61,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004103,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2437.61,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004104,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2437.61,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004105,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2437.61,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5004106,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2437.61,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50040,
+    "descripcion": "Encuadernación",
+    "icono": "ESTUDIO",
+    "monto": 16617.78,
+    "fecha": "2026-08-07",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5004001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3323.58,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004002,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3323.55,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004003,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3323.55,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004004,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3323.55,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5004005,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3323.55,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50039,
+    "descripcion": "Suscripción de prototipado",
+    "icono": null,
+    "monto": 24109.89,
+    "fecha": "2026-08-05",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4026.34,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5003902,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4016.71,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5003903,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4016.71,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5003904,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4016.71,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5003905,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4016.71,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5003906,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4016.71,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50038,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34602,
+    "fecha": "2026-08-03",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4888.97,
+        "porcentaje": 14.13,
+        "sueldo": null
+      },
+      {
+        "id": 5003802,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4046.03,
+        "porcentaje": 11.69,
+        "sueldo": null
+      },
+      {
+        "id": 5003803,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6364.07,
+        "porcentaje": 18.39,
+        "sueldo": null
+      },
+      {
+        "id": 5003804,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6785.53,
+        "porcentaje": 19.61,
+        "sueldo": null
+      },
+      {
+        "id": 5003805,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 8682.1,
+        "porcentaje": 25.09,
+        "sueldo": null
+      },
+      {
+        "id": 5003806,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3835.3,
+        "porcentaje": 11.08,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50037,
+    "descripcion": "Impresión de láminas",
+    "icono": "ESTUDIO",
+    "monto": 18094.11,
+    "fecha": "2026-08-01",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3015.71,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003702,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003703,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003704,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003705,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003706,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3015.68,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50036,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34649.53,
+    "fecha": "2026-07-23",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6929.93,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5003602,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 6929.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5003603,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6929.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5003604,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6929.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5003605,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 6929.9,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50035,
+    "descripcion": "Impresión de láminas",
+    "icono": null,
+    "monto": 18141.64,
+    "fecha": "2026-07-21",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3029.64,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5003502,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3022.4,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5003503,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3022.4,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5003504,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3022.4,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5003505,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3022.4,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5003506,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3022.4,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50034,
+    "descripcion": "Presentación final",
+    "icono": "ESTUDIO",
+    "monto": 21633.75,
+    "fecha": "2026-07-19",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3048.54,
+        "porcentaje": 14.09,
+        "sueldo": null
+      },
+      {
+        "id": 5003402,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2513.68,
+        "porcentaje": 11.62,
+        "sueldo": null
+      },
+      {
+        "id": 5003403,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3984.46,
+        "porcentaje": 18.42,
+        "sueldo": null
+      },
+      {
+        "id": 5003404,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4251.87,
+        "porcentaje": 19.65,
+        "sueldo": null
+      },
+      {
+        "id": 5003405,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 5455.23,
+        "porcentaje": 25.22,
+        "sueldo": null
+      },
+      {
+        "id": 5003406,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2379.97,
+        "porcentaje": 11,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50033,
+    "descripcion": "Impresión 3D",
+    "icono": null,
+    "monto": 42125.86,
+    "fecha": "2026-07-17",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7021.01,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003302,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7020.97,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003303,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7020.97,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003304,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7020.97,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003305,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 7020.97,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003306,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 7020.97,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50032,
+    "descripcion": "Compra de cartón",
+    "icono": null,
+    "monto": 8717.97,
+    "fecha": "2026-07-15",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1743.61,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5003202,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1743.59,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5003203,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1743.59,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5003204,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1743.59,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5003205,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 1743.59,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50031,
+    "descripcion": "Hosting del proyecto",
+    "icono": "ESTUDIO",
+    "monto": 12110.08,
+    "fecha": "2026-07-13",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2018.38,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003102,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2018.34,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003103,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2018.34,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003104,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2018.34,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003105,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2018.34,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5003106,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2018.34,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50030,
+    "descripcion": "Traslado a la facultad",
+    "icono": null,
+    "monto": 9902.19,
+    "fecha": "2026-07-11",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5003001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1395.39,
+        "porcentaje": 14.09,
+        "sueldo": null
+      },
+      {
+        "id": 5003002,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1150.56,
+        "porcentaje": 11.62,
+        "sueldo": null
+      },
+      {
+        "id": 5003003,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1823.76,
+        "porcentaje": 18.42,
+        "sueldo": null
+      },
+      {
+        "id": 5003004,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1946.16,
+        "porcentaje": 19.65,
+        "sueldo": null
+      },
+      {
+        "id": 5003005,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2496.96,
+        "porcentaje": 25.22,
+        "sueldo": null
+      },
+      {
+        "id": 5003006,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1089.36,
+        "porcentaje": 11,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50029,
+    "descripcion": "Merienda de estudio",
+    "icono": null,
+    "monto": 14594.3,
+    "fecha": "2026-07-09",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2432.4,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002902,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2432.38,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002903,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2432.38,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002904,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2432.38,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002905,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2432.38,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002906,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2432.38,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50028,
+    "descripcion": "Encuadernación",
+    "icono": "ESTUDIO",
+    "monto": 16586.41,
+    "fecha": "2026-07-07",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3317.29,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002802,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3317.28,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002803,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3317.28,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002804,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3317.28,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002805,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3317.28,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50027,
+    "descripcion": "Suscripción de prototipado",
+    "icono": null,
+    "monto": 24078.52,
+    "fecha": "2026-07-05",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4021.12,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5002702,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4011.48,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5002703,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4011.48,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5002704,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4011.48,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5002705,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4011.48,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5002706,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4011.48,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50026,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34570.63,
+    "fecha": "2026-07-03",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4871.55,
+        "porcentaje": 14.09,
+        "sueldo": null
+      },
+      {
+        "id": 5002602,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4016.85,
+        "porcentaje": 11.62,
+        "sueldo": null
+      },
+      {
+        "id": 5002603,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6367.14,
+        "porcentaje": 18.42,
+        "sueldo": null
+      },
+      {
+        "id": 5002604,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6794.47,
+        "porcentaje": 19.65,
+        "sueldo": null
+      },
+      {
+        "id": 5002605,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 8717.43,
+        "porcentaje": 25.22,
+        "sueldo": null
+      },
+      {
+        "id": 5002606,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3803.19,
+        "porcentaje": 11,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50025,
+    "descripcion": "Impresión de láminas",
+    "icono": "ESTUDIO",
+    "monto": 18062.74,
+    "fecha": "2026-07-01",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3010.49,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002502,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002503,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002504,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002505,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002506,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3010.45,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50024,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34618.16,
+    "fecha": "2026-06-23",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6923.64,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002402,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 6923.63,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002403,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6923.63,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002404,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6923.63,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002405,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 6923.63,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50023,
+    "descripcion": "Impresión de láminas",
+    "icono": null,
+    "monto": 18110.27,
+    "fecha": "2026-06-21",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3024.42,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5002302,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3017.17,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5002303,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3017.17,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5002304,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3017.17,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5002305,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3017.17,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5002306,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3017.17,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50022,
+    "descripcion": "Presentación final",
+    "icono": "ESTUDIO",
+    "monto": 21602.38,
+    "fecha": "2026-06-19",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3035.74,
+        "porcentaje": 14.05,
+        "sueldo": null
+      },
+      {
+        "id": 5002202,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2493.62,
+        "porcentaje": 11.54,
+        "sueldo": null
+      },
+      {
+        "id": 5002203,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3984.37,
+        "porcentaje": 18.44,
+        "sueldo": null
+      },
+      {
+        "id": 5002204,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4255.42,
+        "porcentaje": 19.7,
+        "sueldo": null
+      },
+      {
+        "id": 5002205,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 5475.13,
+        "porcentaje": 25.35,
+        "sueldo": null
+      },
+      {
+        "id": 5002206,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2358.1,
+        "porcentaje": 10.92,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50021,
+    "descripcion": "Impresión 3D",
+    "icono": null,
+    "monto": 42094.49,
+    "fecha": "2026-06-17",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7015.79,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002102,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7015.74,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002103,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7015.74,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002104,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7015.74,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002105,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 7015.74,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5002106,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 7015.74,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50020,
+    "descripcion": "Compra de cartón",
+    "icono": null,
+    "monto": 8686.6,
+    "fecha": "2026-06-15",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5002001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1737.32,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002002,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1737.32,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002003,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1737.32,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002004,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1737.32,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5002005,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 1737.32,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50019,
+    "descripcion": "Hosting del proyecto",
+    "icono": "ESTUDIO",
+    "monto": 12078.71,
+    "fecha": "2026-06-13",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2013.16,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001902,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2013.11,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001903,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2013.11,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001904,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2013.11,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001905,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2013.11,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001906,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2013.11,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50018,
+    "descripcion": "Traslado a la facultad",
+    "icono": null,
+    "monto": 9870.82,
+    "fecha": "2026-06-11",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1387.13,
+        "porcentaje": 14.05,
+        "sueldo": null
+      },
+      {
+        "id": 5001802,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1139.41,
+        "porcentaje": 11.54,
+        "sueldo": null
+      },
+      {
+        "id": 5001803,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1820.59,
+        "porcentaje": 18.44,
+        "sueldo": null
+      },
+      {
+        "id": 5001804,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1944.44,
+        "porcentaje": 19.7,
+        "sueldo": null
+      },
+      {
+        "id": 5001805,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2501.76,
+        "porcentaje": 25.35,
+        "sueldo": null
+      },
+      {
+        "id": 5001806,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1077.49,
+        "porcentaje": 10.92,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50017,
+    "descripcion": "Merienda de estudio",
+    "icono": null,
+    "monto": 14562.93,
+    "fecha": "2026-06-09",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2427.18,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001702,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2427.15,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001703,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2427.15,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001704,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2427.15,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001705,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2427.15,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001706,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2427.15,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50016,
+    "descripcion": "Encuadernación",
+    "icono": "ESTUDIO",
+    "monto": 16555.04,
+    "fecha": "2026-06-07",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3311.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5001602,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3311,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5001603,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3311,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5001604,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3311,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5001605,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3311,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50015,
+    "descripcion": "Suscripción de prototipado",
+    "icono": null,
+    "monto": 24047.15,
+    "fecha": "2026-06-05",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4015.85,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5001502,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4006.26,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5001503,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4006.26,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5001504,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4006.26,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5001505,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4006.26,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5001506,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4006.26,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50014,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34539.26,
+    "fecha": "2026-06-03",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4853.72,
+        "porcentaje": 14.05,
+        "sueldo": null
+      },
+      {
+        "id": 5001402,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3986.96,
+        "porcentaje": 11.54,
+        "sueldo": null
+      },
+      {
+        "id": 5001403,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6370.47,
+        "porcentaje": 18.44,
+        "sueldo": null
+      },
+      {
+        "id": 5001404,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6803.84,
+        "porcentaje": 19.7,
+        "sueldo": null
+      },
+      {
+        "id": 5001405,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 8753.99,
+        "porcentaje": 25.35,
+        "sueldo": null
+      },
+      {
+        "id": 5001406,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3770.28,
+        "porcentaje": 10.92,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50013,
+    "descripcion": "Impresión de láminas",
+    "icono": "ESTUDIO",
+    "monto": 18031.37,
+    "fecha": "2026-06-01",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3005.27,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001302,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001303,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001304,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001305,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5001306,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3005.22,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50012,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34586.79,
+    "fecha": "2026-05-23",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6917.39,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5001202,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 6917.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5001203,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6917.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5001204,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6917.35,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5001205,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 6917.35,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50011,
+    "descripcion": "Impresión de láminas",
+    "icono": null,
+    "monto": 18078.9,
+    "fecha": "2026-05-21",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3019.2,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5001102,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3011.94,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5001103,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3011.94,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5001104,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3011.94,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5001105,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3011.94,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5001106,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3011.94,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50010,
+    "descripcion": "Presentación final",
+    "icono": "ESTUDIO",
+    "monto": 21571.01,
+    "fecha": "2026-05-19",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5001001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3022.72,
+        "porcentaje": 14.01,
+        "sueldo": null
+      },
+      {
+        "id": 5001002,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2473.1,
+        "porcentaje": 11.46,
+        "sueldo": null
+      },
+      {
+        "id": 5001003,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3984.45,
+        "porcentaje": 18.47,
+        "sueldo": null
+      },
+      {
+        "id": 5001004,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4259.24,
+        "porcentaje": 19.75,
+        "sueldo": null
+      },
+      {
+        "id": 5001005,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 5495.79,
+        "porcentaje": 25.48,
+        "sueldo": null
+      },
+      {
+        "id": 5001006,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2335.71,
+        "porcentaje": 10.83,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50009,
+    "descripcion": "Impresión 3D",
+    "icono": null,
+    "monto": 42063.12,
+    "fecha": "2026-05-17",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7010.52,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000902,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 7010.52,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000903,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7010.52,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000904,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 7010.52,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000905,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 7010.52,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000906,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 7010.52,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50008,
+    "descripcion": "Compra de cartón",
+    "icono": null,
+    "monto": 8655.23,
+    "fecha": "2026-05-15",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1731.07,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5000802,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1731.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5000803,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1731.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5000804,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1731.04,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5000805,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 1731.04,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50007,
+    "descripcion": "Hosting del proyecto",
+    "icono": "ESTUDIO",
+    "monto": 12047.34,
+    "fecha": "2026-05-13",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2007.89,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000702,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2007.89,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000703,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2007.89,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000704,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2007.89,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000705,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2007.89,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000706,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2007.89,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50006,
+    "descripcion": "Traslado a la facultad",
+    "icono": null,
+    "monto": 9839.45,
+    "fecha": "2026-05-11",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 9,
+    "pagadorNombre": "Mateo Herrera",
+    "pagadorEmail": "mateo@example.test",
+    "categoriaId": 3,
+    "categoriaNombre": "Transporte",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 1378.81,
+        "porcentaje": 14.01,
+        "sueldo": null
+      },
+      {
+        "id": 5000602,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 1128.08,
+        "porcentaje": 11.46,
+        "sueldo": null
+      },
+      {
+        "id": 5000603,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 1817.47,
+        "porcentaje": 18.47,
+        "sueldo": null
+      },
+      {
+        "id": 5000604,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 1942.82,
+        "porcentaje": 19.75,
+        "sueldo": null
+      },
+      {
+        "id": 5000605,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2506.86,
+        "porcentaje": 25.48,
+        "sueldo": null
+      },
+      {
+        "id": 5000606,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 1065.41,
+        "porcentaje": 10.83,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50005,
+    "descripcion": "Merienda de estudio",
+    "icono": null,
+    "monto": 14531.56,
+    "fecha": "2026-05-09",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 7,
+    "pagadorNombre": "Nicolás Romero",
+    "pagadorEmail": "nicolas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2421.96,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000502,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 2421.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000503,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 2421.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000504,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 2421.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000505,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 2421.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000506,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 2421.92,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50004,
+    "descripcion": "Encuadernación",
+    "icono": "ESTUDIO",
+    "monto": 16523.67,
+    "fecha": "2026-05-07",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3304.75,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5000402,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3304.73,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5000403,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3304.73,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5000404,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3304.73,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 5000405,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3304.73,
+        "porcentaje": 20,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50003,
+    "descripcion": "Suscripción de prototipado",
+    "icono": null,
+    "monto": 24015.78,
+    "fecha": "2026-05-05",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 3,
+    "pagadorNombre": "Sol García",
+    "pagadorEmail": "sol@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4010.63,
+        "porcentaje": 16.7,
+        "sueldo": null
+      },
+      {
+        "id": 5000302,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 4001.03,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5000303,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4001.03,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5000304,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 4001.03,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5000305,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 4001.03,
+        "porcentaje": 16.66,
+        "sueldo": null
+      },
+      {
+        "id": 5000306,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 4001.03,
+        "porcentaje": 16.66,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50002,
+    "descripcion": "Materiales para maqueta",
+    "icono": null,
+    "monto": 34507.89,
+    "fecha": "2026-05-03",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4835.54,
+        "porcentaje": 14.01,
+        "sueldo": null
+      },
+      {
+        "id": 5000202,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3956.31,
+        "porcentaje": 11.46,
+        "sueldo": null
+      },
+      {
+        "id": 5000203,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 6374.06,
+        "porcentaje": 18.47,
+        "sueldo": null
+      },
+      {
+        "id": 5000204,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 6813.65,
+        "porcentaje": 19.75,
+        "sueldo": null
+      },
+      {
+        "id": 5000205,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 8791.81,
+        "porcentaje": 25.48,
+        "sueldo": null
+      },
+      {
+        "id": 5000206,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3736.52,
+        "porcentaje": 10.83,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 50001,
+    "descripcion": "Impresión de láminas",
+    "icono": "ESTUDIO",
+    "monto": 18000,
+    "fecha": "2026-05-01",
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "pagadorId": 12,
+    "pagadorNombre": "Emilia Vega",
+    "pagadorEmail": "emilia@example.test",
+    "categoriaId": 9,
+    "categoriaNombre": "Estudio",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 5000101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000102,
+        "usuarioId": 3,
+        "usuarioNombre": "Sol García",
+        "usuarioEmail": "sol@example.test",
+        "importe": 3000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000103,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000104,
+        "usuarioId": 7,
+        "usuarioNombre": "Nicolás Romero",
+        "usuarioEmail": "nicolas@example.test",
+        "importe": 3000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000105,
+        "usuarioId": 9,
+        "usuarioNombre": "Mateo Herrera",
+        "usuarioEmail": "mateo@example.test",
+        "importe": 3000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      },
+      {
+        "id": 5000106,
+        "usuarioId": 12,
+        "usuarioNombre": "Emilia Vega",
+        "usuarioEmail": "emilia@example.test",
+        "importe": 3000,
+        "porcentaje": 16.67,
+        "sueldo": null
+      }
+    ]
+  }
+]

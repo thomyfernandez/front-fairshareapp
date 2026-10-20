@@ -1,8 +1,8 @@
 import { Button } from './Button'
 import { Icon } from './Icon'
 
-export function Card({ as: Tag = 'section', className = '', children, ...props }) {
-  return <Tag className={`ui-card ${className}`} {...props}>{children}</Tag>
+export function Card({ as: Tag = 'section', variant = 'default', className = '', children, ...props }) {
+  return <Tag className={`ui-card ui-card--${variant} ${className}`} {...props}>{children}</Tag>
 }
 export function Badge({ tone = 'neutral', children }) {
   return <span className={`ui-badge ui-badge--${tone}`}>{children}</span>

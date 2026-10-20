@@ -43,7 +43,7 @@ export default function SpacesPage() {
   }
 
   return (
-    <div className="spaces-page">
+    <div className="feature-page spaces-page">
       <PageHeader
         eyebrow="UN LUGAR PARA CADA GRUPO"
         title="Mis espacios"

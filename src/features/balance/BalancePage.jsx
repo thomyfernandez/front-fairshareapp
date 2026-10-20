@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Empty, Modal, PageHeader, ResourceState } from '../../components/ui'
+import { Button, Empty, Modal, PageHeader, ResourceState } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
 import { useWorkspace } from '../../app/useWorkspace'
 import { BalanceSummary } from './BalanceSummary'
@@ -33,14 +33,14 @@ export default function BalancePage() {
   }
 
   return (
-    <div className="legacy-feature">
+    <div className="legacy-feature feature-page balance-page">
       <PageHeader
         title="Balance y pagos"
         description="Mirá quién le debe a quién en este espacio y registrá los pagos a medida que se resuelven."
-        actions={<button disabled={busy} className="secondary" onClick={() => run(() => refresh())}>Actualizar balance</button>}
+        actions={<Button variant="ghost" disabled={busy} onClick={() => run(() => refresh())}>Actualizar balance</Button>}
       />
       <ResourceState resource={resource}>
-        <section className="card">
+        <section className="balance-content">
           <BalanceSummary debts={debts} userId={userId} />
           {sortByRelevance(debts, userId).map(debt => (
             <DebtCard

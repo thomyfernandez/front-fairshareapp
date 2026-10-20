@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Badge, Button, Icon, LoadingState, Modal } from '../../components/ui'
 import { dateLabel, money } from '../../lib/format'
+import { expenseIcon } from '../../components/ui/expense-icons'
 import { useWorkspace } from '../../app/useWorkspace'
 
 /**
@@ -19,6 +20,7 @@ export function ExpenseDetail({
   api: propApi,
   open = true,
   onClose,
+  onRepeat,
   asModal = true,
 }) {
   const workspace = useWorkspace()
@@ -113,7 +115,7 @@ export function ExpenseDetail({
                 {money(gasto.monto)}
               </strong>
               <span className="text-xs text-secondary block mt-1">
-                Registrado el {dateLabel(gasto.fecha)}
+                Fecha del gasto: {dateLabel(gasto.fecha)}
               </span>
             </div>
 
@@ -127,7 +129,7 @@ export function ExpenseDetail({
                     : 'neutral'
                 }
               >
-                {gasto.estado === 'LIQUIDADO' ? 'Liquidado' : 'Pendiente de balance'}
+                {gasto.estado === 'LIQUIDADO' ? 'Liquidado' : 'Pendiente de liquidar'}
               </Badge>
               <Badge tone="brand">
                 Reparto: {gasto.tipoReparto || gasto.regla || 'EQUITATIVA'}
@@ -198,7 +200,7 @@ export function ExpenseDetail({
                           {nombre.slice(0, 2).toUpperCase()}
                         </span>
                         <div className="min-w-0">
-                          <span className="text-sm font-medium text-primary block truncate">
+                          <span className="text-sm font-medium text-primary block break-words">
                             {nombre}
                           </span>
                           <span className="text-xs text-secondary">
@@ -242,12 +244,12 @@ export function ExpenseDetail({
     <Modal
       open={open}
       onClose={onClose}
-      title={gasto?.descripcion || 'Detalle del gasto'}
+      title={<span className="expense-detail-title"><Icon name={expenseIcon(gasto?.categoriaNombre, gasto?.descripcion, gasto?.icono)} size={24} />{gasto?.descripcion || 'Detalle del gasto'}</span>}
       description="Desglose del pago y distribución entre miembros."
       footer={
-        <Button variant="secondary" onClick={onClose}>
+        <>{onRepeat && <Button disabled={loading || Boolean(error) || !gasto} onClick={() => onRepeat(gasto)}><Icon name="repeat" size={16} />Repetir gasto</Button>}<Button variant="secondary" onClick={onClose}>
           Cerrar detalle
-        </Button>
+        </Button></>
       }
     >
       {content}

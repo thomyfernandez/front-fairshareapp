@@ -1,0 +1,20 @@
+[
+  {
+    "id": 601,
+    "espacioId": 6,
+    "usuarioId": 1,
+    "nombreUsuario": "Ana Ruiz",
+    "emailUsuario": "demo@fairshare.test",
+    "rol": "ADMIN",
+    "sueldoDeclarado": 1200000
+  },
+  {
+    "id": 602,
+    "espacioId": 6,
+    "usuarioId": 2,
+    "nombreUsuario": "Thomas Fernandez",
+    "emailUsuario": "thomas@example.test",
+    "rol": "MIEMBRO",
+    "sueldoDeclarado": 1800000
+  }
+]

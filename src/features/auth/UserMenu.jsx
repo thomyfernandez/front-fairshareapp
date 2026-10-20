@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router'
 import { Button, Icon } from '../../components/ui'
 import { useSession } from './useSession'
 
-export function UserMenu() {
+export function UserMenu({ compact = false }) {
   const { session, signOut } = useSession()
   const { pathname } = useLocation()
   const navigate = useNavigate()
@@ -22,8 +22,8 @@ export function UserMenu() {
     event.currentTarget.removeAttribute('open')
     event.currentTarget.querySelector('summary')?.focus()
   }
-  return <details ref={menu} className="account-menu" onKeyDown={closeWithEscape}>
-    <summary aria-label={`Cuenta de ${name}`}><span className="avatar" aria-hidden="true">{name.slice(0, 1).toUpperCase()}</span><span className="account-name">{name}</span></summary>
+  return <details ref={menu} className={`account-menu${compact ? ' account-menu--compact' : ''}`} onKeyDown={closeWithEscape}>
+    <summary aria-label={`Cuenta de ${name}`}>{compact ? 'Mi cuenta' : <><span className="avatar" aria-hidden="true">{name.slice(0, 1).toUpperCase()}</span><span className="account-name">{name}</span></>}</summary>
     <div className="account-menu__panel">
       <strong>{fullName}</strong>
       {usuario?.email && <span>{usuario.email}</span>}

@@ -1,0 +1,210 @@
+[
+  {
+    "id": 9,
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "montoTotal": 962520.74,
+    "fechaLiquidacion": "2026-05-28",
+    "mes": 5,
+    "anio": 2026,
+    "descripcion": "Cierre de viaje al sur",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      20001,
+      20002,
+      20003,
+      20004,
+      20005,
+      20006,
+      20007,
+      20008,
+      20009,
+      20010,
+      20011,
+      20012
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 962520.74,
+      "presupuestoAnterior": 6322843.82,
+      "presupuestoRestante": 5360323.08,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-05-28"
+    }
+  },
+  {
+    "id": 10,
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "montoTotal": 962897.18,
+    "fechaLiquidacion": "2026-06-28",
+    "mes": 6,
+    "anio": 2026,
+    "descripcion": "Cierre de viaje al sur",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      20013,
+      20014,
+      20015,
+      20016,
+      20017,
+      20018,
+      20019,
+      20020,
+      20021,
+      20022,
+      20023,
+      20024
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 962897.18,
+      "presupuestoAnterior": 5360323.08,
+      "presupuestoRestante": 4397425.9,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-06-28"
+    }
+  },
+  {
+    "id": 11,
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "montoTotal": 963273.62,
+    "fechaLiquidacion": "2026-07-28",
+    "mes": 7,
+    "anio": 2026,
+    "descripcion": "Cierre de viaje al sur",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      20025,
+      20026,
+      20027,
+      20028,
+      20029,
+      20030,
+      20031,
+      20032,
+      20033,
+      20034,
+      20035,
+      20036
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 963273.62,
+      "presupuestoAnterior": 4397425.9,
+      "presupuestoRestante": 3434152.28,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-07-28"
+    }
+  },
+  {
+    "id": 12,
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "montoTotal": 963650.06,
+    "fechaLiquidacion": "2026-08-28",
+    "mes": 8,
+    "anio": 2026,
+    "descripcion": "Cierre de viaje al sur",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      20037,
+      20038,
+      20039,
+      20040,
+      20041,
+      20042,
+      20043,
+      20044,
+      20045,
+      20046,
+      20047,
+      20048
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 963650.06,
+      "presupuestoAnterior": 3434152.28,
+      "presupuestoRestante": 2470502.22,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-08-28"
+    }
+  },
+  {
+    "id": 13,
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "montoTotal": 964026.5,
+    "fechaLiquidacion": "2026-09-28",
+    "mes": 9,
+    "anio": 2026,
+    "descripcion": "Cierre de viaje al sur",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      20049,
+      20050,
+      20051,
+      20052,
+      20053,
+      20054,
+      20055,
+      20056,
+      20057,
+      20058,
+      20059,
+      20060
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 964026.5,
+      "presupuestoAnterior": 2470502.22,
+      "presupuestoRestante": 1506475.72,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-09-28"
+    }
+  },
+  {
+    "id": 14,
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "montoTotal": 415674.74,
+    "fechaLiquidacion": "2026-10-06",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de viaje al sur",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      20061,
+      20062,
+      20063,
+      20064
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 415674.74,
+      "presupuestoAnterior": 1506475.72,
+      "presupuestoRestante": 1090800.98,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-06"
+    }
+  },
+  {
+    "id": 15,
+    "espacioId": 2,
+    "espacioNombre": "Viaje al sur",
+    "montoTotal": 140800.98,
+    "fechaLiquidacion": "2026-10-10",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de viaje al sur",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      20065,
+      20066,
+      20067,
+      20068
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 140800.98,
+      "presupuestoAnterior": 1090800.98,
+      "presupuestoRestante": 950000,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-10"
+    }
+  }
+]

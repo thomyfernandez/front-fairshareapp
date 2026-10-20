@@ -27,8 +27,13 @@ export function Modal({ open, onClose, title, description, children, className =
   return createPortal(<dialog ref={ref} tabIndex={-1} className={`ui-modal ${className}`} aria-labelledby={titleId} aria-describedby={description ? descriptionId : undefined}
     onKeyDown={event => {
       if (event.key !== 'Tab') return
-      const controls = [...ref.current.querySelectorAll('button, a[href], input, select, textarea, [tabindex]')]
-        .filter(element => !element.disabled && element.tabIndex >= 0 && !element.closest('[hidden]'))
+      const controls = [...ref.current.querySelectorAll('button, a[href], input, select, textarea, summary, [tabindex]')]
+        .filter(element => {
+          if (element.disabled || element.tabIndex < 0 || element.closest('[hidden]')) return false
+          // Un details cerrado conserva solo su summary en el recorrido del teclado.
+          const collapsed = element.closest('details:not([open])')
+          return !collapsed || collapsed.querySelector('summary') === element
+        })
       const first = controls[0]
       const last = controls.at(-1)
       if (!first) { event.preventDefault(); ref.current.focus(); return }

@@ -29,3 +29,14 @@ it('does not dismiss an operation when dismissal is disabled', () => {
   fireEvent(screen.getByRole('dialog'), new Event('cancel', { cancelable: true }))
   expect(close).not.toHaveBeenCalled()
 })
+
+
+it('cycles through disclosure summaries without focusing links inside collapsed menus', () => {
+  render(<Modal open title="Navegación" onClose={() => {}}><a href="/inicio">Inicio</a><details><summary>Cuenta</summary><button>Cerrar sesión</button></details></Modal>)
+  const summary = screen.getByText('Cuenta')
+  summary.focus()
+  fireEvent.keyDown(summary, { key: 'Tab' })
+  expect(screen.getByRole('button', { name: 'Cerrar diálogo' })).toHaveFocus()
+  fireEvent.keyDown(screen.getByRole('button', { name: 'Cerrar diálogo' }), { key: 'Tab', shiftKey: true })
+  expect(summary).toHaveFocus()
+})

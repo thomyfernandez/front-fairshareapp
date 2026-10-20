@@ -1,0 +1,210 @@
+[
+  {
+    "id": 30,
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "montoTotal": 254420.74,
+    "fechaLiquidacion": "2026-05-28",
+    "mes": 5,
+    "anio": 2026,
+    "descripcion": "Cierre de proyecto final",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      50001,
+      50002,
+      50003,
+      50004,
+      50005,
+      50006,
+      50007,
+      50008,
+      50009,
+      50010,
+      50011,
+      50012
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 254420.74,
+      "presupuestoAnterior": 1765243.82,
+      "presupuestoRestante": 1510823.08,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-05-28"
+    }
+  },
+  {
+    "id": 31,
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "montoTotal": 254797.18,
+    "fechaLiquidacion": "2026-06-28",
+    "mes": 6,
+    "anio": 2026,
+    "descripcion": "Cierre de proyecto final",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      50013,
+      50014,
+      50015,
+      50016,
+      50017,
+      50018,
+      50019,
+      50020,
+      50021,
+      50022,
+      50023,
+      50024
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 254797.18,
+      "presupuestoAnterior": 1510823.08,
+      "presupuestoRestante": 1256025.9,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-06-28"
+    }
+  },
+  {
+    "id": 32,
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "montoTotal": 255173.62,
+    "fechaLiquidacion": "2026-07-28",
+    "mes": 7,
+    "anio": 2026,
+    "descripcion": "Cierre de proyecto final",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      50025,
+      50026,
+      50027,
+      50028,
+      50029,
+      50030,
+      50031,
+      50032,
+      50033,
+      50034,
+      50035,
+      50036
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 255173.62,
+      "presupuestoAnterior": 1256025.9,
+      "presupuestoRestante": 1000852.28,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-07-28"
+    }
+  },
+  {
+    "id": 33,
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "montoTotal": 255550.06,
+    "fechaLiquidacion": "2026-08-28",
+    "mes": 8,
+    "anio": 2026,
+    "descripcion": "Cierre de proyecto final",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      50037,
+      50038,
+      50039,
+      50040,
+      50041,
+      50042,
+      50043,
+      50044,
+      50045,
+      50046,
+      50047,
+      50048
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 255550.06,
+      "presupuestoAnterior": 1000852.28,
+      "presupuestoRestante": 745302.22,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-08-28"
+    }
+  },
+  {
+    "id": 34,
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "montoTotal": 255926.5,
+    "fechaLiquidacion": "2026-09-28",
+    "mes": 9,
+    "anio": 2026,
+    "descripcion": "Cierre de proyecto final",
+    "cantidadGastos": 12,
+    "gastosLiquidadosIds": [
+      50049,
+      50050,
+      50051,
+      50052,
+      50053,
+      50054,
+      50055,
+      50056,
+      50057,
+      50058,
+      50059,
+      50060
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 255926.5,
+      "presupuestoAnterior": 745302.22,
+      "presupuestoRestante": 489375.72,
+      "cantidadGastosCerrados": 12,
+      "fechaCierre": "2026-09-28"
+    }
+  },
+  {
+    "id": 35,
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "montoTotal": 93674.74,
+    "fechaLiquidacion": "2026-10-06",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de proyecto final",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      50061,
+      50062,
+      50063,
+      50064
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 93674.74,
+      "presupuestoAnterior": 489375.72,
+      "presupuestoRestante": 395700.98,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-06"
+    }
+  },
+  {
+    "id": 36,
+    "espacioId": 5,
+    "espacioNombre": "Proyecto final",
+    "montoTotal": 45700.98,
+    "fechaLiquidacion": "2026-10-10",
+    "mes": 10,
+    "anio": 2026,
+    "descripcion": "Cierre de proyecto final",
+    "cantidadGastos": 4,
+    "gastosLiquidadosIds": [
+      50065,
+      50066,
+      50067,
+      50068
+    ],
+    "resumenCierre": {
+      "totalLiquidado": 45700.98,
+      "presupuestoAnterior": 395700.98,
+      "presupuestoRestante": 350000,
+      "cantidadGastosCerrados": 4,
+      "fechaCierre": "2026-10-10"
+    }
+  }
+]

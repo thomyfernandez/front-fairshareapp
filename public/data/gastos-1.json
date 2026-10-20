@@ -1,0 +1,4250 @@
+[
+  {
+    "id": 10080,
+    "descripcion": "Expensas",
+    "icono": null,
+    "monto": 92806.76,
+    "fecha": "2026-10-19",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1008001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 30935.6,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1008002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 30935.58,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1008003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 30935.58,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10079,
+    "descripcion": "Delivery del viernes",
+    "icono": "COMIDAS",
+    "monto": 28898.87,
+    "fecha": "2026-10-18",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7224.71,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7224.72,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7224.72,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7224.72,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10078,
+    "descripcion": "Ferretería",
+    "icono": null,
+    "monto": 15770.98,
+    "fecha": "2026-10-17",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 3207.67,
+        "porcentaje": 20.34,
+        "sueldo": null
+      },
+      {
+        "id": 1007802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4811.48,
+        "porcentaje": 30.51,
+        "sueldo": null
+      },
+      {
+        "id": 1007803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 3608.61,
+        "porcentaje": 22.88,
+        "sueldo": null
+      },
+      {
+        "id": 1007804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4143.22,
+        "porcentaje": 26.27,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10077,
+    "descripcion": "Artículos de limpieza",
+    "icono": null,
+    "monto": 22683.09,
+    "fecha": "2026-10-16",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5670.78,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5670.77,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5670.77,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 5670.77,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10076,
+    "descripcion": "Internet",
+    "icono": "INTERNET",
+    "monto": 32275.2,
+    "fecha": "2026-10-15",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 2,
+    "categoriaNombre": "Internet",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 10758.4,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1007602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10758.4,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1007603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 10758.4,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10075,
+    "descripcion": "Gas",
+    "icono": null,
+    "monto": 18617.31,
+    "fecha": "2026-10-14",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4654.35,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4654.32,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4654.32,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4654.32,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10074,
+    "descripcion": "Luz",
+    "icono": null,
+    "monto": 34825.42,
+    "fecha": "2026-10-13",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7083.15,
+        "porcentaje": 20.34,
+        "sueldo": null
+      },
+      {
+        "id": 1007402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 10624.7,
+        "porcentaje": 30.51,
+        "sueldo": null
+      },
+      {
+        "id": 1007403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7968.52,
+        "porcentaje": 22.88,
+        "sueldo": null
+      },
+      {
+        "id": 1007404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 9149.05,
+        "porcentaje": 26.27,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10073,
+    "descripcion": "Alquiler",
+    "icono": "HOGAR",
+    "monto": 450251.53,
+    "fecha": "2026-10-12",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 112562.89,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 112562.88,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 112562.88,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 112562.88,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10072,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12993.64,
+    "fecha": "2026-10-11",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4331.22,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1007202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4331.21,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1007203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4331.21,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10071,
+    "descripcion": "Coto",
+    "icono": null,
+    "monto": 45435.75,
+    "fecha": "2026-10-10",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11358.93,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11358.94,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11358.94,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1007104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11358.94,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10070,
+    "descripcion": "Expensas",
+    "icono": "HOGAR",
+    "monto": 92727.86,
+    "fecha": "2026-10-09",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1007001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18859.92,
+        "porcentaje": 20.34,
+        "sueldo": null
+      },
+      {
+        "id": 1007002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 28289.85,
+        "porcentaje": 30.51,
+        "sueldo": null
+      },
+      {
+        "id": 1007003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 21217.39,
+        "porcentaje": 22.88,
+        "sueldo": null
+      },
+      {
+        "id": 1007004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 24360.7,
+        "porcentaje": 26.27,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10069,
+    "descripcion": "Delivery del viernes",
+    "icono": null,
+    "monto": 28819.97,
+    "fecha": "2026-10-08",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 1006901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7205,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7204.99,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7204.99,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7204.99,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "descripcion": "Coto",
+    "icono": null,
+    "monto": 23232,
+    "fecha": "2026-10-08",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 10201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11616,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 10202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11616,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "descripcion": "DIA",
+    "icono": null,
+    "monto": 231232,
+    "fecha": "2026-10-08",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "PENDIENTE",
+    "participantes": [
+      {
+        "id": 10101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 115616,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 10102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 115616,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10068,
+    "descripcion": "Ferretería",
+    "icono": null,
+    "monto": 15692.08,
+    "fecha": "2026-10-07",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5230.7,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1006802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5230.69,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1006803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5230.69,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10067,
+    "descripcion": "Artículos de limpieza",
+    "icono": "HOGAR",
+    "monto": 22604.19,
+    "fecha": "2026-10-06",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5651.07,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5651.04,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5651.04,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 5651.04,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10066,
+    "descripcion": "Internet",
+    "icono": null,
+    "monto": 32196.3,
+    "fecha": "2026-10-05",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 2,
+    "categoriaNombre": "Internet",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6548.4,
+        "porcentaje": 20.34,
+        "sueldo": null
+      },
+      {
+        "id": 1006602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9822.6,
+        "porcentaje": 30.51,
+        "sueldo": null
+      },
+      {
+        "id": 1006603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7366.95,
+        "porcentaje": 22.88,
+        "sueldo": null
+      },
+      {
+        "id": 1006604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8458.35,
+        "porcentaje": 26.27,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10065,
+    "descripcion": "Gas",
+    "icono": null,
+    "monto": 18538.41,
+    "fecha": "2026-10-04",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4634.61,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4634.6,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4634.6,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4634.6,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10064,
+    "descripcion": "Luz",
+    "icono": "SERVICIOS",
+    "monto": 34746.52,
+    "fecha": "2026-10-03",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11582.18,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1006402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11582.17,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1006403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11582.17,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10063,
+    "descripcion": "Alquiler",
+    "icono": null,
+    "monto": 450172.63,
+    "fecha": "2026-10-02",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 112543.15,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 112543.16,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 112543.16,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 112543.16,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "descripcion": "Internet",
+    "icono": null,
+    "monto": 32000,
+    "fecha": "2026-10-02",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 2,
+    "categoriaNombre": "Internet",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 10301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 16000,
+        "porcentaje": 50,
+        "sueldo": null
+      },
+      {
+        "id": 10302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 16000,
+        "porcentaje": 50,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10062,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12914.74,
+    "fecha": "2026-10-01",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2626.74,
+        "porcentaje": 20.34,
+        "sueldo": null
+      },
+      {
+        "id": 1006202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3940.09,
+        "porcentaje": 30.51,
+        "sueldo": null
+      },
+      {
+        "id": 1006203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2955.06,
+        "porcentaje": 22.88,
+        "sueldo": null
+      },
+      {
+        "id": 1006204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3392.85,
+        "porcentaje": 26.27,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10061,
+    "descripcion": "Coto",
+    "icono": "COMPRAS",
+    "monto": 45356.85,
+    "fecha": "2026-10-01",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11339.22,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11339.21,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11339.21,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1006104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11339.21,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10060,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12962.27,
+    "fecha": "2026-09-23",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1006001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4320.77,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1006002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4320.75,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1006003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4320.75,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10059,
+    "descripcion": "Coto",
+    "icono": null,
+    "monto": 45404.38,
+    "fecha": "2026-09-21",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11351.08,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11351.1,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11351.1,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11351.1,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10058,
+    "descripcion": "Expensas",
+    "icono": "HOGAR",
+    "monto": 92696.49,
+    "fecha": "2026-09-19",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18794.15,
+        "porcentaje": 20.27,
+        "sueldo": null
+      },
+      {
+        "id": 1005802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 28350.47,
+        "porcentaje": 30.58,
+        "sueldo": null
+      },
+      {
+        "id": 1005803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 21183.21,
+        "porcentaje": 22.85,
+        "sueldo": null
+      },
+      {
+        "id": 1005804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 24368.66,
+        "porcentaje": 26.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10057,
+    "descripcion": "Delivery del viernes",
+    "icono": null,
+    "monto": 28788.6,
+    "fecha": "2026-09-17",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7197.15,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7197.15,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7197.15,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7197.15,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10056,
+    "descripcion": "Ferretería",
+    "icono": null,
+    "monto": 15660.71,
+    "fecha": "2026-09-15",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5220.25,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1005602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5220.23,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1005603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5220.23,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10055,
+    "descripcion": "Artículos de limpieza",
+    "icono": "HOGAR",
+    "monto": 22572.82,
+    "fecha": "2026-09-13",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5643.22,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5643.2,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5643.2,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 5643.2,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10054,
+    "descripcion": "Internet",
+    "icono": null,
+    "monto": 32164.93,
+    "fecha": "2026-09-11",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 2,
+    "categoriaNombre": "Internet",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6521.43,
+        "porcentaje": 20.27,
+        "sueldo": null
+      },
+      {
+        "id": 1005402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9837.38,
+        "porcentaje": 30.58,
+        "sueldo": null
+      },
+      {
+        "id": 1005403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7350.4,
+        "porcentaje": 22.85,
+        "sueldo": null
+      },
+      {
+        "id": 1005404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8455.72,
+        "porcentaje": 26.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10053,
+    "descripcion": "Gas",
+    "icono": null,
+    "monto": 18507.04,
+    "fecha": "2026-09-09",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4626.76,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4626.76,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4626.76,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4626.76,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10052,
+    "descripcion": "Luz",
+    "icono": "SERVICIOS",
+    "monto": 34715.15,
+    "fecha": "2026-09-07",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11571.73,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1005202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11571.71,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1005203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11571.71,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10051,
+    "descripcion": "Alquiler",
+    "icono": null,
+    "monto": 450141.26,
+    "fecha": "2026-09-05",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 112535.3,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 112535.32,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 112535.32,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1005104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 112535.32,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10050,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12883.37,
+    "fecha": "2026-09-03",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1005001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2612.11,
+        "porcentaje": 20.27,
+        "sueldo": null
+      },
+      {
+        "id": 1005002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3940.27,
+        "porcentaje": 30.58,
+        "sueldo": null
+      },
+      {
+        "id": 1005003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2944.13,
+        "porcentaje": 22.85,
+        "sueldo": null
+      },
+      {
+        "id": 1005004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3386.86,
+        "porcentaje": 26.29,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10049,
+    "descripcion": "Coto",
+    "icono": "COMPRAS",
+    "monto": 45325.48,
+    "fecha": "2026-09-01",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11331.37,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11331.37,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11331.37,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11331.37,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10048,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12930.9,
+    "fecha": "2026-08-23",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4310.3,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1004802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4310.3,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1004803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4310.3,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10047,
+    "descripcion": "Coto",
+    "icono": null,
+    "monto": 45373.01,
+    "fecha": "2026-08-21",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11343.26,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11343.25,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11343.25,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11343.25,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10046,
+    "descripcion": "Expensas",
+    "icono": "HOGAR",
+    "monto": 92665.12,
+    "fecha": "2026-08-19",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18726.76,
+        "porcentaje": 20.21,
+        "sueldo": null
+      },
+      {
+        "id": 1004602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 28412.99,
+        "porcentaje": 30.66,
+        "sueldo": null
+      },
+      {
+        "id": 1004603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 21148.31,
+        "porcentaje": 22.82,
+        "sueldo": null
+      },
+      {
+        "id": 1004604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 24377.06,
+        "porcentaje": 26.31,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10045,
+    "descripcion": "Delivery del viernes",
+    "icono": null,
+    "monto": 28757.23,
+    "fecha": "2026-08-17",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7189.33,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7189.3,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7189.3,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7189.3,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10044,
+    "descripcion": "Ferretería",
+    "icono": null,
+    "monto": 15629.34,
+    "fecha": "2026-08-15",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5209.78,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1004402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5209.78,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1004403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5209.78,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10043,
+    "descripcion": "Artículos de limpieza",
+    "icono": "HOGAR",
+    "monto": 22541.45,
+    "fecha": "2026-08-13",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5635.37,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5635.36,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5635.36,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 5635.36,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10042,
+    "descripcion": "Internet",
+    "icono": null,
+    "monto": 32133.56,
+    "fecha": "2026-08-11",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 2,
+    "categoriaNombre": "Internet",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6493.91,
+        "porcentaje": 20.21,
+        "sueldo": null
+      },
+      {
+        "id": 1004202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9852.79,
+        "porcentaje": 30.66,
+        "sueldo": null
+      },
+      {
+        "id": 1004203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7333.61,
+        "porcentaje": 22.82,
+        "sueldo": null
+      },
+      {
+        "id": 1004204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8453.25,
+        "porcentaje": 26.31,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10041,
+    "descripcion": "Gas",
+    "icono": null,
+    "monto": 18475.67,
+    "fecha": "2026-08-09",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4618.94,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4618.91,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4618.91,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1004104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4618.91,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10040,
+    "descripcion": "Luz",
+    "icono": "SERVICIOS",
+    "monto": 34683.78,
+    "fecha": "2026-08-07",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1004001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11561.26,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1004002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11561.26,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1004003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11561.26,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10039,
+    "descripcion": "Alquiler",
+    "icono": null,
+    "monto": 450109.89,
+    "fecha": "2026-08-05",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 112527.48,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 112527.47,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 112527.47,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 112527.47,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10038,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12852,
+    "fecha": "2026-08-03",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2597.28,
+        "porcentaje": 20.21,
+        "sueldo": null
+      },
+      {
+        "id": 1003802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3940.68,
+        "porcentaje": 30.66,
+        "sueldo": null
+      },
+      {
+        "id": 1003803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2933.12,
+        "porcentaje": 22.82,
+        "sueldo": null
+      },
+      {
+        "id": 1003804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3380.92,
+        "porcentaje": 26.31,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10037,
+    "descripcion": "Coto",
+    "icono": "COMPRAS",
+    "monto": 45294.11,
+    "fecha": "2026-08-01",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11323.55,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11323.52,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11323.52,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11323.52,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10036,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12899.53,
+    "fecha": "2026-07-23",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4299.85,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1003602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4299.84,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1003603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4299.84,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10035,
+    "descripcion": "Coto",
+    "icono": null,
+    "monto": 45341.64,
+    "fecha": "2026-07-21",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11335.41,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11335.41,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11335.41,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11335.41,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10034,
+    "descripcion": "Expensas",
+    "icono": "HOGAR",
+    "monto": 92633.75,
+    "fecha": "2026-07-19",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18657.7,
+        "porcentaje": 20.14,
+        "sueldo": null
+      },
+      {
+        "id": 1003402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 28477.51,
+        "porcentaje": 30.74,
+        "sueldo": null
+      },
+      {
+        "id": 1003403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 21112.63,
+        "porcentaje": 22.79,
+        "sueldo": null
+      },
+      {
+        "id": 1003404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 24385.91,
+        "porcentaje": 26.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10033,
+    "descripcion": "Delivery del viernes",
+    "icono": null,
+    "monto": 28725.86,
+    "fecha": "2026-07-17",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7181.48,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7181.46,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7181.46,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7181.46,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10032,
+    "descripcion": "Ferretería",
+    "icono": null,
+    "monto": 15597.97,
+    "fecha": "2026-07-15",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5199.33,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1003202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5199.32,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1003203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5199.32,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10031,
+    "descripcion": "Artículos de limpieza",
+    "icono": "HOGAR",
+    "monto": 22510.08,
+    "fecha": "2026-07-13",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5627.52,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5627.52,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5627.52,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1003104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 5627.52,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10030,
+    "descripcion": "Internet",
+    "icono": null,
+    "monto": 32102.19,
+    "fecha": "2026-07-11",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 2,
+    "categoriaNombre": "Internet",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1003001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6465.83,
+        "porcentaje": 20.14,
+        "sueldo": null
+      },
+      {
+        "id": 1003002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9868.87,
+        "porcentaje": 30.74,
+        "sueldo": null
+      },
+      {
+        "id": 1003003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7316.57,
+        "porcentaje": 22.79,
+        "sueldo": null
+      },
+      {
+        "id": 1003004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8450.92,
+        "porcentaje": 26.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10029,
+    "descripcion": "Gas",
+    "icono": null,
+    "monto": 18444.3,
+    "fecha": "2026-07-09",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4611.09,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4611.07,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4611.07,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4611.07,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10028,
+    "descripcion": "Luz",
+    "icono": "SERVICIOS",
+    "monto": 34652.41,
+    "fecha": "2026-07-07",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11550.81,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1002802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11550.8,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1002803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11550.8,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10027,
+    "descripcion": "Alquiler",
+    "icono": null,
+    "monto": 450078.52,
+    "fecha": "2026-07-05",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 112519.63,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 112519.63,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 112519.63,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 112519.63,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10026,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12820.63,
+    "fecha": "2026-07-03",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2582.26,
+        "porcentaje": 20.14,
+        "sueldo": null
+      },
+      {
+        "id": 1002602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3941.32,
+        "porcentaje": 30.74,
+        "sueldo": null
+      },
+      {
+        "id": 1002603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2922.01,
+        "porcentaje": 22.79,
+        "sueldo": null
+      },
+      {
+        "id": 1002604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3375.04,
+        "porcentaje": 26.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10025,
+    "descripcion": "Coto",
+    "icono": "COMPRAS",
+    "monto": 45262.74,
+    "fecha": "2026-07-01",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11315.7,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11315.68,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11315.68,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11315.68,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10024,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12868.16,
+    "fecha": "2026-06-23",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4289.4,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1002402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4289.38,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1002403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4289.38,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10023,
+    "descripcion": "Coto",
+    "icono": null,
+    "monto": 45310.27,
+    "fecha": "2026-06-21",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11327.56,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11327.57,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11327.57,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11327.57,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10022,
+    "descripcion": "Expensas",
+    "icono": "HOGAR",
+    "monto": 92602.38,
+    "fecha": "2026-06-19",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18586.87,
+        "porcentaje": 20.07,
+        "sueldo": null
+      },
+      {
+        "id": 1002202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 28544.1,
+        "porcentaje": 30.82,
+        "sueldo": null
+      },
+      {
+        "id": 1002203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 21076.16,
+        "porcentaje": 22.76,
+        "sueldo": null
+      },
+      {
+        "id": 1002204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 24395.25,
+        "porcentaje": 26.34,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10021,
+    "descripcion": "Delivery del viernes",
+    "icono": null,
+    "monto": 28694.49,
+    "fecha": "2026-06-17",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7173.63,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7173.62,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7173.62,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1002104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7173.62,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10020,
+    "descripcion": "Ferretería",
+    "icono": null,
+    "monto": 15566.6,
+    "fecha": "2026-06-15",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1002001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5188.88,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1002002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5188.86,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1002003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5188.86,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10019,
+    "descripcion": "Artículos de limpieza",
+    "icono": "HOGAR",
+    "monto": 22478.71,
+    "fecha": "2026-06-13",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5619.7,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5619.67,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5619.67,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 5619.67,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10018,
+    "descripcion": "Internet",
+    "icono": null,
+    "monto": 32070.82,
+    "fecha": "2026-06-11",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 2,
+    "categoriaNombre": "Internet",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6437.17,
+        "porcentaje": 20.07,
+        "sueldo": null
+      },
+      {
+        "id": 1001802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9885.62,
+        "porcentaje": 30.82,
+        "sueldo": null
+      },
+      {
+        "id": 1001803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7299.27,
+        "porcentaje": 22.76,
+        "sueldo": null
+      },
+      {
+        "id": 1001804,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8448.76,
+        "porcentaje": 26.34,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10017,
+    "descripcion": "Gas",
+    "icono": null,
+    "monto": 18412.93,
+    "fecha": "2026-06-09",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4603.24,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4603.23,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4603.23,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4603.23,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10016,
+    "descripcion": "Luz",
+    "icono": "SERVICIOS",
+    "monto": 34621.04,
+    "fecha": "2026-06-07",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11540.36,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1001602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11540.34,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1001603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11540.34,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10015,
+    "descripcion": "Alquiler",
+    "icono": null,
+    "monto": 450047.15,
+    "fecha": "2026-06-05",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 112511.78,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 112511.79,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 112511.79,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 112511.79,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10014,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12789.26,
+    "fecha": "2026-06-03",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2567.04,
+        "porcentaje": 20.07,
+        "sueldo": null
+      },
+      {
+        "id": 1001402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3942.2,
+        "porcentaje": 30.82,
+        "sueldo": null
+      },
+      {
+        "id": 1001403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2910.81,
+        "porcentaje": 22.76,
+        "sueldo": null
+      },
+      {
+        "id": 1001404,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3369.21,
+        "porcentaje": 26.34,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10013,
+    "descripcion": "Coto",
+    "icono": "COMPRAS",
+    "monto": 45231.37,
+    "fecha": "2026-06-01",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11307.85,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11307.84,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11307.84,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11307.84,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10012,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12836.79,
+    "fecha": "2026-05-23",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4278.93,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1001202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4278.93,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1001203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4278.93,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10011,
+    "descripcion": "Coto",
+    "icono": null,
+    "monto": 45278.9,
+    "fecha": "2026-05-21",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11319.71,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11319.73,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11319.73,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1001104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11319.73,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10010,
+    "descripcion": "Expensas",
+    "icono": "HOGAR",
+    "monto": 92571.01,
+    "fecha": "2026-05-19",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1001001,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 18514.22,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 1001002,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 28612.85,
+        "porcentaje": 30.91,
+        "sueldo": null
+      },
+      {
+        "id": 1001003,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 21038.86,
+        "porcentaje": 22.73,
+        "sueldo": null
+      },
+      {
+        "id": 1001004,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 24405.08,
+        "porcentaje": 26.36,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10009,
+    "descripcion": "Delivery del viernes",
+    "icono": null,
+    "monto": 28663.12,
+    "fecha": "2026-05-17",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 5,
+    "categoriaNombre": "Comidas",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000901,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 7165.78,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000902,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 7165.78,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000903,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7165.78,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000904,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 7165.78,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10008,
+    "descripcion": "Ferretería",
+    "icono": null,
+    "monto": 15535.23,
+    "fecha": "2026-05-15",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000801,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5178.41,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1000802,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5178.41,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1000803,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5178.41,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10007,
+    "descripcion": "Artículos de limpieza",
+    "icono": "HOGAR",
+    "monto": 22447.34,
+    "fecha": "2026-05-13",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000701,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 5611.85,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000702,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 5611.83,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000703,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 5611.83,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000704,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 5611.83,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10006,
+    "descripcion": "Internet",
+    "icono": null,
+    "monto": 32039.45,
+    "fecha": "2026-05-11",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 2,
+    "categoriaNombre": "Internet",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000601,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 6407.9,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 1000602,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 9903.1,
+        "porcentaje": 30.91,
+        "sueldo": null
+      },
+      {
+        "id": 1000603,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 7281.69,
+        "porcentaje": 22.73,
+        "sueldo": null
+      },
+      {
+        "id": 1000604,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 8446.76,
+        "porcentaje": 26.36,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10005,
+    "descripcion": "Gas",
+    "icono": null,
+    "monto": 18381.56,
+    "fecha": "2026-05-09",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000501,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 4595.39,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000502,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 4595.39,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000503,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 4595.39,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000504,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 4595.39,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10004,
+    "descripcion": "Luz",
+    "icono": "SERVICIOS",
+    "monto": 34589.67,
+    "fecha": "2026-05-07",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 1,
+    "pagadorNombre": "Ana Ruiz",
+    "pagadorEmail": "demo@fairshare.test",
+    "categoriaId": 4,
+    "categoriaNombre": "Servicios",
+    "regla": "PARTICIPACION_PARCIAL",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000401,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11529.89,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1000402,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11529.89,
+        "porcentaje": 33.33,
+        "sueldo": null
+      },
+      {
+        "id": 1000403,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11529.89,
+        "porcentaje": 33.33,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10003,
+    "descripcion": "Alquiler",
+    "icono": null,
+    "monto": 450015.78,
+    "fecha": "2026-05-05",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 5,
+    "pagadorNombre": "Martín López",
+    "pagadorEmail": "martin@example.test",
+    "categoriaId": 6,
+    "categoriaNombre": "Hogar",
+    "regla": "PERSONALIZADA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000301,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 112503.93,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000302,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 112503.95,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000303,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 112503.95,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000304,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 112503.95,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10002,
+    "descripcion": "Verdulería",
+    "icono": null,
+    "monto": 12757.89,
+    "fecha": "2026-05-03",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 4,
+    "pagadorNombre": "Lucía Pérez",
+    "pagadorEmail": "lucia@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "PROPORCIONAL_INGRESOS",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000201,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 2551.59,
+        "porcentaje": 20,
+        "sueldo": null
+      },
+      {
+        "id": 1000202,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 3943.34,
+        "porcentaje": 30.91,
+        "sueldo": null
+      },
+      {
+        "id": 1000203,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 2899.52,
+        "porcentaje": 22.73,
+        "sueldo": null
+      },
+      {
+        "id": 1000204,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 3363.44,
+        "porcentaje": 26.36,
+        "sueldo": null
+      }
+    ]
+  },
+  {
+    "id": 10001,
+    "descripcion": "Coto",
+    "icono": "COMPRAS",
+    "monto": 45200,
+    "fecha": "2026-05-01",
+    "espacioId": 1,
+    "espacioNombre": "Nuestro hogar",
+    "pagadorId": 2,
+    "pagadorNombre": "Thomas Fernandez",
+    "pagadorEmail": "thomas@example.test",
+    "categoriaId": 1,
+    "categoriaNombre": "Supermercado",
+    "regla": "EQUITATIVA",
+    "estado": "LIQUIDADO",
+    "participantes": [
+      {
+        "id": 1000101,
+        "usuarioId": 1,
+        "usuarioNombre": "Ana Ruiz",
+        "usuarioEmail": "demo@fairshare.test",
+        "importe": 11300,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000102,
+        "usuarioId": 2,
+        "usuarioNombre": "Thomas Fernandez",
+        "usuarioEmail": "thomas@example.test",
+        "importe": 11300,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000103,
+        "usuarioId": 4,
+        "usuarioNombre": "Lucía Pérez",
+        "usuarioEmail": "lucia@example.test",
+        "importe": 11300,
+        "porcentaje": 25,
+        "sueldo": null
+      },
+      {
+        "id": 1000104,
+        "usuarioId": 5,
+        "usuarioNombre": "Martín López",
+        "usuarioEmail": "martin@example.test",
+        "importe": 11300,
+        "porcentaje": 25,
+        "sueldo": null
+      }
+    ]
+  }
+]

@@ -5,7 +5,9 @@ import { UIProvider } from '../components/ui'
 import { ExpenseFilters } from '../features/gastos/ExpenseFilters.jsx'
 import { ExpenseDetail } from '../features/gastos/ExpenseDetail.jsx'
 import { ExpenseList } from '../features/gastos/ExpenseList.jsx'
+import { ExpenseForm } from '../features/gastos/ExpenseForm.jsx'
 import { ExpenseBatchForm } from '../features/gastos/ExpenseBatchForm.jsx'
+import { WorkspaceContext } from '../app/workspace-context'
 import { ApiError } from '../api'
 
 const mockMembers = [
@@ -47,12 +49,12 @@ const mockExpenses = [
 ]
 
 function renderWithUI(ui) {
-  return render(<UIProvider>{ui}</UIProvider>)
+  return render(<UIProvider><WorkspaceContext.Provider value={{ spaceId: '1', members: mockMembers, session: { usuario: { id: 1 } }, isAdmin: true, api: ui.props.api || vi.fn(), invalidate: vi.fn() }}>{ui}</WorkspaceContext.Provider></UIProvider>)
 }
 
 describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => {
   it('ExpenseFilters: emite cambios de búsqueda y fechas y permite limpiar', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const onSearchChange = vi.fn()
     const onDesdeChange = vi.fn()
     const onClear = vi.fn()
@@ -85,20 +87,20 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
         members={mockMembers}
         open={true}
         onClose={vi.fn()}
-        asModal={false}
+        asModal={true}
       />
     )
 
     expect(screen.getByText('Supermercado Mensual')).toBeInTheDocument()
-    expect(screen.getByText('$ 6.000,00')).toBeInTheDocument()
-    expect(screen.getByText('Ana')).toBeInTheDocument()
+    expect(screen.getAllByText('$ 6.000,00')).toHaveLength(2)
+    expect(screen.getAllByText('Ana')).toHaveLength(2)
     expect(screen.getByText(/Abonó el importe total/i)).toBeInTheDocument()
     expect(screen.getByText('Carlos')).toBeInTheDocument()
     expect(screen.getByText('Lucía')).toBeInTheDocument()
   })
 
   it('ExpenseList: lista gastos y abre modal de confirmación al eliminar', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
 
     renderWithUI(
       <ExpenseList
@@ -128,8 +130,8 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     expect(screen.getByText(/Esta acción recalculará los balances/i)).toBeInTheDocument()
   })
 
-  it('ExpenseBatchForm: construye y envía un único payload con { gastos: [...] }', async () => {
-    const user = userEvent.setup()
+  it('ExpenseBatchForm: envía el array de gastos del contrato real de lote', async () => {
+    const user = userEvent.setup({ delay: null })
     const mockApi = vi.fn().mockResolvedValue({ status: 'OK', count: 2 })
     const onSuccess = vi.fn()
 
@@ -142,8 +144,10 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
       />
     )
 
-    expect(screen.getByText('Registro de gastos por lote')).toBeInTheDocument()
-    expect(screen.getByText(/Registro transaccional en lote/i)).toBeInTheDocument()
+    expect(screen.getAllByLabelText(/^Descripción/)).toHaveLength(1)
+    await user.click(screen.getByRole('button', { name: 'Agregar otro gasto' }))
+    await user.click(screen.getByText('Cómo funciona', { exact: true }))
+    expect(screen.getByText(/Si uno tiene un error, ninguno se guarda/)).toBeVisible()
 
     // Completar el primer gasto
     const descInputs = screen.getAllByLabelText(/^Descripción/)
@@ -159,26 +163,26 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
     await user.selectOptions(pagadorSelects[1], '2')
 
     // Enviar lote
-    const submitBtn = screen.getByRole('button', { name: /Registrar lote/i })
+    const submitBtn = screen.getByRole('button', { name: /^Registrar \d+ gastos?$/ })
     await user.click(submitBtn)
+    expect(mockApi.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(0)
+    await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
 
     await waitFor(() => {
-      expect(mockApi).toHaveBeenCalledTimes(1)
+      expect(mockApi.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(1)
     })
 
-    const [calledUrl, calledOpts] = mockApi.mock.calls[0]
+    const [calledUrl, calledOpts] = mockApi.mock.calls.find(([, opts]) => opts?.method === 'POST')
     expect(calledUrl).toBe('/api/v1/espacios/1/gastos/lote')
-    expect(calledOpts.body).toEqual({
-      gastos: expect.arrayContaining([
+    expect(calledOpts.body).toEqual(expect.arrayContaining([
         expect.objectContaining({ descripcion: 'Gasto Lote 1', monto: 1500 }),
         expect.objectContaining({ descripcion: 'Gasto Lote 2', monto: 2500 }),
-      ]),
-    })
+      ]))
     expect(onSuccess).toHaveBeenCalled()
   })
 
   it('ExpenseBatchForm UX: ante un error 400 del servidor, conserva todos los datos ingresados', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const mockApi = vi.fn().mockRejectedValue(
       new ApiError('Error 400: Lote rechazado por datos inconsistentes.', { status: 400 })
     )
@@ -191,20 +195,46 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
       />
     )
 
+    await user.click(screen.getByRole('button', { name: 'Agregar otro gasto' }))
     const descInputs = screen.getAllByLabelText(/^Descripción/)
     const montoInputs = screen.getAllByLabelText(/^Monto/)
 
     await user.type(descInputs[0], 'Compra no confirmada')
     await user.type(montoInputs[0], '800')
+    await user.type(descInputs[1], 'Segunda compra no confirmada')
+    await user.type(montoInputs[1], '200')
 
-    const submitBtn = screen.getByRole('button', { name: /Registrar lote/i })
+    const submitBtn = screen.getByRole('button', { name: /^Registrar \d+ gastos?$/ })
     await user.click(submitBtn)
+    expect(mockApi.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(0)
+    await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
 
     // Mensaje de error visible
-    expect(await screen.findByText('Error 400: Lote rechazado por datos inconsistentes.')).toBeInTheDocument()
+    expect(await screen.findAllByText('Error 400: Lote rechazado por datos inconsistentes.')).not.toHaveLength(0)
+    expect(mockApi.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(1)
 
     // Los datos DEBEN preservarse
     expect(descInputs[0]).toHaveValue('Compra no confirmada')
     expect(montoInputs[0]).toHaveValue(800)
+    expect(descInputs[1]).toHaveValue('Segunda compra no confirmada')
+    expect(montoInputs[1]).toHaveValue(200)
   })
 })
+
+for (const [label, Form] of [['individual', ExpenseForm], ['varios gastos', ExpenseBatchForm]]) {
+  it(`muestra el nombre en el error de ingresos del registro ${label} y conserva lo ingresado`, async () => {
+    const user = userEvent.setup({ delay: null })
+    const api = vi.fn().mockRejectedValue(new ApiError('El usuario con id 74 no cuenta con un sueldo registrado mayor a cero para aplicar la division proporcional', { status: 400, code: 'REGLA_INVALIDA' }))
+    renderWithUI(<Form spaceId="1" members={[mockMembers[0], { usuarioId: 74, nombreUsuario: 'Thomas Fernandez', rol: 'MIEMBRO' }]} api={api} />)
+    await user.type(screen.getByLabelText(/^Descripción/), 'Alquiler')
+    await user.type(screen.getByLabelText(/^Monto/), '21000')
+    await user.selectOptions(screen.getByLabelText(/^(Tipo de reparto|Reparto)/), 'PROPORCIONAL_INGRESOS')
+    await user.click(screen.getByRole('button', { name: Form === ExpenseForm ? 'Registrar gasto' : /^Registrar 1 gasto$/ }))
+    if (Form === ExpenseBatchForm) await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
+    expect(await screen.findByText(/Thomas Fernandez necesita registrar un ingreso mayor a cero/)).toBeVisible()
+    expect(screen.queryByText(/El usuario con id 74/)).not.toBeInTheDocument()
+    expect(screen.getByLabelText(/^Descripción/)).toHaveValue('Alquiler')
+    expect(screen.getByLabelText(/^Monto/)).toHaveValue(21000)
+    expect(api.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(1)
+  })
+}

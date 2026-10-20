@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { Button, Icon, useUI } from '../../components/ui'
+import { Button, Disclosure, Icon, useUI } from '../../components/ui'
 
-export function InvitationCode({ code, spaceName = 'el espacio', className = '' }) {
+export function InvitationCode({ code, spaceName = 'el espacio', className = '', compact = false }) {
   const { notify } = useUI()
   const [copiedType, setCopiedType] = useState(null)
 
@@ -23,8 +23,9 @@ export function InvitationCode({ code, spaceName = 'el espacio', className = '' 
         textarea.style.left = '-9999px'
         document.body.appendChild(textarea)
         textarea.select()
-        document.execCommand('copy')
+        const copied = document.execCommand('copy')
         document.body.removeChild(textarea)
+        if (!copied) throw new Error('No se pudo copiar')
       }
       setCopiedType(type)
       notify(message)
@@ -51,6 +52,16 @@ export function InvitationCode({ code, spaceName = 'el espacio', className = '' 
       copyToClipboard(inviteUrl, 'link', 'Enlace de invitación copiado.')
     }
   }
+
+  if (compact) return <div className={`settings-invitation ${className}`}>
+    <div className="settings-invitation__main"><div className="invite-code-box"><span className="invite-code-box__label">Código del espacio</span><strong className="invite-code-box__code" data-testid="invite-code">{code}</strong></div>
+      <Button variant="secondary" onClick={() => copyToClipboard(inviteUrl, 'link', 'Invitación copiada.')}><Icon name={copiedType === 'link' ? 'check' : 'copy'} size={16} />{copiedType === 'link' ? 'Invitación copiada' : 'Copiar invitación'}</Button>
+    </div>
+    <Disclosure title="Otras formas de invitar" className="settings-invitation__alternatives"><div>
+      <Button variant="ghost" onClick={() => copyToClipboard(code, 'code', 'Código de invitación copiado.')}><Icon name={copiedType === 'code' ? 'check' : 'copy'} size={16} />{copiedType === 'code' ? 'Código copiado' : 'Copiar solo el código'}</Button>
+      {typeof navigator !== 'undefined' && typeof navigator.share === 'function' && <Button variant="ghost" onClick={handleShare}><Icon name="share" size={16} />Compartir invitación</Button>}
+    </div></Disclosure>
+  </div>
 
   return (
     <div className={`invite-card__body ${className}`}>

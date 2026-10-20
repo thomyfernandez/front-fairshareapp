@@ -1,5 +1,4 @@
-import { Badge, Button } from '../../components/ui'
-import { money } from '../../lib/format'
+import { Avatar, Badge, Button, Money } from '../../components/ui'
 import { debtRole } from './model'
 
 const roleCopy = {
@@ -13,20 +12,11 @@ export function DebtCard({ debt, userId, canRegistrarPago, onRegistrarPago }) {
   const { tone, label } = roleCopy[role]
 
   return (
-    <article className="expense">
-      <div className="row">
-        <div>
-          <Badge tone={tone}>{label}</Badge>
-          <strong>{debt.deudorNombre} → {debt.acreedorNombre}</strong>
-        </div>
-        <strong>{money(debt.monto)}</strong>
-      </div>
-      {canRegistrarPago && (
-        <div className="row">
-          <span>{role === 'deudor' ? 'Registrá que ya pagaste esta deuda' : 'Registrá el pago en nombre del espacio'}</span>
-          <Button variant="secondary" onClick={() => onRegistrarPago(debt)}>Registrar pago</Button>
-        </div>
-      )}
+    <article className="debt-item">
+      <Avatar name={role === 'deudor' ? debt.acreedorNombre : debt.deudorNombre} />
+      <div className="debt-item__person"><Badge tone={tone}>{label}</Badge><strong>{debt.deudorNombre} → {debt.acreedorNombre}</strong></div>
+      <strong className="debt-item__amount"><Money value={debt.monto} hideZeroDecimals /></strong>
+      {canRegistrarPago && <Button variant="secondary" onClick={() => onRegistrarPago(debt)}>Registrar pago</Button>}
     </article>
   )
 }

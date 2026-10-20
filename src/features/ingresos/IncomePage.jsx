@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Button, Card, EmptyState, Icon, Modal, PageHeader, ResourceState } from '../../components/ui'
+import { Button, Card, EmptyState, Icon, Modal, Money, PageHeader, PanelDisclosure, ResourceState } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
 import { money, periodLabel } from '../../lib/format'
 import { IncomeForm } from './IncomeForm'
@@ -40,26 +40,26 @@ export default function IncomePage() {
     if (accepted) mutate(`/api/v1/sueldos/${income.id}`, 'DELETE', undefined, 'Ingreso eliminado.')
   }
 
-  return <div className="legacy-feature">
+  return <div className="legacy-feature feature-page income-page">
     <PageHeader
       title="Mis ingresos"
-      description="Registrá tu ingreso de cada mes. Se usa para calcular tu parte en los gastos con reparto proporcional de ese período, en todos tus espacios."
+      description="Tu ingreso de cada mes ayuda a repartir los gastos proporcionales en todos tus espacios."
       actions={<Button onClick={() => openForm(null)}><Icon name="plus" size={18} />Agregar ingreso</Button>}
     />
     <ResourceState resource={resource}>
       <Card>
         <h2>Ingresos por período</h2>
-        <p className="text-sm text-secondary">Hay un único registro por mes: si guardás un período que ya existe, se actualiza ese registro.</p>
+        <PanelDisclosure title="Cómo se usan mis ingresos" icon="info"><p>Hay un único registro por mes: si guardás un período que ya existe, se actualiza ese registro.</p></PanelDisclosure>
         {incomes.length ? <ul className="list-none m-0 p-0" aria-label="Ingresos registrados">
-          {incomes.map(income => <li className="row" key={income.id}>
+          {incomes.map(income => <li className="row income-item" key={income.id}><span className="ui-item-icon"><Icon name="wallet" /></span>
             <div>
               <strong>{periodLabel(income.mes, income.anio)}</strong>
               <small className="block text-secondary">{TIPO_LABELS[income.tipo] || income.tipo} · cobro {(FRECUENCIA_LABELS[income.frecuencia] || income.frecuencia).toLowerCase()}</small>
             </div>
-            <strong>{money(income.monto)}</strong>
+            <strong className="income-item__amount"><Money value={income.monto} hideZeroDecimals /></strong>
             <div className="filters m-0">
-              <Button variant="secondary" disabled={busy} onClick={() => openForm(income)} aria-label={`Editar ingreso de ${periodLabel(income.mes, income.anio)}`}>Editar</Button>
-              <Button variant="danger" disabled={busy} onClick={() => remove(income)} aria-label={`Eliminar ingreso de ${periodLabel(income.mes, income.anio)}`}>Eliminar</Button>
+              <Button variant="ghost" disabled={busy} onClick={() => openForm(income)} aria-label={`Editar ingreso de ${periodLabel(income.mes, income.anio)}`}>Editar</Button>
+              <Button variant="ghost" disabled={busy} onClick={() => remove(income)} aria-label={`Eliminar ingreso de ${periodLabel(income.mes, income.anio)}`}>Eliminar</Button>
             </div>
           </li>)}
         </ul> : <EmptyState icon="wallet" title="Todavía no registraste ingresos" description="Agregá tu ingreso del mes para que los gastos proporcionales se repartan según lo que gana cada persona." action={<Button onClick={() => openForm(null)}>Agregar ingreso</Button>} />}

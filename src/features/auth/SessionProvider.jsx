@@ -3,6 +3,7 @@ import { createApi } from '../../api'
 
 import { SessionContext } from './session-context'
 import { tokenExpiry } from './session'
+import { clearSessionDrafts } from '../../lib/draft-storage'
 
 // setTimeout overflows above ~24.8 days; longer tokens rely on the server's 401 instead.
 const MAX_TIMER_MS = 2 ** 31 - 1
@@ -38,6 +39,7 @@ export function SessionProvider({ children }) {
   const endSession = useCallback(reason => {
     if (!active.current) return
     const email = active.current.usuario?.email
+    clearSessionDrafts()
     active.current = null
     setSession(null)
     setNotice({ reason, email })

@@ -1,100 +1,29 @@
-import { Field, Submit } from '../../components/ui'
+import { Field, PanelDisclosure, Submit } from '../../components/ui'
 import { nextMonth, formData } from '../../lib/format'
+import { RecurringAmountFields } from './RecurringAmountFields'
+import { REGLAS_DIVISION } from './model'
 
 export function RecurringForm({ spacePath, session, members, mutate, busy }) {
-    const peopleSelect = (name, label, helpText, value = session?.usuario?.id) => (
-    <Field label={label} helpText={helpText}>
-    <select name={name} defaultValue={value} required>
-        {members?.map(m => (
-        <option key={m.usuarioId || m.id} value={m.usuarioId || m.id}>
-            {m.nombreUsuario || m.nombre}
-        </option>
-        ))}
-    </select>
-    </Field>
-    )
-
-return (
-    <details>
-    <summary>Crear nueva plantilla</summary>
-    <form 
-        className="grid-form" 
-        onSubmit={event => {
-            event.preventDefault()
-            const d = formData(event)
-            for (const k of ['pagadorId', 'montoBase', 'montoVariable', 'frecuenciaAjusteMeses']) {
-            d[k] = Number(d[k])
-        }
-        mutate(`${spacePath}/favoritos`, 'POST', d, 'Plantilla creada con éxito.') 
-        }}
-    >
-        <Field 
-            label="Nombre del gasto" 
-            name="nombre" 
-            helpText="Identificador claro del gasto recurrente (ej: Alquiler, Internet, Expensas)." 
-            required 
-            minLength={2} 
-            maxLength={100} 
-        />
-        
-        {peopleSelect(
-            'pagadorId', 
-            'Pagador por defecto', 
-            'Miembro del espacio responsable de abonar inicialmente este gasto.'
-        )}
-        
-        <Field 
-            label="Monto base fijo" 
-            name="montoBase" 
-            type="number" 
-            min="0" 
-            step="0.01" 
-            helpText="Importe estable o tarifa fija que no varía mes a mes." 
-            required 
-        />
-        
-        <Field 
-            label="Monto variable estimado" 
-            name="montoVariable" 
-            type="number" 
-            min="0" 
-            step="0.01" 
-            defaultValue="0" 
-            helpText="Valor estimado para cargos variables o adicionales (ingresar 0 si no aplica)." 
-            required 
-        />
-        
-        <Field 
-            label="Revisión de tarifa (en meses)" 
-            name="frecuenciaAjusteMeses" 
-            type="number" 
-            min="1" 
-            defaultValue="1" 
-            helpText="Cada cuántos meses se requiere reevaluar o actualizar los montos de esta plantilla." 
-            required 
-        />
-        
-        <Field 
-            label="Próxima fecha de revisión" 
-            name="fechaProximaRevision" 
-            type="date" 
-            defaultValue={nextMonth()} 
-            helpText="Fecha límite en la que el sistema exigirá la actualización de la tarifa." 
-            required 
-        />
-        
-        <Field 
-            label="Método de reparto" 
-            helpText="Criterio para distribuir el importe total entre los participantes del espacio."
-        >
-        <select name="reglaDivision">
-            <option value="EQUITATIVA">Partes iguales (Equitativo)</option>
-            <option value="PROPORCIONAL_INGRESOS">Según ingresos declarados (Proporcional)</option>
-        </select>
-        </Field>
-        
-        <Submit busy={busy}>Guardar plantilla</Submit>
-        </form>
-    </details>
-    )
+  const currentUser = session?.usuario?.id
+  const payer = members.some(member => Number(member.usuarioId) === Number(currentUser)) ? currentUser : members[0]?.usuarioId ?? ''
+  return <PanelDisclosure title="Crear plantilla" icon="plus" className="recurring-create">
+    <form aria-label="Crear plantilla recurrente" className="grid-form recurring-template-form" onSubmit={event => {
+      event.preventDefault()
+      const data = formData(event)
+      data.nombre = data.nombre.trim()
+      for (const key of ['pagadorId', 'montoBase', 'montoVariable', 'frecuenciaAjusteMeses']) data[key] = Number(data[key])
+      mutate(`${spacePath}/favoritos`, 'POST', data, 'Plantilla creada.')
+    }}>
+      <Field label="Nombre" name="nombre" required minLength={2} maxLength={100} disabled={busy} />
+      <Field label="Pagador"><select name="pagadorId" defaultValue={payer} required disabled={busy}>
+        {!members.length && <option value="">No hay miembros disponibles</option>}
+        {members.map(member => <option key={member.usuarioId} value={member.usuarioId}>{member.nombreUsuario}</option>)}
+      </select></Field>
+      <RecurringAmountFields amountName="montoBase" additionalName="montoVariable" disabled={busy} />
+      <Field label="Revisar cada (meses)" name="frecuenciaAjusteMeses" type="number" min="1" step="1" defaultValue="1" required disabled={busy} />
+      <Field label="Próxima revisión" name="fechaProximaRevision" type="date" defaultValue={nextMonth()} required disabled={busy} />
+      <Field label="Reparto"><select name="reglaDivision" disabled={busy}>{Object.entries(REGLAS_DIVISION).map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></Field>
+      <div className="recurring-template-form__actions"><Submit busy={busy} disabled={!members.length}>Crear plantilla</Submit></div>
+    </form>
+  </PanelDisclosure>
 }

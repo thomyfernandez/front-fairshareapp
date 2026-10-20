@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from 'vitest'
 import { UIProvider } from '../components/ui'
 import { ExpenseForm } from '../features/gastos/ExpenseForm.jsx'
 import { ParticipantsSelector } from '../features/gastos/ParticipantsSelector.jsx'
+import { WorkspaceContext } from '../app/workspace-context'
 import { ApiError } from '../api'
 
 const mockMembers = [
@@ -13,7 +14,7 @@ const mockMembers = [
 ]
 
 function renderWithUI(ui) {
-  return render(<UIProvider>{ui}</UIProvider>)
+  return render(<UIProvider><WorkspaceContext.Provider value={{ spaceId: '1', members: mockMembers, session: { usuario: { id: 1 } }, isAdmin: true, api: ui.props.api || vi.fn(), invalidate: vi.fn() }}>{ui}</WorkspaceContext.Provider></UIProvider>)
 }
 
 describe('ExpenseForm & ParticipantsSelector', () => {
@@ -41,7 +42,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
   })
 
   it('ParticipantsSelector: modo PORCENTUAL valida en tiempo real que la suma sea exactamente 100%', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const onChange = vi.fn()
 
     renderWithUI(
@@ -74,7 +75,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
   })
 
   it('ParticipantsSelector: modo MONTOS_FIJOS valida que la suma coincida con el total del gasto', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const onChange = vi.fn()
 
     renderWithUI(
@@ -99,7 +100,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
   })
 
   it('ExpenseForm: construye y envía la estructura JSON exacta requerida por el backend', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const mockApi = vi.fn().mockResolvedValue({ id: 101, status: 'CREATED' })
     const onSuccess = vi.fn()
 
@@ -122,10 +123,10 @@ describe('ExpenseForm & ParticipantsSelector', () => {
     await user.click(screen.getByRole('button', { name: 'Registrar gasto' }))
 
     await waitFor(() => {
-      expect(mockApi).toHaveBeenCalledTimes(1)
+      expect(mockApi.mock.calls.filter(([, options]) => options?.method === 'POST')).toHaveLength(1)
     })
 
-    const [calledPath, calledOptions] = mockApi.mock.calls[0]
+    const [calledPath, calledOptions] = mockApi.mock.calls.find(([, options]) => options?.method === 'POST')
     expect(calledPath).toBe('/api/v1/espacios/1/gastos')
     expect(calledOptions.method).toBe('POST')
 
@@ -135,18 +136,18 @@ describe('ExpenseForm & ParticipantsSelector', () => {
       monto: 3000,
       fecha: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
       pagadorId: 1,
-      tipoReparto: 'EQUITATIVA',
+      regla: 'EQUITATIVA',
       participantes: [
-        { usuarioId: 1, porcentaje: 33.33, importe: 1000 },
-        { usuarioId: 2, porcentaje: 33.33, importe: 1000 },
-        { usuarioId: 3, porcentaje: 33.33, importe: 1000 },
+        { usuarioId: 1 },
+        { usuarioId: 2 },
+        { usuarioId: 3 },
       ],
     })
     expect(onSuccess).toHaveBeenCalled()
   })
 
   it('UX Crítica: si la petición falla (ej. error 400), conserva TODOS los datos para que el usuario pueda corregirlos', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const mockApi = vi.fn().mockRejectedValue(
       new ApiError('Error 400: El servicio rechazó la operación.', {
         status: 400,
@@ -175,7 +176,7 @@ describe('ExpenseForm & ParticipantsSelector', () => {
     await user.click(screen.getByRole('button', { name: 'Registrar gasto' }))
 
     // Verificar que se mostró el error
-    expect(await screen.findByText('Error 400: El servicio rechazó la operación.')).toBeInTheDocument()
+    expect((await screen.findAllByText('Error 400: El servicio rechazó la operación.')).some(element => element.getAttribute('aria-hidden') !== 'true')).toBe(true)
 
     // VERIFICACIÓN CRÍTICA DE UX:
     // Los campos NO deben haberse borrado ni reseteado

@@ -15,7 +15,7 @@ Estas instrucciones se aplican a todo el repositorio `front-fairshareapp` y a cu
 - Leer `DESIGN_SYSTEM.md` antes de crear o modificar interfaces. Consultar los componentes existentes y la galería `/componentes` para mantener consistencia.
 - Usar `tokens.json` como fuente de valores visuales: colores, tipografía, espaciado, radios y sombras. Consumir las variables y utilidades semánticas del tema, evitando valores arbitrarios cuando exista un token adecuado.
 - No editar directamente `src/styles/theme.css`: es un archivo generado. Modificar los tokens y ejecutar `npm run tokens:build`; verificar con `npm run tokens:check`.
-- Mantener el tema claro, la fuente Inter local y las reglas de contraste y movimiento definidas en el sistema de diseño.
+- Aplicar los temas definidos en el sistema de diseño: todas las pantallas, incluidos acceso, registro y diálogos, usan el tema elegido por el usuario: la referencia oscura de Cercana o el tema claro. Revisar los cambios visuales en ambos temas. Mantener Inter local y las reglas de contraste y movimiento.
 - Usar índigo para acciones principales, enlaces y foco. Reservar verde para pago rápido y estados positivos, según `DESIGN_SYSTEM.md`.
 - No usar `text-tertiary` para texto pequeño esencial sobre blanco. Utilizar colores semánticos con contraste suficiente.
 - Reutilizar y, cuando corresponda, extender los componentes de `src/components/ui` antes de crear alternativas. Evitar variantes de botones, campos, tarjetas y modales que resuelvan lo mismo de maneras distintas.
@@ -80,6 +80,7 @@ Estas instrucciones se aplican a todo el repositorio `front-fairshareapp` y a cu
 
 - Para cambios de código, ejecutar las verificaciones pertinentes: `npm run lint`, `npm test`, `npm run tokens:check` y `npm run build`. Priorizar primero las pruebas afectadas; no repetir verificaciones exitosas sin cambios o motivos nuevos.
 - Añadir o actualizar pruebas cuando cambie comportamiento relevante, especialmente pagos, formularios, permisos, navegación y estados asíncronos. Probar lo que experimenta el usuario, evitando pruebas que solo reproduzcan la implementación.
+- En pruebas de interfaz, crear el usuario con `userEvent.setup({ delay: null })` para no esperar entre teclas. No resolver una prueba lenta subiendo su tiempo de espera: primero buscar la causa.
 - Para cambios visuales, revisar en el navegador el responsive, el teclado, el foco y los estados afectados. Una compilación exitosa no reemplaza la revisión de UX/UI.
 - No dar por terminado un cambio de interfaz con desbordes, controles inaccesibles, texto ilegible, inconsistencias del sistema de diseño o una cantidad de información que dificulte la tarea principal.
 - Actualizar `README.md` y la documentación relacionada cuando cambien instalación, comandos, flujos, contratos o convenciones. Mantener ambos archivos de instrucciones idénticos.
