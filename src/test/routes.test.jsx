@@ -41,7 +41,7 @@ function setup(route, options) {
   return fetcher
 }
 async function logIn() {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   await user.type(await screen.findByRole('textbox', { name: /^Email/ }), 'ana@example.test')
   await user.type(screen.getByLabelText(/^Contraseña/), 'password-test')
   await user.click(screen.getByRole('button', { name: 'Iniciar sesión' }))

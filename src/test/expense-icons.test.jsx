@@ -31,7 +31,7 @@ it('permite elegir cualquiera de los 14 íconos sin confundirlo con una categor�
 })
 
 it('ofrece selección, automático, cancelación y retorno del foco con el diálogo compartido', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   function Picker() { const [value, setValue] = useState(null); return <ExpenseIconPicker value={value} onChange={setValue} description="Coto" /> }
   wrap(<Picker />)
   await user.click(screen.getByRole('button', { name: 'Cambiar ícono del gasto: Automático' }))
@@ -50,7 +50,7 @@ it('ofrece selección, automático, cancelación y retorno del foco con el diál
 })
 
 it('mantiene el ícono elegido al guardar y retomar un borrador individual', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const saveDraft = vi.fn()
   const initial = { descripcion: 'Comida de mascota', monto: '200', fecha: today(), pagadorId: '1', tipoReparto: 'EQUITATIVA', participantes: [{ usuarioId: 1 }, { usuarioId: 2 }] }
   const first = wrap(<ExpenseForm spaceId="1" members={members} api={vi.fn()} initialValues={initial} onDraftChange={saveDraft} />)
@@ -68,7 +68,7 @@ it('mantiene el ícono elegido al guardar y retomar un borrador individual', asy
 })
 
 it('envía un ícono independiente por gasto al registrar varios juntos', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const api = vi.fn().mockResolvedValue([{ id: 1 }, { id: 2 }])
   const values = { gastos: ['Regalo de cumpleaños', 'Taxi'].map((descripcion, index) => ({ tempId: index + 1, descripcion, monto: '100', fecha: today(), pagadorId: '1', tipoReparto: 'EQUITATIVA', participantes: [{ usuarioId: 1 }, { usuarioId: 2 }] })) }
   wrap(<ExpenseBatchForm spaceId="1" members={members} api={api} initialValues={values} />)

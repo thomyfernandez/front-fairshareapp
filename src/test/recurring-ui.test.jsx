@@ -38,7 +38,7 @@ async function createForm(user) {
 }
 
 it('crea una plantilla sin exigir un importe adicional y envía cero en el contrato existente', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const api = setup()
   const form = await createForm(user)
   expect(within(form).getByLabelText(/^Importe adicional/)).not.toBeVisible()
@@ -51,7 +51,7 @@ it('crea una plantilla sin exigir un importe adicional y envía cero en el contr
 const template = (overrides = {}) => ({ id: 9, nombre: 'Luz', montoBase: 100.1, montoVariable: 20.2, pagadorId: 2, reglaDivision: 'EQUITATIVA', categoriaId: 3, fechaProximaRevision: nextMonth(), vencido: false, ...overrides })
 
 it('agrega una sola copia al borrador, conserva la selección al navegar y permite quitarla desde la bandeja', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const api = setup({ templates: [template()] })
   await user.click(await screen.findByRole('button', { name: 'Agregar Luz para registrar' }))
   const tray = screen.getByRole('region', { name: 'Gastos para registrar' })
@@ -78,7 +78,7 @@ it('agrega una sola copia al borrador, conserva la selección al navegar y permi
 it('suma las plantillas al borrador existente y registra solo después de revisar; un error conserva el lote', async () => {
   saveDraft(1, 1, 'lote', { gastos: [{ tempId: 7, descripcion: 'Compra manual', monto: '50', fecha: today(), pagadorId: '1', tipoReparto: 'EQUITATIVA', participantes: [{ usuarioId: 1 }], touched: true }], removed: null })
   saveDraft(1, 2, 'lote', { gastos: [{ tempId: 1, descripcion: 'Otro espacio', monto: '999', fecha: today(), participantes: [] }] })
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const api = setup({ templates: [template({ reglaDivision: 'PROPORCIONAL_INGRESOS' })], failBatchOnce: true })
   await user.click(await screen.findByRole('button', { name: 'Agregar Luz para registrar' }))
   expect(readDraft(1, 1, 'lote').gastos.map(row => row.descripcion)).toEqual(['Compra manual', 'Luz'])
@@ -118,7 +118,7 @@ it('exige actualizar plantillas vencidas, importes inválidos o pagadores fuera 
 
 it('no sobrescribe un borrador ilegible ni excede la capacidad del lote', async () => {
   saveDraft(1, 1, 'lote', { gastos: 'datos no reconocidos' })
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   setup({ templates: [template()] })
   await user.click(await screen.findByRole('button', { name: 'Agregar Luz para registrar' }))
   expect(screen.getByText(/No pudimos leer el borrador/)).toBeVisible()
@@ -131,7 +131,7 @@ it('no sobrescribe un borrador ilegible ni excede la capacidad del lote', async 
 })
 
 it('suma el adicional con centavos y conserva su valor al plegarlo', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const api = setup()
   const form = await createForm(user)
   fireEvent.change(within(form).getByLabelText(/^Monto del gasto/), { target: { value: '1000.50' } })
@@ -147,7 +147,7 @@ it('suma el adicional con centavos y conserva su valor al plegarlo', async () =>
 })
 
 it('muestra los adicionales existentes al actualizar y preserva los importes si falla el envío', async () => {
-  const user = userEvent.setup()
+  const user = userEvent.setup({ delay: null })
   const api = setup({ templates: [{ id: 9, nombre: 'Internet', montoBase: 100, montoVariable: 20, fechaProximaRevision: nextMonth(), vencido: false }], failUpdate: true })
   await user.click(await screen.findByText('Actualizar monto y revisión', { selector: 'summary span' }))
   const form = screen.getByRole('form', { name: 'Actualizar plantilla Internet' })

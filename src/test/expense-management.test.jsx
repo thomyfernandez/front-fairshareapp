@@ -54,7 +54,7 @@ function renderWithUI(ui) {
 
 describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => {
   it('ExpenseFilters: emite cambios de búsqueda y fechas y permite limpiar', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const onSearchChange = vi.fn()
     const onDesdeChange = vi.fn()
     const onClear = vi.fn()
@@ -100,7 +100,7 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
   })
 
   it('ExpenseList: lista gastos y abre modal de confirmación al eliminar', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
 
     renderWithUI(
       <ExpenseList
@@ -131,7 +131,7 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
   })
 
   it('ExpenseBatchForm: envía el array de gastos del contrato real de lote', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const mockApi = vi.fn().mockResolvedValue({ status: 'OK', count: 2 })
     const onSuccess = vi.fn()
 
@@ -182,7 +182,7 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
   })
 
   it('ExpenseBatchForm UX: ante un error 400 del servidor, conserva todos los datos ingresados', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const mockApi = vi.fn().mockRejectedValue(
       new ApiError('Error 400: Lote rechazado por datos inconsistentes.', { status: 400 })
     )
@@ -223,7 +223,7 @@ describe('ExpenseFilters, ExpenseDetail, ExpenseList & ExpenseBatchForm', () => 
 
 for (const [label, Form] of [['individual', ExpenseForm], ['varios gastos', ExpenseBatchForm]]) {
   it(`muestra el nombre en el error de ingresos del registro ${label} y conserva lo ingresado`, async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const api = vi.fn().mockRejectedValue(new ApiError('El usuario con id 74 no cuenta con un sueldo registrado mayor a cero para aplicar la division proporcional', { status: 400, code: 'REGLA_INVALIDA' }))
     renderWithUI(<Form spaceId="1" members={[mockMembers[0], { usuarioId: 74, nombreUsuario: 'Thomas Fernandez', rol: 'MIEMBRO' }]} api={api} />)
     await user.type(screen.getByLabelText(/^Descripción/), 'Alquiler')

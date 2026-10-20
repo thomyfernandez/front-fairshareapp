@@ -34,7 +34,7 @@ function RouteProbe() {
 function setup(route = '/login', options) {
   const fetcher = mockApi(options)
   render(<MemoryRouter initialEntries={[route]}><UIProvider><SessionProvider><AppRoutes /><RouteProbe /></SessionProvider></UIProvider></MemoryRouter>)
-  return { fetcher, user: userEvent.setup() }
+  return { fetcher, user: userEvent.setup({ delay: null }) }
 }
 const email = () => screen.getByRole('textbox', { name: /^Email/ })
 const password = () => screen.getByLabelText(/^Contraseña/)

@@ -71,7 +71,7 @@ async function openReview(user, name = /Internet/) {
 
 describe('SettlementsPage', () => {
   it('closes exactly the reviewed expenses, period and note only after confirmation', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api, invalidate } = renderPage({ closeResult: { id: 8, resumenCierre: { cantidadGastosCerrados: 1, totalLiquidado: 200.2, presupuestoRestante: 799.8 } } })
     expect(await screen.findByRole('button', { name: 'Revisar cierre' })).toBeDisabled()
     fireEvent.change(screen.getByLabelText(/^Período del cierre/), { target: { value: '2027-03' } })
@@ -91,7 +91,7 @@ describe('SettlementsPage', () => {
   })
 
   it('keeps selection, period and note when switching to history and back', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage()
     await user.click(await screen.findByRole('checkbox', { name: /Supermercado/ }))
     await user.click(screen.getByText('Agregar una nota', { exact: true }))
@@ -107,7 +107,7 @@ describe('SettlementsPage', () => {
   })
 
   it('toggles all pending expenses and never offers settled expenses for selection', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage()
     await screen.findByRole('button', { name: 'Seleccionar todos' })
     await user.click(screen.getByText('Supermercado', { exact: true }))
@@ -121,7 +121,7 @@ describe('SettlementsPage', () => {
   })
 
   it('blocks a close above the budget', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api } = renderPage({ presupuesto: 150 })
     await user.click(await screen.findByRole('button', { name: 'Seleccionar todos' }))
     expect(screen.getByText(/supera el presupuesto disponible/)).toBeVisible()
@@ -130,7 +130,7 @@ describe('SettlementsPage', () => {
   })
 
   it('does not enable a close without a confirmed budget or valid period', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage({ presupuesto: null })
     await user.click(await screen.findByRole('checkbox', { name: /Internet/ }))
     expect(screen.getByText('No disponible')).toBeVisible()
@@ -140,7 +140,7 @@ describe('SettlementsPage', () => {
   })
 
   it('requires another review if the budget changes while the confirmation is open', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api, update } = renderPage()
     await openReview(user)
     update({ space: { id: 1, presupuestoBase: 900 } })
@@ -151,7 +151,7 @@ describe('SettlementsPage', () => {
   })
 
   it('does not submit expenses removed by a refresh while the review is open', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { api, updateExpenses } = renderPage()
     await openReview(user)
     updateExpenses(expenses.filter(expense => expense.id !== 2))
@@ -163,7 +163,7 @@ describe('SettlementsPage', () => {
   })
 
   it('keeps history available when the pending expenses request fails', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage({ expenseError: new Error('Gastos no disponibles') })
     expect(await screen.findByText('Gastos no disponibles')).toBeVisible()
     expect(screen.queryByRole('button', { name: 'Revisar cierre' })).not.toBeInTheDocument()
@@ -173,7 +173,7 @@ describe('SettlementsPage', () => {
   })
 
   it('keeps the reviewed values and note after a recoverable server error', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage({ closeResult: new ApiError('No pudimos registrar el cierre.', { status: 500 }) })
     await screen.findByRole('button', { name: 'Revisar cierre' })
     await user.click(screen.getByText('Agregar una nota', { exact: true }))
@@ -188,7 +188,7 @@ describe('SettlementsPage', () => {
   })
 
   it('reloads after a conflict without losing the accounting note', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     const { invalidate } = renderPage({ closeResult: new ApiError('Uno o más gastos ya fueron liquidados', { status: 409, code: 'CONFLICTO' }) })
     await screen.findByRole('button', { name: 'Revisar cierre' })
     await user.click(screen.getByText('Agregar una nota', { exact: true }))
@@ -202,7 +202,7 @@ describe('SettlementsPage', () => {
   })
 
   it('offers a compact empty history without filters before the first close', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage({ historyData: [] })
     await user.click(screen.getByRole('tab', { name: 'Historial' }))
     expect(await screen.findByRole('heading', { name: 'Tu historial empieza con el primer cierre' })).toBeVisible()
@@ -212,7 +212,7 @@ describe('SettlementsPage', () => {
   })
 
   it('keeps filters and a clear action when a filtered history is empty', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage({ historyData: [], route: '/?vista=historial&modo=periodo&mes=10&anio=2026' })
     expect(await screen.findByRole('heading', { name: 'No hay cierres para este filtro' })).toBeVisible()
     expect(screen.getByRole('form', { name: 'Filtrar historial' })).toBeVisible()
@@ -223,7 +223,7 @@ describe('SettlementsPage', () => {
   })
 
   it('treats a history load failure as an error, not an empty history', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage({ historyError: new Error('Historial no disponible') })
     await user.click(screen.getByRole('tab', { name: 'Historial' }))
     expect(await screen.findByText('Historial no disponible')).toBeVisible()
@@ -232,7 +232,7 @@ describe('SettlementsPage', () => {
   })
 
   it('lets members read history and detail without offering a close', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup({ delay: null })
     renderPage({ isAdmin: false })
     expect(screen.getByRole('tab', { name: 'Historial' })).toHaveAttribute('aria-selected', 'true')
     expect(screen.queryByRole('button', { name: 'Revisar cierre' })).not.toBeInTheDocument()
