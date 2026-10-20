@@ -1,7 +1,9 @@
 @layer components {
-  .app-layout { display: grid; grid-template-columns: 248px minmax(0, 1fr); min-height: 100dvh; }
+  .app-layout { display: grid; grid-template-columns: max(240px, 15vw) minmax(0, 1fr); min-height: 100dvh; }
+  .app-layout--sidebar-collapsed { grid-template-columns: minmax(0, 1fr) !important; }
+  .app-layout--sidebar-collapsed .desktop-sidebar { display: none !important; }
   .desktop-sidebar { background: var(--color-panel); border-right: 1px solid var(--color-border-subtle); }
-  .sidebar-content { display: flex; flex-direction: column; height: 100dvh; overflow-y: auto; padding: 24px 18px 16px; position: sticky; top: 0; }
+  .sidebar-content { display: flex; flex-direction: column; height: 100dvh; overflow-y: auto; overflow-x: hidden; scrollbar-width: thin; padding: 24px 18px 16px; position: sticky; top: 0; }
   .sidebar-brand { padding: 0 10px 24px; }
   .app-brand { display: inline-flex; align-items: center; gap: 10px; font-size: 23px; font-weight: var(--font-weight-bold); letter-spacing: -.9px; color: var(--color-brand-secondary); }
   .app-brand__mark { display: grid; place-items: center; width: 34px; height: 34px; background: var(--color-brand-primary); color: var(--color-text-inverse); border-radius: 9px; font-size: 22px; letter-spacing: -1px; position: relative; }
@@ -25,7 +27,7 @@
   .account-menu summary { display: flex; align-items: center; gap: 9px; padding: 4px 0; list-style: none; min-height: 44px; }
   .account-menu summary::-webkit-details-marker { display: none; }
   .avatar { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--color-brand-soft); color: var(--color-brand-ink); font-size: var(--text-sm); font-weight: var(--font-weight-semibold); }
-  .account-name { font-size: var(--text-xs); max-width: 100px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .account-name { font-size: var(--text-xs); max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .account-menu__panel { position: absolute; top: calc(100% + 12px); right: 0; z-index: 20; display: grid; gap: 8px; width: 260px; padding: 16px; border: 1px solid var(--color-border-subtle); background: var(--color-canvas); border-radius: var(--radius-lg); box-shadow: var(--shadow-panel); }
   .account-menu__panel strong { font-size: var(--text-sm); }
   .account-menu__panel > span { color: var(--color-text-secondary); font-size: var(--text-xs); overflow-wrap: anywhere; }
@@ -64,7 +66,28 @@
   .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .gallery-grid p { font-size: var(--text-sm); }
   .gallery-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
-  @media(max-width:1180px) { .app-layout { grid-template-columns: 220px minmax(0, 1fr); } .app-main { padding: 30px 28px; } .app-header { padding: 12px 28px; } }
+  .avatar-picker-modal { width: min(640px, calc(100% - 32px)); }
+  .avatar-picker-content { display: grid; gap: var(--spacing-4); }
+  .avatar-picker-preview { display: flex; align-items: center; gap: var(--spacing-4); padding: var(--spacing-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-xl); background: var(--color-panel); }
+  .avatar-picker-preview__image { width: 64px; height: 64px; flex-shrink: 0; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: var(--color-brand-soft); }
+  .avatar-picker-preview__image img { width: 100%; height: 100%; object-fit: contain; }
+  .avatar-picker-preview__initials { font-size: var(--text-xl); font-weight: var(--font-weight-bold); color: var(--color-brand-ink); }
+  .avatar-picker-preview__info { display: grid; gap: 2px; }
+  .avatar-picker-preview__info strong { font-size: var(--text-base); color: var(--color-text-primary); }
+  .avatar-picker-preview__info span { font-size: var(--text-xs); color: var(--color-text-secondary); }
+  .avatar-picker-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: var(--spacing-2); max-height: min(50dvh, 380px); overflow-y: auto; padding: 4px; }
+  .avatar-picker-option { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; min-height: 84px; padding: 10px 6px; border-radius: var(--radius-lg); border: 1px solid var(--color-border-subtle); background: var(--color-canvas); cursor: pointer; transition: all var(--motion-duration-fast) var(--ease-standard); }
+  .avatar-picker-option:hover { background: var(--color-header); border-color: var(--color-border-strong); }
+  .avatar-picker-option--selected { border-color: var(--color-brand-primary); background: var(--color-brand-soft); box-shadow: 0 0 0 1px var(--color-brand-primary); }
+  .avatar-picker-option:focus-visible { outline: 2px solid var(--color-brand-primary); outline-offset: 2px; }
+  .avatar-picker-option__thumb { width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; overflow: hidden; background: var(--color-brand-soft); }
+  .avatar-picker-option__thumb img { width: 100%; height: 100%; object-fit: contain; }
+  .avatar-picker-option__initials { font-size: var(--text-sm); font-weight: var(--font-weight-semibold); color: var(--color-brand-ink); }
+  .avatar-picker-option__name { font-size: 11px; font-weight: var(--font-weight-medium); color: var(--color-text-secondary); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .avatar-picker-option--selected .avatar-picker-option__name { color: var(--color-brand-ink); font-weight: var(--font-weight-semibold); }
+  .avatar-picker-option__check { position: absolute; top: 4px; right: 4px; width: 16px; height: 16px; border-radius: 50%; background: var(--color-brand-primary); color: var(--color-text-inverse); display: grid; place-items: center; }
+  .avatar-picker-modal__footer { display: flex; justify-content: flex-end; gap: var(--spacing-3); width: 100%; }
+  @media(max-width:1180px) { .app-layout { grid-template-columns: max(240px, 15vw) minmax(0, 1fr); } .app-main { padding: 30px 28px; } .app-header { padding: 12px 28px; } }
   @media(max-width:900px) { .app-layout { grid-template-columns: minmax(0, 1fr); } .desktop-sidebar { display: none; } .mobile-menu-button { display: inline-flex; } .header-breadcrumb > span, .header-breadcrumb > svg { display: none; } .app-header { padding: 8px 24px; } }
   @media(max-width:650px) { .app-main { padding: 24px 16px; } .app-header { padding: 8px 16px; gap: 8px; } .app-footer { padding: 18px 16px; flex-direction: column; font-size: var(--text-xs); } .gallery-grid { grid-template-columns: minmax(0, 1fr); } }
 }

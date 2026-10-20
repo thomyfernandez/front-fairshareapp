@@ -13,7 +13,7 @@ export function DebtCard({ debt, userId, canRegistrarPago, onRegistrarPago }) {
 
   return (
     <article className="debt-item">
-      <Avatar name={role === 'deudor' ? debt.acreedorNombre : debt.deudorNombre} />
+      <Avatar name={role === 'deudor' ? debt.acreedorNombre : debt.deudorNombre} userId={role === 'deudor' ? debt.acreedorId : debt.deudorId} />
       <div className="debt-item__person"><Badge tone={tone}>{label}</Badge><strong>{debt.deudorNombre} → {debt.acreedorNombre}</strong></div>
       <strong className="debt-item__amount"><Money value={debt.monto} hideZeroDecimals /></strong>
       {canRegistrarPago && <Button variant="secondary" onClick={() => onRegistrarPago(debt)}>Registrar pago</Button>}

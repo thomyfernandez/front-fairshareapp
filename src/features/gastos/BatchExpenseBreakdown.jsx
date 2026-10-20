@@ -18,7 +18,7 @@ export function BatchExpenseBreakdown({ expenses, members }) {
           <ul className={`review-expense__participants${proportional ? ' review-expense__participants--names' : ''}`}>{expense.participantes.map(participant => {
             const name = batchMemberName(members, participant.usuarioId)
             return <li key={participant.usuarioId}>
-              <span className="review-expense__person"><Avatar name={name} size="small" /><span>{name}</span></span>
+              <span className="review-expense__person"><Avatar name={name} userId={participant.usuarioId} size="small" /><span>{name}</span></span>
               {!proportional && <span className="review-expense__allocation">{expense.tipoReparto === 'PORCENTUAL' && <span>{participant.porcentaje}%</span>}<Money value={participant.importe} /></span>}
             </li>
           })}</ul>
