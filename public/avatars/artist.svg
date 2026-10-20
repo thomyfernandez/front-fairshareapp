@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="50" cy="50" r="48" fill="#30264e" stroke="#b3a1ff" stroke-width="2" />
+  <path d="M24 90 C24 74 35 70 50 70 C65 70 76 74 76 90 Z" fill="#22222c" />
+  <!-- Rayas de remera artística -->
+  <line x1="32" y1="78" x2="68" y2="78" stroke="#f0eef8" stroke-width="2" />
+  <line x1="36" y1="84" x2="64" y2="84" stroke="#f0eef8" stroke-width="2" />
+  <!-- Cabeza -->
+  <circle cx="50" cy="48" r="18" fill="#f0eef8" />
+  <!-- Boina artística -->
+  <ellipse cx="50" cy="34" rx="22" ry="9" fill="#fa8199" />
+  <circle cx="50" cy="24" r="2.5" fill="#fa8199" />
+  <!-- Pincel en la oreja -->
+  <line x1="62" y1="46" x2="76" y2="32" stroke="#e3b963" stroke-width="2.5" stroke-linecap="round" />
+  <path d="M74 34 L78 30 L80 32 L76 36 Z" fill="#b3a1ff" />
+  <!-- Ojos y sonrisa cómplice -->
+  <circle cx="44" cy="47" r="2" fill="#17171f" />
+  <path d="M53 48 Q56 45 59 48" stroke="#17171f" stroke-width="1.8" fill="none" stroke-linecap="round" />
+  <path d="M46 54 Q50 58 54 54" stroke="#17171f" stroke-width="1.8" fill="none" stroke-linecap="round" />
+  <!-- Mancha de pintura en la mejilla -->
+  <circle cx="41" cy="52" r="2.5" fill="#87bbff" opacity="0.8" />
+</svg>
