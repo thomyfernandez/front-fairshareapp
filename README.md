@@ -41,7 +41,7 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
    - Declaracion de sueldos mensuales para el calculo de distribuciones proporcionales equitativas segun ingresos.
 
 4. **Registro y Clasificacion de Gastos**:
-   - Carga de gastos individuales y varios juntos con selección de pagador, desglose entre participantes y un ícono opcional elegido por el usuario (14 opciones y Automático). La elección se conserva en borradores, al repetir y al consultar el gasto.
+   - Carga de gastos individuales y varios juntos con selección de pagador, desglose entre participantes y una categoría elegida desde el catálogo. El ícono se asigna según la categoría, que se conserva en borradores, al repetir y al consultar el gasto.
    - Consulta del listado historico de gastos con búsqueda, filtros de fechas y paginación de 10, 20 o 50 registros; conserva la página al volver al espacio.
 
 5. **Matriz de Balances y Deudas Simplificadas**:
@@ -152,8 +152,7 @@ La aplicacion estara accesible en el navegador en `http://localhost:3000`.
 ```text
 front-fairshareapp/
 ├── public/                 # Recursos publicos estaticos e iconos SVG
-│   ├── favicon.svg
-│   └── icons.svg
+│   └── favicon.svg         # Isotipo F igual para la pestaña del navegador
 ├── src/                    # Codigo fuente de la aplicacion
 │   ├── assets/             # Imagenes y logotipos
 │   ├── api.js              # Modulo centralizado de comunicacion HTTP con la API REST
@@ -176,7 +175,7 @@ front-fairshareapp/
 
 ## Sistema de diseño
 
-La dirección visual es **Cercana**, con el tema oscuro del prototipo en todas las pantallas: un balance protagonista, información agrupada por tarea y detalles a demanda. La fuente de valores es `tokens.json`. Consultá [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) para la paleta, las utilidades y las reglas de uso, y el [catálogo de componentes](./docs/DESIGN_SYSTEM_COMPONENTS.md) para sus contratos y estados. `/componentes` incluye fundamentos, una composición de referencia del resumen y ejemplos interactivos de deuda, cobro, saldos simultáneos, carga y error. Todos usan datos de demostración; las pantallas reales utilizan estos componentes con sus datos y flujos existentes. El tema se genera automáticamente antes de iniciar o compilar; `npm run tokens:build` lo actualiza y `npm run tokens:check` comprueba su sincronización.
+La dirección visual es **Cercana**, con el tema oscuro del prototipo y un tema claro en todas las pantallas: un balance protagonista, información agrupada por tarea y detalles a demanda. La fuente de valores es `tokens.json`. Consultá [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md) para la paleta, las utilidades y las reglas de uso, y el [catálogo de componentes](./docs/DESIGN_SYSTEM_COMPONENTS.md) para sus contratos y estados. `/componentes` incluye fundamentos, una composición de referencia del resumen y ejemplos interactivos de deuda, cobro, saldos simultáneos, carga y error. Todos usan datos de demostración; las pantallas reales utilizan estos componentes con sus datos y flujos existentes. El tema se genera automáticamente antes de iniciar o compilar; `npm run tokens:build` lo actualiza y `npm run tokens:check` comprueba su sincronización.
 
 ## Arquitectura y componentes compartidos
 
@@ -184,7 +183,7 @@ Consultá [FRONTEND_ARCHITECTURE.md](./FRONTEND_ARCHITECTURE.md) para las rutas,
 
 ### Dashboard y navegación
 
-El selector de espacio está debajo del logo y permite cambiar de grupo o crear uno. Dentro de cada espacio, la navegación muestra Inicio, Gastos, Balance, Recurrentes y Liquidaciones en el grupo principal; Miembros y Configuración quedan visibles en un segundo grupo. Mis ingresos, cuenta y espacios están al pie; en móvil se accede desde “Abrir navegación”. Todo el producto comparte el tema oscuro, incluidos acceso, registro, detalles y confirmaciones. En Mis espacios e ingresos la navegación muestra los destinos de cuenta. No hay un desplegable Más: todos los destinos del espacio están visibles. Los filtros y formularios conservan sus contratos. El presupuesto, los datos de espacios y la edición de recurrentes reutilizan PanelDisclosure; las filas de gastos comparten categorías, foco y hover completo.
+El selector de espacio está debajo del logo y permite cambiar de grupo o crear uno. Dentro de cada espacio, la navegación muestra Inicio, Gastos, Balance, Recurrentes y Liquidaciones en el grupo principal; Miembros y Configuración quedan visibles en un segundo grupo. Mis ingresos, cuenta y espacios están al pie; en móvil se accede desde “Abrir navegación”. Todo el producto comparte el tema elegido, incluidos acceso, registro, detalles y confirmaciones. “Usar modo claro” y “Usar modo oscuro” están al pie de la navegación y en la cabecera de acceso; la elección se recuerda en el navegador y, sin ella, se sigue la apariencia del sistema. En Mis espacios e ingresos la navegación muestra los destinos de cuenta. No hay un desplegable Más: todos los destinos del espacio están visibles. Los filtros y formularios conservan sus contratos. El presupuesto, los datos de espacios y la edición de recurrentes reutilizan PanelDisclosure; las filas de gastos comparten categorías, foco y hover completo.
 
 El resumen aplica la dirección Cercana: un balance personal protagonista, actividad del mes en una sección abierta y avisos solo cuando hay tareas reales. El saldo aparece una sola vez por concepto; si hay dinero por pagar y por cobrar se muestran ambos, aunque su neto sea cero. El selector de mes solo filtra los gastos. Cada fila abre el detalle existente, y registrar un pago conserva la elección de deuda, el importe total o parcial y la confirmación antes de actualizar los datos. Las plantillas vencidas enlazan a su revisión; las invitaciones se gestionan desde Miembros.
 
@@ -218,3 +217,5 @@ La invitación prioriza copiar el enlace de ingreso y conserva las alternativas 
 - Búsqueda `q` y fechas permanecen en la URL. La navegación conserva el último filtro y posición de cada espacio durante la sesión, incluida la vuelta desde Mis ingresos o un formulario. Limpiar filtros elimina también el contexto recordado.
 
 El registro individual usa `POST /api/v1/espacios/{id}/gastos`; el lote usa `POST /api/v1/espacios/{id}/gastos/lote` con un **array directo**, según el controlador existente. Los formularios traducen los modos de edición a `regla`: equitativa, personalizada o proporcional a ingresos. En personalizada envían porcentajes **o** importes, sin mezclarlos; el reparto proporcional se calcula en el servidor. No se reintenta automáticamente un registro en un endpoint alternativo.
+
+Las categorías se consultan en `GET /api/v1/categorias` (`CategoriaResponseDTO`: `id`, `nombre`), también disponible desde `/public/data/categorias.json` en demostración. El registro individual y múltiple guardan `categoriaId`; el ícono se determina por la categoría, sin una selección independiente.

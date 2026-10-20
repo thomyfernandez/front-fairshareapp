@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>FairShare — Gastos compartidos</title>
+    <script>
+      // Aplica el tema antes de la primera pintura para evitar un destello; replica src/app/theme-preference.js.
+      try {
+        var saved = localStorage.getItem('fairshare.theme')
+        var theme = saved === 'light' || saved === 'dark' ? saved : (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+        document.documentElement.setAttribute('data-theme', theme)
+      } catch (error) { /* Se mantiene el tema oscuro de referencia. */ }
+    </script>
   </head>
   <body>
     <div id="root"></div>

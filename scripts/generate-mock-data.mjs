@@ -30,7 +30,7 @@ function addIncome(userId, month, id = incomes.length + 1) {
 addIncome(1, 10); addIncome(1, 9); addIncome(2, 10); addIncome(3, 10)
 for (const user of users) for (let month = 5; month <= 10; month++) if (!incomes.some(row => row.usuarioId === user.id && row.mes === month)) addIncome(user.id, month)
 const members = configurations.flatMap((configuration, index) => configuration[6].map(userId => ({ id: (index + 1) * 100 + userId, espacioId: index + 1, usuarioId: userId, nombreUsuario: fullName(users[userId - 1]), emailUsuario: users[userId - 1].email, rol: userId === configuration[7] ? 'ADMIN' : 'MIEMBRO', sueldoDeclarado: incomeBase[userId - 1] })))
-const categories = [[1, 'Supermercado'], [2, 'Internet'], [3, 'Transporte'], [4, 'Servicios'], [5, 'Comidas'], [6, 'Hogar'], [7, 'Trabajo'], [8, 'Ocio'], [9, 'Estudio'], [10, 'Deportes']]
+const categories = [[1, 'Supermercado'], [2, 'Internet'], [3, 'Transporte'], [4, 'Servicios'], [5, 'Comidas'], [6, 'Hogar'], [7, 'Trabajo'], [8, 'Ocio'], [9, 'Estudio'], [10, 'Deportes'], [11, 'Salud'], [12, 'Regalos'], [13, 'Mascotas'], [14, 'Otros']]
 const concepts = [
   [['Coto', 1, 45200], ['Verdulería', 1, 12750], ['Alquiler', 6, 450000], ['Luz', 4, 34566], ['Gas', 4, 18350], ['Internet', 2, 32000], ['Artículos de limpieza', 6, 22400], ['Ferretería', 6, 15480], ['Delivery del viernes', 5, 28600], ['Expensas', 6, 92500]],
   [['Cabaña en Bariloche', 6, 180000], ['Combustible', 3, 68000], ['Excursión al lago', 8, 95000], ['Cena en el centro', 5, 72000], ['Compras para el viaje', 1, 56000], ['Estacionamiento', 3, 12000], ['Alquiler de equipo', 8, 45500], ['Desayuno en ruta', 5, 26500], ['Seguro de viaje', 3, 34000], ['Pasajes', 3, 125000]],
@@ -39,7 +39,8 @@ const concepts = [
   [['Impresión de láminas', 9, 18000], ['Materiales para maqueta', 9, 34500], ['Suscripción de prototipado', 9, 24000], ['Encuadernación', 9, 16500], ['Merienda de estudio', 5, 14500], ['Traslado a la facultad', 3, 9800], ['Hosting del proyecto', 9, 12000], ['Compra de cartón', 9, 8600], ['Impresión 3D', 9, 42000], ['Presentación final', 9, 21500]],
   [['Cena de aniversario', 5, 92000], ['Entradas de cine', 8, 24500], ['Compra del fin de semana', 1, 62500], ['Escapada de fin de semana', 8, 150000], ['Café y merienda', 5, 18500], ['Regalo compartido', 8, 48000], ['Transporte de la salida', 3, 15600], ['Entradas al teatro', 8, 68000], ['Comida para cocinar', 1, 32000], ['Fondo para vacaciones', 8, 120000]],
 ]
-const state = { users, spaces, incomes, members, expenses: [], debts: [], payments: [] }
+const categoryCatalog = categories.map(([id, nombre]) => ({ id, nombre }))
+const state = { categories: categoryCatalog, users, spaces, incomes, members, expenses: [], debts: [], payments: [] }
 function expense(space, id, body) {
   const row = buildExpense(state, space, body, id, now)
   row.categoriaNombre = categories.find(([categoryId]) => categoryId === row.categoriaId)?.[1] || null
@@ -103,6 +104,7 @@ Object.assign(templates[2], { nombre: 'Luz', montoBase: 34566, montoVariable: 0,
 const manifest = { description: 'Manifiesto de archivos; los DTOs se encuentran sin envoltorios en cada archivo indicado.', referenceDate: reference, fixtures: {} }
 async function fixture(key, file, dto, value) { manifest.fixtures[key] = { file, dto }; await write(file, value) }
 await fixture('login', 'login.json', 'LoginResponse', { token: 'mock-demo-ana-v1', tokenType: 'Bearer', expiresIn: 3600, email: users[0].email, nombre: users[0].nombre, apellido: users[0].apellido, usuario: users[0] })
+await fixture('categories', 'categorias.json', 'CategoriaResponseDTO[]', categoryCatalog)
 await fixture('users', 'usuarios.json', 'UsuarioResponse[]', users)
 await fixture('spaces', 'espacios.json', 'EspacioResponseDTO[]', spaces)
 await fixture('incomes', 'sueldos.json', 'SueldoResponse[]', incomes)

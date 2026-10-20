@@ -42,7 +42,6 @@ export function expensePayload(value) {
     descripcion: value.descripcion.trim(), monto: Number(Number(value.monto).toFixed(2)), fecha: value.fecha,
     pagadorId: Number(value.pagadorId), regla: custom ? 'PERSONALIZADA' : value.tipoReparto === 'PROPORCIONAL_INGRESOS' ? 'PROPORCIONAL_INGRESOS' : 'EQUITATIVA',
     ...(value.categoriaId != null ? { categoriaId: Number(value.categoriaId) } : {}),
-    ...(isExpenseIcon(value.icono) ? { icono: value.icono } : {}),
     participantes: value.participantes.map(part => ({ usuarioId: Number(part.usuarioId), ...(custom ? value.tipoReparto === 'PORCENTUAL' ? { porcentaje: Number(Number(part.porcentaje).toFixed(2)) } : { importe: Number(Number(part.importe).toFixed(2)) } : {}) })),
   }
 }

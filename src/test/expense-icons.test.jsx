@@ -3,68 +3,70 @@ import { fireEvent, render, screen, waitFor, within } from '@testing-library/rea
 import userEvent from '@testing-library/user-event'
 import { expect, it, vi } from 'vitest'
 import { UIProvider } from '../components/ui'
-import { ExpenseIconPicker } from '../features/gastos/ExpenseIconPicker'
+import { ExpenseCategoryPicker } from '../features/gastos/ExpenseCategoryPicker'
 import { ExpenseForm } from '../features/gastos/ExpenseForm'
 import { ExpenseBatchForm } from '../features/gastos/ExpenseBatchForm'
 import { WorkspaceContext } from '../app/workspace-context'
-import { expenseIcon, expenseIconChoices } from '../components/ui/expense-icons'
+import { expenseIcon } from '../components/ui/expense-icons'
 import { expensePayload, repeatExpense } from '../features/gastos/expense-experience'
 import { today } from '../lib/format'
 
 const members = [{ usuarioId: 1, nombreUsuario: 'Ana Ruiz', rol: 'ADMIN' }, { usuarioId: 2, nombreUsuario: 'Thomas Fernandez', rol: 'MIEMBRO' }]
+const data = [{ id: 91, nombre: 'Mascotas' }, { id: 42, nombre: 'Regalos' }, { id: 83, nombre: 'Transporte' }]
+const resource = { data, loading: false, error: null }
 function wrap(ui) { return render(<UIProvider><WorkspaceContext.Provider value={{ members, session: { usuario: { id: 1 } }, invalidate: vi.fn() }}>{ui}</WorkspaceContext.Provider></UIProvider>) }
+const apiWith = handler => vi.fn((path, options) => path === '/api/v1/categorias' ? Promise.resolve(data) : handler(path, options))
 async function choose(user, trigger, name) {
   await user.click(trigger)
-  await user.click(screen.getByRole('button', { name: `Usar ícono: ${name}` }))
+  await user.click(await screen.findByRole('button', { name: `Usar categoría: ${name}` }))
 }
 
-it('permite elegir cualquiera de los 14 íconos sin confundirlo con una categoría', () => {
-  for (const choice of expenseIconChoices) expect(expenseIcon('Supermercado', 'Coto', choice.value)).toBe(choice.icon)
-  expect(expenseIcon('Supermercado', 'Coto', 'REGALOS')).toBe('gift')
-  expect(expenseIcon('Supermercado', 'Coto', 'RECIBO')).toBe('receipt')
-  expect(expenseIcon('Supermercado', 'Coto', null)).toBe('basket')
-  expect(expenseIcon('Supermercado', 'Coto', 'DESCONOCIDO')).toBe('basket')
-  const value = { descripcion: 'Coto', monto: '100', fecha: today(), pagadorId: 1, tipoReparto: 'EQUITATIVA', categoriaId: 9, icono: 'MASCOTAS', participantes: [{ usuarioId: 1 }] }
-  expect(expensePayload(value)).toMatchObject({ categoriaId: 9, icono: 'MASCOTAS' })
-  expect(expensePayload({ ...value, icono: null })).not.toHaveProperty('icono')
-  expect(repeatExpense(value, members)).toMatchObject({ categoriaId: 9, icono: 'MASCOTAS' })
+it('deriva el ícono de la categoría y envía su ID real, sin una elección independiente de ícono', () => {
+  expect(expenseIcon('Mascotas', 'Coto', 'COMPRAS')).toBe('paw')
+  expect(expenseIcon('Regalos', 'Coto', 'RECIBO')).toBe('gift')
+  expect(expenseIcon('Comidas')).toBe('utensils')
+  expect(expenseIcon('Supermercado')).toBe('basket')
+  const value = { descripcion: 'Alimento', monto: '100', fecha: today(), pagadorId: 1, tipoReparto: 'EQUITATIVA', categoriaId: 91, categoriaNombre: 'Mascotas', icono: 'COMPRAS', participantes: [{ usuarioId: 1 }] }
+  expect(expensePayload(value)).toMatchObject({ categoriaId: 91 })
+  expect(expensePayload(value)).not.toHaveProperty('icono')
+  expect(repeatExpense(value, members)).toMatchObject({ categoriaId: 91, categoriaNombre: 'Mascotas' })
 })
 
 it('ofrece selección, automático, cancelación y retorno del foco con el diálogo compartido', async () => {
   const user = userEvent.setup({ delay: null })
   function Picker() { const [value, setValue] = useState(null); return <ExpenseIconPicker value={value} onChange={setValue} description="Coto" /> }
   wrap(<Picker />)
-  await user.click(screen.getByRole('button', { name: 'Cambiar ícono del gasto: Automático' }))
-  const dialog = screen.getByRole('dialog', { name: 'Elegí un ícono' })
-  expect(within(dialog).getAllByRole('button', { name: /^Usar ícono:/ })).toHaveLength(15)
-  expect(within(dialog).getByRole('button', { name: 'Usar ícono: Automático' })).toHaveAttribute('aria-pressed', 'true')
-  await user.click(within(dialog).getByRole('button', { name: 'Usar ícono: Regalos' }))
-  const selected = screen.getByRole('button', { name: 'Cambiar ícono del gasto: Regalos' })
+  await user.click(screen.getByRole('button', { name: 'Cambiar categoría: Sin categoría' }))
+  const dialog = screen.getByRole('dialog', { name: 'Elegí una categoría' })
+  expect(within(dialog).getAllByRole('button', { name: /^Usar categoría:/ })).toHaveLength(4)
+  expect(within(dialog).getByRole('button', { name: 'Usar categoría: Sin categoría' })).toHaveAttribute('aria-pressed', 'true')
+  await user.click(within(dialog).getByRole('button', { name: 'Usar categoría: Regalos' }))
+  const selected = screen.getByRole('button', { name: 'Cambiar categoría: Regalos' })
   expect(selected).toHaveFocus()
   await user.click(selected)
-  expect(screen.getByRole('button', { name: 'Usar ícono: Regalos' })).toHaveAttribute('aria-pressed', 'true')
-  fireEvent(screen.getByRole('dialog', { name: 'Elegí un ícono' }), new Event('cancel', { cancelable: true }))
+  expect(screen.getByRole('button', { name: 'Usar categoría: Regalos' })).toHaveAttribute('aria-pressed', 'true')
+  fireEvent(screen.getByRole('dialog', { name: 'Elegí una categoría' }), new Event('cancel', { cancelable: true }))
   expect(selected).toHaveFocus()
-  await choose(user, selected, 'Automático')
-  expect(screen.getByRole('button', { name: 'Cambiar ícono del gasto: Automático' })).toHaveFocus()
+  await choose(user, selected, 'Sin categoría')
+  expect(screen.getByRole('button', { name: 'Cambiar categoría: Sin categoría' })).toHaveFocus()
 })
 
 it('mantiene el ícono elegido al guardar y retomar un borrador individual', async () => {
   const user = userEvent.setup({ delay: null })
   const saveDraft = vi.fn()
   const initial = { descripcion: 'Comida de mascota', monto: '200', fecha: today(), pagadorId: '1', tipoReparto: 'EQUITATIVA', participantes: [{ usuarioId: 1 }, { usuarioId: 2 }] }
-  const first = wrap(<ExpenseForm spaceId="1" members={members} api={vi.fn()} initialValues={initial} onDraftChange={saveDraft} />)
-  await choose(user, screen.getByRole('button', { name: 'Cambiar ícono del gasto: Automático' }), 'Mascotas')
-  await waitFor(() => expect(saveDraft.mock.lastCall[0]).toMatchObject({ icono: 'MASCOTAS', touched: true }))
+  const first = wrap(<ExpenseForm spaceId="1" members={members} api={apiWith(() => Promise.resolve({}))} initialValues={initial} onDraftChange={saveDraft} />)
+  await choose(user, screen.getByRole('button', { name: 'Cambiar categoría: Sin categoría' }), 'Mascotas')
+  await waitFor(() => expect(saveDraft.mock.lastCall[0]).toMatchObject({ categoriaId: 91, categoriaNombre: 'Mascotas', touched: true }))
   const draft = saveDraft.mock.lastCall[0]
   first.unmount()
-  const api = vi.fn().mockRejectedValue(new Error('Falló el registro'))
+  const api = apiWith(() => Promise.reject(new Error('Falló el registro')))
   wrap(<ExpenseForm spaceId="1" members={members} api={api} initialValues={draft} />)
-  expect(screen.getByRole('button', { name: 'Cambiar ícono del gasto: Mascotas' })).toBeVisible()
+  expect(screen.getByRole('button', { name: 'Cambiar categoría: Mascotas' })).toBeVisible()
   await user.click(screen.getByRole('button', { name: 'Registrar gasto', exact: true }))
   expect(await screen.findByText('Falló el registro')).toBeVisible()
-  expect(screen.getByRole('button', { name: 'Cambiar ícono del gasto: Mascotas' })).toBeVisible()
-  expect(api).toHaveBeenCalledWith('/api/v1/espacios/1/gastos', expect.objectContaining({ body: expect.objectContaining({ icono: 'MASCOTAS' }) }))
+  expect(screen.getByRole('button', { name: 'Cambiar categoría: Mascotas' })).toBeVisible()
+  expect(api).toHaveBeenCalledWith('/api/v1/espacios/1/gastos', expect.objectContaining({ body: expect.objectContaining({ categoriaId: 91 }) }))
 })
 
 it('envía un ícono independiente por gasto al registrar varios juntos', async () => {
@@ -72,10 +74,25 @@ it('envía un ícono independiente por gasto al registrar varios juntos', async 
   const api = vi.fn().mockResolvedValue([{ id: 1 }, { id: 2 }])
   const values = { gastos: ['Regalo de cumpleaños', 'Taxi'].map((descripcion, index) => ({ tempId: index + 1, descripcion, monto: '100', fecha: today(), pagadorId: '1', tipoReparto: 'EQUITATIVA', participantes: [{ usuarioId: 1 }, { usuarioId: 2 }] })) }
   wrap(<ExpenseBatchForm spaceId="1" members={members} api={api} initialValues={values} />)
-  await choose(user, screen.getByRole('button', { name: 'Cambiar ícono del gasto 1: Automático' }), 'Regalos')
-  await choose(user, screen.getByRole('button', { name: 'Cambiar ícono del gasto 2: Automático' }), 'Transporte')
+  await choose(user, screen.getByRole('button', { name: 'Cambiar categoría del gasto 1: Sin categoría' }), 'Regalos')
+  await choose(user, screen.getByRole('button', { name: 'Cambiar categoría del gasto 2: Sin categoría' }), 'Transporte')
   await user.click(screen.getByRole('button', { name: 'Registrar 2 gastos' }))
   await user.click(screen.getByRole('button', { name: 'Confirmar registro', exact: true }))
-  await waitFor(() => expect(api).toHaveBeenCalledTimes(1))
-  expect(api.mock.calls[0][1].body.map(row => row.icono)).toEqual(['REGALOS', 'TRANSPORTE'])
+  await waitFor(() => expect(api.mock.calls.filter(([, opts]) => opts?.method === 'POST')).toHaveLength(1))
+  const post = api.mock.calls.find(([, opts]) => opts?.method === 'POST')
+  expect(post[1].body.map(row => row.categoriaId)).toEqual([42, 83])
+  expect(post[1].body.every(row => !('icono' in row))).toBe(true)
+  expect(api.mock.calls.filter(([path]) => path === '/api/v1/categorias')).toHaveLength(1)
+})
+
+it('muestra el error del catálogo y permite reintentar sin perder el gasto', async () => {
+  const user = userEvent.setup()
+  let attempts = 0
+  const api = vi.fn(() => ++attempts === 1 ? Promise.reject(new Error('Sin conexión')) : Promise.resolve(data))
+  wrap(<ExpenseForm spaceId="1" members={members} api={api} initialValues={{ descripcion: 'Mi gasto' }} />)
+  await user.click(screen.getByRole('button', { name: 'Cambiar categoría: Sin categoría' }))
+  expect(await screen.findByText(/No pudimos cargar las categorías/)).toBeVisible()
+  await user.click(screen.getByRole('button', { name: 'Reintentar' }))
+  await user.click(await screen.findByRole('button', { name: 'Usar categoría: Mascotas' }))
+  expect(screen.getByLabelText(/^Descripción del gasto/)).toHaveValue('Mi gasto')
 })
