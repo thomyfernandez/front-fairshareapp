@@ -9,6 +9,7 @@ import { SessionContext } from '../features/auth/session-context'
 import { clearSessionDrafts, draftKey, readDraft, removeDraft, saveDraft } from '../lib/draft-storage'
 import { expenseErrorMessage, expensePayload, frequentExpenses, repeatExpense, similarExpenses, validExpenseAmount } from '../features/gastos/expense-experience'
 import { today } from '../lib/format'
+import { storeWrapper } from './store-wrapper'
 
 const members = [{ usuarioId: 1, nombreUsuario: 'Ana', rol: 'ADMIN' }, { usuarioId: 2, nombreUsuario: 'Luis', rol: 'MIEMBRO' }, { usuarioId: 3, nombreUsuario: 'Sol', rol: 'MIEMBRO' }]
 const original = { id: 7, descripcion: 'Supermercado', monto: 600, fecha: today(), pagadorId: 2, pagadorNombre: 'Luis', regla: 'EQUITATIVA', estado: 'PENDIENTE', participantes: [{ usuarioId: 1, importe: 300, porcentaje: 50 }, { usuarioId: 2, importe: 300, porcentaje: 50 }] }
@@ -31,7 +32,7 @@ function setup({ route = '/espacios/1/gastos', failure, responseAmount } = {}) {
     if (clean.includes('/gastos/')) return data.find(item => String(item.id) === clean.split('/').at(-1))
     return []
   })
-  const view = render(<StrictMode><MemoryRouter initialEntries={[route]}><SessionContext.Provider value={{ session, api }}><UIProvider><AppRoutes /></UIProvider></SessionContext.Provider></MemoryRouter></StrictMode>)
+  const view = render(<StrictMode><MemoryRouter initialEntries={[route]}><SessionContext.Provider value={{ session, api }}><UIProvider><AppRoutes /></UIProvider></SessionContext.Provider></MemoryRouter></StrictMode>, storeWrapper())
   return { ...view, api }
 }
 const posts = api => api.mock.calls.filter(([, options]) => options?.method === 'POST')

@@ -1,11 +1,14 @@
 import { useEffect, useRef } from 'react'
+import { useSelector } from 'react-redux'
 import { Link, useLocation } from 'react-router'
 import { Button, Icon } from '../components/ui'
 import { useWorkspace } from './useWorkspace'
 import { spaceDestination } from './navigation'
+import { selectExpenseViews } from '../features/gastos/expenseViewsSlice'
 
 export function SpaceSwitcher({ onNavigate }) {
-  const { spaces, spacesState, space, spaceId, expenseViews } = useWorkspace()
+  const { spaces, spacesState, space, spaceId } = useWorkspace()
+  const expenseViews = useSelector(selectExpenseViews)
   const { pathname, search } = useLocation()
   const ref = useRef(null)
   useEffect(() => { ref.current?.removeAttribute('open') }, [pathname, search])

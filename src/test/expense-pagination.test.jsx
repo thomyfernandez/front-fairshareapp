@@ -5,6 +5,7 @@ import { beforeEach, expect, it, vi } from 'vitest'
 import { AppRoutes } from '../app/AppRoutes'
 import { SessionContext } from '../features/auth/session-context'
 import { UIProvider } from '../components/ui'
+import { storeWrapper } from './store-wrapper'
 
 const rows = Array.from({ length: 53 }, (_, index) => ({ id: index + 1, descripcion: index === 6 ? 'Único viaje' : `Compra ${String(index + 1).padStart(2, '0')}`, fecha: '2026-10-19', monto: 100 + index, estado: 'PENDIENTE', pagadorId: 1, pagadorNombre: 'Ana Ruiz', regla: 'EQUITATIVA', participantes: [{ usuarioId: 1, importe: 100 + index }] }))
 function History() {
@@ -25,7 +26,7 @@ function setup({ route = '/espacios/1/gastos', count = 53 } = {}) {
     }
     return []
   })
-  render(<MemoryRouter initialEntries={[route]}><SessionContext.Provider value={{ api, session: { usuario: { id: 1, nombre: 'Ana' } } }}><UIProvider><AppRoutes /><History /></UIProvider></SessionContext.Provider></MemoryRouter>)
+  render(<MemoryRouter initialEntries={[route]}><SessionContext.Provider value={{ api, session: { usuario: { id: 1, nombre: 'Ana' } } }}><UIProvider><AppRoutes /><History /></UIProvider></SessionContext.Provider></MemoryRouter>, storeWrapper())
   return api
 }
 const list = () => screen.getByRole('list', { name: 'Gastos del espacio' })

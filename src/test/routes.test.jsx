@@ -8,6 +8,7 @@ import { SessionProvider } from '../features/auth/SessionProvider'
 import { saveDraft, readDraft } from '../lib/draft-storage'
 import { localDate } from '../lib/format'
 import { THEME_STORAGE_KEY } from '../app/theme-preference'
+import { storeWrapper } from './store-wrapper'
 
 const spaces = [
   { id: 1, nombre: 'Casa del equipo', presupuestoBase: 5000, reglaReparto: 'CINCUENTA_CINCUENTA' },
@@ -38,7 +39,7 @@ function RouteProbe() {
 }
 function setup(route, options) {
   const fetcher = mockApi(options)
-  render(<MemoryRouter initialEntries={[route]}><UIProvider><SessionProvider><AppRoutes /><RouteProbe /></SessionProvider></UIProvider></MemoryRouter>)
+  render(<MemoryRouter initialEntries={[route]}><UIProvider><SessionProvider><AppRoutes /><RouteProbe /></SessionProvider></UIProvider></MemoryRouter>, storeWrapper())
   return fetcher
 }
 async function logIn() {

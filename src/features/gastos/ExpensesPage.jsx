@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, useSearchParams } from 'react-router'
 import { Button, EmptyState, Icon, InlineAlert, PageHeader, ResourceState, useUI } from '../../components/ui'
 import { useFeature } from '../../hooks/useFeature'
@@ -14,12 +15,13 @@ import { ExpenseBatchForm } from './ExpenseBatchForm'
 import { ExpenseDetail } from './ExpenseDetail'
 import { ExpenseReceipt } from './ExpenseReceipt'
 import { ExpensePagination } from './ExpensePagination'
+import { rememberExpenseView, selectExpenseView } from './expenseViewsSlice'
 
 const listQuery = params => new URLSearchParams([...params].filter(([key]) => ['desde', 'hasta', 'q', 'pagina', 'cantidad'].includes(key))).toString()
 export default function ExpensesPage() {
-  const { spaceId, expenseViews } = useWorkspace()
+  const { spaceId } = useWorkspace()
   const [params] = useSearchParams()
-  const remembered = expenseViews?.[spaceId]?.query
+  const remembered = useSelector(state => selectExpenseView(state, spaceId))?.query
   const [restoreTarget] = useState(() => {
     if (!remembered || listQuery(params) || (params.size && !params.has('nuevo'))) return null
     const next = new URLSearchParams(remembered)
@@ -34,7 +36,10 @@ export default function ExpensesPage() {
 }
 
 function ExpenseScreen() {
-  const { spaceId, session, expenseViews, rememberExpenseView } = useWorkspace()
+  const { spaceId, session } = useWorkspace()
+  const savedView = useSelector(state => selectExpenseView(state, spaceId))
+  const dispatch = useDispatch()
+  const remember = useCallback((id, view) => dispatch(rememberExpenseView(id, view)), [dispatch])
   const userId = session?.usuario?.id
   const [params, setParams] = useSearchParams()
   const tab = params.has('nuevo') ? params.get('modo') === 'lote' ? 'lote' : 'individual' : 'lista'
@@ -85,13 +90,13 @@ function ExpenseScreen() {
   const singleDraft = readSaved(userId, spaceId, 'individual')
   const batchDraft = readSaved(userId, spaceId, 'lote')
 
-  useEffect(() => { rememberExpenseView?.(spaceId, { query }) }, [spaceId, query, rememberExpenseView])
+  useEffect(() => { remember(spaceId, { query }) }, [spaceId, query, remember])
   useEffect(() => () => {
-    if (latest.current.tab === 'lista') rememberExpenseView?.(spaceId, { query: latest.current.query, scroll: window.scrollY })
-  }, [spaceId, rememberExpenseView])
+    if (latest.current.tab === 'lista') remember(spaceId, { query: latest.current.query, scroll: window.scrollY })
+  }, [spaceId, remember])
   useEffect(() => {
     if (tab !== 'lista' || resource.loading || membersState.loading || focusPageStart.current) return
-    const frame = requestAnimationFrame(() => window.scrollTo({ top: expenseViews?.[spaceId]?.scroll || 0, behavior: 'instant' }))
+    const frame = requestAnimationFrame(() => window.scrollTo({ top: savedView?.scroll || 0, behavior: 'instant' }))
     return () => cancelAnimationFrame(frame)
     // La posición se restaura al volver o terminar de cargar, no al desplazarse.
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -112,13 +117,13 @@ function ExpenseScreen() {
     const next = new URLSearchParams(params)
     if (value) next.set(key, value); else next.delete(key)
     next.delete('pagina')
-    rememberExpenseView?.(spaceId, { query: listQuery(next), scroll: 0 })
+    remember(spaceId, { query: listQuery(next), scroll: 0 })
     setParams(next, { replace: true })
   }
   function clearFilters() {
     const next = new URLSearchParams()
     if (pageSize !== 10) next.set('cantidad', String(pageSize))
-    rememberExpenseView?.(spaceId, { query: next.toString(), scroll: 0 })
+    remember(spaceId, { query: next.toString(), scroll: 0 })
     setParams(next)
   }
   function changePage(nextPage, nextSize = pageSize) {
@@ -126,12 +131,12 @@ function ExpenseScreen() {
     if (nextPage > 1) next.set('pagina', String(nextPage)); else next.delete('pagina')
     if (nextSize !== 10) next.set('cantidad', String(nextSize)); else next.delete('cantidad')
     focusPageStart.current = true
-    rememberExpenseView?.(spaceId, { query: listQuery(next), scroll: 0 })
+    remember(spaceId, { query: listQuery(next), scroll: 0 })
     setParams(next)
   }
   async function openForm(kind, source) {
     if (source && readSaved(userId, spaceId, 'individual') && !await confirm({ title: '¿Reemplazar el borrador individual?', description: 'Hay un gasto sin registrar. Podés retomarlo desde el listado o reemplazarlo con este gasto anterior.', confirmLabel: 'Reemplazar borrador' })) return
-    if (tab === 'lista') rememberExpenseView?.(spaceId, { scroll: window.scrollY })
+    if (tab === 'lista') remember(spaceId, { scroll: window.scrollY })
     setValues(previous => ({ ...previous, [kind]: source ? repeatExpense(source, members) : readSaved(userId, spaceId, kind) || {} }))
     setGeneration(value => value + 1)
     const next = new URLSearchParams(params); next.set('nuevo', '1'); next.set('modo', kind)

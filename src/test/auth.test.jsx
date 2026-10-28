@@ -6,6 +6,7 @@ import { AppRoutes } from '../app/AppRoutes'
 import { UIProvider } from '../components/ui'
 import { SessionProvider } from '../features/auth/SessionProvider'
 import { tokenExpiry } from '../features/auth/session'
+import { storeWrapper } from './store-wrapper'
 
 const base64url = value => btoa(JSON.stringify(value)).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_')
 const jwt = exp => `${base64url({ alg: 'HS256' })}.${base64url({ sub: 'ana@example.test', exp })}.firma`
@@ -33,7 +34,7 @@ function RouteProbe() {
 }
 function setup(route = '/login', options) {
   const fetcher = mockApi(options)
-  render(<MemoryRouter initialEntries={[route]}><UIProvider><SessionProvider><AppRoutes /><RouteProbe /></SessionProvider></UIProvider></MemoryRouter>)
+  render(<MemoryRouter initialEntries={[route]}><UIProvider><SessionProvider><AppRoutes /><RouteProbe /></SessionProvider></UIProvider></MemoryRouter>, storeWrapper())
   return { fetcher, user: userEvent.setup({ delay: null }) }
 }
 const email = () => screen.getByRole('textbox', { name: /^Email/ })

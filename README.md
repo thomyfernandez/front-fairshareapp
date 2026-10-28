@@ -17,6 +17,7 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
 - **Framework**: React 19 (Componentes Funcionales y Hooks modernos: useState, useEffect, useCallback)
 - **Herramienta de Construccion y Empaquetado**: Vite (desarrollo rapido con Hot Module Replacement)
 - **Estilos**: Tailwind CSS v4, tokens DTCG 2025.10, variables CSS y fuente Inter local; tema documentado en [DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)
+- **Estado global**: Redux Toolkit + React Redux (ver [Estado global con Redux Toolkit](#estado-global-con-redux-toolkit))
 - **Linter de Codigo**: Oxlint
 - **Servidor Web de Produccion**: Nginx en contenedor Docker (imagen ligera basada en Alpine Linux)
 
@@ -220,6 +221,18 @@ La invitación prioriza copiar el enlace de ingreso y conserva las alternativas 
 El registro individual usa `POST /api/v1/espacios/{id}/gastos`; el lote usa `POST /api/v1/espacios/{id}/gastos/lote` con un **array directo**, según el controlador existente. Los formularios traducen los modos de edición a `regla`: equitativa, personalizada o proporcional a ingresos. En personalizada envían porcentajes **o** importes, sin mezclarlos; el reparto proporcional se calcula en el servidor. No se reintenta automáticamente un registro en un endpoint alternativo.
 
 Las categorías se consultan en `GET /api/v1/categorias` (`CategoriaResponseDTO`: `id`, `nombre`), también disponible desde `/public/data/categorias.json` en demostración. El registro individual y múltiple guardan `categoriaId`; el ícono se determina por la categoría, sin una selección independiente.
+
+### Estado global con Redux Toolkit
+
+El store (`src/app/store.js`) se provee en `App.jsx` con `<Provider>`. Su slice `expenseViews` (`src/features/gastos/expenseViewsSlice.js`) recuerda, por espacio, la vista del listado de Gastos: la consulta con `q`, `desde`, `hasta`, `pagina` y `cantidad`, y la posición de desplazamiento.
+
+- **Acciones:** `rememberExpenseView(spaceId, vista)` combina los datos parciales de un espacio; `clearExpenseViews()` descarta todo.
+- **Selectores:** `selectExpenseViews` y `selectExpenseView(state, spaceId)`.
+- **Componentes suscriptos:** `ExpensesPage` despacha la vista al filtrar, paginar, abrir un formulario o salir, y la lee para restaurar filtros y scroll. `Sidebar` y `SpaceSwitcher` la leen para que el enlace a Gastos de cada espacio vuelva a esa misma vista.
+- **Privacidad:** `WorkspaceProvider` despacha `clearExpenseViews()` al cerrar la sesión o cambiar de cuenta. Así la vista de una persona no la ve otra. Nada se guarda en el almacenamiento del navegador.
+- **Fuente de verdad:** la URL sigue siendo la fuente de los filtros visibles; el slice solo guarda la última vista para volver a ella.
+
+En las pruebas, `src/test/store-wrapper.jsx` crea un store nuevo por caso.
 
 
 ### Avatares de la cuenta

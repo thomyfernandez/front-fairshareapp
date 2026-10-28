@@ -1,6 +1,8 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router'
 import { useSession } from '../features/auth/useSession'
+import { clearExpenseViews } from '../features/gastos/expenseViewsSlice'
 import { useApiResource } from '../hooks/useApiResource'
 
 import { WorkspaceContext } from './workspace-context'
@@ -9,8 +11,10 @@ export function WorkspaceProvider({ children }) {
   const { session, api } = useSession()
   const { pathname, search } = useLocation()
   const [revision, setRevision] = useState(0)
-  const [expenseViews, setExpenseViews] = useState({})
-  const rememberExpenseView = useCallback((id, value) => setExpenseViews(previous => ({ ...previous, [id]: { ...previous[id], ...value } })), [])
+  const dispatch = useDispatch()
+  const userId = session?.usuario?.id
+  // El store vive más que esta sesión: al cerrarla o cambiar de cuenta se olvidan las vistas de Gastos.
+  useEffect(() => () => { dispatch(clearExpenseViews()) }, [dispatch, userId])
   const spacesState = useApiResource(api, '/api/v1/espacios', { revision })
   const routeSpaceId = pathname.match(/^\/espacios\/([1-9]\d*)(?:\/|$)/)?.[1] || null
   const incomeContext = new URLSearchParams(search).get('espacio')
@@ -26,6 +30,6 @@ export function WorkspaceProvider({ children }) {
   const isAdmin = members.some(member => member.usuarioId === session?.usuario?.id && member.rol === 'ADMIN')
   return <WorkspaceContext.Provider value={{
     session, api, spaces: spacesState.data, spacesState, spaceId: unavailableContext ? null : spaceId,
-    space: spaceState.data, spaceState, members, membersState, isAdmin, revision, invalidate, expenseViews, rememberExpenseView,
+    space: spaceState.data, spaceState, members, membersState, isAdmin, revision, invalidate,
   }}>{children}</WorkspaceContext.Provider>
 }

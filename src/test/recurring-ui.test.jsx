@@ -7,6 +7,7 @@ import { UIProvider } from '../components/ui'
 import { SessionContext } from '../features/auth/session-context'
 import { money, nextMonth, today } from '../lib/format'
 import { clearSessionDrafts, readDraft, saveDraft } from '../lib/draft-storage'
+import { storeWrapper } from './store-wrapper'
 
 beforeEach(clearSessionDrafts)
 
@@ -28,7 +29,7 @@ function setup({ templates = [], failUpdate = false, failBatchOnce = false, fail
     if (path.endsWith('/favoritos')) return templates
     return []
   })
-  render(<MemoryRouter initialEntries={['/espacios/1/recurrentes']}><SessionContext.Provider value={{ session: { usuario: { id: currentUserId, nombre: 'Ana' } }, api }}><UIProvider><AppRoutes /></UIProvider></SessionContext.Provider></MemoryRouter>)
+  render(<MemoryRouter initialEntries={['/espacios/1/recurrentes']}><SessionContext.Provider value={{ session: { usuario: { id: currentUserId, nombre: 'Ana' } }, api }}><UIProvider><AppRoutes /></UIProvider></SessionContext.Provider></MemoryRouter>, storeWrapper())
   return api
 }
 
