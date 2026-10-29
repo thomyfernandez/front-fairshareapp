@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import { Badge, Card, Icon, Money, PanelDisclosure } from '../../components/ui'
+import { FavoriteButton } from './FavoriteButton'
 
 const typeIcons = {
   HOGAR: 'home',
@@ -28,9 +29,12 @@ export function SpaceCard({ space }) {
         <span className="space-card__icon" aria-hidden="true">
           <Icon name={iconName} size={24} />
         </span>
-        {space.tipo && (
-          <Badge tone="neutral">{typeLabels[space.tipo] || space.tipo}</Badge>
-        )}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          {space.tipo && (
+            <Badge tone="neutral">{typeLabels[space.tipo] || space.tipo}</Badge>
+          )}
+          <FavoriteButton spaceId={space.id} spaceName={space.nombre} />
+        </div>
       </div>
 
       <h2>{space.nombre}</h2>

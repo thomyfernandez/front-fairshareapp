@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Provider } from 'react-redux'
+import { store } from '../../store'
 import { Button } from './Button'
 import { Modal } from './Modal'
 import { Notification } from './Notification'
@@ -22,9 +24,31 @@ export function UIProvider({ children }) {
   }, [])
   const answer = useCallback(value => { resolver.current?.(value); resolver.current = null; setQuestion(null) }, [])
   useEffect(() => () => resolver.current?.(false), [])
-  return <UIContext.Provider value={{ notify, confirm }}>
-    {children}
-    <div className="notification-stack" aria-label="Notificaciones">{notices.map(item => <Notification key={item.id} notice={item} onDismiss={dismiss} />)}</div>
-    <Modal open={Boolean(question)} title={question?.title || 'Confirmar acción'} description={question?.description} onClose={() => answer(false)} footer={<><Button variant="secondary" data-autofocus onClick={() => answer(false)}>Cancelar</Button><Button variant={question?.danger ? 'danger' : 'primary'} onClick={() => answer(true)}>{question?.confirmLabel || 'Confirmar'}</Button></>} />
-  </UIContext.Provider>
+  return (
+    <Provider store={store}>
+      <UIContext.Provider value={{ notify, confirm }}>
+        {children}
+        <div className="notification-stack" aria-label="Notificaciones">
+          {notices.map(item => <Notification key={item.id} notice={item} onDismiss={dismiss} />)}
+        </div>
+        <Modal
+          open={Boolean(question)}
+          title={question?.title || 'Confirmar acción'}
+          description={question?.description}
+          onClose={() => answer(false)}
+          footer={
+            <>
+              <Button variant="secondary" data-autofocus onClick={() => answer(false)}>
+                Cancelar
+              </Button>
+              <Button variant={question?.danger ? 'danger' : 'primary'} onClick={() => answer(true)}>
+                {question?.confirmLabel || 'Confirmar'}
+              </Button>
+            </>
+          }
+        />
+      </UIContext.Provider>
+    </Provider>
+  )
 }
+
