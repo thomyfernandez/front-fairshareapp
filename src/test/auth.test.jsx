@@ -1,22 +1,32 @@
-import { act, render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter, useLocation } from 'react-router'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { AppRoutes } from '../app/AppRoutes'
 import { UIProvider } from '../components/ui'
 import { SessionProvider } from '../features/auth/SessionProvider'
-import { tokenExpiry } from '../features/auth/session'
+import { useSession } from '../features/auth/useSession'
 import { storeWrapper } from './store-wrapper'
 
-const base64url = value => btoa(JSON.stringify(value)).replace(/=+$/, '').replace(/\+/g, '-').replace(/\//g, '_')
-const jwt = exp => `${base64url({ alg: 'HS256' })}.${base64url({ sub: 'ana@example.test', exp })}.firma`
+const ana = { id: 3, usuario: 'anap', email: 'ana@example.test', nombre: 'Ana', apellido: 'Pérez' }
 
-// Mirrors the backend contract: errors are plain-text bodies, registration answers "OK".
-function mockApi({ login = () => [200, { token: 'test-token', email: 'ana@example.test', nombre: 'Ana', apellido: 'Pérez' }], registro = () => [201, 'OK'] } = {}) {
+// Mirrors the backend contract: the JWT travels in an HttpOnly cookie the browser keeps, so the
+// login body only carries the user; /me answers with the user while that cookie is valid.
+// Errors are plain-text bodies and registration answers "OK".
+function mockApi({ login = () => [200, ana], registro = () => [201, 'OK'], me = () => [401, ''] } = {}) {
+  let cookie = null
   const fetcher = vi.fn(async (url, options = {}) => {
     const path = url.split('?')[0]
+    if (path.endsWith('/usuarios/me')) {
+      const [status, body] = cookie === 'expired' ? [401, ''] : cookie ? [200, cookie] : me()
+      return new Response(typeof body === 'string' ? body : JSON.stringify(body), { status })
+    }
+    if (path.endsWith('/csrf')) return new Response(JSON.stringify({ token: 'csrf-test' }), { status: 200 })
+    if (path.endsWith('/logout')) { cookie = null; return new Response(null, { status: 204 }) }
+    if (cookie === 'expired') return new Response('', { status: 401 })
     if (path.endsWith('/login')) {
       const [status, body] = login(JSON.parse(options.body))
+      if (status === 200) cookie = body
       return new Response(typeof body === 'string' ? body : JSON.stringify(body), { status })
     }
     if (path.endsWith('/registro')) {
@@ -26,15 +36,23 @@ function mockApi({ login = () => [200, { token: 'test-token', email: 'ana@exampl
     }
     return new Response('[]', { status: 200 })
   })
+  fetcher.expireCookie = () => { cookie = 'expired' }
   vi.stubGlobal('fetch', fetcher)
   return fetcher
+}
+// Calls made by the person's actions; the session check on startup (/me) always happens.
+const serverCalls = fetcher => fetcher.mock.calls.filter(([url]) => !url.endsWith('/usuarios/me'))
+// Any authenticated request the app makes later (here, on demand).
+function RequestProbe() {
+  const { api } = useSession()
+  return <button type="button" onClick={() => api('/api/v1/espacios').catch(() => {})}>Consultar servidor</button>
 }
 function RouteProbe() {
   return <output data-testid="route">{useLocation().pathname}</output>
 }
 function setup(route = '/login', options) {
   const fetcher = mockApi(options)
-  render(<MemoryRouter initialEntries={[route]}><UIProvider><SessionProvider><AppRoutes /><RouteProbe /></SessionProvider></UIProvider></MemoryRouter>, storeWrapper())
+  render(<MemoryRouter initialEntries={[route]}><UIProvider><SessionProvider><AppRoutes /><RouteProbe /><RequestProbe /></SessionProvider></UIProvider></MemoryRouter>, storeWrapper())
   return { fetcher, user: userEvent.setup({ delay: null }) }
 }
 const email = () => screen.getByRole('textbox', { name: /^Email/ })
@@ -55,7 +73,7 @@ describe('login', () => {
     expect(screen.getByText(/Ingresá un email válido/)).toBeInTheDocument()
     await user.type(email(), 'example.test')
     expect(screen.queryByText(/Ingresá un email válido/)).not.toBeInTheDocument()
-    expect(fetcher).not.toHaveBeenCalled()
+    expect(serverCalls(fetcher)).toHaveLength(0)
   })
 
   it('explains wrong credentials and keeps the email typed', async () => {
@@ -100,17 +118,47 @@ describe('login', () => {
     expect(email()).toHaveValue('ana@example.test')
   })
 
-  it('ends the session when the token expires and explains why', async () => {
-    vi.useFakeTimers({ shouldAdvanceTime: true })
-    const exp = Math.floor(Date.now() / 1000) + 60
-    const { user } = setup('/login', { login: () => [200, { token: jwt(exp), email: 'ana@example.test', nombre: 'Ana' }] })
+  it('ends the session when the server stops accepting the cookie and explains why', async () => {
+    const { fetcher, user } = setup()
     await user.type(email(), 'ana@example.test')
     await user.type(password(), 'password-test')
     await user.click(screen.getByRole('button', { name: 'Iniciar sesión' }))
     await waitFor(() => expect(screen.getByTestId('route')).not.toHaveTextContent('/login'))
-    await act(() => vi.advanceTimersByTimeAsync(61_000))
+    fetcher.expireCookie()
+    await user.click(screen.getByRole('button', { name: 'Consultar servidor' }))
     expect(await screen.findByText('Tu sesión venció. Iniciá sesión nuevamente para continuar.')).toBeInTheDocument()
     expect(screen.getByTestId('route')).toHaveTextContent('/login')
+  })
+})
+
+describe('persistent session (HttpOnly cookie)', () => {
+  it('restores the session after a reload by asking the server who is signed in', async () => {
+    const { fetcher } = setup('/espacios', { me: () => [200, ana] })
+    expect(await screen.findByLabelText('Cuenta de Ana')).toBeInTheDocument()
+    expect(screen.getByTestId('route')).toHaveTextContent('/espacios')
+    expect(fetcher).toHaveBeenCalledWith('/api/v1/usuarios/me', expect.objectContaining({ credentials: 'include' }))
+  })
+
+  it('sends people without a valid cookie to login and brings them back after signing in', async () => {
+    const { user } = setup('/espacios')
+    expect(await screen.findByRole('button', { name: 'Iniciar sesión' })).toBeInTheDocument()
+    expect(screen.getByTestId('route')).toHaveTextContent('/login')
+    await user.type(email(), 'ana@example.test')
+    await user.type(password(), 'password-test')
+    await user.click(screen.getByRole('button', { name: 'Iniciar sesión' }))
+    await waitFor(() => expect(screen.getByTestId('route')).toHaveTextContent('/espacios'))
+  })
+
+  it('never stores the session in localStorage or sessionStorage and asks the server to clear the cookie on sign out', async () => {
+    const { fetcher, user } = setup()
+    await user.type(email(), 'ana@example.test')
+    await user.type(password(), 'password-test')
+    await user.click(screen.getByRole('button', { name: 'Iniciar sesión' }))
+    await user.click(await screen.findByLabelText('Cuenta de Ana'))
+    const stored = [...Object.values(localStorage), ...Object.values(sessionStorage)].join(' ')
+    expect(stored).not.toMatch(/ana@example\.test|token/i)
+    await user.click(screen.getByRole('button', { name: 'Cerrar sesión' }))
+    await waitFor(() => expect(fetcher).toHaveBeenCalledWith('/api/v1/usuarios/logout', expect.objectContaining({ method: 'POST', headers: expect.objectContaining({ 'X-XSRF-TOKEN': 'csrf-test' }) })))
   })
 })
 
@@ -132,7 +180,7 @@ describe('registration', () => {
     expect(screen.getByText('Elegí un nombre de usuario.')).toBeInTheDocument()
     expect(password()).toHaveAccessibleDescription(/Usá al menos 8 caracteres\..*Usá al menos 8 caracteres\./)
     expect(screen.getByLabelText(/^Apellido/)).toHaveFocus()
-    expect(fetcher).not.toHaveBeenCalled()
+    expect(serverCalls(fetcher)).toHaveLength(0)
   })
 
   it('takes the person to login with the email filled in after registering', async () => {
@@ -143,7 +191,7 @@ describe('registration', () => {
     expect(screen.getByTestId('route')).toHaveTextContent('/login')
     expect(email()).toHaveValue('ana@example.test')
     expect(password()).toHaveFocus()
-    expect(JSON.parse(fetcher.mock.calls[0][1].body)).toEqual({ nombre: 'Ana', apellido: 'Pérez', usuario: 'anap', email: 'ana@example.test', contra: 'password-test' })
+    expect(JSON.parse(serverCalls(fetcher)[0][1].body)).toEqual({ nombre: 'Ana', apellido: 'Pérez', usuario: 'anap', email: 'ana@example.test', contra: 'password-test' })
   })
 
   it('marks a duplicated email, keeps the data and offers to log in', async () => {
@@ -164,10 +212,4 @@ describe('registration', () => {
     await user.click(screen.getByRole('button', { name: 'Crear cuenta' }))
     expect(await screen.findByRole('alert')).toHaveTextContent('No pudimos confirmar si la cuenta se creó.')
   })
-})
-
-it('reads the expiry of a JWT and ignores malformed tokens', () => {
-  expect(tokenExpiry(jwt(1700000000))).toBe(1700000000000)
-  expect(tokenExpiry('test-token')).toBeNull()
-  expect(tokenExpiry(undefined)).toBeNull()
 })

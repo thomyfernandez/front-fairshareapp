@@ -18,8 +18,13 @@ export async function loadMockFixtures(fetcher, base = import.meta.env.BASE_URL 
   return Object.fromEntries(entries)
 }
 
+const json = (body, status = 200) => new Response(status === 204 ? null : JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } })
+
 export function createMockFetcher({ fetcher = globalThis.fetch, now, base } = {}) {
   let engine
+  // Simula la cookie HttpOnly del backend: la guarda "el navegador" (este fetcher), nunca el código
+  // de la app. Vive en memoria, así que en modo mock un F5 cierra la sesión (no hay servidor real).
+  let sessionCookie = null
   return async function fetchMock(input, options = {}) {
     if (options.signal?.aborted) throw new DOMException('Solicitud cancelada', 'AbortError')
     let request
@@ -36,8 +41,21 @@ export function createMockFetcher({ fetcher = globalThis.fetch, now, base } = {}
     try { body = options.body ? JSON.parse(options.body) : undefined } catch {
       return new Response(JSON.stringify({ timestamp: new Date().toISOString(), status: 400, code: 'JSON_MALFORMADO', message: 'JSON inválido.', path: new URL(input, 'http://mock.local').pathname }), { status: 400, headers: { 'Content-Type': 'application/json' } })
     }
-    const result = request(input, { method: options.method || 'GET', body, token: headers.get('Authorization')?.replace(/^Bearer /, '') })
-    return new Response(result.status === 204 ? null : JSON.stringify(result.body), { status: result.status, headers: { 'Content-Type': 'application/json' } })
+    const method = options.method || 'GET'
+    const path = new URL(input, 'http://mock.local').pathname
+    if (path === '/api/v1/usuarios/csrf') return json({ headerName: 'X-XSRF-TOKEN', token: 'mock-csrf' })
+    if (path === '/api/v1/usuarios/logout' && method === 'POST') {
+      sessionCookie = null
+      return json(null, 204)
+    }
+    const result = request(input, { method, body, token: sessionCookie ?? headers.get('Authorization')?.replace(/^Bearer /, '') })
+    if (path === '/api/v1/usuarios/login' && result.status === 200) {
+      // Igual que el backend: el token va a la "cookie" y el body solo lleva datos del usuario.
+      const { token, tokenType: _tokenType, expiresIn: _expiresIn, ...user } = result.body
+      sessionCookie = token
+      return json(user)
+    }
+    return json(result.body, result.status)
   }
 }
 

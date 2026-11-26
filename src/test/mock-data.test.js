@@ -35,8 +35,11 @@ it('la interfaz consume los JSON locales por fetch y no contacta ningún endpoin
   const mockFetcher = createMockFetcher({ fetcher, now })
   const publicApi = createApi({ fetcher: mockFetcher, baseUrl: 'https://backend.example.test' })
   const auth = await publicApi('/api/v1/usuarios/login', { method: 'POST', body: DEMO_ACCOUNT })
-  assertContract('LoginResponse', auth)
-  const api = createApi({ token: auth.token, fetcher: mockFetcher })
+  // Como el backend, el token queda en la "cookie" del fetcher simulado y no llega al código de la app.
+  expect(auth).not.toHaveProperty('token')
+  expect(auth.usuario.email).toBe(DEMO_ACCOUNT.email)
+  const api = createApi({ fetcher: mockFetcher })
+  expect((await api('/api/v1/usuarios/me')).id).toBe(auth.usuario.id)
   expect((await api('/api/v1/espacios')).map(item => item.nombre)).toEqual(fixtures.spaces.map(item => item.nombre))
   await api('/api/v1/espacios/1/gastos', { method: 'POST', body: expense() })
   expect((await api('/api/v1/espacios/1/gastos')).some(item => item.descripcion === 'Cena compartida')).toBe(true)
