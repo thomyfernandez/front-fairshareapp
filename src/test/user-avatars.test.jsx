@@ -92,12 +92,21 @@ it('el selector se reinicia al cambiar de cuenta', () => {
 })
 
 const profile = { id: 1, nombre: 'Ana', apellido: 'Ruiz', email: 'ana@example.test', avatarId: 'carpincho' }
+// Backend con cookie HttpOnly: sin sesión previa (/me → 401), token CSRF disponible y logout 204.
+function sessionFetcher(avatarResponse) {
+  return vi.fn(async url => {
+    if (url.endsWith('/usuarios/me')) return new Response('', { status: 401 })
+    if (url.endsWith('/csrf')) return new Response(JSON.stringify({ token: 'csrf-test' }), { status: 200 })
+    if (url.endsWith('/logout')) return new Response(null, { status: 204 })
+    return avatarResponse()
+  })
+}
 function AccountProbe() {
   const { session, signIn, signOut, updateAvatar } = useSession()
   const [error, setError] = useState('')
   return <>
-    <button onClick={() => signIn({ token: 'token-a', usuario: profile })}>Ingresar Ana</button>
-    <button onClick={() => { signOut(); signIn({ token: 'token-b', usuario: { ...profile, id: 2, avatarId: 'tero' } }) }}>Cambiar cuenta</button>
+    <button onClick={() => signIn({ usuario: profile })}>Ingresar Ana</button>
+    <button onClick={() => { signOut(); signIn({ usuario: { ...profile, id: 2, avatarId: 'tero' } }) }}>Cambiar cuenta</button>
     <button onClick={() => updateAvatar('astro').catch(failure => setError(failure.message))}>Actualizar</button>
     <output>{session?.usuario?.avatarId}</output><span>{error}</span>
   </>
@@ -105,19 +114,20 @@ function AccountProbe() {
 
 it('la sesión actualiza el avatar con PATCH autenticado después de la respuesta del servidor', async () => {
   const user = userEvent.setup({ delay: null })
-  const fetcher = vi.fn(async () => new Response(JSON.stringify({ ...profile, avatarId: 'astro' }), { status: 200 }))
+  const fetcher = sessionFetcher(async () => new Response(JSON.stringify({ ...profile, avatarId: 'astro' }), { status: 200 }))
   vi.stubGlobal('fetch', fetcher)
   render(<SessionProvider><AccountProbe /></SessionProvider>)
   await user.click(screen.getByRole('button', { name: 'Ingresar Ana' }))
   await user.click(screen.getByRole('button', { name: 'Actualizar' }))
   await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('astro'))
-  expect(fetcher).toHaveBeenCalledWith('/api/v1/usuarios/me/avatar', expect.objectContaining({ method: 'PATCH', headers: expect.objectContaining({ Authorization: 'Bearer token-a' }), body: JSON.stringify({ avatarId: 'astro' }) }))
+  expect(fetcher).toHaveBeenCalledWith('/api/v1/usuarios/me/avatar', expect.objectContaining({ method: 'PATCH', credentials: 'include', headers: expect.objectContaining({ 'X-XSRF-TOKEN': 'csrf-test' }), body: JSON.stringify({ avatarId: 'astro' }) }))
+  expect(fetcher.mock.calls.every(([, options]) => !options.headers.Authorization)).toBe(true)
 })
 
 it('una respuesta pendiente no modifica otra cuenta si la sesión cambia durante el envío', async () => {
   const user = userEvent.setup({ delay: null })
   let resolve
-  vi.stubGlobal('fetch', vi.fn(() => new Promise(done => { resolve = done })))
+  vi.stubGlobal('fetch', sessionFetcher(() => new Promise(done => { resolve = done })))
   render(<SessionProvider><AccountProbe /></SessionProvider>)
   await user.click(screen.getByRole('button', { name: 'Ingresar Ana' }))
   await user.click(screen.getByRole('button', { name: 'Actualizar' }))

@@ -11,16 +11,53 @@ export class ApiError extends Error {
 
 const fetchMock = (...args) => import('./mocks/mock-fetch').then(module => module.mockFetch(...args))
 
-export function createApi({ baseUrl = '', token = '', onUnauthorized = () => {}, fetcher = import.meta.env.MODE === 'mock' ? fetchMock : globalThis.fetch } = {}) {
+// Sesión con cookie HttpOnly: el JWT lo guarda y lo envía el navegador; este código nunca lo ve.
+// Como el navegador adjunta la cookie solo, los métodos que modifican datos llevan además el
+// token CSRF (patrón "double submit": cookie XSRF-TOKEN legible + header X-XSRF-TOKEN).
+export const CSRF_COOKIE = 'XSRF-TOKEN'
+export const CSRF_HEADER = 'X-XSRF-TOKEN'
+export const CSRF_PATH = '/api/v1/usuarios/csrf'
+const SAFE_METHODS = new Set(['GET', 'HEAD', 'OPTIONS'])
+// Antes de iniciar sesión no hay cookie que un sitio externo pueda aprovechar; un 401 acá significa
+// credenciales incorrectas, no una sesión vencida.
+const PUBLIC_AUTH_PATHS = ['/api/v1/usuarios/login', '/api/v1/usuarios/registro']
+
+export function readCookie(name) {
+  if (typeof document === 'undefined') return ''
+  const prefix = `${name}=`
+  const entry = document.cookie.split(';').map(part => part.trim()).find(part => part.startsWith(prefix))
+  return entry ? decodeURIComponent(entry.slice(prefix.length)) : ''
+}
+
+export function createApi({ baseUrl = '', onUnauthorized = () => {}, fetcher = import.meta.env.MODE === 'mock' ? fetchMock : globalThis.fetch } = {}) {
+  const root = baseUrl.replace(/\/$/, '')
+  // Si el back está en otro origen (sin proxy), document.cookie no ve su XSRF-TOKEN: se usa el del body.
+  let fallbackCsrf = ''
+  async function csrfToken(signal) {
+    const fromCookie = readCookie(CSRF_COOKIE)
+    if (fromCookie) return fromCookie
+    try {
+      const response = await fetcher(`${root}${CSRF_PATH}`, { method: 'GET', headers: { Accept: 'application/json' }, credentials: 'include', signal })
+      const data = response.ok ? await response.json().catch(() => null) : null
+      fallbackCsrf = data?.token || fallbackCsrf
+    } catch (cause) {
+      if (cause.name === 'AbortError') throw cause
+    }
+    return readCookie(CSRF_COOKIE) || fallbackCsrf
+  }
   return async function api(path, { method = 'GET', body, signal } = {}) {
     const headers = { Accept: 'application/json' }
-    if (token) headers.Authorization = `Bearer ${token}`
     if (body !== undefined) headers['Content-Type'] = 'application/json'
+    const isPublicAuth = PUBLIC_AUTH_PATHS.includes(path)
+    if (!SAFE_METHODS.has(method) && !isPublicAuth) {
+      const token = await csrfToken(signal)
+      if (token) headers[CSRF_HEADER] = token
+    }
     let response
     let text
     try {
-      response = await fetcher(`${baseUrl.replace(/\/$/, '')}${path}`, {
-        method, headers, signal,
+      response = await fetcher(`${root}${path}`, {
+        method, headers, signal, credentials: 'include',
         ...(body !== undefined ? { body: JSON.stringify(body) } : {}),
       })
       text = await response.text()
@@ -43,7 +80,7 @@ export function createApi({ baseUrl = '', token = '', onUnauthorized = () => {},
       }
     }
     if (!response.ok) {
-      if (response.status === 401 && token) onUnauthorized()
+      if (response.status === 401 && !isPublicAuth) onUnauthorized()
       const fallback = response.status === 403 ? 'No tenés permiso para realizar esta acción.'
         : response.status === 401 ? 'No pudimos validar tus credenciales.'
         : 'No pudimos completar la solicitud. Intentá nuevamente.'

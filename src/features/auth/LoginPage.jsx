@@ -42,7 +42,8 @@ export default function LoginPage() {
     mapError: loginError,
     submit: async values => {
       const auth = await api('/api/v1/usuarios/login', { method: 'POST', body: { email: values.email.trim(), contra: values.contra } })
-      if (!auth?.token) throw new ApiError('Respuesta de login sin token', { status: 200, code: 'INVALID_RESPONSE' })
+      // El token llega en una cookie HttpOnly; el body trae solo los datos del usuario.
+      if ((auth?.usuario?.id ?? auth?.id) == null) throw new ApiError('Respuesta de login sin usuario', { status: 200, code: 'INVALID_RESPONSE' })
       // Navigation happens when the session appears: this page redirects to the destination.
       signIn(auth)
     },

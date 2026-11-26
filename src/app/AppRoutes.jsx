@@ -22,8 +22,9 @@ const SpaceSettings = lazy(() => import('../features/espacios/SpaceSettings'))
 const ComponentGallery = lazy(() => import('../features/design-system/ComponentGallery'))
 
 function ProtectedApp() {
-  const { session } = useSession()
+  const { session, status } = useSession()
   const location = useLocation()
+  if (status === 'loading') return <LoadingState label="Recuperando tu sesión…" />
   if (!session) return <Navigate to="/login" replace state={{ from: `${location.pathname}${location.search}` }} />
   return <WorkspaceProvider><AppLayout /></WorkspaceProvider>
 }

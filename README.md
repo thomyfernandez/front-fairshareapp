@@ -8,7 +8,7 @@ Aplicacion cliente web para la plataforma de gestion inteligente y liquidacion t
 
 El frontend de FairShare proporciona una interfaz de usuario interactiva y responsiva disenada para permitir a grupos de usuarios (convivencia, viajes, parejas o proyectos) administrar sus finanzas compartidas en tiempo real. 
 
-Consume los servicios de la API REST de FairShare mediante comunicacion asincrona y autenticacion por token JWT Bearer, brindando soporte integral para la gestion de espacios, reparto equitativo y proporcional de gastos, compensacion automatica de deudas y checkout de liquidaciones periodicas.
+Consume los servicios de la API REST de FairShare mediante comunicacion asincrona y autenticacion por JWT en cookie HttpOnly, brindando soporte integral para la gestion de espacios, reparto equitativo y proporcional de gastos, compensacion automatica de deudas y checkout de liquidaciones periodicas.
 
 ---
 
@@ -29,8 +29,8 @@ Consume los servicios de la API REST de FairShare mediante comunicacion asincron
    - Registro con validacion junto a cada campo; al crear la cuenta se vuelve al login con el email completado.
    - Después del login, los enlaces a un espacio se retoman solo si pertenecen al listado de la cuenta autenticada. Si el destino era de otra cuenta, se abre el resumen del primer espacio propio; sin espacios, se muestra Mis espacios. Si falla la comprobación, se ofrece reintentar sin abrir el espacio anterior.
    - Mensajes claros para email ya registrado (409), credenciales incorrectas (401), errores del servidor y falta de conexion.
-   - Inicio de sesion con JWT en memoria; recargar requiere autenticarse nuevamente.
-   - Cierre de sesion desde el menu de usuario y aviso de sesion vencida (al recibir 401 o al llegar el `exp` del token).
+   - Sesion con JWT en cookie HttpOnly + proteccion CSRF: recargar (F5) mantiene la sesion sin guardar el token en el navegador. Ver [Persistencia y seguridad de la sesión](#persistencia-y-seguridad-de-la-sesión).
+   - Cierre de sesion desde el menu de usuario (el servidor borra la cookie) y aviso de sesion vencida al recibir 401.
    - No se ofrece recuperacion de contrasena porque el backend todavia no la implementa.
    - Pantallas en `src/features/auth`: `LoginPage`, `RegisterPage`, `AuthLayout`, `UserMenu` y `SessionProvider`.
 
@@ -208,6 +208,55 @@ La invitación prioriza copiar el enlace de ingreso y conserva las alternativas 
 ### Contexto al navegar a Mis ingresos
 
 `/ingresos` sigue siendo una sección personal: consulta y modifica `/api/v1/sueldos` para todos los espacios. Los enlaces desde un espacio incluyen `?espacio={id}` para conservar su selector y navegación lateral, también al volver con el navegador o abrir el enlace después de iniciar sesión. El selector permite cambiar ese contexto sin salir de Mis ingresos ni filtrar o volver a solicitar los sueldos. El contexto solo se admite si el espacio pertenece al listado del usuario; un identificador inválido, ajeno o sin acceso no bloquea la consulta de ingresos personales. Entrar a `/ingresos` sin contexto mantiene la vista general de la cuenta. No se guarda el espacio activo en almacenamiento del navegador.
+
+## Persistencia y seguridad de la sesión
+
+Esta sección resume el TPG de persistencia en el navegador: qué se guarda, dónde se guarda y por qué.
+
+### 1. Datos no sensibles en Web Storage
+
+| Dato | Dónde | Clave | Motivo |
+| --- | --- | --- | --- |
+| Tema claro/oscuro | `localStorage` | `fairshare.theme` | Es una preferencia que debe durar entre visitas. `index.html` la lee antes del primer pintado para evitar el parpadeo. |
+| Sidebar expandida o colapsada | `localStorage` | `fairshare:sidebar-collapsed` | Es una preferencia de interfaz que debe durar entre visitas. |
+| Borradores de gastos | `sessionStorage` | `fairshare:draft:v1:{usuario}:{espacio}:{tipo}` | Son temporales: sirven en la misma pestaña, incluso después de un F5. Se borran al cerrar la pestaña, al cerrar sesión o cuando la sesión vence. |
+
+Ninguna de estas claves guarda tokens, contraseñas ni datos de la cuenta. Si un ataque XSS las leyera, solo obtendría preferencias visuales o borradores de la propia pestaña.
+
+### 2. Sesión persistente con cookie HttpOnly (opción avanzada)
+
+El TPG plantea tres opciones:
+
+| Opción | ¿JS puede leer el token? | Riesgo principal | Decisión |
+| --- | --- | --- | --- |
+| `localStorage` | Sí | Con XSS, `localStorage.getItem('token')` y un `fetch` alcanzan para robar la sesión. | Descartada |
+| `redux-persist` | Sí: guarda el estado en `localStorage` | Es el mismo riesgo XSS, porque el token queda serializado y legible. | Descartada |
+| **Cookie HttpOnly** | **No** | CSRF, porque el navegador envía la cookie automáticamente. Se mitiga como se explica más abajo. | **Elegida** |
+
+Elegimos la cookie HttpOnly porque es la única opción en la que un script inyectado no puede leer el token. El problema que introduce, CSRF, tiene mitigaciones estándar que Spring Security ya ofrece.
+
+**Cómo funciona:**
+
+1. `POST /api/v1/usuarios/login`: el backend responde con `Set-Cookie: fairshare_token=<JWT>; HttpOnly; SameSite=Lax; Path=/` (y `Secure` en producción). El body trae solo los datos del usuario, nunca el token.
+2. Cada request usa `credentials: 'include'` (`src/api.js`) y el navegador adjunta la cookie solo. El frontend no lee ni guarda el JWT; tampoco envía `Authorization: Bearer`.
+3. **F5:** al iniciar, `SessionProvider` llama a `GET /api/v1/usuarios/me`. Si la cookie es válida, recupera el usuario y la sesión continúa. Mientras tanto, las rutas protegidas muestran "Recuperando tu sesión…" en lugar de mandar a `/login`.
+4. **Vencimiento:** lo decide el servidor (`jwt.expiration-ms`). Ante un 401, la interfaz cierra la sesión y lo informa.
+5. **Logout:** `POST /api/v1/usuarios/logout` devuelve la cookie con `Max-Age=0`. JavaScript no puede borrar una cookie HttpOnly, por eso lo hace el servidor.
+
+### 3. Ataques y mitigaciones
+
+| Ataque | Mitigación |
+| --- | --- |
+| **XSS: robo del token** | Cookie `HttpOnly`: `document.cookie` no la muestra y no hay token en `localStorage`/`sessionStorage`. React escapa por defecto todo lo que renderiza y el proyecto no usa `dangerouslySetInnerHTML`. Ninguna clave de Web Storage contiene credenciales. |
+| **CSRF: un sitio externo usa la cookie de la víctima** | (1) `SameSite=Lax`: el navegador no envía la cookie en POST/PUT/PATCH/DELETE que vienen de otro sitio. (2) Token CSRF con el patrón *double submit*: Spring emite la cookie `XSRF-TOKEN`, legible por JS, y exige el mismo valor en el header `X-XSRF-TOKEN` en toda request que modifica datos. Un sitio externo no puede leer esa cookie, así que no puede armar el header. Sin el header, el servidor responde 403. (3) CORS con orígenes explícitos y `allowCredentials`, nunca `*`. |
+| **Robo de la cookie en tránsito** | `Secure` en producción (`COOKIE_SECURE=true`), para que la cookie viaje solo por HTTPS. |
+| **Sesión robada que no expira** | La cookie y el JWT vencen juntos (`jwt.expiration-ms`, 24 h). El logout elimina la cookie. |
+
+**Límite honesto:** HttpOnly impide que un XSS *robe* el token, pero un script inyectado todavía podría hacer requests desde la misma página mientras la víctima la tiene abierta. Por eso, prevenir el XSS en sí (escapado de React, validación en el servidor) sigue siendo necesario.
+
+**Modo mock (`npm run start:mock`):** no hay servidor real que guarde la cookie. `mock-fetch.js` la simula en memoria, con el mismo contrato: el login no devuelve el token y existen `/me`, `/logout` y `/csrf`. Por eso, en modo mock un F5 sí cierra la sesión.
+
+**Prueba manual (con backend):** después del login, en DevTools → Application → Cookies aparece `fairshare_token` con HttpOnly y SameSite=Lax, mientras que `document.cookie` en la consola solo muestra `XSRF-TOKEN`. Con F5 la sesión sigue activa. Al cerrar sesión, la cookie desaparece.
 
 ## Registro de gastos y continuidad
 
